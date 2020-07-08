@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Container from 'react-bootstrap/Container';
@@ -74,10 +75,8 @@ class Header extends React.Component {
       </Navbar>
       <div className="dv_heading_search">
         <Container>
-          <h1 className="dv_home_Service_content">About us </h1>
-          <p className="dv_home_Service_content_p">
-            Appreciate for visiting our page{' '}
-          </p>
+          <h1 className="dv_home_Service_content">{this.props.title}</h1>
+          <p className="dv_home_Service_content_p">{this.props.desc + ' '}</p>
         </Container>
       </div>
 
@@ -85,5 +84,10 @@ class Header extends React.Component {
     </header>
   );
 }
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired
+};
 
 export default Header;

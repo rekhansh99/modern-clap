@@ -10,7 +10,10 @@ import Footer from '../../app/components/Footer';
 const Blogs = () => {
   return (
     <div className="dv_wrapper">
-      <Header />
+      <Header
+        title="Blog"
+        desc="A blog is a discussion or informational data published on the Web"
+      />
 
       <div className="dv_content">
         <div className="dv_terms_conditions">

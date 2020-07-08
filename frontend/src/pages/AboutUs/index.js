@@ -11,7 +11,7 @@ import Header from '../../app/components/Header';
 const AboutUs = () => {
   return (
     <div className="dv_wrapper">
-      <Header />
+      <Header title="About us" desc="Appreciate for visiting our page " />
 
       <div className="dv_content">
         <div className="dv_about_us_wrapper">
