@@ -1,4 +1,9 @@
 import React from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
@@ -11,9 +16,9 @@ const TermsAndConditions = () => {
       />
       <div className="dv_content">
         <div className="dv_terms_conditions">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
+          <Container>
+            <Row>
+              <Col md={12}>
                 <div className="dv_terms_head">Terms heading</div>
                 <p className="dv_terms_p">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -25,9 +30,9 @@ const TermsAndConditions = () => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.{' '}
                 </p>
-              </div>
+              </Col>
               <div className="dv_divider" />
-              <div className="col-md-12">
+              <Col md={12}>
                 <div className="dv_terms_head">Terms heading</div>
                 <p className="dv_terms_p">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -39,9 +44,9 @@ const TermsAndConditions = () => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.{' '}
                 </p>
-              </div>
+              </Col>
               <div className="dv_divider" />
-              <div className="col-md-12">
+              <Col md={12}>
                 <div className="dv_terms_head">Terms heading</div>
                 <p className="dv_terms_p">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -53,9 +58,9 @@ const TermsAndConditions = () => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.{' '}
                 </p>
-              </div>
+              </Col>
               <div className="dv_divider" />
-              <div className="col-md-12">
+              <Col md={12}>
                 <div className="dv_terms_head">Terms heading</div>
                 <p className="dv_terms_p">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -67,9 +72,9 @@ const TermsAndConditions = () => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.{' '}
                 </p>
-              </div>
+              </Col>
               <div className="dv_divider" />
-              <div className="col-md-12">
+              <Col md={12}>
                 <div className="dv_terms_head">Terms heading</div>
                 <p className="dv_terms_p">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -81,10 +86,10 @@ const TermsAndConditions = () => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.{' '}
                 </p>
-              </div>
+              </Col>
               <div className="dv_divider" />
-            </div>
-          </div>
+            </Row>
+          </Container>
         </div>
       </div>
       <Footer />

@@ -135,9 +135,14 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  headerClassName: 'dv_about_us_wrapper',
+  headerClassName: PropTypes.string,
   title: PropTypes.string.isRequired,
   desc: PropTypes.oneOf(PropTypes.string, PropTypes.element).isRequired,
+  search: PropTypes.bool
+};
+
+Header.defaultProps = {
+  headerClassName: 'dv_about_us_page',
   search: false
 };
 

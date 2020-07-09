@@ -1,4 +1,11 @@
 import React from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
@@ -8,9 +15,9 @@ const ContactUs = () => {
       <Header title="Contact Us" desc="Get in touch to know and grow..!" />
       <div className="dv_content">
         <div className="dv_contactus_wrapper">
-          <div className="container text-center">
-            <div className="row">
-              <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
+          <Container className="text-center">
+            <Row>
+              <Col lg={4} md={4} csm={12} xs={12}>
                 <div className="dv_contact_cards">
                   <img
                     className="mb-4"
@@ -35,8 +42,8 @@ const ContactUs = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
+              </Col>
+              <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
                   <img
                     className="mb-4"
@@ -61,12 +68,12 @@ const ContactUs = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
+              </Col>
+              <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
                   <img
                     className="mb-4"
-                    src="/images/svgs/email.svg"
+                    src="/images/svgs/telephone.svg"
                     height="50"
                     width="50"
                     alt="mobile"
@@ -87,54 +94,51 @@ const ContactUs = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <div className="dv_contact_form">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
+          <Container>
+            <Row>
+              <Col md={12}>
                 <h4 className="dv_contact_form_heading">
                   Feel free to contact us{' '}
                 </h4>
-                <input
+                <FormControl
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Full Name"
                 />
-                <input
+                <FormControl
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Orgnization Name"
                 />
-                <input
+                <FormControl
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Email ID"
                 />
-                <input
+                <FormControl
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Contact No"
                 />
-                <input
+                <FormControl
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Message"
                 />
-                <button
-                  type="button"
-                  className="btn btn-default dv_submit_Career"
-                >
+                <Button type="button" className="btn-default dv_submit_Career">
                   Submit
-                </button>
-              </div>
-            </div>
-          </div>
+                </Button>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <div className="dv_contact_map">
-          <div className="container">
+          <Container>
             <iframe
               title="location"
               className="dv_map_iframe"
@@ -145,7 +149,7 @@ const ContactUs = () => {
               tabIndex={0}
               frameBorder={0}
             />
-          </div>
+          </Container>
         </div>
       </div>
       <Footer />
