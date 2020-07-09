@@ -45,14 +45,18 @@ class Header extends React.Component {
             className={classnames('dv_logo_icon', {
               dv_menu_scroll_style: this.state.fixed
             })}
-            href="#"
+            href="/"
           >
             ModernClap
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
             <Nav.Item as="li">
-              <a style={{ display: 'none' }} className="dv_sm_show" to="#!">
+              <a
+                style={{ display: 'none' }}
+                className="dv_sm_show"
+                href="/book-now"
+              >
                 book now
               </a>
               <Nav.Link
