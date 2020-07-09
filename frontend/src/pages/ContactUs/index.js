@@ -13,6 +13,7 @@ const ContactUs = () => {
                   src="/images/svgs/mobile.svg"
                   height="50"
                   width="50"
+                  alt="mobile"
                 />
                 <span>Mobile </span>
                 <ul>
@@ -38,6 +39,7 @@ const ContactUs = () => {
                   src="/images/svgs/telephone.svg"
                   height="50"
                   width="50"
+                  alt="mobile"
                 />
                 <span>Telephone </span>
                 <ul>
@@ -63,6 +65,7 @@ const ContactUs = () => {
                   src="/images/svgs/email.svg"
                   height="50"
                   width="50"
+                  alt="mobile"
                 />
                 <span>Email us </span>
                 <ul>

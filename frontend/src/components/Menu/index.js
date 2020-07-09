@@ -71,7 +71,7 @@ const Menu = ({ open, showMenu }) => {
               </Link>
             </li>
             <li>
-              <Link to="my-bookings.html">
+              <Link to="/bookings">
                 <Image src="/images/svgs/bookings.svg" />
                 My Bookings{' '}
               </Link>
@@ -80,43 +80,43 @@ const Menu = ({ open, showMenu }) => {
         </div>
         <ul className="dv_menu_links_a">
           <li>
-            <Link to="about-us.html">
+            <Link to="/about-us">
               <Image src="/images/svgs/about-us.svg" />
               About us{' '}
             </Link>
           </li>
           <li>
-            <Link to="terms-conditions.html">
+            <Link to="/terms-conditions">
               <Image src="/images/svgs/tnc.svg" />
               terms &amp; condition{' '}
             </Link>
           </li>
           <li>
-            <Link to="privacy-policy.html">
+            <Link to="/privacy-policy">
               <Image src="/images/svgs/privacy.svg" />
               privacy policy{' '}
             </Link>
           </li>
           <li>
-            <Link to="blogs.html">
+            <Link to="/blogs">
               <Image src="/images/svgs/blogs.svg" />
               blog{' '}
             </Link>
           </li>
           <li>
-            <Link to="reviews.html">
+            <Link to="/reviews">
               <Image src="/images/svgs/reviews.svg" />
               reviews{' '}
             </Link>
           </li>
           <li>
-            <Link to="careers.html">
+            <Link to="/careers">
               <Image src="/images/svgs/careers.svg" />
               careers{' '}
             </Link>
           </li>
           <li>
-            <Link to="contact-us.html">
+            <Link to="/contact-us">
               <Image src="/images/svgs/contact-us.svg" />
               contact us
             </Link>
