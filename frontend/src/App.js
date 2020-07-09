@@ -9,6 +9,7 @@ import Bookings from './pages/Bookings';
 import BookingDetails from './pages/Bookings/BookingDetails';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Reviews from './pages/Reviews';
 
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path="/contact-us">
           <ContactUs />
+        </Route>
+        <Route exact path="/privacy-policy">
+          <PrivacyPolicy />
         </Route>
         <Route exact path="/terms-and-conditions">
           <TermsAndConditions />
