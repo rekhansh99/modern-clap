@@ -10,6 +10,7 @@ import BookingDetails from './pages/Bookings/BookingDetails';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
 import TermsAndConditions from './pages/TermsAndConditions';
+import Reviews from './pages/Reviews';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
         </Route>
         <Route exact path="/terms-and-conditions">
           <TermsAndConditions />
+        </Route>
+        <Route exact path="/reviews">
+          <Reviews />
         </Route>
       </Switch>
     </Router>
