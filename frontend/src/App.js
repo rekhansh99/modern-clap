@@ -2,15 +2,32 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
+
 import AboutUs from './pages/AboutUs';
+import Blogs from './pages/Blogs';
+import Bookings from './pages/Bookings';
+import BookingDetails from './pages/Bookings/BookingDetails';
 import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/about-us" component={AboutUs} />
-        <Route exact path="/contact-us" component={ContactUs} />
+        <Route exact path="/about-us">
+          <AboutUs />
+        </Route>
+        <Route exact path="/blogs">
+          <Blogs />
+        </Route>
+        <Route exact path="/bookings">
+          <Bookings />
+        </Route>
+        <Route exact path="/booking">
+          <BookingDetails />
+        </Route>
+        <Route exact path="/contact-us">
+          <ContactUs />
+        </Route>
       </Switch>
     </Router>
   );
