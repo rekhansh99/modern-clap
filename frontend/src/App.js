@@ -9,6 +9,7 @@ import Bookings from './pages/Bookings';
 import BookingDetails from './pages/Bookings/BookingDetails';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path="/contact-us">
           <ContactUs />
+        </Route>
+        <Route exact path="/terms-and-conditions">
+          <TermsAndConditions />
         </Route>
       </Switch>
     </Router>

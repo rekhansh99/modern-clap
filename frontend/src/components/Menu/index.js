@@ -86,7 +86,7 @@ const Menu = ({ open, showMenu }) => {
             </Link>
           </li>
           <li>
-            <Link to="/terms-conditions">
+            <Link to="/terms-and-conditions">
               <Image src="/images/svgs/tnc.svg" />
               terms &amp; condition{' '}
             </Link>
