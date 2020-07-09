@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RepeatSlider = props => {
   const sliderItemsJSX = props.items.map((item, i) => (
@@ -21,6 +22,18 @@ const RepeatSlider = props => {
       </div>
     </div>
   );
+};
+
+RepeatSlider.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string,
+      src: PropTypes.string,
+      title: PropTypes.string
+    })
+  ).isRequired,
+  heading: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired
 };
 
 export default RepeatSlider;

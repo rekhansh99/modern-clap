@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookingCard = props => {
   let statusColor;
@@ -25,6 +26,14 @@ const BookingCard = props => {
       </div>
     </div>
   );
+};
+
+BookingCard.propTypes = {
+  status: PropTypes.string,
+  serviceName: PropTypes.string.isRequired,
+  bookingDate: PropTypes.string.isRequired,
+  detailsColor: PropTypes.string.isRequired,
+  cardDetails: PropTypes.string.isRequired
 };
 
 export default BookingCard;
