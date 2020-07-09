@@ -5,8 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
-import Footer from '../../app/components/Footer';
-import Header from '../../app/components/Header';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 const AboutUs = () => {
   return (
