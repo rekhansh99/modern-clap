@@ -1,4 +1,11 @@
 import React from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import FormFileInput from 'react-bootstrap/FormFileInput';
+import FormFileLabel from 'react-bootstrap/FormFileLabel';
+import Button from 'react-bootstrap/Button';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
@@ -11,10 +18,10 @@ const Careers = () => {
       />
       <div className="dv_content">
         <div className="dv_career_form_wrapper">
-          <div className="container">
+          <Container>
             <div className="dv_career_container">
               <label className="dv_career_section">Personal Details </label>
-              <select className="form-control dv_careers_form_input">
+              <Form.Control as="select" className="dv_careers_form_input">
                 <option value>Job title</option>
                 <option value="Fresher">Fresher</option>
                 <option value="Jr. Asp.net Developer">
@@ -71,110 +78,105 @@ const Careers = () => {
                   Data Entry Operator
                 </option>
                 <option value="Other"> Other</option>
-              </select>
-              <input
+              </Form.Control>
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Full Name"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Mobile"
               />
-              <input
+              <Form.Control
                 type="date"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="DOB"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Email ID"
               />
               <div className="dv_male_female">
-                <div className="custom-control custom-radio custom-control-inline">
-                  <input
+                <Form.Check type="radio" custom inline>
+                  <Form.Check.Input
                     type="radio"
-                    className="custom-control-input"
                     id="customRadio"
                     name="example"
                     defaultValue="customEx"
                   />
-                  <label className="custom-control-label" htmlFor="customRadio">
+                  <Form.Check.Label htmlFor="customRadio">
                     Male{' '}
-                  </label>
-                </div>
-                <div className="custom-control custom-radio custom-control-inline">
-                  <input
+                  </Form.Check.Label>
+                </Form.Check>
+                <Form.Check type="radio" custom inline>
+                  <Form.Check.Input
                     type="radio"
-                    className="custom-control-input"
                     id="customRadio2"
                     name="example"
                     defaultValue="customEx"
                   />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customRadio2"
-                  >
+                  <Form.Check.Label htmlFor="customRadio2">
                     Female{' '}
-                  </label>
-                </div>
+                  </Form.Check.Label>
+                </Form.Check>
               </div>
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Address"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="City"
               />
-              <select className="form-control dv_careers_form_input">
+              <Form.Control as="select" className="dv_careers_form_input">
                 <option value>Martial Status </option>
                 <option>Married </option>
                 <option>unmarried </option>
                 <option>Divorced </option>
-              </select>
+              </Form.Control>
               <label className="dv_career_section">Academic Details </label>
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Highest Qualification"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Year of Passing"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Percentange"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Collage"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="University"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Skills"
               />
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Other Details"
               />
               <label className="dv_career_section">Experience Details </label>
-              <select className="form-control dv_careers_form_input">
+              <Form.Control as="select" className="dv_careers_form_input">
                 <option value selected>
                   Total Experice
                 </option>
@@ -190,8 +192,8 @@ const Careers = () => {
                 <option value="8 year">8 year</option>
                 <option value="9 year">9 year</option>
                 <option value="10+ year">10 year</option>
-              </select>
-              <select className="form-control dv_careers_form_input">
+              </Form.Control>
+              <Form.Control as="select" className="dv_careers_form_input">
                 <option value>Notice Period </option>
                 <option value="Immediate">Immediate</option>
                 <option value="1 week">1 week</option>
@@ -201,28 +203,23 @@ const Careers = () => {
                 <option value="4 months">4 months</option>
                 <option value="5 months">5 months</option>
                 <option value="6 months">6 months</option>
-              </select>
-              <div className="custom-file mb-3">
-                <input
-                  type="file"
-                  className="form-control dv_careers_form_input custom-file-input"
+              </Form.Control>
+              <Form.File custom className="mb-3">
+                <FormFileInput
+                  id="customFile"
+                  className="form-control dv_careers_form_input"
                   name="filename"
                 />
-                <label
-                  className="dv_attach_resume custom-file-label"
+                <FormFileLabel
                   htmlFor="customFile"
+                  className="form-control dv_attach_resume"
                 >
                   Attach Resume{' '}
-                </label>
-              </div>
-              <button
-                type="button"
-                className="btn btn-default dv_submit_Career"
-              >
-                Submit
-              </button>
+                </FormFileLabel>
+              </Form.File>
+              <Button className="btn-default dv_submit_Career">Submit</Button>
             </div>
-          </div>
+          </Container>
         </div>
       </div>
       <Footer />

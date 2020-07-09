@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import './App.css';
-
 import AboutUs from './pages/AboutUs';
 import Blogs from './pages/Blogs';
 import Bookings from './pages/Bookings';
-import BookingDetails from './pages/Bookings/BookingDetails';
+import BookingDetails from './pages/BookingDetails';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
+import Landing from './pages/Landing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Reviews from './pages/Reviews';
@@ -34,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/contact-us">
           <ContactUs />
+        </Route>
+        <Route exact path="/">
+          <Landing />
         </Route>
         <Route exact path="/privacy-policy">
           <PrivacyPolicy />

@@ -1,5 +1,5 @@
 import React from 'react';
-import RepeatSlider from '../../components/RepeatSlider/RepeatSlider';
+import RepeatSlider from '../../components/RepeatSlider';
 
 const BookingDetails = () => {
   const sliders = [

@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Image from 'react-bootstrap/Image';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 
 import Menu from '../Menu';
 
@@ -32,7 +34,7 @@ class Header extends React.Component {
   };
 
   render = () => (
-    <header className="dv_about_us_page">
+    <header className={this.props.headerClassName}>
       <Navbar
         expand="sm"
         className={classnames('dv_fixed_navbar', {
@@ -80,7 +82,50 @@ class Header extends React.Component {
       <div className="dv_heading_search">
         <Container>
           <h1 className="dv_home_Service_content">{this.props.title}</h1>
-          <p className="dv_home_Service_content_p">{this.props.desc + ' '}</p>
+          <p className="dv_home_Service_content_p">{this.props.desc}</p>
+          {this.props.search ? (
+            <div className="dv_drp_search">
+              <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text
+                    className="dv_input_text_group"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    <img
+                      src="/images/svgs/india.svg"
+                      alt=""
+                      width="15px"
+                      style={{ margin: '0 15px 0 0' }}
+                    />
+                    Mumbai
+                    <svg
+                      className="dv_arrow_down_search"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                  type="text"
+                  id="searchservices"
+                  className="dv_group_search_input"
+                  placeholder="Search for a service"
+                />
+              </InputGroup>
+            </div>
+          ) : (
+            ''
+          )}
         </Container>
       </div>
 
@@ -90,8 +135,10 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  headerClassName: 'dv_about_us_wrapper',
   title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired
+  desc: PropTypes.oneOf(PropTypes.string, PropTypes.element).isRequired,
+  search: false
 };
 
 export default Header;
