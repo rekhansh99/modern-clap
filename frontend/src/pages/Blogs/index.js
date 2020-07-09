@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import Header from '../../app/components/Header';
-import Footer from '../../app/components/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const Blogs = () => {
   return (
