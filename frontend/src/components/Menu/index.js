@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -10,6 +10,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { X, LogOut } from 'react-feather';
 
 const Menu = ({ open, showMenu }) => {
   return (
@@ -22,11 +23,9 @@ const Menu = ({ open, showMenu }) => {
       <ModalHeader className="dv_login_modal_header">
         <ModalTitle className="dv_login_modal_header_h4">
           Account
-          <Image
+          <X
             style={{ float: 'right', cursor: 'pointer' }}
-            src="/images/svgs/close.svg"
-            width="24"
-            height="24"
+            size={24}
             onClick={() => showMenu(false)}
           />
         </ModalTitle>
@@ -124,11 +123,7 @@ const Menu = ({ open, showMenu }) => {
         </ul>
         <Button className="btn-default dv_logout_btn" type="submit">
           Logout
-          <Image
-            src="/images/svgs/logout.svg"
-            width="15px"
-            style={{ margin: '0 0 0 7px' }}
-          />
+          <LogOut width={15} style={{ margin: '0 0 0 7px' }} />
         </Button>
       </ModalBody>
     </Modal>

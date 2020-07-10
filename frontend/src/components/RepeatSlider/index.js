@@ -34,8 +34,8 @@ const RepeatSlider = props => {
           ]}
           margin={15}
           navText={[
-            "<img src='/fonts/feather-icons/chevron-left.svg'>",
-            "<img src='/fonts/feather-icons/chevron-right.svg'>"
+            "<img src='/images/svgs/chevron-left.svg'>",
+            "<img src='/images/svgs/chevron-right.svg'>"
           ]}
           dots={false}
           responsive={{

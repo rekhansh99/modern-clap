@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
+import { ChevronRight, ChevronLeft, Star } from 'react-feather';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -33,11 +34,8 @@ const Reviews = () => {
                       width="20"
                     />
                     suresh varma
-                    <img
-                      src="/images/svgs/star.svg"
-                      alt=""
-                      width="15"
-                      height="15"
+                    <Star
+                      size={15}
                       style={{
                         fill: '#0eca0e',
                         color: '#0eca0e',
@@ -100,20 +98,7 @@ const Reviews = () => {
               <ul>
                 <li>
                   <Link to="#!">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-chevron-left"
-                    >
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg>
+                    <ChevronLeft size={24} />
                   </Link>
                 </li>
                 <li>
@@ -130,20 +115,7 @@ const Reviews = () => {
                 </li>
                 <li>
                   <Link to="#!">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-chevron-right"
-                    >
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
+                    <ChevronRight size={24} />
                   </Link>
                 </li>
               </ul>

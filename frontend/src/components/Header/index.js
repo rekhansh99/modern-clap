@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Image from 'react-bootstrap/Image';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import { Menu, ChevronDown } from 'react-feather';
 
-import Menu from '../Menu';
+import MenuModal from '../Menu';
 
 class Header extends React.Component {
   state = {
@@ -71,11 +71,7 @@ class Header extends React.Component {
                 onClick={() => this.showMenu(true)}
               >
                 Login
-                <Image
-                  src="images/svgs/three-bars.svg"
-                  width="24"
-                  height="24"
-                />
+                <Menu size={24} />
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -101,20 +97,7 @@ class Header extends React.Component {
                       style={{ margin: '0 15px 0 0' }}
                     />
                     Mumbai
-                    <svg
-                      className="dv_arrow_down_search"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <ChevronDown className="dv_arrow_down_search" size={24} />
                   </InputGroup.Text>
                 </InputGroup.Prepend>
                 <Form.Control
@@ -131,7 +114,7 @@ class Header extends React.Component {
         </Container>
       </div>
 
-      <Menu open={this.state.menuOpen} showMenu={this.showMenu} />
+      <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
     </header>
   );
 }
