@@ -7,10 +7,19 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { X, LogOut } from 'react-feather';
+
+import { ReactComponent as Avatar } from '../../svgs/avatar.svg';
+import { ReactComponent as Bookings } from '../../svgs/bookings.svg';
+import { ReactComponent as AboutUs } from '../../svgs/about-us.svg';
+import { ReactComponent as TnC } from '../../svgs/tnc.svg';
+import { ReactComponent as PrivacyPolicy } from '../../svgs/privacy.svg';
+import { ReactComponent as Blogs } from '../../svgs/blogs.svg';
+import { ReactComponent as Reviews } from '../../svgs/reviews.svg';
+import { ReactComponent as Careers } from '../../svgs/careers.svg';
+import { ReactComponent as ContactUs } from '../../svgs/contact-us.svg';
 
 const Menu = ({ open, showMenu }) => {
   return (
@@ -65,13 +74,13 @@ const Menu = ({ open, showMenu }) => {
           <ul className="dv_menu_links_a" style={{ margin: '0 0 30px 0' }}>
             <li>
               <Link to="#">
-                <Image src="/images/svgs/avatar.svg" />
+                <Avatar />
                 Sanjay Sakpal
               </Link>
             </li>
             <li>
               <Link to="/bookings">
-                <Image src="/images/svgs/bookings.svg" />
+                <Bookings />
                 My Bookings
               </Link>
             </li>
@@ -80,43 +89,43 @@ const Menu = ({ open, showMenu }) => {
         <ul className="dv_menu_links_a">
           <li>
             <Link to="/about-us">
-              <Image src="/images/svgs/about-us.svg" />
+              <AboutUs />
               About us
             </Link>
           </li>
           <li>
             <Link to="/terms-and-conditions">
-              <Image src="/images/svgs/tnc.svg" />
+              <TnC />
               terms &amp; condition
             </Link>
           </li>
           <li>
             <Link to="/privacy-policy">
-              <Image src="/images/svgs/privacy.svg" />
+              <PrivacyPolicy />
               privacy policy
             </Link>
           </li>
           <li>
             <Link to="/blogs">
-              <Image src="/images/svgs/blogs.svg" />
+              <Blogs />
               blog
             </Link>
           </li>
           <li>
             <Link to="/reviews">
-              <Image src="/images/svgs/reviews.svg" />
+              <Reviews />
               reviews
             </Link>
           </li>
           <li>
             <Link to="/careers">
-              <Image src="/images/svgs/careers.svg" />
+              <Careers />
               careers
             </Link>
           </li>
           <li>
             <Link to="/contact-us">
-              <Image src="/images/svgs/contact-us.svg" />
+              <ContactUs />
               contact us
             </Link>
           </li>

@@ -10,6 +10,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import { Menu, ChevronDown } from 'react-feather';
 
+import { ReactComponent as India } from '../../svgs/india.svg';
+
 import MenuModal from '../Menu';
 
 class Header extends React.Component {
@@ -90,12 +92,7 @@ class Header extends React.Component {
                     data-toggle="modal"
                     data-target="#myModal"
                   >
-                    <img
-                      src="/images/svgs/india.svg"
-                      alt=""
-                      width="15px"
-                      style={{ margin: '0 15px 0 0' }}
-                    />
+                    <India width={15} style={{ margin: '0 15px 0 0' }} />
                     Mumbai
                     <ChevronDown className="dv_arrow_down_search" size={24} />
                   </InputGroup.Text>

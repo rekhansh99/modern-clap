@@ -5,66 +5,79 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { ReactComponent as Cleaners } from '../../svgs/cleaners.svg';
+import { ReactComponent as OnlineFitness } from '../../svgs/online-fitness.svg';
+import { ReactComponent as LadiesSalon } from '../../svgs/ladies-salon.svg';
+import { ReactComponent as GentsSalon } from '../../svgs/gents-salon.svg';
+import { ReactComponent as Disinfection } from '../../svgs/disinfection.svg';
+import { ReactComponent as DeepCleaning } from '../../svgs/deep-cleaning.svg';
+import { ReactComponent as Handyman } from '../../svgs/handyman.svg';
+import { ReactComponent as Electrician } from '../../svgs/electrician.svg';
+import { ReactComponent as Painters } from '../../svgs/painters.svg';
+import { ReactComponent as PackersAndMovers } from '../../svgs/packers-and-movers.svg';
+import { ReactComponent as ACTechnician } from '../../svgs/ac-technician.svg';
+import { ReactComponent as PestControl } from '../../svgs/pest-control.svg';
+
 const Categories = () => {
   const categories = [
     {
       name: 'cleaners',
-      img: 'cleaners.svg',
+      icon: <Cleaners />,
       url: 'cleaners'
     },
     {
       name: 'online fitness',
-      img: 'online-fitness.svg',
+      icon: <OnlineFitness />,
       url: 'online-fitness'
     },
     {
       name: 'ladies salon',
-      img: 'ladies-salon.svg',
+      icon: <LadiesSalon />,
       url: 'ladies-salon'
     },
     {
       name: 'gents salon',
-      img: 'gents-salon.svg',
+      icon: <GentsSalon />,
       url: 'gents-salon'
     },
     {
       name: 'disinfection',
-      img: 'disinfection.svg',
+      icon: <Disinfection />,
       url: 'disinfection'
     },
     {
       name: 'deep cleaning',
-      img: 'deep-cleaning.svg',
+      icon: <DeepCleaning />,
       url: 'deep-cleaning'
     },
     {
       name: 'handyman',
-      img: 'handyman.svg',
+      icon: <Handyman />,
       url: 'handyman'
     },
     {
       name: 'electrician',
-      img: 'electrician.svg',
+      icon: <Electrician />,
       url: 'electrician'
     },
     {
       name: 'painters',
-      img: 'painters.svg',
+      icon: <Painters />,
       url: 'painters'
     },
     {
       name: 'packers & movers',
-      img: 'packers-and-movers.svg',
+      icon: <PackersAndMovers />,
       url: 'packers-and-movers'
     },
     {
       name: 'AC Technicians',
-      img: 'ac-technician.svg',
+      icon: <ACTechnician />,
       url: 'ac-technician'
     },
     {
       name: 'pest controls',
-      img: 'pest-control.svg',
+      icon: <PestControl />,
       url: 'pest-control'
     }
   ];
@@ -72,7 +85,7 @@ const Categories = () => {
   const categoriesJSX = categories.map(category => (
     <Col md={2} sm={4} xs={4} className="dv_all_cat_2" key={category.name}>
       <Link to={'/select-services/' + category.url}>
-        <img src={'/images/svgs/' + category.img} alt="" />
+        {category.icon}
         {category.name}
         {/* <span class="dv_off_percentage_show">31% off </span>
          */}

@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import { ChevronRight, ChevronLeft, Star } from 'react-feather';
 
+import { ReactComponent as Tick } from '../../svgs/tick.svg';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -26,28 +28,25 @@ const Reviews = () => {
                 />
                 <div className="dv_review_holder_name_review">
                   <span className="dv_name_holder">
-                    <img
-                      className="mr-2"
-                      src="/images/svgs/tick.svg"
-                      alt=""
-                      height="20"
-                      width="20"
-                    />
-                    suresh varma
-                    <Star
-                      size={15}
-                      style={{
-                        fill: '#0eca0e',
-                        color: '#0eca0e',
-                        height: '15px',
-                        width: '15px',
-                        margin: '-4px 0 0 5px'
-                      }}
-                    />
+                    <Tick className="mr-2" height={20} width={20} />
+                    suresh varma{' '}
+                    <span style={{ 'font-size': '14px' }}>
+                      <Star
+                        size={15}
+                        style={{
+                          fill: '#0eca0e',
+                          color: '#0eca0e',
+                          height: '15px',
+                          width: '15px',
+                          margin: '-4px 0 0 5px'
+                        }}
+                      />{' '}
+                      4.5
+                    </span>
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>salon at home </strong> from
-                    <Link to="#!">Sanjay sakpal </Link>
+                    Review against <strong> salon at home </strong> from
+                    <Link to="#!"> Sanjay sakpal </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -69,18 +68,12 @@ const Reviews = () => {
                 />
                 <div className="dv_review_holder_name_review">
                   <span className="dv_name_holder">
-                    <img
-                      className="mr-2"
-                      src="/images/svgs/tick.svg"
-                      alt=""
-                      height="20"
-                      width="20"
-                    />
+                    <Tick className="mr-2" height={20} width={20} />
                     Monika Jadhav
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>Cleaners </strong> from
-                    <Link to="#!">Rahul Gandhi </Link>
+                    Review against <strong> Cleaners </strong> from
+                    <Link to="#!"> Rahul Gandhi </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,

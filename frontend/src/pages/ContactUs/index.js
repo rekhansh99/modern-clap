@@ -9,6 +9,10 @@ import Button from 'react-bootstrap/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
+import { ReactComponent as Mobile } from '../../svgs/mobile.svg';
+import { ReactComponent as Telephone } from '../../svgs/telephone.svg';
+import { ReactComponent as Email } from '../../svgs/email.svg';
+
 const ContactUs = () => {
   return (
     <div className="dv_wrapper">
@@ -19,13 +23,7 @@ const ContactUs = () => {
             <Row>
               <Col lg={4} md={4} csm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/mobile.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Mobile className="mb-4" height={50} width={50} />
                   <span>Mobile </span>
                   <ul>
                     <li>
@@ -45,13 +43,7 @@ const ContactUs = () => {
               </Col>
               <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/telephone.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Telephone className="mb-4" height={50} width={50} />
                   <span>Telephone </span>
                   <ul>
                     <li>
@@ -71,13 +63,7 @@ const ContactUs = () => {
               </Col>
               <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/telephone.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Email className="mb-4" height={50} width={50} />
                   <span>Email us </span>
                   <ul>
                     <li>

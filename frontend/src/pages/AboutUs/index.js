@@ -3,7 +3,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
+
+import { ReactComponent as WhoWeAre } from '../../svgs/who-we-are.svg';
+import { ReactComponent as WhatWeDo } from '../../svgs/what-we-do.svg';
+import { ReactComponent as WhyChooseUs } from '../../svgs/why-choose-us.svg';
+import { ReactComponent as ProfessionalProviders } from '../../svgs/professional-providers.svg';
+import { ReactComponent as HappyCustomers } from '../../svgs/happy-customers.svg';
+import { ReactComponent as Location } from '../../svgs/location.svg';
+import { ReactComponent as Countries } from '../../svgs/countries.svg';
 
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -19,11 +26,7 @@ const AboutUs = () => {
             <Row>
               <Col lg={4} md={12}>
                 <div className="dv_about_us_cards">
-                  <Image
-                    src="images/svgs/who-we-are.svg"
-                    height="24"
-                    width="24"
-                  />
+                  <WhoWeAre />
                   <span className="dv_heading_about">who we are ? </span>
                   <p>
                     Urban Company (formerly UrbanClap) is India’s and the UAE’s
@@ -36,11 +39,7 @@ const AboutUs = () => {
               </Col>
               <Col lg={4} md={12}>
                 <div className="dv_about_us_cards">
-                  <Image
-                    src="images/svgs/what-we-do.svg"
-                    height="24"
-                    width="24"
-                  />
+                  <WhatWeDo />
                   <span className="dv_heading_about">what we do ? </span>
                   <p>
                     Urban Company provides a platform that allows skilled and
@@ -53,11 +52,7 @@ const AboutUs = () => {
               </Col>
               <Col lg={4} md={12}>
                 <div className="dv_about_us_cards">
-                  <Image
-                    src="images/svgs/why-choose-us.svg"
-                    height="24"
-                    width="24"
-                  />
+                  <WhyChooseUs />
                   <span className="dv_heading_about">why choose us ? </span>
                   <p>
                     We having having vast local experience UAE. Our know-how
@@ -77,44 +72,28 @@ const AboutUs = () => {
             <Row>
               <Col md={3}>
                 <div className="dv_four_cards">
-                  <Image
-                    src="images/svgs/professional-providers.svg"
-                    height="50"
-                    width="50"
-                  />
+                  <ProfessionalProviders />
                   <span>professional providers </span>
                   <p>1000 +</p>
                 </div>
               </Col>
               <Col md={3}>
                 <div className="dv_four_cards">
-                  <Image
-                    src="images/svgs/happy-customers.svg"
-                    height="50"
-                    width="50"
-                  />
+                  <HappyCustomers />
                   <span>Happy Customers </span>
                   <p>5000 +</p>
                 </div>
               </Col>
               <Col md={3}>
                 <div className="dv_four_cards">
-                  <Image
-                    src="images/svgs/location.svg"
-                    height="50"
-                    width="50"
-                  />
+                  <Location />
                   <span>Location </span>
                   <p>1 </p>
                 </div>
               </Col>
               <Col md={3}>
                 <div className="dv_four_cards">
-                  <Image
-                    src="images/svgs/countries.svg"
-                    height="50"
-                    width="50"
-                  />
+                  <Countries />
                   <span>Countries </span>
                   <p>1 </p>
                 </div>
