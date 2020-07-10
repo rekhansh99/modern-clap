@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
+import { X, List, CreditCard } from 'react-feather';
 
 const Services = ({ isOpen, setOpen }) => {
   return (
@@ -14,19 +15,12 @@ const Services = ({ isOpen, setOpen }) => {
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
-      style={{ margin: '12% auto 0 auto' }}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Booking Details{' '}
         </ModalTitle>
-        <img
-          src="/images/svgs/close.svg"
-          width={24}
-          height={24}
-          alt=""
-          onClick={() => setOpen(false)}
-        />
+        <X size={24} onClick={() => setOpen(false)} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -35,29 +29,10 @@ const Services = ({ isOpen, setOpen }) => {
           borderRadius: '0 0 5px 5px'
         }}
       >
-        <div className="dv_ciuntry_based_filter">
+        <div className="dv_country_based_filter">
           <ul className="dv_country_based_ul">
             <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-list"
-              >
-                <line x1={8} y1={6} x2={21} y2={6} />
-                <line x1={8} y1={12} x2={21} y2={12} />
-                <line x1={8} y1={18} x2={21} y2={18} />
-                <line x1={3} y1={6} x2="3.01" y2={6} />
-                <line x1={3} y1={12} x2="3.01" y2={12} />
-                <line x1={3} y1={18} x2="3.01" y2={18} />
-              </svg>
-              Services
+              <List size={24} /> Services
             </li>
             <li style={{ display: 'block', margin: '0 0 15px 0' }}>
               <Link to="#!">
@@ -72,22 +47,7 @@ const Services = ({ isOpen, setOpen }) => {
           </ul>
           <ul className="dv_country_based_ul">
             <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-credit-card"
-              >
-                <rect x={1} y={4} width={22} height={16} rx={2} ry={2} />
-                <line x1={1} y1={10} x2={23} y2={10} />
-              </svg>
-              Amount
+              <CreditCard size={24} /> Amount
             </li>
             <li>
               <Link to="#!">

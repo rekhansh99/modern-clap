@@ -449,6 +449,23 @@ input.form-control.dv_subscribe_us_input:active {
   border-bottom-color: #eee;
   background-color: #fafafa;
 }
+.dv_write_reviews_md_dialog {
+  margin: 5% auto 0 auto;
+}
+.dv_choose_location_md_dialog {
+  margin: 12% auto 0 auto;
+}
+.dv_done_successfully_md_dialog {
+  margin: 8% auto 0 auto;
+  max-width: 300px;
+}
+.dv_faqs_md_dialog {
+  margin: 2% auto 0 auto;
+  max-width: 95%;
+}
+.dv_reschedule_time_md_dialog {
+  margin: 4% auto 0 auto;
+}
 button.btn.btn-default.dv_login_btn {
   background: #2874f0;
   color: #ffffff;
@@ -823,7 +840,7 @@ span.dv_section_heading {
   border-radius: 5px;
   box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
 }
-.dv_section_heading > img {
+.dv_section_heading > svg {
   width: 20px;
   float: left;
   height: 20px;
@@ -2049,14 +2066,17 @@ ul.nav.nav-tabs.dv_nav_tabs > li.nav-item:nth-child(1) > a {
   display: block;
 }
 .dv_about_provider_dropdown.dropdown > svg {
-  color: #2874f0;
+  color: #d3d3d3;
   width: 20px;
   height: 20px;
 }
 .addnewaddress {
   padding: 0 15px;
 }
-
+.accordion > .card {
+  overflow: visible;
+  border: none;
+}
 /* seller registration */
 
 .dv_seller_registration_wrapper {

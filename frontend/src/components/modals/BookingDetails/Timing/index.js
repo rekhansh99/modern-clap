@@ -7,15 +7,17 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import Button from 'react-bootstrap/Button';
+import { X } from 'react-feather';
+
+import { ReactComponent as Clock } from '../../../../svgs/clock.svg';
 
 const Timing = ({ isOpen, setOpen }) => {
   return (
     <Modal
       id="resheduletime"
-      dialogClassName="dv_choose_location_md_dialog"
+      dialogClassName="dv_reschedule_time_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
-      style={{ margin: '4% auto 0 auto' }}
     >
       <ModalHeader>
         <ModalTitle
@@ -27,7 +29,7 @@ const Timing = ({ isOpen, setOpen }) => {
             width: '100%'
           }}
         >
-          <img
+          <Clock
             style={{
               width: '30px',
               height: '30px',
@@ -35,17 +37,10 @@ const Timing = ({ isOpen, setOpen }) => {
               float: 'left',
               margin: '0 15px 0 0'
             }}
-            src="/images/svgs/clock.svg"
           />
           Reshdule the time
         </ModalTitle>
-        <img
-          src="/images/svgs/close.svg"
-          width={24}
-          height={24}
-          alt=""
-          onClick={() => setOpen(false)}
-        />
+        <X size={24} onClick={() => setOpen(false)} />
       </ModalHeader>
       <ModalBody
         style={{

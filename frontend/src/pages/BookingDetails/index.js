@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
@@ -12,6 +13,8 @@ import PaymentModal from '../../components/modals/BookingDetails/Payment';
 import ReviewModal from '../../components/modals/BookingDetails/Review';
 import FAQsModal from '../../components/modals/BookingDetails/FAQs';
 import ProviderModal from '../../components/modals/BookingDetails/Provider';
+
+import { ReactComponent as Tick } from '../../svgs/tick.svg';
 
 class BookingDetails extends React.Component {
   state = {
@@ -38,9 +41,9 @@ class BookingDetails extends React.Component {
           style={{ textAlign: 'center' }}
         >
           <Container>
-            <a href="#!" data-toggle="modal" data-target="#donesuccesfully">
+            <Link to="#!" data-toggle="modal" data-target="#donesuccesfully">
               Your order request no is <strong>MD124587</strong>
-            </a>
+            </Link>
           </Container>
         </div>
         {/* <div className="dv_select_service_heading" style="text-align: center; background-color: #ff4a4a;">
@@ -56,7 +59,7 @@ class BookingDetails extends React.Component {
             {/* This review system will enable after completing of payment */}
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 services <span className="dv_sm_overview">2 services </span>
                 <a
                   href="#!"
@@ -70,7 +73,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 Timing <span className="dv_sm_overview">12 Mar, 04 pm </span>
                 <a
                   href="#!"
@@ -84,7 +87,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 location <span className="dv_sm_overview">Home </span>
                 <a
                   href="#!"
@@ -98,7 +101,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 Payment <span className="dv_sm_overview">AED 114 </span>
                 <a
                   href="#!"
@@ -112,7 +115,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 Review
                 <span className="dv_sm_overview">
                   Write review after payment completed
@@ -129,7 +132,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 FAQ&apos;s <span className="dv_sm_overview">14 Questions </span>
                 <a
                   href="#!"
@@ -143,7 +146,7 @@ class BookingDetails extends React.Component {
             </Row>
             <Row>
               <span className="dv_section_heading">
-                <img src="/images/svgs/tick.svg" alt="" />
+                <Tick />
                 Provider
                 {/* <span className="dv_sm_overview">Goodhand Technical LLC </span> */}
                 <a

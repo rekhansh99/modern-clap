@@ -7,28 +7,22 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
+import { X, ChevronDown } from 'react-feather';
 
 const FAQs = ({ isOpen, setOpen }) => {
   return (
     <Modal
       id="faqsquestion"
-      dialogClassName="dv_choose_location_md_dialog"
+      dialogClassName="dv_faqs_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
-      style={{ margin: '2% auto 0 auto', maxWidth: '95%' }}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           FAQ&apos;s Question
         </ModalTitle>
-        <img
-          src="/images/svgs/close.svg"
-          width={24}
-          height={24}
-          alt=""
-          onClick={() => setOpen(false)}
-        />
+        <X size={24} onClick={() => setOpen(false)} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -39,19 +33,18 @@ const FAQs = ({ isOpen, setOpen }) => {
           overflow: 'auto'
         }}
       >
-        <Accordion defaultActiveKey="0">
+        <Accordion>
           <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="0">
                 Question will come here
-                <img
+                <ChevronDown
                   style={{
                     float: 'right',
                     position: 'absolute',
                     right: '15px',
                     top: '15px'
                   }}
-                  src="/images/svgs/angle.svg"
                 />
               </Accordion.Toggle>
             </Card.Header>
@@ -66,18 +59,122 @@ const FAQs = ({ isOpen, setOpen }) => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+          <div className="dv_divider_in_booking_request" />
           <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="1">
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
                 Question will come here
-                <img
+                <ChevronDown
                   style={{
                     float: 'right',
                     position: 'absolute',
                     right: '15px',
                     top: '15px'
                   }}
-                  src="/images/svgs/angle.svg"
+                />
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <p className="dv_sub_headings_para">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <div className="dv_divider_in_booking_request" />
+          <Card>
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+                Question will come here
+                <ChevronDown
+                  style={{
+                    float: 'right',
+                    position: 'absolute',
+                    right: '15px',
+                    top: '15px'
+                  }}
+                />
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <p className="dv_sub_headings_para">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <div className="dv_divider_in_booking_request" />
+          <Card>
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+                Question will come here
+                <ChevronDown
+                  style={{
+                    float: 'right',
+                    position: 'absolute',
+                    right: '15px',
+                    top: '15px'
+                  }}
+                />
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <p className="dv_sub_headings_para">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <div className="dv_divider_in_booking_request" />
+          <Card>
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+                Question will come here
+                <ChevronDown
+                  style={{
+                    float: 'right',
+                    position: 'absolute',
+                    right: '15px',
+                    top: '15px'
+                  }}
+                />
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <p className="dv_sub_headings_para">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <div className="dv_divider_in_booking_request" />
+          <Card>
+            <Card.Header className="dv_faq_card_header">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+                Question will come here
+                <ChevronDown
+                  style={{
+                    float: 'right',
+                    position: 'absolute',
+                    right: '15px',
+                    top: '15px'
+                  }}
                 />
               </Accordion.Toggle>
             </Card.Header>

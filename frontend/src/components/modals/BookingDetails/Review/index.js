@@ -9,23 +9,23 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { X } from 'react-feather';
+
+import { ReactComponent as Reviews } from '../../../../svgs/reviews.svg';
 
 const Review = ({ isOpen, setOpen }) => {
   return (
     <Modal
       id="dv_write_reviews"
-      dialogClassName="dv_choose_location_md_dialog"
+      dialogClassName="dv_write_reviews_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
-      style={{ margin: '5% auto 0 auto' }}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
-          <img
-            src="/images/svgs/reviews.svg"
+          <Reviews
             width={20}
             height={20}
-            alt=""
             style={{
               float: 'left',
               margin: '0 10px 0 0'
@@ -33,13 +33,7 @@ const Review = ({ isOpen, setOpen }) => {
           />
           Add Review
         </ModalTitle>
-        <img
-          src="/images/svgs/close.svg"
-          width={24}
-          height={24}
-          alt=""
-          onClick={() => setOpen(false)}
-        />
+        <X size={24} onClick={() => setOpen(false)} />
       </ModalHeader>
       <ModalBody
         style={{

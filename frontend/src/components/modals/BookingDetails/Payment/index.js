@@ -7,6 +7,9 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { X } from 'react-feather';
+
+import { ReactComponent as Tick } from '../../../../svgs/tick.svg';
 
 const Payment = ({ isOpen, setOpen }) => {
   return (
@@ -15,19 +18,12 @@ const Payment = ({ isOpen, setOpen }) => {
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
-      style={{ margin: '12% auto 0 auto' }}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Payment Summery
         </ModalTitle>
-        <img
-          src="/images/svgs/close.svg"
-          width={24}
-          height={24}
-          alt=""
-          onClick={() => setOpen(false)}
-        />
+        <X size={24} onClick={() => setOpen(false)} />
       </ModalHeader>
       <ModalBody
         style={{ border: 'none', padding: '15px', borderRadius: '0 0 5px 5px' }}
@@ -53,14 +49,13 @@ const Payment = ({ isOpen, setOpen }) => {
         <div className="dv_payment_selection">
           <Row>
             <Col xs={12} className="p-0">
-              <img
+              <Tick
                 style={{
                   width: '20px',
                   float: 'left',
                   height: '20px',
                   margin: '5px 15px 0 20px'
                 }}
-                src="/images/svgs/tick.svg"
               />
               Paying through cash after service
             </Col>
