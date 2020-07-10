@@ -10,6 +10,8 @@ import TimingModal from '../../components/modals/BookingDetails/Timing';
 import LocationModal from '../../components/modals/BookingDetails/Location';
 import PaymentModal from '../../components/modals/BookingDetails/Payment';
 import ReviewModal from '../../components/modals/BookingDetails/Review';
+import FAQsModal from '../../components/modals/BookingDetails/FAQs';
+import ProviderModal from '../../components/modals/BookingDetails/Provider';
 
 class BookingDetails extends React.Component {
   state = {
@@ -267,9 +269,9 @@ class BookingDetails extends React.Component {
           />
         </div>
 
-        <ReviewModal
-          isOpen={this.state.reviewModalOpen}
-          setOpen={open => this.setState({ reviewModalOpen: open })}
+        <ServicesModal
+          isOpen={this.state.servicesModalOpen}
+          setOpen={open => this.setState({ servicesModalOpen: open })}
         />
         <TimingModal
           isOpen={this.state.timingModalOpen}
@@ -283,9 +285,17 @@ class BookingDetails extends React.Component {
           isOpen={this.state.paymentModalOpen}
           setOpen={open => this.setState({ paymentModalOpen: open })}
         />
-        <ServicesModal
-          isOpen={this.state.servicesModalOpen}
-          setOpen={open => this.setState({ servicesModalOpen: open })}
+        <ReviewModal
+          isOpen={this.state.reviewModalOpen}
+          setOpen={open => this.setState({ reviewModalOpen: open })}
+        />
+        <FAQsModal
+          isOpen={this.state.faqsModalOpen}
+          setOpen={open => this.setState({ faqsModalOpen: open })}
+        />
+        <ProviderModal
+          isOpen={this.state.providerModalOpen}
+          setOpen={open => this.setState({ providerModalOpen: open })}
         />
 
         <div className="dv_continue_next">
