@@ -5,11 +5,13 @@ import Row from 'react-bootstrap/Row';
 
 import Header from '../../components/Header';
 import RepeatSlider from '../../components/RepeatSlider';
-import WriteReview from '../../components/modals/WriteReview';
+import ServicesModal from '../../components/modals/BookingDetails/Services';
+import ReviewModal from '../../components/modals/BookingDetails/Review';
 
 class BookingDetails extends React.Component {
   state = {
-    writeReviewOpen: false
+    servicesModalOpen: false,
+    reviewModalOpen: false
   };
 
   render = () => {
@@ -48,8 +50,7 @@ class BookingDetails extends React.Component {
                 services <span className="dv_sm_overview">2 services </span>
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ servicesModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   View
@@ -111,7 +112,7 @@ class BookingDetails extends React.Component {
                 </span>
                 <a
                   href="#!"
-                  onClick={() => this.setState({ writeReviewOpen: true })}
+                  onClick={() => this.setState({ reviewModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   Write
@@ -263,9 +264,13 @@ class BookingDetails extends React.Component {
           />
         </div>
 
-        <WriteReview
-          isOpen={this.state.writeReviewOpen}
-          setOpen={open => this.setState({ writeReviewOpen: open })}
+        <ReviewModal
+          isOpen={this.state.reviewModalOpen}
+          setOpen={open => this.setState({ reviewModalOpen: open })}
+        />
+        <ServicesModal
+          isOpen={this.state.servicesModalOpen}
+          setOpen={open => this.setState({ servicesModalOpen: open })}
         />
 
         <div className="dv_continue_next">

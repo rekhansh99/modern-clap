@@ -10,13 +10,14 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const WriteReview = ({ isOpen, setOpen }) => {
+const Review = ({ isOpen, setOpen }) => {
   return (
     <Modal
       id="dv_write_reviews"
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
       onHide={() => setOpen(false)}
+      style={{ margin: '5% auto 0 auto' }}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
@@ -116,9 +117,9 @@ const WriteReview = ({ isOpen, setOpen }) => {
   );
 };
 
-WriteReview.propTypes = {
+Review.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired
 };
 
-export default WriteReview;
+export default Review;
