@@ -820,7 +820,7 @@ span.dv_section_heading {
   border-radius: 5px;
   box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
 }
-.dv_section_heading > svg {
+.dv_section_heading > img {
   width: 20px;
   float: left;
   height: 20px;
@@ -1599,6 +1599,16 @@ span.dv_review_against > a {
 }
 span.dv_review_against > a:hover {
   text-decoration: none;
+}
+.dv_give_rating > i {
+  font-size: 24px;
+  cursor: pointer;
+}
+.dv_give_rating {
+  border: 1px solid rgb(252, 215, 3);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 0 10px 0;
 }
 .dv_pagination {
   padding: 30px 0 0 0;
