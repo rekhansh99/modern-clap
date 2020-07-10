@@ -29,16 +29,16 @@ const ContactUs = () => {
                   <span>Mobile </span>
                   <ul>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                   </ul>
                 </div>
@@ -55,16 +55,16 @@ const ContactUs = () => {
                   <span>Telephone </span>
                   <ul>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                   </ul>
                 </div>
@@ -81,16 +81,24 @@ const ContactUs = () => {
                   <span>Email us </span>
                   <ul>
                     <li>
-                      <a href="#!">info@modernclap.com </a>
+                      <a href="mailto:info@modernclap.com">
+                        info@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">contact@modernclap.com </a>
+                      <a href="mailto:contact@modernclap.com">
+                        contact@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">sales@modernclap.com </a>
+                      <a href="mailto:sales@modernclap.com">
+                        sales@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">enquiry@modernclap.com </a>
+                      <a href="mailto:enquiry@modernclap.com">
+                        enquiry@modernclap.com
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -103,7 +111,7 @@ const ContactUs = () => {
             <Row>
               <Col md={12}>
                 <h4 className="dv_contact_form_heading">
-                  Feel free to contact us{' '}
+                  Feel free to contact us
                 </h4>
                 <FormControl
                   type="text"

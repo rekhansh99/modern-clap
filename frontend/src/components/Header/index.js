@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -44,12 +45,13 @@ class Header extends React.Component {
         <Container>
           {/* Brand */}
           <Navbar.Brand
-            className={classnames('dv_logo_icon', {
+            className={classnames({
               dv_menu_scroll_style: this.state.fixed
             })}
-            href="/"
           >
-            ModernClap
+            <Link className="dv_logo_icon" to="/">
+              ModernClap
+            </Link>
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">

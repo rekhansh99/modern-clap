@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="dv_usefull_links">signup to our newsletter</div>
         <p>
           Become part of our global community with exclusive access to special
-          offers, latest news and events.{' '}
+          offers, latest news and events.
         </p>
         <InputGroup>
           <FormControl
@@ -39,28 +39,28 @@ const Footer = () => {
             <div className="dv_usefull_links">useful links</div>
             <ul className="dv_footer_menu_links">
               <li>
-                <Link to="#!">about us </Link>
+                <Link to="/about-us">about us </Link>
               </li>
               <li>
-                <Link to="#!">terms &amp; conditions </Link>
+                <Link to="/terms-and-conditions">terms &amp; conditions </Link>
               </li>
               <li>
-                <Link to="#!">privacy policy </Link>
+                <Link to="/privacy-policy">privacy policy </Link>
               </li>
               <li>
-                <Link to="#!">blog </Link>
+                <Link to="/blogs">blog </Link>
               </li>
               <li>
-                <Link to="#!">reviews </Link>
+                <Link to="/reviews">reviews </Link>
               </li>
               <li>
                 <Link to="#!">near me </Link>
               </li>
               <li>
-                <Link to="#!">careers </Link>
+                <Link to="/careers">careers </Link>
               </li>
               <li>
-                <Link to="#!">contact us </Link>
+                <Link to="/contact-us">contact us </Link>
               </li>
             </ul>
           </Col>

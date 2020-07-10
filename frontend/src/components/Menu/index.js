@@ -48,7 +48,7 @@ const Menu = ({ open, showMenu }) => {
             />
           </InputGroup>
           <Button className="btn-default dv_login_btn" type="submit">
-            Get OTP{' '}
+            Get OTP
           </Button>
         </div>
         <div className="dv_login_otp_wrapper">
@@ -59,7 +59,7 @@ const Menu = ({ open, showMenu }) => {
             placeholder="OTP"
           />
           <Button className="btn-default dv_login_btn" type="submit">
-            Login{' '}
+            Login
           </Button>
         </div>
         <div className="dv_after_login_menus">
@@ -73,7 +73,7 @@ const Menu = ({ open, showMenu }) => {
             <li>
               <Link to="/bookings">
                 <Image src="/images/svgs/bookings.svg" />
-                My Bookings{' '}
+                My Bookings
               </Link>
             </li>
           </ul>
@@ -82,37 +82,37 @@ const Menu = ({ open, showMenu }) => {
           <li>
             <Link to="/about-us">
               <Image src="/images/svgs/about-us.svg" />
-              About us{' '}
+              About us
             </Link>
           </li>
           <li>
             <Link to="/terms-and-conditions">
               <Image src="/images/svgs/tnc.svg" />
-              terms &amp; condition{' '}
+              terms &amp; condition
             </Link>
           </li>
           <li>
             <Link to="/privacy-policy">
               <Image src="/images/svgs/privacy.svg" />
-              privacy policy{' '}
+              privacy policy
             </Link>
           </li>
           <li>
             <Link to="/blogs">
               <Image src="/images/svgs/blogs.svg" />
-              blog{' '}
+              blog
             </Link>
           </li>
           <li>
             <Link to="/reviews">
               <Image src="/images/svgs/reviews.svg" />
-              reviews{' '}
+              reviews
             </Link>
           </li>
           <li>
             <Link to="/careers">
               <Image src="/images/svgs/careers.svg" />
-              careers{' '}
+              careers
             </Link>
           </li>
           <li>
@@ -128,7 +128,7 @@ const Menu = ({ open, showMenu }) => {
             src="/images/svgs/logout.svg"
             width="15px"
             style={{ margin: '0 0 0 7px' }}
-          />{' '}
+          />
         </Button>
       </ModalBody>
     </Modal>

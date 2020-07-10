@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -31,7 +32,7 @@ const Reviews = () => {
                       height="20"
                       width="20"
                     />
-                    suresh varma{' '}
+                    suresh varma
                     <img
                       src="/images/svgs/star.svg"
                       alt=""
@@ -47,8 +48,8 @@ const Reviews = () => {
                     />
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>salon at home </strong> from{' '}
-                    <a href="#!">Sanjay sakpal </a>
+                    Review against <strong>salon at home </strong> from
+                    <Link to="#!">Sanjay sakpal </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -57,7 +58,7 @@ const Reviews = () => {
                     ullamco laboris nisi ut aliquip ex ea commodo
                   </span>
                   <div className="dv_review_date_time">
-                    20/20/2020, 05:15 PM{' '}
+                    20/20/2020, 05:15 PM
                   </div>
                 </div>
               </div>
@@ -80,8 +81,8 @@ const Reviews = () => {
                     Monika Jadhav
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>Cleaners </strong> from{' '}
-                    <a href="#!">Rahul Gandhi </a>
+                    Review against <strong>Cleaners </strong> from
+                    <Link to="#!">Rahul Gandhi </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -90,7 +91,7 @@ const Reviews = () => {
                     ullamco laboris nisi ut aliquip ex ea commodo
                   </span>
                   <div className="dv_review_date_time">
-                    20/20/2020, 05:15 PM{' '}
+                    20/20/2020, 05:15 PM
                   </div>
                 </div>
               </div>
@@ -98,7 +99,7 @@ const Reviews = () => {
             <div className="dv_pagination">
               <ul>
                 <li>
-                  <a href="#!">
+                  <Link to="#!">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={24}
@@ -113,22 +114,22 @@ const Reviews = () => {
                     >
                       <polyline points="15 18 9 12 15 6" />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#!">1</a>
+                  <Link to="#!">1</Link>
                 </li>
                 <li>
-                  <a href="#!" className="dv_active_page">
+                  <Link to="#!" className="dv_active_page">
                     2
-                  </a>
+                  </Link>
                 </li>
                 <li>...</li>
                 <li>
-                  <a href="#!">3</a>
+                  <Link to="#!">3</Link>
                 </li>
                 <li>
-                  <a href="#!">
+                  <Link to="#!">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={24}
@@ -143,7 +144,7 @@ const Reviews = () => {
                     >
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

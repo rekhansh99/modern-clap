@@ -20,7 +20,7 @@ const ImageText = () => {
           <Col lg={7} md={12} sm={12} xs={12}>
             <div className="dv_heading_of_panel">safety first</div>
             <p className="dv_paragraph_of_panel">
-              we are very care about our services and your safety is our first{' '}
+              we are very care about our services and your safety is our first
               <strong>priority </strong>
             </p>
             <p className="dv_paragraph_of_panel">

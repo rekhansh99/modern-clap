@@ -64,7 +64,7 @@ const AboutUs = () => {
                     will help steer the patron’s way through the thick and thin
                     of bureaucracy and official procedure to choose the most
                     suitable solution to your requirement Our aim is to make
-                    your life easy and allow you to focus on your experience{' '}
+                    your life easy and allow you to focus on your experience
                   </p>
                 </div>
               </Col>

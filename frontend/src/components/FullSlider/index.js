@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import OwlCarousel from 'react-owl-carousel-autoheight';
@@ -13,10 +14,10 @@ const FullSlider = () => {
   ];
   const imagesJSX = images.map((image, i) => (
     <div className="item dv_home_page_slider_item" key={i}>
-      <a href="#!">
+      <Link to="#!">
         {/* for mobile version we will use diffrent img tag */}
         <img src={image} alt="" title />
-      </a>
+      </Link>
     </div>
   ));
 

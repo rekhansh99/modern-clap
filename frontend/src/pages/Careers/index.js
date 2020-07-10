@@ -25,58 +25,43 @@ const Careers = () => {
                 <option value>Job title</option>
                 <option value="Fresher">Fresher</option>
                 <option value="Jr. Asp.net Developer">
-                  {' '}
                   Jr. Asp.net Developer (0.6 to 3 year)
                 </option>
                 <option value="Sr. Asp.net Developer">
-                  {' '}
                   Sr. Asp.net Developer (above 3 year)
                 </option>
                 <option value="Jr. SQL Database Developer">
-                  {' '}
                   Jr. SQL Database Developer
                 </option>
                 <option value="Sr. SQL Database Developer">
-                  {' '}
-                  Sr. SQL Database Developer{' '}
+                  Sr. SQL Database Developer
                 </option>
                 <option value="Jr. Graphic Designer">
-                  {' '}
                   Jr. Graphic Designer (1 to 3 year)
                 </option>
                 <option value="Sr. Graphic Designer">
-                  {' '}
                   Sr. Graphic Designer (above 3 year)
                 </option>
                 <option value="Jr. Web Designer">
-                  {' '}
                   Jr. Web Designer (1 to 3 year)
                 </option>
                 <option value="Sr. Web Designer">
-                  {' '}
                   Sr. Web Designer (above 3 year)
                 </option>
                 <option value="Jr. SEO / SMO executive">
-                  {' '}
                   Jr. SEO / SMO executive
                 </option>
                 <option value="Sr. SEO / SMO executive">
-                  {' '}
-                  Sr. SEO / SMO executive{' '}
+                  Sr. SEO / SMO executive
                 </option>
                 {/* <option value="Business Development Executive"> Business Development Executive</option> */}
                 <option value="Business Development Manager">
-                  {' '}
                   Business Development Manager
                 </option>
                 <option value="Tele Sales Executive">
-                  {' '}
                   Tele Sales Executive
                 </option>
-                <option value="Data Entry Operator">
-                  {' '}
-                  Data Entry Operator
-                </option>
+                <option value="Data Entry Operator">Data Entry Operator</option>
                 <option value="Other"> Other</option>
               </Form.Control>
               <Form.Control
@@ -108,7 +93,7 @@ const Careers = () => {
                     defaultValue="customEx"
                   />
                   <Form.Check.Label htmlFor="customRadio">
-                    Male{' '}
+                    Male
                   </Form.Check.Label>
                 </Form.Check>
                 <Form.Check type="radio" custom inline>
@@ -119,7 +104,7 @@ const Careers = () => {
                     defaultValue="customEx"
                   />
                   <Form.Check.Label htmlFor="customRadio2">
-                    Female{' '}
+                    Female
                   </Form.Check.Label>
                 </Form.Check>
               </div>
@@ -214,7 +199,7 @@ const Careers = () => {
                   htmlFor="customFile"
                   className="form-control dv_attach_resume"
                 >
-                  Attach Resume{' '}
+                  Attach Resume
                 </FormFileLabel>
               </Form.File>
               <Button className="btn-default dv_submit_Career">Submit</Button>
