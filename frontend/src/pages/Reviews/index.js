@@ -1,7 +1,11 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
+import { ChevronRight, ChevronLeft, Star } from 'react-feather';
+
+import { ReactComponent as Tick } from '../../svgs/tick.svg';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -24,31 +28,25 @@ const Reviews = () => {
                 />
                 <div className="dv_review_holder_name_review">
                   <span className="dv_name_holder">
-                    <img
-                      className="mr-2"
-                      src="/images/svgs/tick.svg"
-                      alt=""
-                      height="20"
-                      width="20"
-                    />
+                    <Tick className="mr-2" height={20} width={20} />
                     suresh varma{' '}
-                    <img
-                      src="/images/svgs/star.svg"
-                      alt=""
-                      width="15"
-                      height="15"
-                      style={{
-                        fill: '#0eca0e',
-                        color: '#0eca0e',
-                        height: '15px',
-                        width: '15px',
-                        margin: '-4px 0 0 5px'
-                      }}
-                    />
+                    <span style={{ 'font-size': '14px' }}>
+                      <Star
+                        size={15}
+                        style={{
+                          fill: '#0eca0e',
+                          color: '#0eca0e',
+                          height: '15px',
+                          width: '15px',
+                          margin: '-4px 0 0 5px'
+                        }}
+                      />{' '}
+                      4.5
+                    </span>
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>salon at home </strong> from{' '}
-                    <a href="#!">Sanjay sakpal </a>
+                    Review against <strong> salon at home </strong> from
+                    <Link to="#!"> Sanjay sakpal </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -57,7 +55,7 @@ const Reviews = () => {
                     ullamco laboris nisi ut aliquip ex ea commodo
                   </span>
                   <div className="dv_review_date_time">
-                    20/20/2020, 05:15 PM{' '}
+                    20/20/2020, 05:15 PM
                   </div>
                 </div>
               </div>
@@ -70,18 +68,12 @@ const Reviews = () => {
                 />
                 <div className="dv_review_holder_name_review">
                   <span className="dv_name_holder">
-                    <img
-                      className="mr-2"
-                      src="/images/svgs/tick.svg"
-                      alt=""
-                      height="20"
-                      width="20"
-                    />
+                    <Tick className="mr-2" height={20} width={20} />
                     Monika Jadhav
                   </span>
                   <span className="dv_review_against">
-                    Review against <strong>Cleaners </strong> from{' '}
-                    <a href="#!">Rahul Gandhi </a>
+                    Review against <strong> Cleaners </strong> from
+                    <Link to="#!"> Rahul Gandhi </Link>
                   </span>
                   <span className="dv_review_txt">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -90,7 +82,7 @@ const Reviews = () => {
                     ullamco laboris nisi ut aliquip ex ea commodo
                   </span>
                   <div className="dv_review_date_time">
-                    20/20/2020, 05:15 PM{' '}
+                    20/20/2020, 05:15 PM
                   </div>
                 </div>
               </div>
@@ -98,52 +90,26 @@ const Reviews = () => {
             <div className="dv_pagination">
               <ul>
                 <li>
-                  <a href="#!">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-chevron-left"
-                    >
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                  </a>
+                  <Link to="#!">
+                    <ChevronLeft size={24} />
+                  </Link>
                 </li>
                 <li>
-                  <a href="#!">1</a>
+                  <Link to="#!">1</Link>
                 </li>
                 <li>
-                  <a href="#!" className="dv_active_page">
+                  <Link to="#!" className="dv_active_page">
                     2
-                  </a>
+                  </Link>
                 </li>
                 <li>...</li>
                 <li>
-                  <a href="#!">3</a>
+                  <Link to="#!">3</Link>
                 </li>
                 <li>
-                  <a href="#!">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-chevron-right"
-                    >
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </a>
+                  <Link to="#!">
+                    <ChevronRight size={24} />
+                  </Link>
                 </li>
               </ul>
             </div>

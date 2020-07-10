@@ -1,15 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { X, LogOut } from 'react-feather';
+
+import { ReactComponent as Avatar } from '../../svgs/avatar.svg';
+import { ReactComponent as Bookings } from '../../svgs/bookings.svg';
+import { ReactComponent as AboutUs } from '../../svgs/about-us.svg';
+import { ReactComponent as TnC } from '../../svgs/tnc.svg';
+import { ReactComponent as PrivacyPolicy } from '../../svgs/privacy.svg';
+import { ReactComponent as Blogs } from '../../svgs/blogs.svg';
+import { ReactComponent as Reviews } from '../../svgs/reviews.svg';
+import { ReactComponent as Careers } from '../../svgs/careers.svg';
+import { ReactComponent as ContactUs } from '../../svgs/contact-us.svg';
 
 const Menu = ({ open, showMenu }) => {
   return (
@@ -22,11 +32,9 @@ const Menu = ({ open, showMenu }) => {
       <ModalHeader className="dv_login_modal_header">
         <ModalTitle className="dv_login_modal_header_h4">
           Account
-          <Image
+          <X
             style={{ float: 'right', cursor: 'pointer' }}
-            src="/images/svgs/close.svg"
-            width="24"
-            height="24"
+            size={24}
             onClick={() => showMenu(false)}
           />
         </ModalTitle>
@@ -48,7 +56,7 @@ const Menu = ({ open, showMenu }) => {
             />
           </InputGroup>
           <Button className="btn-default dv_login_btn" type="submit">
-            Get OTP{' '}
+            Get OTP
           </Button>
         </div>
         <div className="dv_login_otp_wrapper">
@@ -59,21 +67,21 @@ const Menu = ({ open, showMenu }) => {
             placeholder="OTP"
           />
           <Button className="btn-default dv_login_btn" type="submit">
-            Login{' '}
+            Login
           </Button>
         </div>
         <div className="dv_after_login_menus">
           <ul className="dv_menu_links_a" style={{ margin: '0 0 30px 0' }}>
             <li>
               <Link to="#">
-                <Image src="/images/svgs/avatar.svg" />
+                <Avatar />
                 Sanjay Sakpal
               </Link>
             </li>
             <li>
               <Link to="/bookings">
-                <Image src="/images/svgs/bookings.svg" />
-                My Bookings{' '}
+                <Bookings />
+                My Bookings
               </Link>
             </li>
           </ul>
@@ -81,54 +89,50 @@ const Menu = ({ open, showMenu }) => {
         <ul className="dv_menu_links_a">
           <li>
             <Link to="/about-us">
-              <Image src="/images/svgs/about-us.svg" />
-              About us{' '}
+              <AboutUs />
+              About us
             </Link>
           </li>
           <li>
             <Link to="/terms-and-conditions">
-              <Image src="/images/svgs/tnc.svg" />
-              terms &amp; condition{' '}
+              <TnC />
+              terms &amp; condition
             </Link>
           </li>
           <li>
             <Link to="/privacy-policy">
-              <Image src="/images/svgs/privacy.svg" />
-              privacy policy{' '}
+              <PrivacyPolicy />
+              privacy policy
             </Link>
           </li>
           <li>
             <Link to="/blogs">
-              <Image src="/images/svgs/blogs.svg" />
-              blog{' '}
+              <Blogs />
+              blog
             </Link>
           </li>
           <li>
             <Link to="/reviews">
-              <Image src="/images/svgs/reviews.svg" />
-              reviews{' '}
+              <Reviews />
+              reviews
             </Link>
           </li>
           <li>
             <Link to="/careers">
-              <Image src="/images/svgs/careers.svg" />
-              careers{' '}
+              <Careers />
+              careers
             </Link>
           </li>
           <li>
             <Link to="/contact-us">
-              <Image src="/images/svgs/contact-us.svg" />
+              <ContactUs />
               contact us
             </Link>
           </li>
         </ul>
         <Button className="btn-default dv_logout_btn" type="submit">
           Logout
-          <Image
-            src="/images/svgs/logout.svg"
-            width="15px"
-            style={{ margin: '0 0 0 7px' }}
-          />{' '}
+          <LogOut width={15} style={{ margin: '0 0 0 7px' }} />
         </Button>
       </ModalBody>
     </Modal>

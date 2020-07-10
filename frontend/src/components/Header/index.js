@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Image from 'react-bootstrap/Image';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import { Menu, ChevronDown } from 'react-feather';
 
-import Menu from '../Menu';
+import { ReactComponent as India } from '../../svgs/india.svg';
+
+import MenuModal from '../Menu';
 
 class Header extends React.Component {
   state = {
@@ -44,12 +47,13 @@ class Header extends React.Component {
         <Container>
           {/* Brand */}
           <Navbar.Brand
-            className={classnames('dv_logo_icon', {
+            className={classnames({
               dv_menu_scroll_style: this.state.fixed
             })}
-            href="/"
           >
-            ModernClap
+            <Link className="dv_logo_icon" to="/">
+              ModernClap
+            </Link>
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
@@ -69,11 +73,7 @@ class Header extends React.Component {
                 onClick={() => this.showMenu(true)}
               >
                 Login
-                <Image
-                  src="images/svgs/three-bars.svg"
-                  width="24"
-                  height="24"
-                />
+                <Menu size={24} />
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -92,27 +92,9 @@ class Header extends React.Component {
                     data-toggle="modal"
                     data-target="#myModal"
                   >
-                    <img
-                      src="/images/svgs/india.svg"
-                      alt=""
-                      width="15px"
-                      style={{ margin: '0 15px 0 0' }}
-                    />
+                    <India width={15} style={{ margin: '0 15px 0 0' }} />
                     Mumbai
-                    <svg
-                      className="dv_arrow_down_search"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <ChevronDown className="dv_arrow_down_search" size={24} />
                   </InputGroup.Text>
                 </InputGroup.Prepend>
                 <Form.Control
@@ -129,7 +111,7 @@ class Header extends React.Component {
         </Container>
       </div>
 
-      <Menu open={this.state.menuOpen} showMenu={this.showMenu} />
+      <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
     </header>
   );
 }

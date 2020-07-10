@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -21,7 +22,7 @@ const Blogs = () => {
             <Row>
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
-                  <a href="#!">
+                  <Link to="#!">
                     <img src="images/blog-list.jpg" alt="" title />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
@@ -29,12 +30,12 @@ const Blogs = () => {
                       sed do eiusmod..!
                     </p>
                     <span className="dv_blog_date">12/12/2020</span>
-                  </a>
+                  </Link>
                 </div>
               </Col>
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
-                  <a href="#!">
+                  <Link to="#!">
                     <img src="images/blog-list.jpg" alt="" title />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
@@ -42,12 +43,12 @@ const Blogs = () => {
                       sed do eiusmod..!
                     </p>
                     <span className="dv_blog_date">12/12/2020</span>
-                  </a>
+                  </Link>
                 </div>
               </Col>
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
-                  <a href="#!">
+                  <Link to="#!">
                     <img src="images/blog-list.jpg" alt="" title />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
@@ -55,12 +56,12 @@ const Blogs = () => {
                       sed do eiusmod..!
                     </p>
                     <span className="dv_blog_date">12/12/2020</span>
-                  </a>
+                  </Link>
                 </div>
               </Col>
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
-                  <a href="#!">
+                  <Link to="#!">
                     <img src="images/blog-list.jpg" alt="" title />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
@@ -68,12 +69,12 @@ const Blogs = () => {
                       sed do eiusmod..!
                     </p>
                     <span className="dv_blog_date">12/12/2020</span>
-                  </a>
+                  </Link>
                 </div>
               </Col>
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
-                  <a href="#!">
+                  <Link to="#!">
                     <img src="images/blog-list.jpg" alt="" title />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
@@ -81,7 +82,7 @@ const Blogs = () => {
                       sed do eiusmod..!
                     </p>
                     <span className="dv_blog_date">12/12/2020</span>
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>

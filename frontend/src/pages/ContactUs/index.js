@@ -9,6 +9,10 @@ import Button from 'react-bootstrap/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
+import { ReactComponent as Mobile } from '../../svgs/mobile.svg';
+import { ReactComponent as Telephone } from '../../svgs/telephone.svg';
+import { ReactComponent as Email } from '../../svgs/email.svg';
+
 const ContactUs = () => {
   return (
     <div className="dv_wrapper">
@@ -19,78 +23,68 @@ const ContactUs = () => {
             <Row>
               <Col lg={4} md={4} csm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/mobile.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Mobile className="mb-4" height={50} width={50} />
                   <span>Mobile </span>
                   <ul>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 56 547 6598 </a>
+                      <a href="tel:+971565476598">+971 56 547 6598 </a>
                     </li>
                   </ul>
                 </div>
               </Col>
               <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/telephone.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Telephone className="mb-4" height={50} width={50} />
                   <span>Telephone </span>
                   <ul>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                     <li>
-                      <a href="#!">+971 4 547 6598 </a>
+                      <a href="tel:+97145476598">+971 4 547 6598 </a>
                     </li>
                   </ul>
                 </div>
               </Col>
               <Col lg={4} md={4} sm={12} xs={12}>
                 <div className="dv_contact_cards">
-                  <img
-                    className="mb-4"
-                    src="/images/svgs/telephone.svg"
-                    height="50"
-                    width="50"
-                    alt="mobile"
-                  />
+                  <Email className="mb-4" height={50} width={50} />
                   <span>Email us </span>
                   <ul>
                     <li>
-                      <a href="#!">info@modernclap.com </a>
+                      <a href="mailto:info@modernclap.com">
+                        info@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">contact@modernclap.com </a>
+                      <a href="mailto:contact@modernclap.com">
+                        contact@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">sales@modernclap.com </a>
+                      <a href="mailto:sales@modernclap.com">
+                        sales@modernclap.com
+                      </a>
                     </li>
                     <li>
-                      <a href="#!">enquiry@modernclap.com </a>
+                      <a href="mailto:enquiry@modernclap.com">
+                        enquiry@modernclap.com
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -103,7 +97,7 @@ const ContactUs = () => {
             <Row>
               <Col md={12}>
                 <h4 className="dv_contact_form_heading">
-                  Feel free to contact us{' '}
+                  Feel free to contact us
                 </h4>
                 <FormControl
                   type="text"

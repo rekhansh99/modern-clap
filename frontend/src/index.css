@@ -124,7 +124,7 @@ ul.dv_country_based_ul > li > svg {
 
 /*.dv_home_full_slider{ border-radius: 5px;}*/
 
-.dv_all_cat_2 > a > img {
+.dv_all_cat_2 > a > svg {
   width: 40px;
   display: block;
   height: 40px;
@@ -176,6 +176,9 @@ h3.dv_repeat_slider_heading {
   color: #ffffff;
   font-weight: 600;
   text-decoration: underline;
+}
+.dv_logo_icon {
+  color: rgba(0, 0, 0, 0.9);
 }
 p.dv_repeat_slider_para {
   margin: 0;
@@ -483,7 +486,7 @@ ul.dv_menu_links_a > li > a {
 ul.dv_menu_links_a > li:nth-last-child(1) > a {
   border: none !important;
 }
-ul.dv_menu_links_a > li > a > img {
+ul.dv_menu_links_a > li > a > svg {
   width: 20px;
   float: left;
   height: 20px;
