@@ -6,12 +6,18 @@ import Row from 'react-bootstrap/Row';
 import Header from '../../components/Header';
 import RepeatSlider from '../../components/RepeatSlider';
 import ServicesModal from '../../components/modals/BookingDetails/Services';
+import TimingModal from '../../components/modals/BookingDetails/Timing';
 import ReviewModal from '../../components/modals/BookingDetails/Review';
 
 class BookingDetails extends React.Component {
   state = {
     servicesModalOpen: false,
-    reviewModalOpen: false
+    timingModalOpen: false,
+    locationModalOpen: false,
+    paymentModalOpen: false,
+    reviewModalOpen: false,
+    faqsModalOpen: false,
+    providerModalOpen: false
   };
 
   render = () => {
@@ -64,8 +70,7 @@ class BookingDetails extends React.Component {
                 Timing <span className="dv_sm_overview">12 Mar, 04 pm </span>
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ timingModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   Reschedule
@@ -79,8 +84,7 @@ class BookingDetails extends React.Component {
                 location <span className="dv_sm_overview">Home </span>
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ locationModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   View
@@ -94,8 +98,7 @@ class BookingDetails extends React.Component {
                 Payment <span className="dv_sm_overview">AED 114 </span>
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ paymentModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   View
@@ -126,8 +129,7 @@ class BookingDetails extends React.Component {
                 FAQ&apos;s <span className="dv_sm_overview">14 Questions </span>
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ faqsModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   View
@@ -142,8 +144,7 @@ class BookingDetails extends React.Component {
                 {/* <span className="dv_sm_overview">Goodhand Technical LLC </span> */}
                 <a
                   href="#!"
-                  data-toggle="modal"
-                  data-target="#viewrequestdetails"
+                  onClick={() => this.setState({ providerModalOpen: true })}
                   className="dv_edit_for_all"
                 >
                   View
@@ -267,6 +268,10 @@ class BookingDetails extends React.Component {
         <ReviewModal
           isOpen={this.state.reviewModalOpen}
           setOpen={open => this.setState({ reviewModalOpen: open })}
+        />
+        <TimingModal
+          isOpen={this.state.timingModalOpen}
+          setOpen={open => this.setState({ timingModalOpen: open })}
         />
         <ServicesModal
           isOpen={this.state.servicesModalOpen}
