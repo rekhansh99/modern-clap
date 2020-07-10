@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -59,14 +60,14 @@ const Services = ({ isOpen, setOpen }) => {
               Services
             </li>
             <li style={{ display: 'block', margin: '0 0 15px 0' }}>
-              <a href="#!">
+              <Link to="#!">
                 <strong>manicure pedicure</strong>{' '}
-              </a>
+              </Link>
             </li>
             <li style={{ display: 'block', margin: '0 0 15px 0' }}>
-              <a href="#!">
+              <Link to="#!">
                 <strong>GK keratin treatment</strong>{' '}
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="dv_country_based_ul">
@@ -89,9 +90,9 @@ const Services = ({ isOpen, setOpen }) => {
               Amount
             </li>
             <li>
-              <a href="#!">
+              <Link to="#!">
                 <strong>AED 1200</strong>{' '}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

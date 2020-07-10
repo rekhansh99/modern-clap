@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -55,82 +56,82 @@ const Timing = ({ isOpen, setOpen }) => {
       >
         <ul className="dv_timing_selection">
           <li>
-            <a href="javascript:void(0)">
+            <Link to="#!">
               <span className="dv_day_txt">today </span> 24
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);" className="active">
+            <Link to="#!" className="active">
               <span className="dv_day_txt">tom </span> 25
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);">
+            <Link to="#!">
               <span className="dv_day_txt">Wed </span> 26
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);">
+            <Link to="#!">
               <span className="dv_day_txt">Thus </span> 27
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);">
+            <Link to="#!">
               <span className="dv_day_txt">Fri </span> 28
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);">
+            <Link to="#!">
               <span className="dv_day_txt">sat </span> 29
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);">
+            <Link to="#!">
               <span className="dv_day_txt">sun </span> 30
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="dv_timing_selection">
           <li>
-            <a href="javascript:void(0);" className="active">
+            <Link to="#!" className="active">
               10 AM
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 11 AM </a>
+            <Link to="#!"> 11 AM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 12 AM </a>
+            <Link to="#!"> 12 AM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 01 PM </a>
+            <Link to="#!"> 01 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 02 PM </a>
+            <Link to="#!"> 02 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 03 PM </a>
+            <Link to="#!"> 03 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 04 PM </a>
+            <Link to="#!"> 04 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 05 PM </a>
+            <Link to="#!"> 05 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 06 PM </a>
+            <Link to="#!"> 06 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 07 PM </a>
+            <Link to="#!"> 07 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 08 PM </a>
+            <Link to="#!"> 08 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 09 PM </a>
+            <Link to="#!"> 09 PM </Link>
           </li>
           <li>
-            <a href="javascript:void(0);"> 10 PM </a>
+            <Link to="#!"> 10 PM </Link>
           </li>
         </ul>
         <Button

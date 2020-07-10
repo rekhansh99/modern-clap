@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -55,15 +56,12 @@ const Location = ({ isOpen, setOpen }) => {
               Home
             </li>
             <li style={{ display: 'block', margin: '0 0 15px 0' }}>
-              <a
-                href="javascript:void(0);"
-                style={{ background: 'no-repeat', padding: 0 }}
-              >
+              <Link to="#!" style={{ background: 'no-repeat', padding: 0 }}>
                 <strong>
                   301, Buhaleeba Plaza, al muaraqabat road, Dubai, United Arab
                   Emirates. P:O Box : 81748{' '}
                 </strong>{' '}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
