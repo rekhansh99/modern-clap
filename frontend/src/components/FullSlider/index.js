@@ -16,7 +16,7 @@ const FullSlider = () => {
     <div className="item dv_home_page_slider_item" key={i}>
       <Link to="#!">
         {/* for mobile version we will use diffrent img tag */}
-        <img src={image} alt="" title />
+        <img src={image} alt="" />
       </Link>
     </div>
   ));

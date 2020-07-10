@@ -23,7 +23,7 @@ const Blogs = () => {
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
                   <Link to="#!">
-                    <img src="images/blog-list.jpg" alt="" title />
+                    <img src="images/blog-list.jpg" alt="" />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -36,7 +36,7 @@ const Blogs = () => {
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
                   <Link to="#!">
-                    <img src="images/blog-list.jpg" alt="" title />
+                    <img src="images/blog-list.jpg" alt="" />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -49,7 +49,7 @@ const Blogs = () => {
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
                   <Link to="#!">
-                    <img src="images/blog-list.jpg" alt="" title />
+                    <img src="images/blog-list.jpg" alt="" />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -62,7 +62,7 @@ const Blogs = () => {
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
                   <Link to="#!">
-                    <img src="images/blog-list.jpg" alt="" title />
+                    <img src="images/blog-list.jpg" alt="" />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -75,7 +75,7 @@ const Blogs = () => {
               <Col xs={12} sm={6} md={4}>
                 <div className="dv_blog_cards">
                   <Link to="#!">
-                    <img src="images/blog-list.jpg" alt="" title />
+                    <img src="images/blog-list.jpg" alt="" />
                     <div className="dv_blog_heading">blog heading text</div>
                     <p className="dv_blog_p">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,

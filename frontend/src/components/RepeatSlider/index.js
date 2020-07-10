@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import OwlCarousel from 'react-owl-carousel-autoheight';
 
@@ -9,10 +10,10 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 const RepeatSlider = props => {
   const sliderItemsJSX = props.items.map((item, i) => (
     <div className="item" key={i}>
-      <a href={item.link}>
+      <Link to={item.link}>
         <img className="owlsliderimg" src={item.src} alt={item.alt} />
         <div className="dv_img_title">{item.title}</div>
-      </a>
+      </Link>
     </div>
   ));
 

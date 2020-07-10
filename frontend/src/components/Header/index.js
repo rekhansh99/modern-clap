@@ -119,7 +119,7 @@ class Header extends React.Component {
 Header.propTypes = {
   headerClassName: PropTypes.string,
   title: PropTypes.string.isRequired,
-  desc: PropTypes.oneOf(PropTypes.string, PropTypes.element).isRequired,
+  desc: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   search: PropTypes.bool
 };
 

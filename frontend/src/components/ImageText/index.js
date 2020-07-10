@@ -14,7 +14,6 @@ const ImageText = () => {
               className="dv_left_side_panel_img"
               src="images/safety-first.jpg"
               alt=""
-              title
             />
           </Col>
           <Col lg={7} md={12} sm={12} xs={12}>

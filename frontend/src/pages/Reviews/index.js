@@ -36,8 +36,6 @@ const Reviews = () => {
                         style={{
                           fill: '#0eca0e',
                           color: '#0eca0e',
-                          height: '15px',
-                          width: '15px',
                           margin: '-4px 0 0 5px'
                         }}
                       />{' '}
