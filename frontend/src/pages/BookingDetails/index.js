@@ -8,6 +8,7 @@ import RepeatSlider from '../../components/RepeatSlider';
 import ServicesModal from '../../components/modals/BookingDetails/Services';
 import TimingModal from '../../components/modals/BookingDetails/Timing';
 import LocationModal from '../../components/modals/BookingDetails/Location';
+import PaymentModal from '../../components/modals/BookingDetails/Payment';
 import ReviewModal from '../../components/modals/BookingDetails/Review';
 
 class BookingDetails extends React.Component {
@@ -277,6 +278,10 @@ class BookingDetails extends React.Component {
         <LocationModal
           isOpen={this.state.locationModalOpen}
           setOpen={open => this.setState({ locationModalOpen: open })}
+        />
+        <PaymentModal
+          isOpen={this.state.paymentModalOpen}
+          setOpen={open => this.setState({ paymentModalOpen: open })}
         />
         <ServicesModal
           isOpen={this.state.servicesModalOpen}
