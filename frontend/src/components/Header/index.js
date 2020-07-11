@@ -13,11 +13,13 @@ import { Menu, ChevronDown } from 'react-feather';
 import { ReactComponent as India } from '../../svgs/india.svg';
 
 import MenuModal from '../Menu';
+import LocationModal from '../../components/modals/Landing/Location';
 
 class Header extends React.Component {
   state = {
     fixed: false,
-    menuOpen: false
+    menuOpen: false,
+    openLocationModal: false
   };
 
   componentDidMount = () => {
@@ -96,8 +98,7 @@ class Header extends React.Component {
                 <InputGroup.Prepend>
                   <InputGroup.Text
                     className="dv_input_text_group"
-                    data-toggle="modal"
-                    data-target="#myModal"
+                    onClick={() => this.setState({ openLocationModal: true })}
                   >
                     <India width={15} style={{ margin: '0 15px 0 0' }} />
                     Mumbai
@@ -119,6 +120,10 @@ class Header extends React.Component {
       </div>
 
       <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
+      <LocationModal
+        isOpen={this.state.openLocationModal}
+        close={() => this.setState({ openLocationModal: false })}
+      />
     </header>
   );
 }
