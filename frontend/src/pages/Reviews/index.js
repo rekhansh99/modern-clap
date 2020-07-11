@@ -30,7 +30,7 @@ const Reviews = () => {
                   <span className="dv_name_holder">
                     <Tick className="mr-2" height={20} width={20} />
                     suresh varma{' '}
-                    <span style={{ 'font-size': '14px' }}>
+                    <span style={{ fontSize: '14px' }}>
                       <Star
                         size={15}
                         style={{

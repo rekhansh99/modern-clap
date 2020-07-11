@@ -11,6 +11,9 @@ import Landing from './pages/Landing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Reviews from './pages/Reviews';
+import SelectServices from './pages/SelectServices';
+import SellerRegistration from './pages/SellerRegistration';
+import ServiceDetails from './pages/ServiceDetails';
 
 function App() {
   return (
@@ -45,6 +48,15 @@ function App() {
         </Route>
         <Route exact path="/reviews">
           <Reviews />
+        </Route>
+        <Route exact path="/select-services/:service">
+          <SelectServices />
+        </Route>
+        <Route exact path="/seller/register">
+          <SellerRegistration />
+        </Route>
+        <Route exact path="/service">
+          <ServiceDetails />
         </Route>
       </Switch>
     </Router>

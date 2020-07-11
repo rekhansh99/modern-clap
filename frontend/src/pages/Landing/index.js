@@ -9,7 +9,7 @@ import RepeatSlider from '../../components/RepeatSlider';
 import FullBanner from '../../components/FullBanner';
 import TwoBanner from '../../components/TwoBanner';
 import ImageText from '../../components/ImageText';
-import Categories from '../../components/Categories';
+import CategoryBox from '../../components/CategoryBox';
 
 const Landing = () => {
   return (
@@ -26,7 +26,7 @@ const Landing = () => {
       />
       <div className="dv_content">
         <FullSlider />
-        <Categories />
+        <CategoryBox />
         <FullBanner />
         <TwoBanner />
         <RepeatSlider
@@ -141,7 +141,6 @@ const Landing = () => {
             <img
               src="images/download-app.jpg"
               alt=""
-              title
               style={{ width: '100%', borderRadius: '5px' }}
             />
           </Container>

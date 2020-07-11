@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as Tick } from '../../svgs/tick.svg';
 
-const SectionHeading = ({ title, subtitle, modal, linkText }) => {
+const SectionHeading = ({ title, subtitle, modal, linkText, className }) => {
   return (
-    <span className="dv_section_heading">
+    <span className={'dv_section_heading ' + className}>
       <Tick />
       {title} <span className="dv_sm_overview"> {subtitle}</span>
       <Link to={'#' + modal} replace className="dv_edit_for_all">
@@ -21,7 +21,8 @@ SectionHeading.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   modal: PropTypes.string.isRequired,
-  linkText: PropTypes.string.isRequired
+  linkText: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default SectionHeading;

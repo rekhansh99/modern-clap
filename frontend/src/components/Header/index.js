@@ -13,11 +13,13 @@ import { Menu, ChevronDown } from 'react-feather';
 import { ReactComponent as India } from '../../svgs/india.svg';
 
 import MenuModal from '../Menu';
+import LocationModal from '../../components/modals/Landing/Location';
 
 class Header extends React.Component {
   state = {
     fixed: false,
-    menuOpen: false
+    menuOpen: false,
+    openLocationModal: false
   };
 
   componentDidMount = () => {
@@ -40,6 +42,7 @@ class Header extends React.Component {
     <header className={this.props.headerClassName}>
       <Navbar
         expand="sm"
+        variant="none"
         className={classnames('dv_fixed_navbar', {
           dv_fixed_menu: this.state.fixed
         })}
@@ -47,13 +50,13 @@ class Header extends React.Component {
         <Container>
           {/* Brand */}
           <Navbar.Brand
-            className={classnames({
+            as={Link}
+            className={classnames('dv_logo_icon', {
               dv_menu_scroll_style: this.state.fixed
             })}
+            to="/"
           >
-            <Link className="dv_logo_icon" to="/">
-              ModernClap
-            </Link>
+            ModernClap
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
@@ -72,8 +75,7 @@ class Header extends React.Component {
                 })}
                 onClick={() => this.showMenu(true)}
               >
-                Login
-                <Menu size={24} />
+                Login <Menu size={24} />
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -83,14 +85,20 @@ class Header extends React.Component {
         <Container>
           <h1 className="dv_home_Service_content">{this.props.title}</h1>
           <p className="dv_home_Service_content_p">{this.props.desc}</p>
+          {this.props.bookNow ? (
+            <Link to="#" className="dv_book_now_service">
+              book now
+            </Link>
+          ) : (
+            ''
+          )}
           {this.props.search ? (
             <div className="dv_drp_search">
               <InputGroup className="mb-3">
                 <InputGroup.Prepend>
                   <InputGroup.Text
                     className="dv_input_text_group"
-                    data-toggle="modal"
-                    data-target="#myModal"
+                    onClick={() => this.setState({ openLocationModal: true })}
                   >
                     <India width={15} style={{ margin: '0 15px 0 0' }} />
                     Mumbai
@@ -112,6 +120,10 @@ class Header extends React.Component {
       </div>
 
       <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
+      <LocationModal
+        isOpen={this.state.openLocationModal}
+        close={() => this.setState({ openLocationModal: false })}
+      />
     </header>
   );
 }
@@ -120,12 +132,14 @@ Header.propTypes = {
   headerClassName: PropTypes.string,
   title: PropTypes.string.isRequired,
   desc: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  search: PropTypes.bool
+  search: PropTypes.bool,
+  bookNow: PropTypes.bool
 };
 
 Header.defaultProps = {
   headerClassName: 'dv_about_us_page',
-  search: false
+  search: false,
+  bookNow: false
 };
 
 export default Header;

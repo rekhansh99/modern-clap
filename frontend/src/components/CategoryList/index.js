@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { ChevronRight } from 'react-feather';
 
 import { ReactComponent as Cleaners } from '../../svgs/cleaners.svg';
 import { ReactComponent as OnlineFitness } from '../../svgs/online-fitness.svg';
@@ -18,7 +18,7 @@ import { ReactComponent as PackersAndMovers } from '../../svgs/packers-and-mover
 import { ReactComponent as ACTechnician } from '../../svgs/ac-technician.svg';
 import { ReactComponent as PestControl } from '../../svgs/pest-control.svg';
 
-const Categories = () => {
+const CategoryList = ({ title }) => {
   const categories = [
     {
       name: 'cleaners',
@@ -33,7 +33,8 @@ const Categories = () => {
     {
       name: 'ladies salon',
       icon: <LadiesSalon />,
-      url: 'ladies-salon'
+      url: 'ladies-salon',
+      selected: true
     },
     {
       name: 'gents salon',
@@ -83,25 +84,31 @@ const Categories = () => {
   ];
 
   const categoriesJSX = categories.map(category => (
-    <Col md={2} sm={4} xs={4} className="dv_all_cat_2" key={category.name}>
-      <Link to={'/select-services/' + category.url}>
-        {category.icon}
-        {category.name}
-        {/* <span class="dv_off_percentage_show">31% off </span>
-         */}
-      </Link>
-    </Col>
+    <li
+      key={category.name}
+      className={classnames({ selected: category.selected })}
+    >
+      {category.icon}
+      {category.name}
+      {category.selected ? <ChevronRight /> : ' '}
+    </li>
   ));
 
   return (
-    <div className="dv_all_category">
-      <Container>
-        <div className="dv_all_category_card">
-          <Row>{categoriesJSX}</Row>
-        </div>
-      </Container>
-    </div>
+    <Col
+      lg={3}
+      md={12}
+      sm={12}
+      className="dv_select_service_3 dv_padding_left_0"
+    >
+      <h3>{title}</h3>
+      <ul className="dv_services_ul_height">{categoriesJSX}</ul>
+    </Col>
   );
 };
 
-export default Categories;
+CategoryList.propTypes = {
+  title: PropTypes.string.isRequired
+};
+
+export default CategoryList;
