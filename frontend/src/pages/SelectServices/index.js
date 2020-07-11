@@ -20,7 +20,7 @@ import TimingSelector from '../../components/TimingSelector';
 import Dropdown from 'react-bootstrap/esm/Dropdown';
 
 const SelectServices = () => {
-  const activePane = useLocation().hash;
+  const activePane = useLocation().hash || '#saveaddress';
 
   return (
     <>

@@ -84,7 +84,7 @@ class Header extends React.Component {
           <h1 className="dv_home_Service_content">{this.props.title}</h1>
           <p className="dv_home_Service_content_p">{this.props.desc}</p>
           {this.props.bookNow ? (
-            <Link to="#!" className="dv_book_now_service">
+            <Link to="#" className="dv_book_now_service">
               book now
             </Link>
           ) : (
