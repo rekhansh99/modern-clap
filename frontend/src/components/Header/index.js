@@ -83,6 +83,13 @@ class Header extends React.Component {
         <Container>
           <h1 className="dv_home_Service_content">{this.props.title}</h1>
           <p className="dv_home_Service_content_p">{this.props.desc}</p>
+          {this.props.bookNow ? (
+            <Link to="#!" className="dv_book_now_service">
+              book now
+            </Link>
+          ) : (
+            ''
+          )}
           {this.props.search ? (
             <div className="dv_drp_search">
               <InputGroup className="mb-3">
@@ -120,12 +127,14 @@ Header.propTypes = {
   headerClassName: PropTypes.string,
   title: PropTypes.string.isRequired,
   desc: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  search: PropTypes.bool
+  search: PropTypes.bool,
+  bookNow: PropTypes.bool
 };
 
 Header.defaultProps = {
   headerClassName: 'dv_about_us_page',
-  search: false
+  search: false,
+  bookNow: false
 };
 
 export default Header;

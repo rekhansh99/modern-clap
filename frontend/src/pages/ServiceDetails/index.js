@@ -18,6 +18,8 @@ const ServiceDetails = () => {
       <Header
         title="Manicure Pedicure"
         desc="Hire #1 Staff For Home Services"
+        headerClassName="dv_service_details_header"
+        bookNow
       />
       <div className="dv_content">
         <div className="dv_service_details_information">
