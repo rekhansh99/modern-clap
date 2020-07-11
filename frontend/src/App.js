@@ -13,6 +13,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import Reviews from './pages/Reviews';
 import SelectServices from './pages/SelectServices';
 import SellerRegistration from './pages/SellerRegistration';
+import ServiceDetails from './pages/ServiceDetails';
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route exact path="/seller/register">
           <SellerRegistration />
+        </Route>
+        <Route exact path="/service">
+          <ServiceDetails />
         </Route>
       </Switch>
     </Router>
