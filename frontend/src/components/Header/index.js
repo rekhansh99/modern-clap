@@ -42,6 +42,7 @@ class Header extends React.Component {
     <header className={this.props.headerClassName}>
       <Navbar
         expand="sm"
+        variant="none"
         className={classnames('dv_fixed_navbar', {
           dv_fixed_menu: this.state.fixed
         })}
@@ -49,13 +50,13 @@ class Header extends React.Component {
         <Container>
           {/* Brand */}
           <Navbar.Brand
-            className={classnames({
+            as={Link}
+            className={classnames('dv_logo_icon', {
               dv_menu_scroll_style: this.state.fixed
             })}
+            to="/"
           >
-            <Link className="dv_logo_icon" to="/">
-              ModernClap
-            </Link>
+            ModernClap
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
@@ -74,8 +75,7 @@ class Header extends React.Component {
                 })}
                 onClick={() => this.showMenu(true)}
               >
-                Login
-                <Menu size={24} />
+                Login <Menu size={24} />
               </Nav.Link>
             </Nav.Item>
           </Nav>
