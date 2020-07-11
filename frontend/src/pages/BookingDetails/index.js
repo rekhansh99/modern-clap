@@ -17,6 +17,7 @@ import ReviewModal from '../../components/modals/BookingDetails/Review';
 import FAQsModal from '../../components/modals/BookingDetails/FAQs';
 import ProviderModal from '../../components/modals/BookingDetails/Provider';
 import AreYouSureModal from '../../components/modals/BookingDetails/AreYouSure';
+import DoneSuccessfullyModal from '../../components/modals/BookingDetails/DoneSuccessfully';
 
 class BookingDetails extends React.Component {
   render = () => {
@@ -35,7 +36,7 @@ class BookingDetails extends React.Component {
           style={{ textAlign: 'center' }}
         >
           <Container>
-            <Link to="#!" data-toggle="modal" data-target="#donesuccesfully">
+            <Link to="#doneSuccessfullyModal">
               Your order request no is <strong>MD124587</strong>
             </Link>
           </Container>
@@ -256,6 +257,10 @@ class BookingDetails extends React.Component {
         />
         <AreYouSureModal
           isOpen={modal === '#areYouSureModal'}
+          close={() => this.props.history.replace('/booking')}
+        />
+        <DoneSuccessfullyModal
+          isOpen={modal === '#doneSuccessfullyModal'}
           close={() => this.props.history.replace('/booking')}
         />
 

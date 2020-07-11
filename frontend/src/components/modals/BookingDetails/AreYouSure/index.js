@@ -8,7 +8,7 @@ import ModalBody from 'react-bootstrap/ModalBody';
 
 import { ReactComponent as BellSVG } from '../../../../svgs/bell.svg';
 
-const Location = ({ isOpen, close }) => {
+const AreYouSure = ({ isOpen, close }) => {
   return (
     <Modal
       id="areyousure"
@@ -123,9 +123,9 @@ const Location = ({ isOpen, close }) => {
   );
 };
 
-Location.propTypes = {
+AreYouSure.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired
 };
 
-export default Location;
+export default AreYouSure;
