@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../../components/Header';
 
 import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/esm/Form';
 
 const SellerRegistration = () => {
   return (
@@ -48,42 +50,42 @@ const SellerRegistration = () => {
                   edit
                 </a>
               </span>
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Owner Full Name"
-              />
-              <input
+              ></Form.Control>
+              <Form.Control
                 type="Email Address"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Email Address"
-              />
-              <input
+              ></Form.Control>
+              <Form.Control
                 type="tel"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Mobile No"
-              />
-              <input
+              ></Form.Control>
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Phone No"
-              />
-              <select className="form-control dv_careers_form_input">
-                <option value>Select Country </option>
-                <option>United arab emirates </option>
-                <option>India </option>
-                <option>United State of America </option>
-              </select>
-              <input
+              ></Form.Control>
+              <Form.Control as="select" className="dv_careers_form_input">
+                <option value>Select Country</option>
+                <option>United arab emirates</option>
+                <option>India</option>
+                <option>United State of America</option>
+              </Form.Control>
+              <Form.Control
                 type="password"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Password"
-              />
-              <input
+              ></Form.Control>
+              <Form.Control
                 type="Password"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Retype Password"
-              />
+              ></Form.Control>
               <span
                 className="dv_section_heading"
                 style={{ margin: '0 0 15px 0' }}
@@ -95,18 +97,18 @@ const SellerRegistration = () => {
                   edit
                 </a>
               </span>
-              <input
+              <Form.Control
                 type="text"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder="Trade License No"
-              />
-              <input
+              ></Form.Control>
+              <Form.Control
                 type="date"
-                className="form-control dv_careers_form_input"
+                className="dv_careers_form_input"
                 placeholder
                 defaultValue
                 title="Expiry Date"
-              />
+              ></Form.Control>
               <div className="custom-file mb-3">
                 <input
                   type="file"
@@ -130,7 +132,7 @@ const SellerRegistration = () => {
                     edit
                   </a>
                 </span>
-                <select className="form-control dv_careers_form_input">
+                <Form.Control as="select" className="dv_careers_form_input">
                   <option selected>Business Category </option>
                   <option>Cleaners </option>
                   <option>Online Fitness </option>
@@ -144,57 +146,52 @@ const SellerRegistration = () => {
                   <option>Packers &amp; Movers </option>
                   <option>AC Technicians </option>
                   <option>Pest COntrol </option>
-                </select>
-                <input
+                </Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Shop Name"
-                />
-                <input
+                ></Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Contact Person (optional)"
-                />
-                <input
+                ></Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Contact No (optional)"
-                />
-                <select className="form-control dv_careers_form_input">
+                ></Form.Control>
+                <Form.Control as="select" className="dv_careers_form_input">
                   <option selected>Emirates </option>
                   <option selected>Dubai </option>
                   {/* <option disabled="">Sharjha </option>
-                      <option disabled="">Abu Dhabi </option>
-                      <option disabled="">Ras al khaim </option>
-                      <option disabled="">Al ain </option> */}
-                </select>
-                <input
+										<option disabled="">Abu Dhabi </option>
+										<option disabled="">Ras al khaim </option>
+										<option disabled="">Al ain </option> */}
+                </Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Address"
-                />
-                <input
+                ></Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="Area"
-                />
-                <input
+                ></Form.Control>
+                <Form.Control
                   type="text"
-                  className="form-control dv_careers_form_input"
+                  className="dv_careers_form_input"
                   placeholder="P.O Box "
-                />
+                ></Form.Control>
               </div>
             </div>
           </div>
         </div>
         <div className="dv_continue_next">
           <div className="dv_seller_container pb-2  pt-2">
-            <button
-              type="button"
-              className="btn btn-default dv_seller_submit_btn"
-            >
-              Next
-            </button>
+            <Button className="btn-default dv_seller_submit_btn">Next</Button>
           </div>
         </div>
       </div>
