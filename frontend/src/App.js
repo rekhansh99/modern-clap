@@ -11,6 +11,7 @@ import Landing from './pages/Landing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Reviews from './pages/Reviews';
+import SellerRegistration from './pages/SellerRegistration';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route exact path="/reviews">
           <Reviews />
+        </Route>
+        <Route exact path="/register-seller">
+          <SellerRegistration />
         </Route>
       </Switch>
     </Router>
