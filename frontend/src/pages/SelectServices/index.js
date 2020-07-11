@@ -19,9 +19,11 @@ import SectionHeading from '../../components/SectionHeading';
 import CategoryList from '../../components/CategoryList';
 import ServicesList from '../../components/ServicesList';
 import TimingSelector from '../../components/TimingSelector';
+import CartModal from '../../components/modals/SelectServices/Cart';
 
 const SelectServices = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const activePane = useLocation().hash;
 
   return (
@@ -508,11 +510,14 @@ const SelectServices = () => {
           </Container>
         </div>
       </div>
+
+      <CartModal isOpen={cartOpen} close={() => setCartOpen(false)} />
+
       <div className="dv_continue_next">
         <Container>
           <ul>
             <li>
-              <Link to="#!">
+              <Link to="#!" onClick={() => setCartOpen(true)}>
                 <CartCheck size={20} style={{ margin: '-4px 5px 0 0' }} />
                 cart - 15
               </Link>
