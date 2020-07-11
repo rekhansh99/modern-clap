@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 
 import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/esm/Form';
+import Form from 'react-bootstrap/Form';
 
 const SellerRegistration = () => {
   return (
