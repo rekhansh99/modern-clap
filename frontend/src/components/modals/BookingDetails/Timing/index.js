@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -10,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { X } from 'react-feather';
 
 import { ReactComponent as Clock } from '../../../../svgs/clock.svg';
+import TimingSelector from '../../../TimingSelector';
 
 const Timing = ({ isOpen, close }) => {
   return (
@@ -49,86 +49,7 @@ const Timing = ({ isOpen, close }) => {
           borderRadius: '0 0 5px 5px'
         }}
       >
-        <ul className="dv_timing_selection">
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">today </span> 24
-            </Link>
-          </li>
-          <li>
-            <Link to="#!" className="active">
-              <span className="dv_day_txt">tom </span> 25
-            </Link>
-          </li>
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">Wed </span> 26
-            </Link>
-          </li>
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">Thus </span> 27
-            </Link>
-          </li>
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">Fri </span> 28
-            </Link>
-          </li>
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">sat </span> 29
-            </Link>
-          </li>
-          <li>
-            <Link to="#!">
-              <span className="dv_day_txt">sun </span> 30
-            </Link>
-          </li>
-        </ul>
-        <ul className="dv_timing_selection">
-          <li>
-            <Link to="#!" className="active">
-              10 AM
-            </Link>
-          </li>
-          <li>
-            <Link to="#!"> 11 AM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 12 AM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 01 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 02 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 03 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 04 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 05 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 06 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 07 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 08 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 09 PM </Link>
-          </li>
-          <li>
-            <Link to="#!"> 10 PM </Link>
-          </li>
-        </ul>
+        <TimingSelector />
         <Button
           style={{
             backgroundColor: '#2874f0',
