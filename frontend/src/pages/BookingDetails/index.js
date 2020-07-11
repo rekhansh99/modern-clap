@@ -16,6 +16,7 @@ import PaymentModal from '../../components/modals/BookingDetails/Payment';
 import ReviewModal from '../../components/modals/BookingDetails/Review';
 import FAQsModal from '../../components/modals/BookingDetails/FAQs';
 import ProviderModal from '../../components/modals/BookingDetails/Provider';
+import AreYouSureModal from '../../components/modals/BookingDetails/AreYouSure';
 
 class BookingDetails extends React.Component {
   render = () => {
@@ -253,12 +254,20 @@ class BookingDetails extends React.Component {
           isOpen={modal === '#providerModal'}
           close={() => this.props.history.replace('/booking')}
         />
+        <AreYouSureModal
+          isOpen={modal === '#areYouSureModal'}
+          close={() => this.props.history.replace('/booking')}
+        />
 
         <div className="dv_continue_next">
           <Container>
             <ul>
               <li>
-                <a href="#!" data-toggle="modal" data-target="#areyousure">
+                <a
+                  href="#areYouSureModal"
+                  data-toggle="modal"
+                  data-target="#areyousure"
+                >
                   Cancel
                 </a>
               </li>
