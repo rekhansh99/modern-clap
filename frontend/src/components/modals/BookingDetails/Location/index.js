@@ -8,19 +8,19 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import { X, MapPin } from 'react-feather';
 
-const Location = ({ isOpen, setOpen }) => {
+const Location = ({ isOpen, close }) => {
   return (
     <Modal
       id="viewlocation"
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Location Details
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -51,7 +51,7 @@ const Location = ({ isOpen, setOpen }) => {
 
 Location.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Location;

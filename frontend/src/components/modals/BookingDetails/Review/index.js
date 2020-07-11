@@ -13,13 +13,13 @@ import { X } from 'react-feather';
 
 import { ReactComponent as Reviews } from '../../../../svgs/reviews.svg';
 
-const Review = ({ isOpen, setOpen }) => {
+const Review = ({ isOpen, close }) => {
   return (
     <Modal
       id="dv_write_reviews"
       dialogClassName="dv_write_reviews_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
@@ -33,7 +33,7 @@ const Review = ({ isOpen, setOpen }) => {
           />
           Add Review
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -113,7 +113,7 @@ const Review = ({ isOpen, setOpen }) => {
 
 Review.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Review;

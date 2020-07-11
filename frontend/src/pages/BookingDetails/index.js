@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -6,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 
 import Header from '../../components/Header';
 import RepeatSlider from '../../components/RepeatSlider';
+import SectionHeading from '../../components/SectionHeading';
 import ServicesModal from '../../components/modals/BookingDetails/Services';
 import TimingModal from '../../components/modals/BookingDetails/Timing';
 import LocationModal from '../../components/modals/BookingDetails/Location';
@@ -14,20 +17,10 @@ import ReviewModal from '../../components/modals/BookingDetails/Review';
 import FAQsModal from '../../components/modals/BookingDetails/FAQs';
 import ProviderModal from '../../components/modals/BookingDetails/Provider';
 
-import { ReactComponent as Tick } from '../../svgs/tick.svg';
-
 class BookingDetails extends React.Component {
-  state = {
-    servicesModalOpen: false,
-    timingModalOpen: false,
-    locationModalOpen: false,
-    paymentModalOpen: false,
-    reviewModalOpen: false,
-    faqsModalOpen: false,
-    providerModalOpen: false
-  };
-
   render = () => {
+    const modal = this.props.location.hash;
+
     return (
       <div className="dv_wrapper">
         <Header
@@ -58,105 +51,65 @@ class BookingDetails extends React.Component {
           <Container>
             {/* This review system will enable after completing of payment */}
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                services <span className="dv_sm_overview">2 services </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ servicesModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  View
-                </a>
-              </span>
+              <SectionHeading
+                title="services"
+                subtitle="2 services"
+                modal="servicesModal"
+                linkText="View"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                Timing <span className="dv_sm_overview">12 Mar, 04 pm </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ timingModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  Reschedule
-                </a>
-              </span>
+              <SectionHeading
+                title="timing"
+                subtitle="12 Mar, 04 pm"
+                modal="timingModal"
+                linkText="Reschedule"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                location <span className="dv_sm_overview">Home </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ locationModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  View
-                </a>
-              </span>
+              <SectionHeading
+                title="location"
+                subtitle="Home"
+                modal="locationModal"
+                linkText="View"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                Payment <span className="dv_sm_overview">AED 114 </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ paymentModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  View
-                </a>
-              </span>
+              <SectionHeading
+                title="payment"
+                subtitle="AED 114"
+                modal="paymentModal"
+                linkText="View"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                Review
-                <span className="dv_sm_overview">
-                  Write review after payment completed
-                </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ reviewModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  Write
-                </a>
-              </span>
+              <SectionHeading
+                title="Review"
+                subtitle="Write review after payment complete"
+                modal="reviewModal"
+                linkText="Write"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                FAQ&apos;s <span className="dv_sm_overview">14 Questions </span>
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ faqsModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  View
-                </a>
-              </span>
+              <SectionHeading
+                title="FAQ's"
+                subtitle="14 Questions"
+                modal="faqsModal"
+                linkText="View"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
-              <span className="dv_section_heading">
-                <Tick />
-                Provider
-                {/* <span className="dv_sm_overview">Goodhand Technical LLC </span> */}
-                <a
-                  href="#!"
-                  onClick={() => this.setState({ providerModalOpen: true })}
-                  className="dv_edit_for_all"
-                >
-                  View
-                </a>
-              </span>
+              <SectionHeading
+                title="provider"
+                modal="providerModal"
+                linkText="View"
+              />
               <div className="dv_divider_in_booking_request" />
             </Row>
           </Container>
@@ -273,32 +226,32 @@ class BookingDetails extends React.Component {
         </div>
 
         <ServicesModal
-          isOpen={this.state.servicesModalOpen}
-          setOpen={open => this.setState({ servicesModalOpen: open })}
+          isOpen={modal === '#servicesModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <TimingModal
-          isOpen={this.state.timingModalOpen}
-          setOpen={open => this.setState({ timingModalOpen: open })}
+          isOpen={modal === '#timingModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <LocationModal
-          isOpen={this.state.locationModalOpen}
-          setOpen={open => this.setState({ locationModalOpen: open })}
+          isOpen={modal === '#locationModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <PaymentModal
-          isOpen={this.state.paymentModalOpen}
-          setOpen={open => this.setState({ paymentModalOpen: open })}
+          isOpen={modal === '#paymentModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <ReviewModal
-          isOpen={this.state.reviewModalOpen}
-          setOpen={open => this.setState({ reviewModalOpen: open })}
+          isOpen={modal === '#reviewModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <FAQsModal
-          isOpen={this.state.faqsModalOpen}
-          setOpen={open => this.setState({ faqsModalOpen: open })}
+          isOpen={modal === '#faqsModal'}
+          close={() => this.props.history.replace('/booking')}
         />
         <ProviderModal
-          isOpen={this.state.providerModalOpen}
-          setOpen={open => this.setState({ providerModalOpen: open })}
+          isOpen={modal === '#providerModal'}
+          close={() => this.props.history.replace('/booking')}
         />
 
         <div className="dv_continue_next">
@@ -322,4 +275,9 @@ class BookingDetails extends React.Component {
   };
 }
 
-export default BookingDetails;
+BookingDetails.propTypes = {
+  location: PropTypes.any,
+  history: PropTypes.any
+};
+
+export default withRouter(BookingDetails);

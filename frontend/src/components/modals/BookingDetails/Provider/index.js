@@ -20,19 +20,19 @@ import {
 import { ReactComponent as Reviews } from '../../../../svgs/reviews.svg';
 import { ReactComponent as House } from '../../../../svgs/house.svg';
 
-const Provider = ({ isOpen, setOpen }) => {
+const Provider = ({ isOpen, close }) => {
   return (
     <Modal
       id="providers"
       dialogClassName="dv_faqs_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Providers Details
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -191,7 +191,7 @@ const Provider = ({ isOpen, setOpen }) => {
 
 Provider.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Provider;

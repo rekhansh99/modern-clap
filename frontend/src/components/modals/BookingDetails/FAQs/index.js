@@ -10,19 +10,19 @@ import Card from 'react-bootstrap/Card';
 
 import { X, ChevronDown } from 'react-feather';
 
-const FAQs = ({ isOpen, setOpen }) => {
+const FAQs = ({ isOpen, close }) => {
   return (
     <Modal
       id="faqsquestion"
       dialogClassName="dv_faqs_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           FAQ&apos;s Question
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -197,7 +197,7 @@ const FAQs = ({ isOpen, setOpen }) => {
 
 FAQs.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default FAQs;

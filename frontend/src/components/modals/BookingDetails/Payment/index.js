@@ -11,19 +11,19 @@ import { X } from 'react-feather';
 
 import { ReactComponent as Tick } from '../../../../svgs/tick.svg';
 
-const Payment = ({ isOpen, setOpen }) => {
+const Payment = ({ isOpen, close }) => {
   return (
     <Modal
       id="viewpayment"
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Payment Summery
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{ border: 'none', padding: '15px', borderRadius: '0 0 5px 5px' }}
@@ -68,7 +68,7 @@ const Payment = ({ isOpen, setOpen }) => {
 
 Payment.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Payment;

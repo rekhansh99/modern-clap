@@ -8,19 +8,19 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import { X, List, CreditCard } from 'react-feather';
 
-const Services = ({ isOpen, setOpen }) => {
+const Services = ({ isOpen, close }) => {
   return (
     <Modal
       id="viewrequestdetails"
       dialogClassName="dv_choose_location_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
           Booking Details{' '}
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -63,7 +63,7 @@ const Services = ({ isOpen, setOpen }) => {
 
 Services.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Services;

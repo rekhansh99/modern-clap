@@ -11,13 +11,13 @@ import { X } from 'react-feather';
 
 import { ReactComponent as Clock } from '../../../../svgs/clock.svg';
 
-const Timing = ({ isOpen, setOpen }) => {
+const Timing = ({ isOpen, close }) => {
   return (
     <Modal
       id="resheduletime"
       dialogClassName="dv_reschedule_time_md_dialog"
       show={isOpen}
-      onHide={() => setOpen(false)}
+      onHide={close}
     >
       <ModalHeader>
         <ModalTitle
@@ -40,7 +40,7 @@ const Timing = ({ isOpen, setOpen }) => {
           />
           Reshdule the time
         </ModalTitle>
-        <X size={24} onClick={() => setOpen(false)} />
+        <X size={24} onClick={close} />
       </ModalHeader>
       <ModalBody
         style={{
@@ -150,7 +150,7 @@ const Timing = ({ isOpen, setOpen }) => {
 
 Timing.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 };
 
 export default Timing;
