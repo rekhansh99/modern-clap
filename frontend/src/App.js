@@ -47,7 +47,7 @@ function App() {
         <Route exact path="/reviews">
           <Reviews />
         </Route>
-        <Route exact path="/register-seller">
+        <Route exact path="/seller/register">
           <SellerRegistration />
         </Route>
       </Switch>
