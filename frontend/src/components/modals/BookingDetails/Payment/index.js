@@ -28,7 +28,7 @@ const Payment = ({ isOpen, close }) => {
       <ModalBody
         style={{ border: 'none', padding: '15px', borderRadius: '0 0 5px 5px' }}
       >
-        <div className="dv_ciuntry_based_filter">
+        <div className="dv_country_based_filter">
           <div className="dv_view_cart_visible">
             <ul>
               <li>

@@ -13,7 +13,7 @@ const DoneSuccessfully = ({ isOpen, close }) => {
   return (
     <Modal
       id="donesuccesfully"
-      dialogClassName="dv_choose_location_md_dialog"
+      dialogClassName="dv_done_successfully_md_dialog"
       show={isOpen}
       onHide={close}
     >

@@ -277,9 +277,7 @@ class BookingDetails extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="#!" data-toggle="modal" data-target="#resheduletime">
-                  Reshedule
-                </a>
+                <a href="#timingModal">Reshedule</a>
               </li>
             </ul>
           </Container>

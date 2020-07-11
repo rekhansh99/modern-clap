@@ -88,7 +88,7 @@ const FAQs = ({ isOpen, close }) => {
           <div className="dv_divider_in_booking_request" />
           <Card>
             <Card.Header className="dv_faq_card_header">
-              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="2">
                 Question will come here
                 <ChevronDown
                   style={{
@@ -100,7 +100,7 @@ const FAQs = ({ isOpen, close }) => {
                 />
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <p className="dv_sub_headings_para">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -114,7 +114,7 @@ const FAQs = ({ isOpen, close }) => {
           <div className="dv_divider_in_booking_request" />
           <Card>
             <Card.Header className="dv_faq_card_header">
-              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="3">
                 Question will come here
                 <ChevronDown
                   style={{
@@ -126,7 +126,7 @@ const FAQs = ({ isOpen, close }) => {
                 />
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="3">
               <Card.Body>
                 <p className="dv_sub_headings_para">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -140,7 +140,7 @@ const FAQs = ({ isOpen, close }) => {
           <div className="dv_divider_in_booking_request" />
           <Card>
             <Card.Header className="dv_faq_card_header">
-              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="4">
                 Question will come here
                 <ChevronDown
                   style={{
@@ -152,7 +152,7 @@ const FAQs = ({ isOpen, close }) => {
                 />
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="4">
               <Card.Body>
                 <p className="dv_sub_headings_para">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -166,7 +166,7 @@ const FAQs = ({ isOpen, close }) => {
           <div className="dv_divider_in_booking_request" />
           <Card>
             <Card.Header className="dv_faq_card_header">
-              <Accordion.Toggle as={Card.Link} variant="link" eventKey="1">
+              <Accordion.Toggle as={Card.Link} variant="link" eventKey="5">
                 Question will come here
                 <ChevronDown
                   style={{
@@ -178,7 +178,7 @@ const FAQs = ({ isOpen, close }) => {
                 />
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="5">
               <Card.Body>
                 <p className="dv_sub_headings_para">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed

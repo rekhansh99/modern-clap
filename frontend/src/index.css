@@ -93,7 +93,7 @@ ul.dv_country_based_ul > li > svg {
   margin: 0;
   padding: 0;
 }
-.dv_ciuntry_based_filter > ul.dv_country_based_ul:nth-last-child(1) {
+.dv_country_based_filter > ul.dv_country_based_ul:nth-last-child(1) {
   border: none;
   padding: 0;
   margin: 0;
@@ -442,7 +442,7 @@ input.form-control.dv_subscribe_us_input:active {
   right: 0;
 }
 .modal-content {
-  border-radius: 0;
+  border-radius: 5px;
   border: none;
 }
 .modal-header {
