@@ -626,6 +626,7 @@ button.btn.btn-default.dv_logout_btn {
 ul.dv_services_ul_height {
   height: 500px;
   overflow: auto;
+  text-transform: capitalize;
 }
 .dv_select_service_3 > ul > li.selected > svg:nth-child(2) {
   display: block !important;
@@ -771,6 +772,7 @@ button.btn.btn-default.dv_plus_minusbtn {
   background: #ced4da;
   color: #ffffff;
   border-radius: 0px;
+  border-color: transparent;
   line-height: 0px;
   width: 25px;
 }
@@ -1993,7 +1995,7 @@ span.dv_address_type {
 ul.nav.nav-tabs.dv_nav_tabs {
   border: none;
   list-style-type: none;
-  margin: 0;
+  margin: 15px 0;
   padding: 0;
   overflow-x: auto;
   overflow-y: hidden;
