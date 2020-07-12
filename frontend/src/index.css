@@ -207,7 +207,7 @@ img.dv_left_side_panel_img {
   z-index: 99;
   padding: 0 10px;
 }
-button.owl-prev.dv_sploffer_owl_prev {
+button.dv_sploffer_owl_prev {
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -217,7 +217,7 @@ button.owl-prev.dv_sploffer_owl_prev {
   border-radius: 50%;
   box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
 }
-button.owl-next.dv_sploffer_owl_next {
+button.dv_sploffer_owl_next {
   border: none !important;
   float: right;
   padding: 0 !important;
@@ -228,18 +228,18 @@ button.owl-next.dv_sploffer_owl_next {
   border-radius: 50%;
   box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
 }
-button.owl-next.dv_sploffer_owl_next > img,
-button.owl-prev.dv_sploffer_owl_prev > img {
+button.dv_sploffer_owl_next > img,
+button.dv_sploffer_owl_prev > img {
   width: 20px;
   position: relative;
   top: -2px;
 }
-button.owl-next:focus,
-button.owl-prev:focus,
-button.owl-next:visited,
-button.owl-prev:visited,
-button.owl-next:active,
-button.owl-prev:active {
+button.dv_sploffer_owl_next:focus,
+button.dv_sploffer_owl_prev:focus,
+button.dv_sploffer_owl_next:visited,
+button.dv_sploffer_owl_prev:visited,
+button.dv_sploffer_owl_next:active,
+button.dv_sploffer_owl_prev:active {
   outline: none;
   border: none;
 }
