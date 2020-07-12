@@ -95,12 +95,7 @@ const CategoryList = ({ title }) => {
   ));
 
   return (
-    <Col
-      lg={3}
-      md={12}
-      sm={12}
-      className="dv_select_service_3 dv_padding_left_0"
-    >
+    <Col lg={3} sm={12} className="dv_select_service_3 dv_padding_left_0">
       <h3>{title}</h3>
       <ul className="dv_services_ul_height">{categoriesJSX}</ul>
     </Col>

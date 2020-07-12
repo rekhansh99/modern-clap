@@ -19,7 +19,7 @@ const Bookings = () => {
         <div className="dv_my_booking_wrapper">
           <Container>
             <Row>
-              <Col lg={4} md={12} sm={12} xs={12}>
+              <Col lg={4} xs={12}>
                 <BookingCard
                   serviceName="men's hair cut"
                   bookingDate="12/12/2020, 04:00 PM"
@@ -27,7 +27,7 @@ const Bookings = () => {
                   cardDetails="your request no is MD54251"
                 />
               </Col>
-              <Col lg={4} md={12} sm={12} xs={12}>
+              <Col lg={4} xs={12}>
                 <BookingCard
                   serviceName="hair rebonding"
                   bookingDate="12/12/2020, 04:00 PM"
@@ -36,7 +36,7 @@ const Bookings = () => {
                   cardDetails="Review Pending"
                 />
               </Col>
-              <Col lg={4} md={12} sm={12} xs={12}>
+              <Col lg={4} xs={12}>
                 <BookingCard
                   serviceName="manicure"
                   bookingDate="12/12/2020, 04:00 PM"
@@ -44,7 +44,7 @@ const Bookings = () => {
                   cardDetails="cancelled by customer"
                 />
               </Col>
-              <Col lg={4} md={12} sm={12} xs={12}>
+              <Col lg={4} xs={12}>
                 <BookingCard
                   serviceName="pedicure"
                   bookingDate="12/12/2020, 04:00 PM"

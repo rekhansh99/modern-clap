@@ -10,7 +10,7 @@ const TwoBanner = () => {
     <div className="dv_middle_two_banner">
       <Container>
         <Row>
-          <Col lg={6} md={6} xs={12} className="dv_middle_two_banner_6">
+          <Col md={6} xs={12} className="dv_middle_two_banner_6">
             <Link to="#!">
               <img
                 src="https://k.nooncdn.com/cms/pages/20200625/fe9f59a1f6da2be0610e358552c855df/en_slider-01.gif"
@@ -18,7 +18,7 @@ const TwoBanner = () => {
               />
             </Link>
           </Col>
-          <Col lg={6} md={6} xs={12} className="dv_middle_two_banner_6">
+          <Col md={6} xs={12} className="dv_middle_two_banner_6">
             <Link to="#!">
               <img
                 src="https://k.nooncdn.com/cms/pages/20200625/fe9f59a1f6da2be0610e358552c855df/en_slider-01.gif"

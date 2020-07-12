@@ -9,14 +9,14 @@ const ImageText = () => {
     <div className="dv_left_img_txt">
       <Container>
         <Row>
-          <Col lg={5} md={12} sm={12} xs={12}>
+          <Col lg={5} xs={12}>
             <img
               className="dv_left_side_panel_img"
               src="images/safety-first.jpg"
               alt=""
             />
           </Col>
-          <Col lg={7} md={12} sm={12} xs={12}>
+          <Col lg={7} xs={12}>
             <div className="dv_heading_of_panel">safety first</div>
             <p className="dv_paragraph_of_panel">
               we are very care about our services and your safety is our first

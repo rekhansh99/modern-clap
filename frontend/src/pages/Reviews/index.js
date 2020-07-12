@@ -20,7 +20,7 @@ const Reviews = () => {
       <div className="dv_content">
         <div className="dv_review_counting_wrapper">
           <Container>
-            <Col lg={12} md={12} sm={12} xs={12} className="p-0">
+            <Col xs={12} className="p-0">
               <div className="dv_review_cards">
                 <img
                   src="data:image/jpeg;base64,UklGRkYDAABXRUJQVlA4IDoDAADwEQCdASpQAFAAPt1Wp0yopCOiMLTsqRAbiWMAyeWT3JI9GKvzTSr3TejDsMYKK19euSJoso2vsFCUN9+yy4EGOUzPpOWucU5F9wqR0oovb+0YH5xUsInOEuQtoWeVemxA+Kj1RihXELwid5iZmeHB9DIQGx4oiYl9UOTWJmBB/Z5eeehjKgNFkSrX9LkcHFxf9arJRVzSaAD++fDgoseDsVbxb76aYIFjoKqb3i5PELqn7uOfM/puC4zeKMc5gKO/gbmti8GQ2oItHhw0FWXSueiKsw5crEyfJ/xIrzD2ZYICiNtYMnCgn3WOAvz/wPLyttn1P2KDnL/ENTPhxSq8aob8wiWvBjLUc4irGhwrBGLxWi+KjZBn9KYUHwOFduFyWDdmPRxlqh1d5N+lcGxqL07troelvZ78Tp1lZzJXgp1U1DoUdiLmCfme5JWHJdfJZpfFZyX40noWzSIhCDQBnyOBm6IJIArR77ckdMH9l2283jqhI21cPOzwnwirZOBsPfFJUNvczQI/WBNRay0aBSMkMACDmRLwF9K487kouE/t28kaCLwGJOtDS7tTANSr5r4lV9l9dssjHrKRZV/DYlk9LVZLKG17W4ow019NJx+SzTVacU/o/WfflFMFRBzKB23Q7Ici6eeOf4pK2HybcPcNMSifUOp8qbR+fIwhxmMWrF5AsvEtWXfrsPvPeFQu4pGpSQUKgH9yCgbtIgN+GrCPMCxIyD2psVReB9Gsb8OAMUprtWnmSC1HW0icBfc/Ry/HkEPWW2rNHuaa7LJ1yAJJJ5iu+ejjXC5OSXq1Ctts222yow0zfOIzduHDWsuDHlPXAZDzDjL48PExYL3XztD06J4xtCciCadvE97xW8/4GeNwTT1s81KaMqB1HgvMbgItlsWL1J+5KVtC3csM5iZLsowdC88H9vAMWjlSRjk+eZSWrju6M2HwEL6Ii1dtxfE0VLdrcWM5OHP4Cxb+jzkcZLbJ4a7cyJToJDjALL5wqgXrifeY8TQfNCcUHbAxIZJj1/U2tsjyLDzFywQpmvyrfG4vPM/y2xoz5VmIhSCZ67gW+3kqNkej2PUKlm1GUJHZVGHr3QAA"
@@ -58,7 +58,7 @@ const Reviews = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={12} md={12} sm={12} xs={12} className="p-0">
+            <Col xs={12} className="p-0">
               <div className="dv_review_cards">
                 <img
                   src="data:image/jpeg;base64,UklGRkYDAABXRUJQVlA4IDoDAADwEQCdASpQAFAAPt1Wp0yopCOiMLTsqRAbiWMAyeWT3JI9GKvzTSr3TejDsMYKK19euSJoso2vsFCUN9+yy4EGOUzPpOWucU5F9wqR0oovb+0YH5xUsInOEuQtoWeVemxA+Kj1RihXELwid5iZmeHB9DIQGx4oiYl9UOTWJmBB/Z5eeehjKgNFkSrX9LkcHFxf9arJRVzSaAD++fDgoseDsVbxb76aYIFjoKqb3i5PELqn7uOfM/puC4zeKMc5gKO/gbmti8GQ2oItHhw0FWXSueiKsw5crEyfJ/xIrzD2ZYICiNtYMnCgn3WOAvz/wPLyttn1P2KDnL/ENTPhxSq8aob8wiWvBjLUc4irGhwrBGLxWi+KjZBn9KYUHwOFduFyWDdmPRxlqh1d5N+lcGxqL07troelvZ78Tp1lZzJXgp1U1DoUdiLmCfme5JWHJdfJZpfFZyX40noWzSIhCDQBnyOBm6IJIArR77ckdMH9l2283jqhI21cPOzwnwirZOBsPfFJUNvczQI/WBNRay0aBSMkMACDmRLwF9K487kouE/t28kaCLwGJOtDS7tTANSr5r4lV9l9dssjHrKRZV/DYlk9LVZLKG17W4ow019NJx+SzTVacU/o/WfflFMFRBzKB23Q7Ici6eeOf4pK2HybcPcNMSifUOp8qbR+fIwhxmMWrF5AsvEtWXfrsPvPeFQu4pGpSQUKgH9yCgbtIgN+GrCPMCxIyD2psVReB9Gsb8OAMUprtWnmSC1HW0icBfc/Ry/HkEPWW2rNHuaa7LJ1yAJJJ5iu+ejjXC5OSXq1Ctts222yow0zfOIzduHDWsuDHlPXAZDzDjL48PExYL3XztD06J4xtCciCadvE97xW8/4GeNwTT1s81KaMqB1HgvMbgItlsWL1J+5KVtC3csM5iZLsowdC88H9vAMWjlSRjk+eZSWrju6M2HwEL6Ii1dtxfE0VLdrcWM5OHP4Cxb+jzkcZLbJ4a7cyJToJDjALL5wqgXrifeY8TQfNCcUHbAxIZJj1/U2tsjyLDzFywQpmvyrfG4vPM/y2xoz5VmIhSCZ67gW+3kqNkej2PUKlm1GUJHZVGHr3QAA"

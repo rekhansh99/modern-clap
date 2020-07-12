@@ -21,7 +21,7 @@ const ContactUs = () => {
         <div className="dv_contactus_wrapper">
           <Container className="text-center">
             <Row>
-              <Col lg={4} md={4} csm={12} xs={12}>
+              <Col md={4} xs={12}>
                 <div className="dv_contact_cards">
                   <Mobile className="mb-4" height={50} width={50} />
                   <span>Mobile </span>
@@ -41,7 +41,7 @@ const ContactUs = () => {
                   </ul>
                 </div>
               </Col>
-              <Col lg={4} md={4} sm={12} xs={12}>
+              <Col md={4} xs={12}>
                 <div className="dv_contact_cards">
                   <Telephone className="mb-4" height={50} width={50} />
                   <span>Telephone </span>
@@ -61,7 +61,7 @@ const ContactUs = () => {
                   </ul>
                 </div>
               </Col>
-              <Col lg={4} md={4} sm={12} xs={12}>
+              <Col md={4} xs={12}>
                 <div className="dv_contact_cards">
                   <Email className="mb-4" height={50} width={50} />
                   <span>Email us </span>
