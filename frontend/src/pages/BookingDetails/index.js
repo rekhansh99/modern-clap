@@ -24,7 +24,9 @@ const BookingDetails = props => {
   const booking = {
     id: 'MD124587',
     services: ['manicure pedicure', 'GK keratin treatment'],
-    amount: 'AED 1200'
+    amount: 'AED 1200',
+    location:
+      '301, Buhaleeba Plaza, al muaraqabat road, Dubai, United Arab Emirates. P:O Box : 81748'
   };
 
   return (
@@ -192,6 +194,7 @@ const BookingDetails = props => {
       <LocationModal
         isOpen={modal === '#locationModal'}
         close={() => props.history.replace('/booking')}
+        location={booking.location}
       />
       <PaymentModal
         isOpen={modal === '#paymentModal'}
