@@ -8,7 +8,7 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import { X, List, CreditCard } from 'react-feather';
 
-const Services = ({ isOpen, close, services, amount }) => {
+const Services = ({ isOpen, close, services, payment }) => {
   const servicesJSX = services.map(service => (
     <li key={service} style={{ display: 'block', margin: '0 0 15px 0' }}>
       <Link to="#!">
@@ -50,7 +50,7 @@ const Services = ({ isOpen, close, services, amount }) => {
             </li>
             <li>
               <Link to="#!">
-                <strong>{amount}</strong>
+                <strong>{payment.currency + ' ' + payment.subTotal}</strong>
               </Link>
             </li>
           </ul>
@@ -64,7 +64,7 @@ Services.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
   services: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  amount: PropTypes.string.isRequired
+  payment: PropTypes.object.isRequired
 };
 
 export default Services;
