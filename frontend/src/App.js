@@ -14,10 +14,12 @@ import Reviews from './pages/Reviews';
 import SelectServices from './pages/SelectServices';
 import SellerRegistration from './pages/SellerRegistration';
 import ServiceDetails from './pages/ServiceDetails';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route exact path="/about-us">
           <AboutUs />
