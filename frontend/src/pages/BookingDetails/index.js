@@ -24,7 +24,13 @@ const BookingDetails = props => {
   const booking = {
     id: 'MD124587',
     services: ['manicure pedicure', 'GK keratin treatment'],
-    amount: 'AED 1200',
+    payment: {
+      currency: 'AED',
+      subTotal: 120,
+      vat: 5,
+      discount: 12,
+      status: 'Paying through cash after service'
+    },
     location:
       '301, Buhaleeba Plaza, al muaraqabat road, Dubai, United Arab Emirates. P:O Box : 81748'
   };
@@ -185,7 +191,7 @@ const BookingDetails = props => {
         isOpen={modal === '#servicesModal'}
         close={() => props.history.replace('/booking')}
         services={booking.services}
-        amount={booking.amount}
+        payment={booking.payment}
       />
       <TimingModal
         isOpen={modal === '#timingModal'}
@@ -199,6 +205,8 @@ const BookingDetails = props => {
       <PaymentModal
         isOpen={modal === '#paymentModal'}
         close={() => props.history.replace('/booking')}
+        payment={booking.payment}
+        numberOfServices={booking.services.length}
       />
       <ReviewModal
         isOpen={modal === '#reviewModal'}
