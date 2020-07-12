@@ -1992,7 +1992,7 @@ span.dv_address_type {
 ul.nav.nav-tabs.dv_nav_tabs {
   border: none;
   list-style-type: none;
-  margin: 15px 0;
+  margin: 15px 0 0 0;
   padding: 0;
   overflow-x: auto;
   overflow-y: hidden;

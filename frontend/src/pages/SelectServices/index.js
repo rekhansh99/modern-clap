@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FormControl from 'react-bootstrap/FormControl';
 import FormCheck from 'react-bootstrap/FormCheck';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import TabContainer from 'react-bootstrap/TabContainer';
 import TabContent from 'react-bootstrap/TabContent';
@@ -13,26 +14,33 @@ import TabPane from 'react-bootstrap/TabPane';
 import { ChevronLeft, Menu, MapPin, PlusSquare, Edit3 } from 'react-feather';
 import { Geo, PencilSquare, TrashFill, CartCheck } from 'react-bootstrap-icons';
 
+import MenuModal from '../../components/Menu';
 import SectionHeading from '../../components/SectionHeading';
 import CategoryList from '../../components/CategoryList';
 import ServicesList from '../../components/ServicesList';
 import TimingSelector from '../../components/TimingSelector';
-import Dropdown from 'react-bootstrap/esm/Dropdown';
+import CartModal from '../../components/modals/SelectServices/Cart';
 
 const SelectServices = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const activePane = useLocation().hash || '#saveaddress';
 
   return (
     <>
       <div className="dv_wrapper dv_book_request">
         <div className="dv_select_service_heading">
-          <div className="container">
-            <Link to="#!">
+          <Container>
+            <Link to="/">
               <ChevronLeft size={24} />
               Book Your Request
             </Link>
-            <Menu size={24} style={{ float: 'right' }} />
-          </div>
+            <Menu
+              size={24}
+              style={{ float: 'right' }}
+              onClick={() => setMenuOpen(true)}
+            />
+          </Container>
         </div>
         <div className="dv_select_service_page">
           <Container>
@@ -68,7 +76,7 @@ const SelectServices = () => {
               <div className="dv_add_divider">
                 <TabContainer
                   defaultActiveKey="#saveaddress"
-                  activeKey={activePane}
+                  activeKey={activePane || '#saveaddress'}
                 >
                   <Nav
                     as="ul"
@@ -168,11 +176,10 @@ const SelectServices = () => {
                             >
                               <FormCheck.Input
                                 type="checkbox"
-                                id="add1"
+                                id="add2"
                                 name="cash"
-                                defaultChecked
                               />
-                              <FormCheck.Label htmlFor="add1">
+                              <FormCheck.Label htmlFor="add2">
                                 <span className="dv_address_type">home</span>
                                 m-02 saraya plaza, al muraqabat road, near to al
                                 muraqabat metra, dubai, UAE
@@ -218,11 +225,10 @@ const SelectServices = () => {
                             >
                               <FormCheck.Input
                                 type="checkbox"
-                                id="add1"
+                                id="add3"
                                 name="cash"
-                                defaultChecked
                               />
-                              <FormCheck.Label htmlFor="add1">
+                              <FormCheck.Label htmlFor="add3">
                                 <span className="dv_address_type">home</span>
                                 m-02 buhaleeba plaza, al rigga road, near to al
                                 rigga station, dubai, UAE{' '}
@@ -439,24 +445,18 @@ const SelectServices = () => {
                   <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
                     <FormCheck.Input
                       type="checkbox"
-                      custom
                       id="cash"
                       name="cash"
                       defaultChecked
                     />
-                    <FormCheck.Label custom htmlFor="cash">
+                    <FormCheck.Label htmlFor="cash">
                       Paying through cash after service{' '}
                     </FormCheck.Label>
                   </Col>
                   <div className="dv_divider_in_booking_request" />
                   <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
-                    <FormCheck.Input
-                      type="checkbox"
-                      custom
-                      id="card"
-                      name="card"
-                    />
-                    <FormCheck.Label custom htmlFor="card">
+                    <FormCheck.Input type="checkbox" id="card" name="card" />
+                    <FormCheck.Label htmlFor="card">
                       Paying through card after service
                     </FormCheck.Label>
                   </Col>
@@ -489,11 +489,10 @@ const SelectServices = () => {
                   <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
                     <FormCheck.Input
                       type="checkbox"
-                      custom
                       id="iamsure"
                       defaultChecked
                     />
-                    <FormCheck.Label custom htmlFor="iamsure">
+                    <FormCheck.Label htmlFor="iamsure">
                       I am surely want to book this service and with this i am
                       accepting our{' '}
                       <a
@@ -511,11 +510,14 @@ const SelectServices = () => {
           </Container>
         </div>
       </div>
+
+      <CartModal isOpen={cartOpen} close={() => setCartOpen(false)} />
+
       <div className="dv_continue_next">
         <Container>
           <ul>
             <li>
-              <Link to="#!">
+              <Link to="#!" onClick={() => setCartOpen(true)}>
                 <CartCheck size={20} style={{ margin: '-4px 5px 0 0' }} />
                 cart - 15
               </Link>
@@ -526,6 +528,8 @@ const SelectServices = () => {
           </ul>
         </Container>
       </div>
+
+      <MenuModal open={menuOpen} showMenu={setMenuOpen} />
     </>
   );
 };
