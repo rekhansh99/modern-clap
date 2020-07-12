@@ -2072,7 +2072,7 @@ ul.nav.nav-tabs.dv_nav_tabs > li.nav-item:nth-child(1) > a {
 .addnewaddress {
   padding: 0 15px;
 }
-.accordion > .card {
+.card {
   overflow: visible;
   border: none;
 }
@@ -2099,4 +2099,307 @@ button.btn.btn-default.dv_seller_submit_btn {
   background: rgba(40, 116, 240, 0.05);
   padding: 25px 15px 75px 15px;
   border-radius: 5px;
+}
+
+/* chat css start */
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+.settings-tray {
+  background: #ebebeb;
+  padding: 10px 15px;
+}
+.settings-tray .no-gutters {
+  padding: 0;
+}
+.settings-tray--right {
+  float: right;
+}
+.settings-tray--right i {
+  margin-top: 10px;
+  font-size: 25px;
+  color: grey;
+  margin-left: 14px;
+  transition: 0.3s;
+}
+.settings-tray--right i:hover {
+  color: #74b9ff;
+  cursor: pointer;
+}
+.search-box {
+  background: #fafafa;
+  padding: 10px 13px;
+}
+.search-box .input-wrapper {
+  background: #fff;
+  border-radius: 40px;
+}
+.search-box .input-wrapper i {
+  color: grey;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+input {
+  border: none;
+  border-radius: 30px;
+  width: 80%;
+}
+input::placeholder {
+  color: #e3e3e3;
+  font-weight: 300;
+  margin-left: 20px;
+}
+input:focus {
+  outline: 0;
+}
+.customer-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #fff;
+  transition: 0.3s ease;
+  border-bottom: 1px solid rgb(235, 235, 235, 0.7);
+}
+.customer-drawer--grey {
+  background: #eee;
+}
+.customer-drawer .text {
+  margin-left: 12px;
+  width: 70%;
+}
+.customer-drawer .text h6 {
+  margin-top: 6px;
+  color: #282828;
+  margin-bottom: 0;
+}
+.customer-drawer .text p {
+  margin: 0;
+}
+.customer-drawer .time {
+  color: grey;
+}
+.customer-drawer--onhover:hover {
+  background: #007bff;
+  cursor: pointer;
+}
+.customer-drawer--onhover:hover p,
+.customer-drawer--onhover:hover h6,
+.customer-drawer--onhover:hover .time {
+  color: #fff !important;
+}
+hr {
+  margin: 5px auto;
+  width: 60%;
+}
+.chat-bubble--right {
+  float: right;
+  background: #007bff !important;
+  color: #ffffff;
+}
+.chat-bubble {
+  font-size: 13px;
+  display: block;
+  width: fit-content;
+  padding: 10px 14px;
+  background: #eee;
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+.chat-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom: 0;
+  margin-top: -10px;
+}
+.chat-bubble--left:after {
+  left: 0;
+  border-right-color: #eee;
+  border-left: 0;
+  margin: -1px 0 0 -9px;
+}
+.chat-bubble--right:after {
+  right: 0;
+  border-left-color: #007bff;
+  border-right: 0;
+  margin: -4px -6px 0 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.offset-md-9 .chat-bubble {
+  background: #74b9ff;
+  color: #fff;
+}
+.chat-box-tray {
+  background: #eee;
+  display: flex;
+  align-items: baseline;
+  padding: 10px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+}
+.chat-box-tray input {
+  margin: 0 10px;
+  padding: 6px 2px;
+}
+.chat-box-tray i {
+  color: grey;
+  font-size: 30px;
+  vertical-align: middle;
+}
+.chat-box-tray i:last-of-type {
+  margin-left: 25px;
+}
+.border-none {
+  border: none;
+}
+
+input.form-control.dv_search_customer {
+  border-color: #ffffff;
+  padding: 15px;
+  height: 51px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  margin: 0;
+  border-radius: 35px;
+}
+.dv_left_customer_height {
+  overflow: auto;
+}
+.dv_right_customer_chat {
+  height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+input.form-control.dv_type_txt_reply {
+  border-color: #ffffff;
+  padding: 15px;
+  height: 51px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  margin: 0 15px;
+  border-radius: 35px;
+}
+
+.dv_left_customer_height::-webkit-scrollbar {
+  width: 4px;
+}
+.dv_left_customer_height::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+  border-radius: 5px;
+}
+.dv_left_customer_height::-webkit-scrollbar-track {
+  background: #ebebeb;
+}
+.dv_left_customer_height::-webkit-scrollbar-thumb:hover {
+  background: #ebebeb;
+}
+
+.dv_right_customer_chat::-webkit-scrollbar {
+  width: 4px;
+}
+.dv_right_customer_chat::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+  border-radius: 5px;
+}
+.dv_right_customer_chat::-webkit-scrollbar-track {
+  background: #ebebeb;
+}
+.dv_right_customer_chat::-webkit-scrollbar-thumb:hover {
+  background: #ebebeb;
+}
+ul.dv_chat_features {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.dv_chat_features > li > svg {
+  width: 20px;
+  height: 20px;
+  color: #999;
+}
+ul.dv_chat_features > li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+  line-height: 42px;
+}
+.chat-box-tray > svg {
+  cursor: pointer;
+}
+ul.dv_chat_media_option {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.dv_chat_media_option > li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+ul.dv_chat_media_option > li > a {
+  margin: 0;
+  padding: 0;
+}
+
+.customer-drawer.customer-drawer--onhover > .text > p.text-muted,
+.customer-drawer.customer-drawer--onhover > .text > h6 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.customer-drawer.customer-drawer--onhover.active {
+  background: #ebebeb;
+  border: none !important;
+}
+.customer-drawer.customer-drawer--onhover.active:hover h6 {
+  color: #282828 !important;
+}
+
+/*chat css end*/
+
+div#resheduletime:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+}
+.dropdown.dv_more_seller_information {
+  position: absolute;
+  right: 46px;
+  color: #999999;
+}
+.dropdown-menu.dv_more_seller_information_drp {
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 13px;
+  width: 200px;
+  margin: 10px 0 0 -75px;
+}
+.dropdown-menu.dv_more_seller_information_drp > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-menu.dv_more_seller_information_drp > ul > li {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
