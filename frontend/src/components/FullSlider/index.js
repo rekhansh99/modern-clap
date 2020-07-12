@@ -12,7 +12,7 @@ const FullSlider = props => {
     <div className="item dv_home_page_slider_item" key={i}>
       <Link to="#!">
         {/* for mobile version we will use diffrent img tag */}
-        <img src={image} alt="Full slider image" />
+        <img src={image} alt="Full slider" />
       </Link>
     </div>
   ));
