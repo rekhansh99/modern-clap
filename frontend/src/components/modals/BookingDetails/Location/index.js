@@ -8,7 +8,7 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import { X, MapPin } from 'react-feather';
 
-const Location = ({ isOpen, close }) => {
+const Location = ({ isOpen, close, location }) => {
   return (
     <Modal
       id="viewlocation"
@@ -36,10 +36,7 @@ const Location = ({ isOpen, close }) => {
             </li>
             <li style={{ display: 'block', margin: '0 0 15px 0' }}>
               <Link to="#!" style={{ background: 'no-repeat', padding: 0 }}>
-                <strong>
-                  301, Buhaleeba Plaza, al muaraqabat road, Dubai, United Arab
-                  Emirates. P:O Box : 81748{' '}
-                </strong>{' '}
+                <strong>{location}</strong>
               </Link>
             </li>
           </ul>
@@ -51,7 +48,8 @@ const Location = ({ isOpen, close }) => {
 
 Location.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  location: PropTypes.string.isRequired
 };
 
 export default Location;

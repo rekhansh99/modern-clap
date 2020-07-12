@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import ItemsCarousel from 'react-items-carousel';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-const FullSlider = () => {
+const FullSlider = props => {
   const [activeItem, setActiveItem] = useState(0);
 
-  const images = [
-    '/images/slider.jpg',
-    '/images/slider.jpg',
-    '/images/slider.jpg'
-  ];
-  const imagesJSX = images.map((image, i) => (
+  const imagesJSX = props.images.map((image, i) => (
     <div className="item dv_home_page_slider_item" key={i}>
       <Link to="#!">
         {/* for mobile version we will use diffrent img tag */}
-        <img src={image} alt="" />
+        <img src={image} alt="Full slider" />
       </Link>
     </div>
   ));
@@ -52,6 +48,10 @@ const FullSlider = () => {
       </Container>
     </div>
   );
+};
+
+FullSlider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
 };
 
 export default FullSlider;

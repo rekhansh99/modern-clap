@@ -12,6 +12,8 @@ import ImageText from '../../components/ImageText';
 import CategoryBox from '../../components/CategoryBox';
 
 const Landing = () => {
+  const fullSliderImages = ['/images/slider.jpg', '/images/slider.jpg'];
+
   return (
     <div className="dv_wrapper">
       <Header
@@ -25,7 +27,7 @@ const Landing = () => {
         search={true}
       />
       <div className="dv_content">
-        <FullSlider />
+        <FullSlider images={fullSliderImages} />
         <CategoryBox />
         <FullBanner />
         <TwoBanner />

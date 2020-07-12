@@ -9,6 +9,46 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const Bookings = () => {
+  const bookings = [
+    {
+      serviceName: "men's hair cut",
+      bookingDate: '12/12/2020, 04:00 PM',
+      status: 'upcoming',
+      cardDetails: 'your request no is MD54251'
+    },
+    {
+      serviceName: 'hair rebonding',
+      bookingDate: '12/12/2020, 04:00 PM',
+      status: 'completed',
+      detailsColor: 'red',
+      cardDetails: 'Review Pending'
+    },
+    {
+      serviceName: 'manicure',
+      bookingDate: '12/12/2020, 04:00 PM',
+      status: 'cancelled',
+      cardDetails: 'cancelled by customer'
+    },
+    {
+      serviceName: 'pedicure',
+      bookingDate: '12/12/2020, 04:00 PM',
+      status: 'upcoming',
+      cardDetails: 'your request no is MD54251'
+    }
+  ];
+
+  const bookingsJSX = bookings.map(booking => (
+    <Col key={booking.serviceName} lg={4} xs={12}>
+      <BookingCard
+        serviceName={booking.serviceName}
+        bookingDate={booking.bookingDate}
+        status={booking.status}
+        detailsColor={booking.detailsColor}
+        cardDetails={booking.cardDetails}
+      />
+    </Col>
+  ));
+
   return (
     <div className="dv_wrapper">
       <Header
@@ -18,41 +58,7 @@ const Bookings = () => {
       <div className="dv_content">
         <div className="dv_my_booking_wrapper">
           <Container>
-            <Row>
-              <Col lg={4} xs={12}>
-                <BookingCard
-                  serviceName="men's hair cut"
-                  bookingDate="12/12/2020, 04:00 PM"
-                  status="upcoming"
-                  cardDetails="your request no is MD54251"
-                />
-              </Col>
-              <Col lg={4} xs={12}>
-                <BookingCard
-                  serviceName="hair rebonding"
-                  bookingDate="12/12/2020, 04:00 PM"
-                  status="completed"
-                  detailsColor="red"
-                  cardDetails="Review Pending"
-                />
-              </Col>
-              <Col lg={4} xs={12}>
-                <BookingCard
-                  serviceName="manicure"
-                  bookingDate="12/12/2020, 04:00 PM"
-                  status="cancelled"
-                  cardDetails="cancelled by customer"
-                />
-              </Col>
-              <Col lg={4} xs={12}>
-                <BookingCard
-                  serviceName="pedicure"
-                  bookingDate="12/12/2020, 04:00 PM"
-                  status="cancelled"
-                  cardDetails="cancelled by customer"
-                />
-              </Col>
-            </Row>
+            <Row>{bookingsJSX}</Row>
           </Container>
         </div>
       </div>

@@ -8,7 +8,15 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import { X, List, CreditCard } from 'react-feather';
 
-const Services = ({ isOpen, close }) => {
+const Services = ({ isOpen, close, services, payment }) => {
+  const servicesJSX = services.map(service => (
+    <li key={service} style={{ display: 'block', margin: '0 0 15px 0' }}>
+      <Link to="#!">
+        <strong>{service}</strong>
+      </Link>
+    </li>
+  ));
+
   return (
     <Modal
       id="viewrequestdetails"
@@ -18,7 +26,7 @@ const Services = ({ isOpen, close }) => {
     >
       <ModalHeader>
         <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
-          Booking Details{' '}
+          Booking Details
         </ModalTitle>
         <X size={24} onClick={close} />
       </ModalHeader>
@@ -34,16 +42,7 @@ const Services = ({ isOpen, close }) => {
             <li>
               <List size={24} /> Services
             </li>
-            <li style={{ display: 'block', margin: '0 0 15px 0' }}>
-              <Link to="#!">
-                <strong>manicure pedicure</strong>{' '}
-              </Link>
-            </li>
-            <li style={{ display: 'block', margin: '0 0 15px 0' }}>
-              <Link to="#!">
-                <strong>GK keratin treatment</strong>{' '}
-              </Link>
-            </li>
+            {servicesJSX}
           </ul>
           <ul className="dv_country_based_ul">
             <li>
@@ -51,7 +50,7 @@ const Services = ({ isOpen, close }) => {
             </li>
             <li>
               <Link to="#!">
-                <strong>AED 1200</strong>{' '}
+                <strong>{payment.currency + ' ' + payment.subTotal}</strong>
               </Link>
             </li>
           </ul>
@@ -63,7 +62,9 @@ const Services = ({ isOpen, close }) => {
 
 Services.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  services: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  payment: PropTypes.object.isRequired
 };
 
 export default Services;

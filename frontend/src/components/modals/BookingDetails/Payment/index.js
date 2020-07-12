@@ -11,7 +11,8 @@ import { X } from 'react-feather';
 
 import { ReactComponent as Tick } from '../../../../svgs/tick.svg';
 
-const Payment = ({ isOpen, close }) => {
+const Payment = ({ isOpen, close, payment, numberOfServices }) => {
+  const vatAmount = (payment.subTotal * payment.vat) / 100;
   return (
     <Modal
       id="viewpayment"
@@ -32,16 +33,24 @@ const Payment = ({ isOpen, close }) => {
           <div className="dv_view_cart_visible">
             <ul>
               <li>
-                Total : 5 services <span>AED 120</span>
+                Total : {numberOfServices} services{' '}
+                <span>{payment.currency + ' ' + payment.subTotal}</span>
               </li>
               <li>
-                VAT 5% : <span>AED 6</span>
+                VAT {payment.vat}% :{' '}
+                <span>{payment.currency + ' ' + vatAmount}</span>
               </li>
               <li>
-                Discount : <span>AED 12</span>
+                Discount :{' '}
+                <span>{payment.currency + ' ' + payment.discount}</span>
               </li>
               <li>
-                Grand Total : <span>AED 114</span>
+                Grand Total :{' '}
+                <span>
+                  {payment.currency +
+                    ' ' +
+                    +(payment.subTotal + vatAmount - payment.discount)}
+                </span>
               </li>
             </ul>
           </div>
@@ -57,7 +66,7 @@ const Payment = ({ isOpen, close }) => {
                   margin: '5px 15px 0 20px'
                 }}
               />
-              Paying through cash after service
+              {payment.status}
             </Col>
           </Row>
         </div>
@@ -68,7 +77,9 @@ const Payment = ({ isOpen, close }) => {
 
 Payment.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  payment: PropTypes.object.isRequired,
+  numberOfServices: PropTypes.number.isRequired
 };
 
 export default Payment;
