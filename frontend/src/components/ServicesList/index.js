@@ -9,12 +9,7 @@ import { Plus, Minus } from 'react-feather';
 
 const ServicesList = () => {
   return (
-    <Col
-      lg={6}
-      md={12}
-      sm={12}
-      className="dv_select_service_3 dv_padding_left_0"
-    >
+    <Col lg={6} sm={12} className="dv_select_service_3 p-0">
       <h3>services </h3>
       <ul className="dv_select_service_ul dv_last_service_border">
         <li>

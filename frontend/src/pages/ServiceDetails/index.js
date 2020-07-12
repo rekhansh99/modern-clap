@@ -35,7 +35,7 @@ const ServiceDetails = () => {
         <div className="dv_service_details_information">
           <Container>
             <Row className="flex-xl-nowrap">
-              <Col md={12} lg={12} xl={12}>
+              <Col md={12}>
                 <TabContainer activeKey={activePane}>
                   <Nav
                     as="ul"
@@ -236,10 +236,7 @@ const ServiceDetails = () => {
                         </div>
                         <Row>
                           <Col
-                            xl={6}
                             lg={6}
-                            md={12}
-                            sm={12}
                             xs={12}
                             className="dv_provider_details_12"
                           >
@@ -280,10 +277,7 @@ const ServiceDetails = () => {
                             </div>
                           </Col>
                           <Col
-                            xl={6}
                             lg={6}
-                            md={12}
-                            sm={12}
                             xs={12}
                             className="dv_provider_details_12"
                           >

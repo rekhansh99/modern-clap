@@ -83,7 +83,7 @@ const CategoryBox = () => {
   ];
 
   const categoriesJSX = categories.map(category => (
-    <Col md={2} sm={4} xs={4} className="dv_all_cat_2" key={category.name}>
+    <Col md={2} xs={4} className="dv_all_cat_2" key={category.name}>
       <Link to={'/select-services/' + category.url}>
         {category.icon}
         {category.name}

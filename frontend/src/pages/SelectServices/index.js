@@ -116,16 +116,11 @@ const SelectServices = () => {
                           <Row style={{ width: '100%', margin: 0 }}>
                             <Col
                               as={FormCheck}
-                              type="checkbox"
                               custom
-                              lg={12}
-                              md={12}
-                              sm={12}
                               xs={12}
                               className="dv_save_address_list"
                             >
                               <FormCheck.Input
-                                type="checkbox"
                                 id="add1"
                                 name="cash"
                                 defaultChecked
@@ -166,19 +161,11 @@ const SelectServices = () => {
                             <div className="dv_divider_in_booking_request" />
                             <Col
                               as={FormCheck}
-                              lg={12}
-                              md={12}
-                              sm={12}
                               xs={12}
                               custom
-                              type="checkbox"
                               className="dv_save_address_list"
                             >
-                              <FormCheck.Input
-                                type="checkbox"
-                                id="add2"
-                                name="cash"
-                              />
+                              <FormCheck.Input id="add2" name="cash" />
                               <FormCheck.Label htmlFor="add2">
                                 <span className="dv_address_type">home</span>
                                 m-02 saraya plaza, al muraqabat road, near to al
@@ -215,19 +202,11 @@ const SelectServices = () => {
                             <div className="dv_divider_in_booking_request" />
                             <Col
                               as={FormCheck}
-                              type="checkbox"
                               custom
-                              lg={12}
-                              md={12}
-                              sm={12}
                               xs={12}
                               className="dv_save_address_list"
                             >
-                              <FormCheck.Input
-                                type="checkbox"
-                                id="add3"
-                                name="cash"
-                              />
+                              <FormCheck.Input id="add3" name="cash" />
                               <FormCheck.Label htmlFor="add3">
                                 <span className="dv_address_type">home</span>
                                 m-02 buhaleeba plaza, al rigga road, near to al
@@ -279,13 +258,7 @@ const SelectServices = () => {
                         Add New addres or search location{' '}
                       </span>
                       <Row>
-                        <Col
-                          lg={6}
-                          md={12}
-                          sm={12}
-                          xs={12}
-                          className="dv_padding_left_0"
-                        >
+                        <Col lg={6} xs={12} className="dv_padding_left_0">
                           <FormControl
                             type="text"
                             id="searchlocation"
@@ -303,20 +276,14 @@ const SelectServices = () => {
                             frameBorder={0}
                           />
                         </Col>
-                        <Col
-                          lg={6}
-                          md={12}
-                          sm={12}
-                          xs={12}
-                          className="dv_padding_right_0"
-                        >
+                        <Col lg={6} xs={12} className="dv_padding_right_0">
                           {/*  <button type="button" class="btn btn-default dv_use_current_location">
                                                     <svg style="width: 20px; margin: 0 15px 0 0;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                                                     Use Current Location
                                                 </button> */}
                           <div className="dv_location_wrapper">
                             <Row>
-                              <Col lg={6} md={12} sm={12} xs={12}>
+                              <Col lg={6} xs={12}>
                                 <FormControl
                                   type="text"
                                   className="dv_all_location_feild_input dv_error_for_input"
@@ -324,7 +291,7 @@ const SelectServices = () => {
                                   id="FlatNo"
                                 />
                               </Col>
-                              <Col lg={6} md={12} sm={12} xs={12}>
+                              <Col lg={6} xs={12}>
                                 <FormControl
                                   type="text"
                                   className="dv_all_location_feild_input"
@@ -334,7 +301,7 @@ const SelectServices = () => {
                               </Col>
                             </Row>
                             <Row>
-                              <Col lg={6} md={12} sm={12} xs={12}>
+                              <Col lg={6} xs={12}>
                                 <FormControl
                                   type="text"
                                   className="dv_all_location_feild_input"
@@ -342,7 +309,7 @@ const SelectServices = () => {
                                   id="Residence"
                                 />
                               </Col>
-                              <Col lg={6} md={12} sm={12} xs={12}>
+                              <Col lg={6} xs={12}>
                                 <FormControl
                                   type="text"
                                   className="dv_all_location_feild_input"
@@ -355,71 +322,35 @@ const SelectServices = () => {
                               as="ul"
                               className="dv_select_location_Address_type"
                             >
-                              <Col
-                                as={FormCheck}
-                                custom
-                                lg={4}
-                                md={4}
-                                sm={4}
-                                xs={4}
-                                type="checkbox"
-                              >
-                                <FormCheck.Input
-                                  type="checkbox"
-                                  id="Home"
-                                  name="example1"
-                                />
+                              <Col as={FormCheck} custom xs={4}>
+                                <FormCheck.Input id="Home" name="example1" />
                                 <FormCheck.Label htmlFor="Home">
                                   Home{' '}
                                 </FormCheck.Label>
                               </Col>
-                              <Col
-                                as={FormCheck}
-                                custom
-                                lg={4}
-                                md={4}
-                                sm={4}
-                                xs={4}
-                                type="checkbox"
-                              >
-                                <FormCheck.Input
-                                  type="checkbox"
-                                  id="Office"
-                                  name="example1"
-                                />
+                              <Col as={FormCheck} custom xs={4}>
+                                <FormCheck.Input id="Office" name="example1" />
                                 <FormCheck.Label htmlFor="Office">
                                   Office{' '}
                                 </FormCheck.Label>
                               </Col>
-                              <Col
-                                as={FormCheck}
-                                custom
-                                lg={4}
-                                md={4}
-                                sm={4}
-                                xs={4}
-                                type="checkbox"
-                              >
-                                <FormCheck.Input
-                                  type="checkbox"
-                                  id="Other"
-                                  name="example1"
-                                />
+                              <Col as={FormCheck} custom xs={4}>
+                                <FormCheck.Input id="Other" name="example1" />
                                 <FormCheck.Label htmlFor="Other">
                                   Other{' '}
                                 </FormCheck.Label>
                               </Col>
                             </Row>
-                            <div className="row dv_md_margin_0">
-                              <div className="lg={12} md={12} sm={12} xs={12} col-12 dv_padding_right_0">
+                            <Row className="dv_md_margin_0">
+                              <Col xs={12} className="dv_padding_right_0">
                                 <button
                                   type="button"
                                   className="btn btn-default dv_save_address_location"
                                 >
                                   Save Address
                                 </button>
-                              </div>
-                            </div>
+                              </Col>
+                            </Row>
                           </div>
                         </Col>
                       </Row>
@@ -442,30 +373,25 @@ const SelectServices = () => {
               />
               <div className="dv_payment_selection">
                 <Row style={{ width: '100%', margin: 0 }}>
-                  <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
-                    <FormCheck.Input
-                      type="checkbox"
-                      id="cash"
-                      name="cash"
-                      defaultChecked
-                    />
+                  <Col as={FormCheck} custom xs={12}>
+                    <FormCheck.Input id="cash" name="cash" defaultChecked />
                     <FormCheck.Label htmlFor="cash">
                       Paying through cash after service{' '}
                     </FormCheck.Label>
                   </Col>
                   <div className="dv_divider_in_booking_request" />
-                  <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
-                    <FormCheck.Input type="checkbox" id="card" name="card" />
+                  <Col as={FormCheck} custom xs={12}>
+                    <FormCheck.Input id="card" name="card" />
                     <FormCheck.Label htmlFor="card">
                       Paying through card after service
                     </FormCheck.Label>
                   </Col>
                   <div className="dv_divider_in_booking_request" />
                   {/* 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="cardonline" name="cardonline">
-                    <label class="custom-control-label" for="cardonline">Add Cards and Pay through Online  </label>
-                </div> */}
+                <Col as= {FormCheck} xs={12} custom>
+                    <FormCheck.Input id="cardonline" name="cardonline">
+                    <FormCheck.Label for="cardonline">Add Cards and Pay through Online  </FormCheck.Label>
+                </Col> */}
                 </Row>
               </div>
               <div className="dv_view_cart_visible">
@@ -486,21 +412,17 @@ const SelectServices = () => {
               </div>
               <div className="dv_payment_selection">
                 <Row style={{ width: '100%', margin: 0 }}>
-                  <Col as={FormCheck} custom lg={12} md={12} sm={12} xs={12}>
-                    <FormCheck.Input
-                      type="checkbox"
-                      id="iamsure"
-                      defaultChecked
-                    />
+                  <Col as={FormCheck} custom xs={12}>
+                    <FormCheck.Input id="iamsure" defaultChecked />
                     <FormCheck.Label htmlFor="iamsure">
                       I am surely want to book this service and with this i am
                       accepting our{' '}
-                      <a
+                      <Link
                         style={{ color: '#282828', fontWeight: 800 }}
-                        href="#!"
+                        to="/terms-and-conditions"
                       >
                         Terms &amp; Condition.{' '}
-                      </a>{' '}
+                      </Link>{' '}
                     </FormCheck.Label>
                   </Col>
                 </Row>

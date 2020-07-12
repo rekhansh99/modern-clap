@@ -51,43 +51,19 @@ const Review = ({ isOpen, close }) => {
             defaultValue={''}
           />
           <Row>
-            <Col
-              lg={6}
-              md={6}
-              sm={6}
-              xs={12}
-              className="dv_raing_per_field_wrapper"
-            >
+            <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Tools </label>
               <div className="dv_give_rating" />
             </Col>
-            <Col
-              lg={6}
-              md={6}
-              sm={6}
-              xs={12}
-              className="dv_raing_per_field_wrapper"
-            >
+            <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Work </label>
               <div className="dv_give_rating" />
             </Col>
-            <Col
-              lg={6}
-              md={6}
-              sm={6}
-              xs={12}
-              className="dv_raing_per_field_wrapper"
-            >
+            <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Behaviour </label>
               <div className="dv_give_rating" />
             </Col>
-            <Col
-              lg={6}
-              md={6}
-              sm={6}
-              xs={12}
-              className="dv_raing_per_field_wrapper"
-            >
+            <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Overall rating </label>
               <div className="dv_give_rating" />
             </Col>
