@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import ItemsCarousel from 'react-items-carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-const RepeatSlider = props => {
-  const [activeItem, setActiveItem] = useState(0);
+import 'swiper/swiper-bundle.min.css';
 
+SwiperCore.use([Navigation]);
+
+const RepeatSlider = props => {
   const sliderItemsJSX = props.items.map((item, i) => (
-    <div className="item" key={i}>
-      <Link to={item.link}>
-        <img
-          className="owlsliderimg"
-          height={199}
-          src={item.src}
-          alt={item.alt}
-        />
-        <div className="dv_img_title">{item.title}</div>
-      </Link>
-    </div>
+    <SwiperSlide key={i}>
+      <div className="item">
+        <Link to={item.link}>
+          <img className="owlsliderimg" src={item.src} alt={item.alt} />
+          <div className="dv_img_title">{item.title}</div>
+        </Link>
+      </div>
+    </SwiperSlide>
   ));
 
   return (
@@ -28,33 +28,47 @@ const RepeatSlider = props => {
       <Container>
         <h3 className="dv_repeat_slider_heading">{props.heading}</h3>
         <p className="dv_repeat_slider_para">{props.desc}</p>
-        <ItemsCarousel
-          activeItemIndex={activeItem}
-          requestToChangeActive={setActiveItem}
-          numberOfCards={3}
-          infiniteLoop={true}
-          gutter={15}
-          showSlither={true}
-          slidesToScroll={1}
-          leftChevron={
-            <button type="button" className="dv_sploffer_owl_prev">
-              <ChevronLeft />
-            </button>
-          }
-          rightChevron={
-            <button type="button" className="dv_sploffer_owl_next">
-              <ChevronRight />
-            </button>
-          }
-          classes={{
-            itemsInnerWrapper: 'position-relative',
-            itemWrapper: 'w-auto position-relative',
-            rightChevronWrapper: 'p-2',
-            leftChevronWrapper: 'p-2'
+        <Swiper
+          spaceBetween={15}
+          slidesPerView={3}
+          loop={true}
+          navigation={{
+            nextEl: '.dv_sploffer_owl_next',
+            prevEl: '.dv_sploffer_owl_prev'
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1
+            },
+            480: {
+              slidesPerView: 1
+            },
+            600: {
+              slidesPerView: 2
+            },
+            991: {
+              slidesPerView: 3
+            }
           }}
         >
           {sliderItemsJSX}
-        </ItemsCarousel>
+          <div className="owl-nav">
+            <button
+              slot="container-end"
+              type="button"
+              className="dv_sploffer_owl_prev"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              slot="container-end"
+              type="button"
+              className="dv_sploffer_owl_next"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </Swiper>
       </Container>
     </div>
   );

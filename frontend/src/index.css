@@ -199,7 +199,7 @@ img.dv_left_side_panel_img {
   margin: 0 0 60px 0;
 }
 
-.dv_home_slider > .owl-nav {
+.owl-nav {
   width: 100%;
   left: 0;
   top: 45%;
