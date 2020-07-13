@@ -15,6 +15,7 @@ import SelectServices from './pages/SelectServices';
 import SellerRegistration from './pages/SellerRegistration';
 import ServiceDetails from './pages/ServiceDetails';
 import ScrollToTop from './components/ScrollToTop';
+import MobileSeach from './pages/Mobile/Search';
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
         </Route>
         <Route exact path="/service">
           <ServiceDetails />
+        </Route>
+        <Route exact path="/search">
+          <MobileSeach />
         </Route>
       </Switch>
     </Router>
