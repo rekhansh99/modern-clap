@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ArrowLeft, X } from 'react-feather';
+import { useHistory } from 'react-router-dom';
 
 const Search = () => {
+  const history = useHistory();
+  const [searchInput, setSearchInput] = useState('');
+
   const trendingServices = [
     { name: 'room cleaning', link: '#!' },
     { name: 'hair cutting', link: '#!' },
@@ -36,14 +40,15 @@ const Search = () => {
   return (
     <React.Fragment>
       <div className="dv_search_header">
-        <ArrowLeft />
+        <ArrowLeft onClick={() => history.goBack()} />
         <input
           type="text"
           className="form-control dv_search_mobile_input"
-          name
           placeholder="Search here"
+          value={searchInput}
+          onChange={e => setSearchInput(e.target.value)}
         />
-        <X />
+        <X onClick={() => setSearchInput('')} />
       </div>
       <div className="dv_mobile_search_wrapper">
         <div className="dv_trending_bullets">
