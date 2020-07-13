@@ -15,7 +15,7 @@ import SelectServices from './pages/SelectServices';
 import SellerRegistration from './pages/SellerRegistration';
 import ServiceDetails from './pages/ServiceDetails';
 import ScrollToTop from './components/ScrollToTop';
-import MobileSeach from './pages/Mobile/Search';
+import MobileSeach from './pages/mobile/Search';
 
 function App() {
   return (
