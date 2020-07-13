@@ -6,14 +6,37 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
-import { Menu, ChevronDown } from 'react-feather';
-
-import { ReactComponent as India } from '../../svgs/india.svg';
+import { Menu } from 'react-feather';
 
 import MenuModal from '../Menu';
-import LocationModal from '../../components/modals/Landing/Location';
+import LocationModal from '../modals/Landing/Location';
+import SearchBar from '../Search';
+
+const items = [
+  'dubai',
+  'Daira',
+  'Abu Dhabi',
+  'Sharjha',
+  'JLT',
+  'C++',
+  'Clojure',
+  'COBOL',
+  'ColdFusion',
+  'Erlang',
+  'Fortran',
+  'Groovy',
+  'Haskell',
+  'Java',
+  'JavaScript',
+  'Lisp',
+  'Perl',
+  'PHP',
+  'Python',
+  'Ruby',
+  'Scala',
+  'Scheme',
+  'Task'
+];
 
 class Header extends React.Component {
   state = {
@@ -92,30 +115,7 @@ class Header extends React.Component {
           ) : (
             ''
           )}
-          {this.props.search ? (
-            <div className="dv_drp_search">
-              <InputGroup className="mb-3">
-                <InputGroup.Prepend>
-                  <InputGroup.Text
-                    className="dv_input_text_group"
-                    onClick={() => this.setState({ openLocationModal: true })}
-                  >
-                    <India width={15} style={{ margin: '0 15px 0 0' }} />
-                    Mumbai
-                    <ChevronDown className="dv_arrow_down_search" size={24} />
-                  </InputGroup.Text>
-                </InputGroup.Prepend>
-                <Form.Control
-                  type="text"
-                  id="searchservices"
-                  className="dv_group_search_input"
-                  placeholder="Search for a service"
-                />
-              </InputGroup>
-            </div>
-          ) : (
-            ''
-          )}
+          {this.props.search ? <SearchBar items={items} /> : ''}
         </Container>
       </div>
 
