@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { withRouter } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -110,6 +111,10 @@ class Header extends React.Component {
                   id="searchservices"
                   className="dv_group_search_input"
                   placeholder="Search for a service"
+                  onFocus={() =>
+                    window.innerWidth < 991 &&
+                    this.props.history.push('/search')
+                  }
                 />
               </InputGroup>
             </div>
@@ -133,7 +138,8 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   search: PropTypes.bool,
-  bookNow: PropTypes.bool
+  bookNow: PropTypes.bool,
+  history: PropTypes.object
 };
 
 Header.defaultProps = {
@@ -142,4 +148,4 @@ Header.defaultProps = {
   bookNow: false
 };
 
-export default Header;
+export default withRouter(Header);
