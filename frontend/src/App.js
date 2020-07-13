@@ -18,7 +18,8 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router>
+    // eslint-disable-next-line no-undef
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Switch>
         <Route exact path="/about-us">

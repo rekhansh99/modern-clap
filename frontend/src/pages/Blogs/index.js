@@ -15,7 +15,7 @@ const Blogs = () => {
       desc:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod..!',
       date: '12/12/2020',
-      imgSrc: '/images/blog-list.jpg',
+      imgSrc: './images/blog-list.jpg',
       link: '#!'
     },
     {
@@ -23,7 +23,8 @@ const Blogs = () => {
       desc:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod..!',
       date: '12/12/2020',
-      imgSrc: '/images/blog-list.jpg',
+      // eslint-disable-next-line no-undef
+      imgSrc: './images/blog-list.jpg',
       link: '#!'
     },
     {
@@ -31,7 +32,8 @@ const Blogs = () => {
       desc:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod..!',
       date: '12/12/2020',
-      imgSrc: '/images/blog-list.jpg',
+      // eslint-disable-next-line no-undef
+      imgSrc: './images/blog-list.jpg',
       link: '#!'
     }
   ];

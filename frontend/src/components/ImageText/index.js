@@ -12,7 +12,7 @@ const ImageText = () => {
           <Col lg={5} xs={12}>
             <img
               className="dv_left_side_panel_img"
-              src="images/safety-first.jpg"
+              src="./images/safety-first.jpg"
               alt=""
             />
           </Col>

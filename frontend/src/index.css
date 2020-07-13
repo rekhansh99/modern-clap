@@ -6,7 +6,7 @@ body {
 header.dv_header {
   background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('/images/header-bg.jpg');
+    url('./images/header-bg.jpg');
   height: 550px;
   background-size: cover;
 }
@@ -1058,7 +1058,7 @@ span.dv_sm_overview {
 header.dv_service_details_header {
   background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('/images/service-details.jpg');
+    url('./images/service-details.jpg');
   height: auto;
   background-size: cover;
   padding: 60px 0;
@@ -1066,7 +1066,7 @@ header.dv_service_details_header {
 header.dv_about_us_page {
   background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('/images/about-us.jpg');
+    url('./images/about-us.jpg');
   height: auto;
   background-size: cover;
   padding: 60px 0;
@@ -1383,7 +1383,7 @@ span.dv_out_of_star {
 header.dv_booking_request_details {
   background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('/images/about-us.jpg');
+    url('./images/about-us.jpg');
   height: auto;
   background-size: cover;
   padding: 60px 0;
@@ -1883,7 +1883,7 @@ a.dv_sm_show {
   right: 10px;
 }
 .form-control.dv_all_location_feild_input.dv_error_for_input {
-  background: #ffffff url(/images/alert-input.svg);
+  background: #ffffff url('./images/alert-input.svg');
   background-repeat: no-repeat;
   background-position: 97% 17px;
   background-size: 17px;

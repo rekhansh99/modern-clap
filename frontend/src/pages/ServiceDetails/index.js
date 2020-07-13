@@ -242,7 +242,7 @@ const ServiceDetails = () => {
                           >
                             <div className="dv_provider_card">
                               <div className="dv_provider_logo">
-                                <img src="/images/facebook.png" alt="" />
+                                <img src="./images/facebook.png" alt="" />
                               </div>
                               <span
                                 style={{
@@ -283,7 +283,7 @@ const ServiceDetails = () => {
                           >
                             <div className="dv_provider_card">
                               <div className="dv_provider_logo">
-                                <img src="images/facebook.png" alt="" />
+                                <img src="./images/facebook.png" alt="" />
                               </div>
                               <span
                                 style={{
@@ -390,22 +390,22 @@ const ServiceDetails = () => {
             items={[
               {
                 link: '#',
-                src: 'images/slider/1.jpg',
+                src: './images/slider/1.jpg',
                 title: 'service title'
               },
               {
                 link: '#',
-                src: 'images/slider/2.jpg',
+                src: './images/slider/2.jpg',
                 title: 'service title'
               },
               {
                 link: '#',
-                src: 'images/slider/3.jpg',
+                src: './images/slider/3.jpg',
                 title: 'service title'
               },
               {
                 link: '#',
-                src: 'images/slider/4.jpg',
+                src: './images/slider/4.jpg',
                 title: 'service title'
               }
             ]}

@@ -12,7 +12,7 @@ import ImageText from '../../components/ImageText';
 import CategoryBox from '../../components/CategoryBox';
 
 const Landing = () => {
-  const fullSliderImages = ['/images/slider.jpg', '/images/slider.jpg'];
+  const fullSliderImages = ['./images/slider.jpg', './images/slider.jpg'];
 
   return (
     <div className="dv_wrapper">
@@ -37,22 +37,22 @@ const Landing = () => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'deep cleaning'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'soft cleaning'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'kitchen cleaning'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'bathroom cleaning'
             }
           ]}
@@ -63,22 +63,22 @@ const Landing = () => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'service title'
             }
           ]}
@@ -91,22 +91,22 @@ const Landing = () => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'service title'
             }
           ]}
@@ -117,22 +117,22 @@ const Landing = () => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'service title'
             }
           ]}
@@ -141,7 +141,7 @@ const Landing = () => {
         <div className="dv_download_app">
           <Container>
             <img
-              src="images/download-app.jpg"
+              src="./images/download-app.jpg"
               alt=""
               style={{ width: '100%', borderRadius: '5px' }}
             />

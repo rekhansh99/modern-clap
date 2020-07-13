@@ -64,7 +64,7 @@ class Header extends React.Component {
               <a
                 style={{ display: 'none' }}
                 className="dv_sm_show"
-                href="/book-now"
+                href="/booking"
               >
                 book now
               </a>

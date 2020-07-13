@@ -15,7 +15,7 @@ const Reviews = () => {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
       reviewerName: 'Rahul Gandhi',
-      imgSrc: '/images/review-holder.webp',
+      imgSrc: './images/review-holder.webp',
       reviewText:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo',
       date: '20/20/2020',
@@ -25,7 +25,7 @@ const Reviews = () => {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
       reviewerName: 'Rahul Gandhi',
-      imgSrc: '/images/review-holder.webp',
+      imgSrc: './images/review-holder.webp',
       reviewText:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo',
       date: '20/20/2020',
@@ -35,7 +35,7 @@ const Reviews = () => {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
       reviewerName: 'Rahul Gandhi',
-      imgSrc: '/images/review-holder.webp',
+      imgSrc: './images/review-holder.webp',
       reviewText:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo',
       date: '20/20/2020',

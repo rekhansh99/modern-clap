@@ -60,7 +60,7 @@ const Provider = ({ isOpen, close }) => {
                 <div className="customer-drawer customer-drawer--onhover active">
                   <img
                     className="profile-image"
-                    src="/images/chat-default.png"
+                    src="./images/chat-default.png"
                     style={{ opacity: '0.5' }}
                     alt=""
                   />
@@ -132,7 +132,7 @@ const Provider = ({ isOpen, close }) => {
                 >
                   <img
                     className="profile-image"
-                    src="images/chat-default.png"
+                    src="./images/chat-default.png"
                     alt=""
                   />
                   <div className="text">
@@ -201,7 +201,7 @@ const Provider = ({ isOpen, close }) => {
                     <Col md={9}>
                       <div className="chat-bubble chat-bubble--left">
                         <img
-                          src="images/whatapp-media.jpg"
+                          src="./images/whatapp-media.jpg"
                           style={{ width: '100%' }}
                           alt=""
                         />

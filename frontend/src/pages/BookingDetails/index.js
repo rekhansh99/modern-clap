@@ -139,22 +139,22 @@ const BookingDetails = props => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'service title'
             }
           ]}
@@ -165,22 +165,22 @@ const BookingDetails = props => {
           items={[
             {
               link: '#',
-              src: 'images/slider/1.jpg',
+              src: './images/slider/1.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/2.jpg',
+              src: './images/slider/2.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/3.jpg',
+              src: './images/slider/3.jpg',
               title: 'service title'
             },
             {
               link: '#',
-              src: 'images/slider/4.jpg',
+              src: './images/slider/4.jpg',
               title: 'service title'
             }
           ]}
