@@ -2403,3 +2403,112 @@ div#resheduletime:before {
   margin: 0;
   padding: 0;
 }
+
+/*start mobile search css*/
+.dv_search_header {
+  position: fixed !important;
+  top: 0;
+  width: 100% !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+input.form-control.dv_search_mobile_input {
+  position: fixed;
+  border-color: #ffffff;
+  padding: 15px 15px 15px 50px;
+  height: 56px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  margin: 0 0 15px 0;
+  border-radius: 0px;
+  font-weight: 600;
+}
+input.form-control.dv_search_mobile_input::placeholder {
+  font-weight: 600;
+  font-size: 14px;
+  color: #999;
+}
+input.form-control.dv_search_mobile_input:focus,
+.form-control.dv_search_mobile_input:focus:active {
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08) !important;
+}
+.dv_search_header > svg:nth-child(1) {
+  z-index: 1;
+  position: fixed;
+  top: 17px;
+  left: 15px;
+}
+.dv_search_header > svg:nth-child(3) {
+  position: fixed;
+  top: 17px;
+  right: 15px;
+}
+.dv_mobile_search_wrapper {
+  padding: 65px 0 0 0;
+}
+.dv_trending_bullets {
+  margin: 0;
+  padding: 0 20px;
+}
+.dv_trending_bullets > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+}
+.dv_trending_bullets > ul > li {
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+.dv_trending_bullets > ul > li > a {
+  background: #2874f012;
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px;
+  display: block;
+  text-transform: capitalize;
+  color: #2874f0;
+  font-weight: 600;
+}
+.dv_trending_bullets > span {
+  display: block;
+  font-size: 13px;
+  padding: 0 0 6px 0;
+  color: #999;
+  text-transform: inherit;
+}
+
+.dv_search_result_dropdown {
+  overflow: auto !important;
+  height: 300px;
+}
+.dv_search_result_dropdown > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.dv_search_result_dropdown > ul > li {
+  margin: 0;
+  padding: 0;
+}
+.dv_search_result_dropdown > ul > li > a {
+  background: #28282808;
+  font-size: 16px;
+  margin: 0;
+  display: block;
+  text-transform: capitalize;
+  color: #3f3f3f;
+  font-weight: 400;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+/*end mobile search css*/

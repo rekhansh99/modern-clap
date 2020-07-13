@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
@@ -35,6 +36,7 @@ const itemStyle = isHighlighted => ({
 const SearchBar = ({ items }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [listOpen, setListOpen] = useState(false);
+  const history = useHistory();
 
   return (
     <div className="dv_drp_search">
@@ -66,6 +68,10 @@ const SearchBar = ({ items }) => {
               id="searchservices"
               className="dv_group_search_input"
               placeholder="Search for a service"
+              onFocus={() => {
+                if (window.innerWidth < 991) history.push('/search');
+              }}
+              onBlur={() => setListOpen(false)}
             />
           </InputGroup>
         )}
