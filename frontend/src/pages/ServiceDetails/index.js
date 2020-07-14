@@ -44,7 +44,7 @@ const ServiceDetails = () => {
                     defaultActiveKey="#about"
                   >
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#about">
+                      <Nav.Link as={Link} to="#about" eventKey="#about">
                         <AboutUsSVG
                           width="20"
                           height="20"
@@ -54,7 +54,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#faqs">
+                      <Nav.Link as={Link} to="#faqs" eventKey="#faqs">
                         <QuestionMarkSVG
                           width="20"
                           height="20"
@@ -65,7 +65,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#provider">
+                      <Nav.Link as={Link} to="#provider" eventKey="#provider">
                         <HandShakeSVG
                           width="20"
                           height="20"
@@ -75,7 +75,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#review">
+                      <Nav.Link as={Link} to="#review" eventKey="#review">
                         <ReviewsSVG
                           width="20"
                           height="20"

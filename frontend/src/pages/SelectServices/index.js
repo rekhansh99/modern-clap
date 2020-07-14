@@ -85,19 +85,31 @@ const SelectServices = () => {
                     defaultActiveKey="#saveaddress"
                   >
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#saveaddress">
+                      <Nav.Link
+                        as={Link}
+                        to="#saveaddress"
+                        eventKey="#saveaddress"
+                      >
                         <MapPin size={24} />
                         Address
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#addnewaddress">
+                      <Nav.Link
+                        as={Link}
+                        to="#addnewaddress"
+                        eventKey="#addnewaddress"
+                      >
                         <PlusSquare size={24} />
                         New
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link as={Link} to="#addcurrentlocation">
+                      <Nav.Link
+                        as={Link}
+                        to="#addcurrentlocation"
+                        eventKey="#addccurrentlocation"
+                      >
                         <Geo size="1em" />
                         Geolocation
                       </Nav.Link>

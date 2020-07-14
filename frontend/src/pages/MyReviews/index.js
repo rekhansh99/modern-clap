@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import TabContainer from 'react-bootstrap/TabContainer';
+import TabContent from 'react-bootstrap/TabContent';
+import TabPane from 'react-bootstrap/TabPane';
 import { Check, Edit2 } from 'react-feather';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
 import ReviewCard from '../../components/ReviewCard';
 import AddReviewCard from '../../components/AddReviewCard';
 
 const MyReviews = () => {
-  const [tab, setTab] = useState('completed-reviews');
-
   const completedReviews = [
     {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
       reviewerName: 'Rahul Gandhi',
-      imgSrc: '/images/review-holder.webp',
+      imgSrc: './images/review-holder.webp',
       reviewText:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo',
       date: '20/20/2020',
@@ -26,7 +29,7 @@ const MyReviews = () => {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
       reviewerName: 'Rahul Gandhi',
-      imgSrc: '/images/review-holder.webp',
+      imgSrc: './images/review-holder.webp',
       reviewText:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo',
       date: '20/20/2020',
@@ -37,9 +40,12 @@ const MyReviews = () => {
     {
       name: 'Monika Jadhav',
       serviceName: 'Cleaners',
-      imgSrc: '/images/review-holder.webp'
+      imgSrc: './images/review-holder.webp'
     }
   ];
+
+  const active = useLocation().hash || '#completed';
+
   const completedReviewsJSX = completedReviews.map(review => (
     <ReviewCard
       key={review.name}
@@ -52,6 +58,7 @@ const MyReviews = () => {
       time={review.time}
     />
   ));
+
   const pendingReviewsJSX = pendingReviews.map(review => (
     <AddReviewCard
       key={review.name}
@@ -70,37 +77,30 @@ const MyReviews = () => {
       <div className="dv_content">
         <div className="dv_review_counting_wrapper">
           <Container>
-            <ul
-              className="nav nav-tabs dv_nav_tabs"
-              style={{ margin: '0 0 30px 0' }}
-            >
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    tab === 'completed-reviews' ? 'active' : ''
-                  }`}
-                  href="#!"
-                  onClick={() => setTab('completed-reviews')}
-                >
-                  <Check width={24} height={24} /> Completed - 6
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    tab === 'pending-reviews' ? 'active' : ''
-                  }`}
-                  href="#!"
-                  onClick={() => setTab('pending-reviews')}
-                >
-                  <Edit2 width={24} height={24} /> Pending - 2
-                </a>
-              </li>
-            </ul>
-            <Tabs activeKey={tab}>
-              <Tab eventKey="completed-reviews">{completedReviewsJSX}</Tab>
-              <Tab eventKey="pending-reviews">{pendingReviewsJSX}</Tab>
-            </Tabs>
+            <TabContainer activeKey={active}>
+              <Nav
+                as="ul"
+                variant="tabs"
+                className="dv_nav_tabs"
+                style={{ margin: '0 0 30px 0' }}
+                defaultActiveKey="#completed"
+              >
+                <Nav.Item as="li">
+                  <Nav.Link as={Link} to="#completed" eventKey="#completed">
+                    <Check size={24} /> Completed - {completedReviewsJSX.length}
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <Nav.Link as={Link} to="#pending" eventKey="#pending">
+                    <Edit2 size={24} /> Pending - {pendingReviewsJSX.length}
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+              <TabContent>
+                <TabPane eventKey="#completed">{completedReviewsJSX}</TabPane>
+                <TabPane eventKey="#pending">{pendingReviewsJSX}</TabPane>
+              </TabContent>
+            </TabContainer>
           </Container>
         </div>
       </div>

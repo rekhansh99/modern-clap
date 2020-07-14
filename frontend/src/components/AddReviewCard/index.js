@@ -10,7 +10,7 @@ const AddReviewCard = props => {
       <img src={props.imgSrc} alt={props.name} />
       <div className="dv_review_holder_name_review">
         <span className="dv_name_holder">
-          <Tick className="mr-2" height={20} width={20} />
+          <Tick className="mr-2" size={20} />
           {props.name}
         </span>
         <span className="dv_review_against">
