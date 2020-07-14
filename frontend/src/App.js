@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/bookings">
           <Bookings />
         </Route>
-        <Route exact path="/booking">
+        <Route exact path="/booking-details">
           <BookingDetails />
         </Route>
         <Route exact path="/careers">
@@ -53,13 +53,13 @@ function App() {
         <Route exact path="/reviews">
           <Reviews />
         </Route>
-        <Route exact path="/select-services/:service">
+        <Route exact path="/book-now">
           <SelectServices />
         </Route>
         <Route exact path="/seller/register">
           <SellerRegistration />
         </Route>
-        <Route exact path="/service">
+        <Route exact path="/service/:service">
           <ServiceDetails />
         </Route>
         <Route exact path="/search">

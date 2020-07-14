@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import RepeatSlider from '../../components/RepeatSlider';
 
@@ -44,7 +44,7 @@ const ServiceDetails = () => {
                     defaultActiveKey="#about"
                   >
                     <Nav.Item as="li">
-                      <Nav.Link href="#about">
+                      <Nav.Link as={Link} to="#about">
                         <AboutUsSVG
                           width="20"
                           height="20"
@@ -54,7 +54,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link href="#faqs">
+                      <Nav.Link as={Link} to="#faqs">
                         <QuestionMarkSVG
                           width="20"
                           height="20"
@@ -65,7 +65,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link href="#provider">
+                      <Nav.Link as={Link} to="#provider">
                         <HandShakeSVG
                           width="20"
                           height="20"
@@ -75,7 +75,7 @@ const ServiceDetails = () => {
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link href="#review">
+                      <Nav.Link as={Link} to="#review">
                         <ReviewsSVG
                           width="20"
                           height="20"

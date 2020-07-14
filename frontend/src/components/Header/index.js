@@ -84,15 +84,16 @@ class Header extends React.Component {
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
             <Nav.Item as="li">
-              <a
+              <Link
                 style={{ display: 'none' }}
                 className="dv_sm_show"
-                href="/booking"
+                to="/book-now"
               >
                 book now
-              </a>
+              </Link>
               <Nav.Link
-                href="#"
+                as={Link}
+                to="#"
                 className={classnames({
                   dv_menu_scroll_style: this.state.fixed
                 })}
@@ -109,7 +110,7 @@ class Header extends React.Component {
           <h1 className="dv_home_Service_content">{this.props.title}</h1>
           <p className="dv_home_Service_content_p">{this.props.desc}</p>
           {this.props.bookNow ? (
-            <Link to="#" className="dv_book_now_service">
+            <Link to="/book-now" className="dv_book_now_service">
               book now
             </Link>
           ) : (

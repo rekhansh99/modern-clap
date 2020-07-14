@@ -85,19 +85,19 @@ const SelectServices = () => {
                     defaultActiveKey="#saveaddress"
                   >
                     <Nav.Item as="li">
-                      <Nav.Link href="#saveaddress">
+                      <Nav.Link as={Link} to="#saveaddress">
                         <MapPin size={24} />
                         Address
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link href="#addnewaddress">
+                      <Nav.Link as={Link} to="#addnewaddress">
                         <PlusSquare size={24} />
                         New
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <Nav.Link href="#addcurrentlocation">
+                      <Nav.Link as={Link} to="#addcurrentlocation">
                         <Geo size="1em" />
                         Geolocation
                       </Nav.Link>
@@ -133,7 +133,7 @@ const SelectServices = () => {
                               <Dropdown className="dv_about_provider_dropdown">
                                 <Dropdown.Toggle as={Edit3} size={24} />
                                 <Dropdown.Menu className="dv_about_provider_dropdown_menu">
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <PencilSquare
                                       size={20}
                                       style={{
@@ -144,7 +144,7 @@ const SelectServices = () => {
                                     />
                                     Edit
                                   </Dropdown.Item>
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <TrashFill
                                       size={20}
                                       style={{
@@ -174,7 +174,7 @@ const SelectServices = () => {
                               <Dropdown className="dv_about_provider_dropdown">
                                 <Dropdown.Toggle as={Edit3} size={24} />
                                 <Dropdown.Menu className="dv_about_provider_dropdown_menu">
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <PencilSquare
                                       size={20}
                                       style={{
@@ -185,7 +185,7 @@ const SelectServices = () => {
                                     />
                                     Edit
                                   </Dropdown.Item>
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <TrashFill
                                       size={20}
                                       style={{
@@ -215,7 +215,7 @@ const SelectServices = () => {
                               <Dropdown className="dv_about_provider_dropdown">
                                 <Dropdown.Toggle as={Edit3} size={24} />
                                 <Dropdown.Menu className="dv_about_provider_dropdown_menu">
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <PencilSquare
                                       size={20}
                                       style={{
@@ -226,7 +226,7 @@ const SelectServices = () => {
                                     />
                                     Edit
                                   </Dropdown.Item>
-                                  <Dropdown.Item href="#">
+                                  <Dropdown.Item as={Link} to="#">
                                     <TrashFill
                                       size={20}
                                       style={{
@@ -445,7 +445,7 @@ const SelectServices = () => {
               </Link>
             </li>
             <li>
-              <Link to="#!">Next </Link>
+              <Link to="/booking-details">Next </Link>
             </li>
           </ul>
         </Container>

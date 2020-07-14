@@ -84,7 +84,7 @@ const CategoryBox = () => {
 
   const categoriesJSX = categories.map(category => (
     <Col md={2} xs={4} className="dv_all_cat_2" key={category.name}>
-      <Link to={'/select-services/' + category.url}>
+      <Link to={'/book-now?category=' + category.url}>
         {category.icon}
         {category.name}
         {/* <span class="dv_off_percentage_show">31% off </span>

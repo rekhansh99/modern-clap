@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
@@ -38,16 +39,16 @@ const Location = ({ isOpen, close }) => {
               India
             </li>
             <li>
-              <a href="#!">mumbai </a>
+              <Link to="#!">mumbai </Link>
             </li>
             <li>
-              <a href="#!">pune </a>
+              <Link to="#!">pune </Link>
             </li>
             <li>
-              <a href="#!">banglore </a>
+              <Link to="#!">banglore </Link>
             </li>
             <li>
-              <a href="#!">delhi</a>
+              <Link to="#!">delhi</Link>
             </li>
           </ul>
           <ul className="dv_country_based_ul">
@@ -56,16 +57,16 @@ const Location = ({ isOpen, close }) => {
               United Arab Emirates
             </li>
             <li>
-              <a href="#!">dubai </a>
+              <Link to="#!">dubai </Link>
             </li>
             <li>
-              <a href="#!">abu dhabi </a>
+              <Link to="#!">abu dhabi </Link>
             </li>
             <li>
-              <a href="#!">sharjha </a>
+              <Link to="#!">sharjha </Link>
             </li>
             <li>
-              <a href="#!">ras al khaim </a>
+              <Link to="#!">ras al khaim </Link>
             </li>
           </ul>
         </div>

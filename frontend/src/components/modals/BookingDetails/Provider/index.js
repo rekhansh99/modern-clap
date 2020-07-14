@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
-// import ModalHeader from 'react-bootstrap/ModalHeader';
-// import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
-// import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import FormControl from 'react-bootstrap/FormControl';
-import {
-  X,
-  //   // Star,
-  //   // AlertCircle,
-  //   ChevronDown,
-  //   Smartphone,
-  //   PhoneCall,
-  Info,
-  Paperclip
-} from 'react-feather';
+import { X, Info, Paperclip } from 'react-feather';
 
 const Provider = ({ isOpen, close }) => {
   return (
@@ -30,12 +19,6 @@ const Provider = ({ isOpen, close }) => {
       show={isOpen}
       onHide={close}
     >
-      {/* <ModalHeader>
-        <ModalTitle style={{ color: '#282828', fontSize: '18px' }}>
-          Providers Details
-        </ModalTitle>
-        <X size={24} onClick={close} />
-      </ModalHeader> */}
       <ModalBody
         style={{
           border: 'none',
@@ -49,14 +32,6 @@ const Provider = ({ isOpen, close }) => {
           <Row className="no-gutters">
             <Col md={4} className="border-right">
               <div className="dv_left_customer_height">
-                {/* <div className="customer-drawer customer-drawer--onhover">
-                    <img className="profile-image" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fmarkhughes%2Ffiles%2F2016%2F01%2FTerminator-2-1200x873.jpg" alt="" />
-                    <div className="text">
-                      <h6>ModernClap Support</h6>
-                      <p className="text-muted">Wa are online to support you. </p>
-                    </div>
-                    <span className="time text-muted small">13:21</span>
-                  </div> */}
                 <div className="customer-drawer customer-drawer--onhover active">
                   <img
                     className="profile-image"
@@ -150,11 +125,6 @@ const Provider = ({ isOpen, close }) => {
                     size={24}
                     onClick={close}
                   />
-                  {/* <ul className="dv_chat_features">
-                    <li>
-                      <Paperclip size={24} />
-                    </li>
-                  </ul> */}
                 </div>
               </div>
               <div className="chat-panel">
@@ -207,7 +177,7 @@ const Provider = ({ isOpen, close }) => {
                         />
                         <ul className="dv_chat_media_option">
                           <li>
-                            <a href="#!">Download</a>
+                            <Link to="#!">Download</Link>
                           </li>
                         </ul>
                       </div>
@@ -238,7 +208,7 @@ const Provider = ({ isOpen, close }) => {
                 <Row>
                   <Col xs={12}>
                     <div className="chat-box-tray">
-                      {/* <svg data-toggle="modal" data-target="#resheduletime" style="margin: 0 10px 0 0; color: #999;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg> */}
+                      {/* <Smile size={24} style={{ margin: '0 10px 0 0, color: '#999 }} /> */}
                       <FormControl
                         className="dv_type_txt_reply"
                         type="text"

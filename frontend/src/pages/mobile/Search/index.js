@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { ArrowLeft, X } from 'react-feather';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Search = () => {
   const history = useHistory();
@@ -27,13 +27,13 @@ const Search = () => {
 
   const trendingServicesJSX = trendingServices.map(service => (
     <li key={service.name}>
-      <a href={service.link}>{service.name}</a>
+      <Link to={service.link}>{service.name}</Link>
     </li>
   ));
 
   const searchResultsJSX = searchResults.map(result => (
     <li key={result.name}>
-      <a href={result.link}>{result.name}</a>
+      <Link to={result.link}>{result.name}</Link>
     </li>
   ));
 

@@ -42,7 +42,7 @@ const ServicesList = () => {
                 <li>Disposable products used </li>
                 <li>safety is priority </li>
                 <li>
-                  <Link to="#!">read more </Link>
+                  <Link to={'/service/medicure'}>read more </Link>
                 </li>
               </ul>
             </div>

@@ -39,55 +39,53 @@ const SearchBar = ({ items }) => {
   const history = useHistory();
 
   return (
-    <div className="dv_drp_search">
-      <AutoComplete
-        getItemValue={item => item}
-        placeholder="Search for a service"
-        items={items}
-        wrapperProps={{ className: 'dv_drp_search', style: {} }}
-        menuStyle={menuStyle}
-        autoHighlight={false}
-        renderItem={(item, isHighlighted) => (
-          <div style={itemStyle(isHighlighted)}>{item}</div>
-        )}
-        renderInput={props => (
-          <InputGroup className="mb-3">
-            <InputGroup.Prepend>
-              <InputGroup.Text
-                className="dv_input_text_group"
-                onClick={() => this.setState({ openLocationModal: true })}
-              >
-                <India width={15} style={{ margin: '0 15px 0 0' }} />
-                Mumbai
-                <ChevronDown className="dv_arrow_down_search" size={24} />
-              </InputGroup.Text>
-            </InputGroup.Prepend>
-            <Form.Control
-              {...props}
-              type="text"
-              id="searchservices"
-              className="dv_group_search_input"
-              placeholder="Search for a service"
-              onFocus={() => {
-                if (window.innerWidth < 991) history.push('/search');
-              }}
-              onBlur={() => setListOpen(false)}
-            />
-          </InputGroup>
-        )}
-        value={searchTerm}
-        open={listOpen}
-        onChange={e => {
-          setSearchTerm(e.target.value);
-          if (!listOpen && e.target.value !== '') setListOpen(true);
-          else if (listOpen && e.target.value === '') setListOpen(false);
-        }}
-        onSelect={val => setSearchTerm(val)}
-        shouldItemRender={(item, value) =>
-          item.search(new RegExp(value, 'i')) !== -1
-        }
-      />
-    </div>
+    <AutoComplete
+      getItemValue={item => item}
+      placeholder="Search for a service"
+      items={items}
+      wrapperProps={{ className: 'dv_drp_search', style: {} }}
+      menuStyle={menuStyle}
+      autoHighlight={false}
+      renderItem={(item, isHighlighted) => (
+        <div style={itemStyle(isHighlighted)}>{item}</div>
+      )}
+      renderInput={props => (
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <InputGroup.Text
+              className="dv_input_text_group"
+              onClick={() => this.setState({ openLocationModal: true })}
+            >
+              <India width={15} style={{ margin: '0 15px 0 0' }} />
+              Mumbai
+              <ChevronDown className="dv_arrow_down_search" size={24} />
+            </InputGroup.Text>
+          </InputGroup.Prepend>
+          <Form.Control
+            {...props}
+            type="text"
+            id="searchservices"
+            className="dv_group_search_input"
+            placeholder="Search for a service"
+            onFocus={() => {
+              if (window.innerWidth < 991) history.push('/search');
+            }}
+            onBlur={() => setListOpen(false)}
+          />
+        </InputGroup>
+      )}
+      value={searchTerm}
+      open={listOpen}
+      onChange={e => {
+        setSearchTerm(e.target.value);
+        if (!listOpen && e.target.value !== '') setListOpen(true);
+        else if (listOpen && e.target.value === '') setListOpen(false);
+      }}
+      onSelect={val => setSearchTerm(val)}
+      shouldItemRender={(item, value) =>
+        item.search(new RegExp(value, 'i')) !== -1
+      }
+    />
   );
 };
 

@@ -53,11 +53,11 @@ const BookingDetails = props => {
           </Link>
         </Container>
       </div>
-      {/* <div className="dv_select_service_heading" style="text-align: center; background-color: #ff4a4a;">
+      {/* <div className="dv_select_service_heading" style={{textAlign: "center", backgroundColor: "#ff4a4a"}}>
         <Container>
-          <a href="javascript:void(0);">
+          <Link to="#">
             Your cancelled order request no is <strong>MD124587</strong>
-          </a>
+          </Link>
         </Container>
       </div> */}
 
@@ -189,60 +189,54 @@ const BookingDetails = props => {
 
       <ServicesModal
         isOpen={modal === '#servicesModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
         services={booking.services}
         payment={booking.payment}
       />
       <TimingModal
         isOpen={modal === '#timingModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
       <LocationModal
         isOpen={modal === '#locationModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
         location={booking.location}
       />
       <PaymentModal
         isOpen={modal === '#paymentModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
         payment={booking.payment}
         numberOfServices={booking.services.length}
       />
       <ReviewModal
         isOpen={modal === '#reviewModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
       <FAQsModal
         isOpen={modal === '#faqsModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
       <ProviderModal
         isOpen={modal === '#providerModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
       <AreYouSureModal
         isOpen={modal === '#areYouSureModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
       <DoneSuccessfullyModal
         isOpen={modal === '#doneSuccessfullyModal'}
-        close={() => props.history.replace('/booking')}
+        close={() => props.history.replace('/booking-details')}
       />
 
       <div className="dv_continue_next">
         <Container>
           <ul>
             <li>
-              <a
-                href="#areYouSureModal"
-                data-toggle="modal"
-                data-target="#areyousure"
-              >
-                Cancel
-              </a>
+              <Link to="#areYouSureModal">Cancel</Link>
             </li>
             <li>
-              <a href="#timingModal">Reshedule</a>
+              <Link to="#timingModal">Reshedule</Link>
             </li>
           </ul>
         </Container>
