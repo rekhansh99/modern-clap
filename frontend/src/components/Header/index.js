@@ -52,7 +52,8 @@ class Header extends React.Component {
   };
 
   handleScroll = () => {
-    this.setState({ fixed: window.scrollY >= 100 });
+    if (window.scrollY >= 100 ? !this.state.fixed : this.state.fixed)
+      this.setState({ fixed: window.scrollY >= 100 });
   };
 
   showMenu = show => {
