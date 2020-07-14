@@ -92,7 +92,7 @@ const ServiceDetails = () => {
                           manicure pedicure
                           <span>
                             A great pedicure can be as soothingto the soul as..
-                            well, to the sole..!{' '}
+                            well, to the sole..!
                           </span>
                         </div>
                         <div className="dv_sub_headings">
@@ -231,7 +231,7 @@ const ServiceDetails = () => {
                         <div className="dv_all_providers_counting">
                           professional providers
                           <span>
-                            18 Carpet Manicure Pedicure services in Dubai{' '}
+                            18 Carpet Manicure Pedicure services in Dubai
                           </span>
                         </div>
                         <Row>
@@ -353,7 +353,7 @@ const ServiceDetails = () => {
                             &quot;
                             <span>
                               Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do{' '}
+                              adipisicing elit, sed do
                             </span>
                             &quot;
                           </div>
@@ -366,7 +366,7 @@ const ServiceDetails = () => {
                             &quot;
                             <span>
                               Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do{' '}
+                              adipisicing elit, sed do
                             </span>
                             &quot;
                           </div>

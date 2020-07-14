@@ -2066,7 +2066,7 @@ ul.nav.nav-tabs.dv_nav_tabs > li.nav-item:nth-child(1) > a {
   display: block;
 }
 .dv_about_provider_dropdown.dropdown > svg {
-  color: #d3d3d3;
+  color: #2874f0;
   width: 20px;
   height: 20px;
 }
@@ -2074,7 +2074,7 @@ ul.nav.nav-tabs.dv_nav_tabs > li.nav-item:nth-child(1) > a {
   padding: 0 15px;
 }
 .card {
-  overflow: visible;
+  overflow: visible !important;
   border: none;
 }
 /* seller registration */

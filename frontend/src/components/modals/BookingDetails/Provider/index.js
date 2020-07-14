@@ -43,7 +43,7 @@ const Provider = ({ isOpen, close }) => {
                     <h6>Goodhand Technical LLC </h6>
                     <ul>
                       <li>
-                        Working Hours : <span>8 to 9 </span>{' '}
+                        Working Hours : <span>8 to 9 </span>
                       </li>
                       <li>
                         Overall Rating - <span>4.3 </span>
@@ -67,7 +67,7 @@ const Provider = ({ isOpen, close }) => {
                     <Dropdown.Menu className="dv_more_seller_information_drp">
                       <ul>
                         <li>
-                          Working Hours : <span>8 to 9 </span>{' '}
+                          Working Hours : <span>8 to 9 </span>
                         </li>
                         <li>
                           Overall Rating - <span>4.3 </span>
@@ -223,7 +223,7 @@ const Provider = ({ isOpen, close }) => {
                         className="btn btn-primary"
                         style={{ borderRadius: '25px', height: '46px' }}
                       >
-                        Send{' '}
+                        Send
                       </button>
                     </div>
                   </Col>
