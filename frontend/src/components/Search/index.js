@@ -38,7 +38,7 @@ const itemStyle = isHighlighted => ({
 const SearchBar = ({ items }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [listOpen, setListOpen] = useState(false);
-  const [locationModal, setLocationModal] = useState(true);
+  const [locationModal, setLocationModal] = useState(false);
   const history = useHistory();
 
   return (
@@ -71,6 +71,7 @@ const SearchBar = ({ items }) => {
               id="searchservices"
               className="dv_group_search_input"
               placeholder="Search for a service"
+              style={{ borderBottomRightRadius: listOpen ? 0 : '.25em' }}
               onFocus={() => {
                 if (window.innerWidth < 991) history.push('/search');
               }}
