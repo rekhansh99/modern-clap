@@ -9,7 +9,6 @@ import Nav from 'react-bootstrap/Nav';
 import { Menu } from 'react-feather';
 
 import MenuModal from '../Menu';
-import LocationModal from '../modals/Landing/Location';
 import SearchBar from '../Search';
 
 const items = [
@@ -41,8 +40,7 @@ const items = [
 class Header extends React.Component {
   state = {
     fixed: false,
-    menuOpen: false,
-    openLocationModal: false
+    menuOpen: false
   };
 
   componentDidMount = () => {
@@ -121,10 +119,6 @@ class Header extends React.Component {
       </div>
 
       <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
-      <LocationModal
-        isOpen={this.state.openLocationModal}
-        close={() => this.setState({ openLocationModal: false })}
-      />
     </header>
   );
 }
