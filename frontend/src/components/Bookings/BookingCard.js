@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 const BookingCard = props => {
+  const history = useHistory();
+
   let statusColor;
   switch (props.status) {
     case 'completed':
@@ -15,7 +18,10 @@ const BookingCard = props => {
   }
 
   return (
-    <div className="dv_mybooking_cards">
+    <div
+      className="dv_mybooking_cards"
+      onClick={() => history.push('/booking-details')}
+    >
       <div className="dv_service_name">{props.serviceName}</div>
       <div className="dv_date_booking">{props.bookingDate}</div>
       <span className={'dv_status_upcoming ' + statusColor}>
