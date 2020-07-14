@@ -9,6 +9,8 @@ import Footer from '../../components/Footer';
 import BlogCard from '../../components/BlogCard';
 
 const Blogs = () => {
+  document.title = 'Blogs | Modern clap';
+
   const blogs = [
     {
       heading: 'Blog heading',

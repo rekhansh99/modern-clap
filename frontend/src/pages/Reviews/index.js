@@ -10,6 +10,8 @@ import Footer from '../../components/Footer';
 import ReviewCard from '../../components/ReviewCard';
 
 const Reviews = () => {
+  document.title = 'Reviews | Modern clap';
+
   const reviews = [
     {
       name: 'Monika Jadhav',

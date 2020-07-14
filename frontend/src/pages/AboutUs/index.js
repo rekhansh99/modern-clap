@@ -16,6 +16,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 const AboutUs = () => {
+  document.title = 'About us | Modern clap';
+
   return (
     <div className="dv_wrapper">
       <Header title="About us" desc="Appreciate for visiting our page " />

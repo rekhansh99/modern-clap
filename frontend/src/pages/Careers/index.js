@@ -10,6 +10,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 const Careers = () => {
+  document.title = 'Careers | Modern clap';
+
   return (
     <div className="dv_wrapper">
       <Header

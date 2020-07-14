@@ -14,6 +14,8 @@ import ReviewCard from '../../components/ReviewCard';
 import AddReviewCard from '../../components/AddReviewCard';
 
 const MyReviews = () => {
+  document.title = 'My Reviews | Modern clap';
+
   const completedReviews = [
     {
       name: 'Monika Jadhav',

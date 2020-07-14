@@ -21,6 +21,8 @@ import { ReactComponent as ReviewsSVG } from '../../svgs/reviews.svg';
 import { Star, ChevronDown } from 'react-feather';
 
 const ServiceDetails = () => {
+  document.title = 'Service Details | Modern clap';
+
   const activePane = useLocation().hash || '#about';
 
   return (

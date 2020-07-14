@@ -12,6 +12,8 @@ import ImageText from '../../components/ImageText';
 import CategoryBox from '../../components/CategoryBox';
 
 const Landing = () => {
+  document.title = 'Modern clap';
+
   const fullSliderImages = ['./images/slider.jpg', './images/slider.jpg'];
 
   return (

@@ -14,6 +14,8 @@ import { ReactComponent as Telephone } from '../../svgs/telephone.svg';
 import { ReactComponent as Email } from '../../svgs/email.svg';
 
 const ContactUs = () => {
+  document.title = 'Contact us | Modern clap';
+
   return (
     <div className="dv_wrapper">
       <Header title="Contact Us" desc="Get in touch to know and grow..!" />

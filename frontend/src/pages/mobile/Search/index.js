@@ -4,6 +4,8 @@ import { ArrowLeft, X } from 'react-feather';
 import { useHistory, Link } from 'react-router-dom';
 
 const Search = () => {
+  document.title = 'Search | Modern clap';
+
   const history = useHistory();
   const [searchInput, setSearchInput] = useState('');
 

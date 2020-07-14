@@ -7,6 +7,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 const PrivacyPolicy = () => {
+  document.title = 'Privacy Policy | Modern  clap';
+
   return (
     <div className="dv_wrapper">
       <Header

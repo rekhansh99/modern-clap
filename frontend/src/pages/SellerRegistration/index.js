@@ -12,6 +12,8 @@ import SectionHeading from '../../components/SectionHeading';
 import { ReactComponent as GreenTickSVG } from '../../svgs/tick-green.svg';
 
 const SellerRegistration = () => {
+  document.title = 'Seller Registration | Modern clap';
+
   return (
     <div className="dv_wrapper">
       <Header

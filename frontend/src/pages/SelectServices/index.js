@@ -21,6 +21,8 @@ import NewAddress from '../../components/NewAddress';
 import Payment from '../../components/Payment';
 
 const SelectServices = () => {
+  document.title = 'Services | Modern clap';
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const activePane = useLocation().hash || '#saveaddress';

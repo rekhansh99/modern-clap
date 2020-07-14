@@ -9,6 +9,8 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const Bookings = () => {
+  document.title = 'My Bookings | Moddern clap';
+
   const bookings = [
     {
       serviceName: "men's hair cut",

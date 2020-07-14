@@ -8,6 +8,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 const TermsAndConditions = () => {
+  document.title = 'Terms and Conditions | Modern clap';
+
   return (
     <div className="dv_wrapper">
       <Header

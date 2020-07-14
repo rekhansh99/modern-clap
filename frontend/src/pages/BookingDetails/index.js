@@ -20,6 +20,8 @@ import AreYouSureModal from '../../components/modals/BookingDetails/AreYouSure';
 import DoneSuccessfullyModal from '../../components/modals/BookingDetails/DoneSuccessfully';
 
 const BookingDetails = props => {
+  document.title = 'Booking Details | Modern clap';
+
   const modal = props.location.hash;
   const booking = {
     id: 'MD124587',
