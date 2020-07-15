@@ -8,7 +8,7 @@ import BookingCard from '../../components/Bookings/BookingCard';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-const Bookings = () => {
+const MyBookings = () => {
   document.title = 'My Bookings | Modern clap';
 
   const bookings = [
@@ -70,4 +70,4 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+export default MyBookings;

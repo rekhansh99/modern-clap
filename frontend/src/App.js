@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AboutUs from './pages/AboutUs';
 import Blogs from './pages/Blogs';
-import Bookings from './pages/Bookings';
+import MyBookings from './pages/MyBookings';
 import BookingDetails from './pages/BookingDetails';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
@@ -31,7 +31,7 @@ function App() {
           <Blogs />
         </Route>
         <Route exact path="/bookings">
-          <Bookings />
+          <MyBookings />
         </Route>
         <Route exact path="/booking-details">
           <BookingDetails />
