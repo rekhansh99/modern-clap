@@ -136,6 +136,7 @@ const Reviews = () => {
       <Header
         title="Reviews"
         desc="Total 1,241review by 245 customers with average rating is 4.5"
+        headerClassName="dv_reviews_header"
       />
       <div className="dv_content">
         <div className="dv_review_counting_wrapper">

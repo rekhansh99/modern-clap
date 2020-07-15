@@ -4,9 +4,9 @@ body {
   padding: 0;
 }
 header.dv_header {
-  background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('./images/header-bg.jpg');
+    url('./images/page-headers/header-bg.jpg');
+  background-position: center;
   height: 550px;
   background-size: cover;
 }
@@ -1059,17 +1059,17 @@ span.dv_sm_overview {
   padding: 30px 0;
 }
 header.dv_service_details_header {
-  background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('./images/service-details.jpg');
+    url('./images/page-headers/service-details-header.jpg');
+  background-position: center;
   height: auto;
   background-size: cover;
   padding: 60px 0;
 }
 header.dv_about_us_page {
-  background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('./images/about-us.jpg');
+    url('./images/page-headers/about-us-header.jpg');
+  background-position: center;
   height: auto;
   background-size: cover;
   padding: 60px 0;
@@ -1384,9 +1384,73 @@ span.dv_out_of_star {
   font-size: 18px;
 }
 header.dv_booking_request_details {
-  background-position: center;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
-    url('./images/about-us.jpg');
+    url('./images/page-headers/booking-details-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_blog_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/blog-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_career_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/career-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_contact_us_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/contact-us-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_my_bookings_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/my-bookings-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_my_reviews_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/my-reviews-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_privacy_policy_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/privacy-policy-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_reviews_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/reviews-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
+header.dv_terms_conditions_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/terms-condition-header.jpg');
+  background-position: center;
   height: auto;
   background-size: cover;
   padding: 60px 0;

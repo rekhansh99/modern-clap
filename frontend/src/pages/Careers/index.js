@@ -17,6 +17,7 @@ const Careers = () => {
       <Header
         title="Careers"
         desc="We’re looking for creative, collaborative individuals to join our team!"
+        headerClassName="dv_career_header"
       />
       <div className="dv_content">
         <div className="dv_career_form_wrapper">

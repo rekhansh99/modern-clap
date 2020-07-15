@@ -57,6 +57,7 @@ const Blogs = () => {
       <Header
         title="Blog"
         desc="A blog is a discussion or informational data published on the Web"
+        headerClassName="dv_blog_header"
       />
       <div className="dv_content">
         <div className="dv_terms_conditions">

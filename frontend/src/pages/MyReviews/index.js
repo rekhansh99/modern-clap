@@ -75,6 +75,7 @@ const MyReviews = () => {
       <Header
         title="My Reviews"
         desc="Total 12 review by me for 120 customers with average rating is 4"
+        headerClassName="dv_my_reviews_header"
       />
       <div className="dv_content">
         <div className="dv_review_counting_wrapper">

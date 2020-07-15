@@ -15,6 +15,7 @@ const TermsAndConditions = () => {
       <Header
         title="Terms & Conditions"
         desc="Legal agreements between a service provider and us "
+        headerClassName="dv_terms_conditions_header"
       />
       <div className="dv_content">
         <div className="dv_terms_conditions">

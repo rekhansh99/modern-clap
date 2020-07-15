@@ -14,6 +14,7 @@ const PrivacyPolicy = () => {
       <Header
         title="Privacy Policy"
         desc="Legal Policy between us, service provider and customer"
+        headerClassName="dv_privacy_policy_header"
       />
       <div className="dv_content">
         <div className="dv_terms_conditions">

@@ -20,7 +20,11 @@ const AboutUs = () => {
 
   return (
     <div className="dv_wrapper">
-      <Header title="About us" desc="Appreciate for visiting our page " />
+      <Header
+        title="About us"
+        desc="Appreciate for visiting our page"
+        headerClassName="dv_about_us_page"
+      />
 
       <div className="dv_content">
         <div className="dv_about_us_wrapper">

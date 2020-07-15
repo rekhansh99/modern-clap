@@ -18,7 +18,11 @@ const ContactUs = () => {
 
   return (
     <div className="dv_wrapper">
-      <Header title="Contact Us" desc="Get in touch to know and grow..!" />
+      <Header
+        title="Contact Us"
+        desc="Get in touch to know and grow..!"
+        headerClassName="dv_contact_us_header"
+      />
       <div className="dv_content">
         <div className="dv_contactus_wrapper">
           <Container className="text-center">

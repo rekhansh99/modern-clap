@@ -56,6 +56,7 @@ const Bookings = () => {
       <Header
         title="My Bookings"
         desc="Check your all booking here to get invoice, etc"
+        headerClassName="dv_my_bookings_header"
       />
       <div className="dv_content">
         <div className="dv_my_booking_wrapper">
