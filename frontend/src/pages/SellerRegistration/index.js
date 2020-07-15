@@ -19,7 +19,7 @@ const SellerRegistration = () => {
       <Header
         title="Best way to grow your business "
         desc="Register and Join with our more than 30,000 partners and give boost to business."
-        headerClassName="dv_about_us_page"
+        headerClassName="dv_seller_registration_header"
       />
       <div className="dv_content">
         <div className="dv_seller_registration_wrapper">

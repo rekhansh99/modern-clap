@@ -1447,6 +1447,14 @@ header.dv_reviews_header {
   background-size: cover;
   padding: 60px 0;
 }
+header.dv_seller_registration_header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url('./images/page-headers/seller-registration-header.jpg');
+  background-position: center;
+  height: auto;
+  background-size: cover;
+  padding: 60px 0;
+}
 header.dv_terms_conditions_header {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
     url('./images/page-headers/terms-condition-header.jpg');
