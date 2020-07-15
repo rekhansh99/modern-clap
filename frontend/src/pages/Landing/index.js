@@ -47,112 +47,17 @@ const Landing = () => {
         <CategoryBox />
         <FullBanner />
         <TwoBanner />
-        <RepeatSlider
-          heading="cleaners"
-          desc="professional staff"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'deep cleaning'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'soft cleaning'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'kitchen cleaning'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'bathroom cleaning'
-            }
-          ]}
-        />
-        <RepeatSlider
-          heading="outfeet fitness"
-          desc="safety first"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'service title'
-            }
-          ]}
-        />
+        <RepeatSlider heading="Cleaning" desc="professional staff" />
+        <RepeatSlider heading="AC-Technicians" desc="safety first" />
         <FullBanner />
         <TwoBanner />
-        <RepeatSlider
-          heading="bathroom cleaning"
-          desc="used hand gloves"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'service title'
-            }
-          ]}
-        />
-        <RepeatSlider
-          heading="repairs"
-          desc="30 days service guarantee"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'service title'
-            }
-          ]}
-        />
+        <RepeatSlider heading="Deep-Cleaning" desc="safety first" />
+        <RepeatSlider heading="Disinfection" desc="safety first" />
+        <RepeatSlider heading="Handymen" desc="safety first" />
+        <RepeatSlider heading="Ladies-salon" desc="safety first" />
+        <RepeatSlider heading="Men's salon" desc="safety first" />
+        <RepeatSlider heading="Painters" desc="safety first" />
+        <RepeatSlider heading="Pest-control" desc="safety first" />
         <ImageText />
         <div className="dv_download_app">
           <Container>

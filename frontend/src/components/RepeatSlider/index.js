@@ -8,16 +8,23 @@ import SwiperCore, { Navigation } from 'swiper';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 import 'swiper/swiper-bundle.min.css';
+import sliderNames from '../../config/repeatSliders.json';
 
 SwiperCore.use([Navigation]);
 
 const RepeatSlider = props => {
-  const sliderItemsJSX = props.items.map((item, i) => (
+  const sliderItemsJSX = sliderNames[props.heading].map((item, i) => (
     <SwiperSlide key={i}>
       <div className="item">
-        <Link to={item.link}>
-          <img className="owlsliderimg" src={item.src} alt={item.alt} />
-          <div className="dv_img_title">{item.title}</div>
+        <Link to={item}>
+          <img
+            className="owlsliderimg"
+            src={`./images/sliders/${props.heading}/${item}`}
+            alt={item}
+          />
+          <div className="dv_img_title">
+            {item.split('.')[0].replace(/-/g, ' ')}
+          </div>
         </Link>
       </div>
     </SwiperSlide>

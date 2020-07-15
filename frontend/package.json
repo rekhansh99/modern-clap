@@ -23,7 +23,7 @@
     "swiper": "^6.0.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json}": "eslint",
+    "src/**/*.{js,jsx}": "eslint",
     "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write"
   },
   "scripts": {
