@@ -13,22 +13,25 @@ import sliderNames from '../../config/repeatSliders.json';
 SwiperCore.use([Navigation]);
 
 const RepeatSlider = props => {
-  const sliderItemsJSX = sliderNames[props.heading].map((item, i) => (
-    <SwiperSlide key={i}>
-      <div className="item">
-        <Link to={item}>
-          <img
-            className="owlsliderimg"
-            src={`./images/sliders/${props.heading}/${item}`}
-            alt={item}
-          />
-          <div className="dv_img_title">
-            {item.split('.')[0].replace(/-/g, ' ')}
-          </div>
-        </Link>
-      </div>
-    </SwiperSlide>
-  ));
+  const sliderItemsJSX = sliderNames[props.heading].map((item, i) => {
+    const img = item.replace('&', 'and');
+    const title = item.split('.')[0].replace(/-/g, ' ');
+
+    return (
+      <SwiperSlide key={i}>
+        <div className="item">
+          <Link to={'/service-details/' + title}>
+            <img
+              className="owlsliderimg"
+              src={`./images/sliders/${props.heading}/${img}`}
+              alt={img}
+            />
+            <div className="dv_img_title">{title}</div>
+          </Link>
+        </div>
+      </SwiperSlide>
+    );
+  });
 
   return (
     <div className="dv_repeat_slider_wrapper">
