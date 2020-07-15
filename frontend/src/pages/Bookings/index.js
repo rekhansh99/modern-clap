@@ -9,7 +9,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const Bookings = () => {
-  document.title = 'My Bookings | Moddern clap';
+  document.title = 'My Bookings | Modern clap';
 
   const bookings = [
     {
