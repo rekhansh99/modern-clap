@@ -83,11 +83,8 @@ const CategoryList = ({ title }) => {
     }
   ];
 
-  const categoriesJSX = categories.map(category => (
-    <li
-      key={category.name}
-      className={classnames({ selected: category.selected })}
-    >
+  const categoriesJSX = categories.map((category, index) => (
+    <li key={index} className={classnames({ selected: category.selected })}>
       {category.icon}
       {category.name}
       {category.selected ? <ChevronRight /> : ' '}
