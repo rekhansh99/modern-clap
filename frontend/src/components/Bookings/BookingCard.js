@@ -38,8 +38,12 @@ BookingCard.propTypes = {
   status: PropTypes.string,
   serviceName: PropTypes.string.isRequired,
   bookingDate: PropTypes.string.isRequired,
-  detailsColor: PropTypes.string.isRequired,
+  detailsColor: PropTypes.string,
   cardDetails: PropTypes.string.isRequired
+};
+
+BookingCard.defaultProps = {
+  detailsColor: '#000'
 };
 
 export default BookingCard;
