@@ -22,8 +22,8 @@ const ReviewCard = props => {
                 color: '#0eca0e',
                 margin: '-4px 0 0 5px'
               }}
-            />{' '}
-            4.5
+            />
+            {' ' + props.rating}
           </span>
         </span>
         <span className="dv_review_against">
@@ -43,6 +43,7 @@ ReviewCard.propTypes = {
   name: PropTypes.string.isRequired,
   serviceName: PropTypes.string.isRequired,
   reviewerName: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
   imgSrc: PropTypes.string.isRequired,
   reviewText: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

@@ -761,7 +761,8 @@ ul.dv_services_points > li {
   padding: 0;
 }
 .dv_last_service_border {
-  height: 481px;
+  height: 500px;
+  border-bottom: 1px solid #e0e8e8 !important;
   overflow: auto;
 }
 button.btn.btn-default.dv_plus_minusbtn {
@@ -806,10 +807,6 @@ button.btn.btn-default.dv_plus_minusbtn > svg {
 span.dv_service_name {
   font-size: 16px;
   font-weight: 600;
-}
-.dv_last_service_border {
-  height: 481px;
-  border-bottom: 1px solid #e0e8e8 !important;
 }
 .dv_service_prices_add_minus_btn_wrapper {
   margin: 0;
@@ -939,6 +936,11 @@ ul.dv_timing_selection::-webkit-scrollbar-thumb {
 }
 ul.dv_timing_selection::-webkit-scrollbar-track {
   background: #d4d4d4;
+}
+.read_more {
+  color: #2874f0;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 .dv_service_points > ul > li {
   display: block;
@@ -2513,3 +2515,86 @@ input.form-control.dv_search_mobile_input:focus,
 }
 
 /*end mobile search css*/
+/* Start Review Filter css */
+
+ul.dv_filter_reviews {
+  list-style-type: none;
+  margin: 0 0 15px 0;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+}
+ul.dv_filter_reviews::-webkit-scrollbar {
+  height: 4px;
+}
+ul.dv_filter_reviews::-webkit-scrollbar-thumb {
+  background: #717171;
+  border-radius: 5px;
+}
+ul.dv_filter_reviews::-webkit-scrollbar-track {
+  background: #d4d4d4;
+}
+.dv_filter_reviews > ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+ul.dv_filter_reviews > li {
+  text-align: center;
+  margin: 15px 15px 15px 0;
+  padding: 0;
+}
+ul.dv_filter_reviews > li > a {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  transition: 300ms;
+  background: #ffffff;
+  color: #282828;
+  text-transform: capitalize;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+}
+ul.dv_filter_reviews > li > a:hover {
+  text-decoration: none;
+  background-color: #2874f0;
+  color: #ffffff;
+}
+ul.dv_filter_reviews > li > a:hover > svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+a.dv_active_review_filter {
+  background: #2874f0 !important;
+  color: #ffffff !important;
+}
+a.dv_active_review_filter > svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+ul.dv_filter_reviews > li > a > svg {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -2px;
+  left: 2px;
+  color: #007bff;
+  fill: #007bff;
+}
+ul.dv_filter_reviews > li > a.active {
+  text-decoration: none;
+  background-color: #2874f0;
+  color: #ffffff;
+}
+
+/* End Review Filter css */

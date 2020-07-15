@@ -84,6 +84,12 @@ const Menu = ({ open, showMenu }) => {
                 My Bookings
               </Link>
             </li>
+            <li>
+              <Link to="/my-reviews">
+                <Reviews />
+                My Reviews
+              </Link>
+            </li>
           </ul>
         </div>
         <ul className="dv_menu_links_a">
