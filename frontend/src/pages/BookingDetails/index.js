@@ -135,58 +135,8 @@ const BookingDetails = props => {
         <Container>
           <div className="dv_get_more_services">explore more services</div>
         </Container>
-        <RepeatSlider
-          heading="bathroom cleaning"
-          desc="used hand gloves"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'service title'
-            }
-          ]}
-        />
-        <RepeatSlider
-          heading="repairs"
-          desc="30 days service guarantee"
-          items={[
-            {
-              link: '#',
-              src: './images/slider/1.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/2.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/3.jpg',
-              title: 'service title'
-            },
-            {
-              link: '#',
-              src: './images/slider/4.jpg',
-              title: 'service title'
-            }
-          ]}
-        />
+        <RepeatSlider heading="Cleaning" desc="used hand gloves" />
+        <RepeatSlider heading="Handymen" desc="30 days service guarantee" />
       </div>
 
       <ServicesModal
