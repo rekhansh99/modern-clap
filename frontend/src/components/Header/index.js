@@ -96,7 +96,10 @@ class Header extends React.Component {
                 className={classnames({
                   dv_menu_scroll_style: this.state.fixed
                 })}
-                onClick={() => this.showMenu(true)}
+                onClick={e => {
+                  e.preventDefault();
+                  this.showMenu(true);
+                }}
               >
                 Login <Menu size={24} />
               </Nav.Link>
