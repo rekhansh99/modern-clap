@@ -14,7 +14,17 @@ import CategoryBox from '../../components/CategoryBox';
 const Landing = () => {
   document.title = 'Modern clap';
 
-  const fullSliderImages = ['./images/slider.jpg', './images/slider.jpg'];
+  const fullSliderImages = [
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_1.jpg',
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_2.jpg',
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_3.jpg'
+  ];
+
+  const fullSliderMobileImages = [
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_MOBILE_1.jpg',
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_MOBILE_2.jpg',
+    './images/sliders/HOME_PAGE_MAIN_SLIDER_MOBILE_3.jpg'
+  ];
 
   return (
     <div className="dv_wrapper">
@@ -29,7 +39,11 @@ const Landing = () => {
         search={true}
       />
       <div className="dv_content">
-        <FullSlider images={fullSliderImages} />
+        <FullSlider
+          images={
+            window.innerWidth > 991 ? fullSliderImages : fullSliderMobileImages
+          }
+        />
         <CategoryBox />
         <FullBanner />
         <TwoBanner />
