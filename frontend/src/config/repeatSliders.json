@@ -1,5 +1,5 @@
 {
-  "AC-Technicians": [
+  "AC Technicians": [
     "AC-deep-cleaning.jpg",
     "AC-Soft-Service.jpg",
     "coil-cleaning.jpg",
@@ -24,7 +24,7 @@
     "Party-clean-up.jpg",
     "Window-cleaning.jpg"
   ],
-  "Deep-Cleaning": [
+  "Deep Cleaning": [
     "Bathroom-Deep-Cleaning.jpg",
     "Home-Deep-Cleaning.jpg",
     "Matress-Deep-Cleaning.jpg",
@@ -50,7 +50,7 @@
     "Lock-repair.jpg",
     "TV-mounting.jpg"
   ],
-  "Ladies-salon": [
+  "Ladies Salon": [
     "Eyelash.jpg",
     "Facial.jpg",
     "Hair.jpg",
@@ -61,7 +61,7 @@
     "Threading.jpg",
     "Wax.jpg"
   ],
-  "Men's salon": [
+  "Men's Salon": [
     "Child-haircut.jpg",
     "Haircut.jpg",
     "Head-massage.jpg",
@@ -76,7 +76,7 @@
     "water-proofing.jpg",
     "Wood-Polishing.jpg"
   ],
-  "Pest-control": [
+  "Pest Control": [
     "Ant-Control.jpg",
     "bed-pest-control.jpg",
     "Cockroach-Control.jpg",

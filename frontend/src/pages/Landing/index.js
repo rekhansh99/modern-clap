@@ -48,16 +48,16 @@ const Landing = () => {
         <FullBanner />
         <TwoBanner />
         <RepeatSlider heading="Cleaning" desc="professional staff" />
-        <RepeatSlider heading="AC-Technicians" desc="safety first" />
+        <RepeatSlider heading="AC Technicians" desc="safety first" />
         <FullBanner />
         <TwoBanner />
-        <RepeatSlider heading="Deep-Cleaning" desc="safety first" />
+        <RepeatSlider heading="Deep Cleaning" desc="safety first" />
         <RepeatSlider heading="Disinfection" desc="safety first" />
         <RepeatSlider heading="Handymen" desc="safety first" />
-        <RepeatSlider heading="Ladies-salon" desc="safety first" />
-        <RepeatSlider heading="Men's salon" desc="safety first" />
+        <RepeatSlider heading="Ladies Salon" desc="safety first" />
+        <RepeatSlider heading="Men's Salon" desc="safety first" />
         <RepeatSlider heading="Painters" desc="safety first" />
-        <RepeatSlider heading="Pest-control" desc="safety first" />
+        <RepeatSlider heading="Pest Control" desc="safety first" />
         <ImageText />
         <div className="dv_download_app">
           <Container>
