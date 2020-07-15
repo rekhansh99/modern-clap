@@ -82,14 +82,6 @@ const RepeatSlider = props => {
 };
 
 RepeatSlider.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string,
-      src: PropTypes.string,
-      title: PropTypes.string,
-      alt: ''
-    })
-  ).isRequired,
   heading: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired
 };
