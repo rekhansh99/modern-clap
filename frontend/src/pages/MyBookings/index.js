@@ -5,8 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import BookingCard from '../../components/Bookings/BookingCard';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
 
 const MyBookings = () => {
   document.title = 'My Bookings | Modern clap';

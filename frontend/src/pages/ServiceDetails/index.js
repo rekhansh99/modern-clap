@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
-import Header from '../../components/Header';
-import RepeatSlider from '../../components/RepeatSlider';
+import Header from '../../components/common/Header';
+import RepeatSlider from '../../components/common/RepeatSlider';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

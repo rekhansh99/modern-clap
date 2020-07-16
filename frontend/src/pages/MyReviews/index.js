@@ -8,10 +8,10 @@ import TabContent from 'react-bootstrap/TabContent';
 import TabPane from 'react-bootstrap/TabPane';
 import { Check, Edit2 } from 'react-feather';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import ReviewCard from '../../components/ReviewCard';
-import AddReviewCard from '../../components/AddReviewCard';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import ReviewCard from '../../components/Reviews/ReviewCard';
+import AddReviewCard from '../../components/Reviews/AddReviewCard';
 
 const MyReviews = () => {
   document.title = 'My Reviews | Modern clap';

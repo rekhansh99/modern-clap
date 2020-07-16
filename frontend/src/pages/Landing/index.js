@@ -2,14 +2,14 @@ import React from 'react';
 
 import Container from 'react-bootstrap/Container';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import FullSlider from '../../components/FullSlider';
-import RepeatSlider from '../../components/RepeatSlider';
-import FullBanner from '../../components/FullBanner';
-import TwoBanner from '../../components/TwoBanner';
-import ImageText from '../../components/ImageText';
-import CategoryBox from '../../components/CategoryBox';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import FullSlider from '../../components/Landing/FullSlider';
+import RepeatSlider from '../../components/common/RepeatSlider';
+import FullBanner from '../../components/Landing/FullBanner';
+import TwoBanner from '../../components/Landing/TwoBanner';
+import ImageText from '../../components/Landing/ImageText';
+import CategoryBox from '../../components/Landing/CategoryBox';
 
 const Landing = () => {
   document.title = 'Modern clap';

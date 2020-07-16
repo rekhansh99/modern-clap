@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header';
 
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
@@ -7,7 +6,8 @@ import FormFile from 'react-bootstrap/FormFile';
 import FormFileInput from 'react-bootstrap/FormFileInput';
 import FormFileLabel from 'react-bootstrap/FormFileLabel';
 
-import SectionHeading from '../../components/SectionHeading';
+import Header from '../../components/common/Header';
+import SectionHeading from '../../components/common/SectionHeading';
 
 import { ReactComponent as GreenTickSVG } from '../../svgs/tick-green.svg';
 

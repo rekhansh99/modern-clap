@@ -6,18 +6,18 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import Header from '../../components/Header';
-import RepeatSlider from '../../components/RepeatSlider';
-import SectionHeading from '../../components/SectionHeading';
-import ServicesModal from '../../components/modals/BookingDetails/Services';
-import TimingModal from '../../components/modals/BookingDetails/Timing';
-import LocationModal from '../../components/modals/BookingDetails/Location';
-import PaymentModal from '../../components/modals/BookingDetails/Payment';
-import ReviewModal from '../../components/modals/BookingDetails/Review';
-import FAQsModal from '../../components/modals/BookingDetails/FAQs';
-import ProviderModal from '../../components/modals/BookingDetails/Provider';
-import AreYouSureModal from '../../components/modals/BookingDetails/AreYouSure';
-import DoneSuccessfullyModal from '../../components/modals/BookingDetails/DoneSuccessfully';
+import Header from '../../components/common/Header';
+import RepeatSlider from '../../components/common/RepeatSlider';
+import SectionHeading from '../../components/common/SectionHeading';
+import ServicesModal from '../../components/Bookings/modals/Services';
+import TimingModal from '../../components/Bookings/modals/Timing';
+import LocationModal from '../../components/Bookings/modals/Location';
+import PaymentModal from '../../components/Bookings/modals/Payment';
+import ReviewModal from '../../components/Bookings/modals/Review';
+import FAQsModal from '../../components/Bookings/modals/FAQs';
+import ProviderModal from '../../components/Bookings/modals/Provider';
+import AreYouSureModal from '../../components/Bookings/modals/AreYouSure';
+import DoneSuccessfullyModal from '../../components/Bookings/modals/DoneSuccessfully';
 
 const BookingDetails = props => {
   document.title = 'Booking Details | Modern clap';

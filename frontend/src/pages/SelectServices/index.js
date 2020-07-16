@@ -10,15 +10,15 @@ import TabPane from 'react-bootstrap/TabPane';
 import { ChevronLeft, Menu, MapPin, PlusSquare } from 'react-feather';
 import { Geo, CartCheck } from 'react-bootstrap-icons';
 
-import MenuModal from '../../components/Menu';
-import SectionHeading from '../../components/SectionHeading';
-import CategoryList from '../../components/CategoryList';
-import ServicesList from '../../components/ServicesList';
-import TimingSelector from '../../components/TimingSelector';
-import CartModal from '../../components/modals/SelectServices/Cart';
-import SelectAddress from '../../components/SelectAddress';
-import NewAddress from '../../components/NewAddress';
-import Payment from '../../components/Payment';
+import MenuModal from '../../components/common/Menu';
+import SectionHeading from '../../components/common/SectionHeading';
+import CategoryList from '../../components/SelectServices/CategoryList';
+import ServicesList from '../../components/SelectServices/ServicesList';
+import TimingSelector from '../../components/common/TimingSelector';
+import CartModal from '../../components/SelectServices/Cart';
+import SelectAddress from '../../components/SelectServices/SelectAddress';
+import NewAddress from '../../components/SelectServices/NewAddress';
+import Payment from '../../components/SelectServices/Payment';
 
 const SelectServices = () => {
   document.title = 'Services | Modern clap';

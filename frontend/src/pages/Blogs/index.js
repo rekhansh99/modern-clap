@@ -4,9 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import BlogCard from '../../components/BlogCard';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import BlogCard from '../../components/Blogs/BlogCard';
 
 const Blogs = () => {
   document.title = 'Blogs | Modern clap';

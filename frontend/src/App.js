@@ -1,21 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import AboutUs from './pages/AboutUs';
+import AboutUs from './pages/static/AboutUs';
 import Blogs from './pages/Blogs';
 import MyBookings from './pages/MyBookings';
 import BookingDetails from './pages/BookingDetails';
 import Careers from './pages/Careers';
-import ContactUs from './pages/ContactUs';
+import ContactUs from './pages/static/ContactUs';
 import Landing from './pages/Landing';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/static/PrivacyPolicy';
+import TermsAndConditions from './pages/static/TermsAndConditions';
 import Reviews from './pages/Reviews';
 import SelectServices from './pages/SelectServices';
 import SellerRegistration from './pages/SellerRegistration';
 import ServiceDetails from './pages/ServiceDetails';
-import ScrollToTop from './components/ScrollToTop';
-import MobileSeach from './pages/mobile/Search';
+import ScrollToTop from './components/common/ScrollToTop';
+import MobileSeach from './pages/MobileSearch';
 import MyReviews from './pages/MyReviews';
 
 function App() {

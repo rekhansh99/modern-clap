@@ -6,9 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import { ChevronRight, ChevronLeft, Star } from 'react-feather';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import ReviewCard from '../../components/ReviewCard';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import ReviewCard from '../../components/Reviews/ReviewCard';
 
 const reviews = [
   {
