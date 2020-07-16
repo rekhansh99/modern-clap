@@ -20,7 +20,7 @@ const ImageText = () => {
             <div className="dv_heading_of_panel">safety first</div>
             <p className="dv_paragraph_of_panel">
               we are very care about our services and your safety is our first
-              <strong>priority </strong>
+              <strong> priority </strong>
             </p>
             <p className="dv_paragraph_of_panel">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
