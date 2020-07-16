@@ -5,11 +5,10 @@ import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Form from 'react-bootstrap/Form';
 
-import { X, Minus, Plus } from 'react-feather';
+import { X } from 'react-feather';
+
+import InputStepper from '../InputStepper';
 
 const Cart = ({ isOpen, close }) => {
   return (
@@ -47,20 +46,7 @@ const Cart = ({ isOpen, close }) => {
                   <li>AED 120</li>
                   <li>AED 90</li>
                 </ul>
-                <ButtonGroup>
-                  <span className="dv_add_overlay">add </span>
-                  <Button className="btn-default dv_plus_minusbtn">
-                    <Minus />
-                  </Button>
-                  <Form.Control
-                    type="text"
-                    className="form-control dv_input_qty"
-                    defaultValue={2}
-                  ></Form.Control>
-                  <Button className="btn-default dv_plus_minusbtn">
-                    <Plus />
-                  </Button>
-                </ButtonGroup>
+                <InputStepper value={0} onChange={() => {}} />
               </div>
             </div>
           </div>
@@ -76,19 +62,7 @@ const Cart = ({ isOpen, close }) => {
                   <li>AED 120</li>
                   <li>AED 90</li>
                 </ul>
-                <ButtonGroup>
-                  <Button className="btn-default dv_plus_minusbtn">
-                    <Minus />
-                  </Button>
-                  <Form.Control
-                    type="text"
-                    className="form-control dv_input_qty"
-                    defaultValue={2}
-                  ></Form.Control>
-                  <Button className="btn-default dv_plus_minusbtn">
-                    <Plus />
-                  </Button>
-                </ButtonGroup>
+                <InputStepper value={2} onChange={() => {}} />
               </div>
             </div>
           </div>
