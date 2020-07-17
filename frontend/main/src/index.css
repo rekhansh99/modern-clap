@@ -1699,6 +1699,7 @@ span.dv_review_against > a:hover {
   cursor: pointer;
 }
 .dv_give_rating {
+  color: rgb(252, 215, 3);
   border: 1px solid rgb(252, 215, 3);
   border-radius: 4px;
   padding: 10px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Modal from 'react-bootstrap/Modal';
@@ -11,9 +11,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { X } from 'react-feather';
 
+import StarRating from '../../Reviews/StarRating';
+
 import { ReactComponent as Reviews } from '../../../svgs/reviews.svg';
 
 const Review = ({ isOpen, close }) => {
+  const [toolsRating, setToolsRating] = useState(0);
+  const [workRating, setWorkRating] = useState(0);
+  const [behaviourRating, setBehaviourRating] = useState(0);
+  const [overallRating, setOverallRating] = useState(0);
+
   return (
     <Modal
       id="dv_write_reviews"
@@ -53,19 +60,22 @@ const Review = ({ isOpen, close }) => {
           <Row>
             <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Tools </label>
-              <div className="dv_give_rating" />
+              <StarRating value={toolsRating} onChange={setToolsRating} />
             </Col>
             <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Work </label>
-              <div className="dv_give_rating" />
+              <StarRating value={workRating} onChange={setWorkRating} />
             </Col>
             <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Behaviour </label>
-              <div className="dv_give_rating" />
+              <StarRating
+                value={behaviourRating}
+                onChange={setBehaviourRating}
+              />
             </Col>
             <Col sm={6} xs={12} className="dv_raing_per_field_wrapper">
               <label>Overall rating </label>
-              <div className="dv_give_rating" />
+              <StarRating value={overallRating} onChange={setOverallRating} />
             </Col>
           </Row>
           <Button
