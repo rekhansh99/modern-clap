@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
@@ -25,7 +25,9 @@ const SelectServices = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const activePane = useLocation().hash || '#saveaddress';
+  const [openSection, setOpenSection] = useState(0);
+  const [highestReachedSection, setHighestReachedSection] = useState(0);
+  const [activeLocationPane, setActiveLocationPane] = useState('');
 
   return (
     <>
@@ -50,11 +52,16 @@ const SelectServices = () => {
                 title="services"
                 subtitle="2 services"
                 modal="!"
-                linkText="Edit"
+                onClick={() => setOpenSection(0)}
+                linkText={highestReachedSection >= 0 && 'Edit'}
               />
-              <CategoryList title="Type" />
-              <CategoryList title="Category" />
-              <ServicesList />
+              {openSection === 0 && (
+                <React.Fragment>
+                  <CategoryList title="Type" />
+                  <CategoryList title="Category" />
+                  <ServicesList />
+                </React.Fragment>
+              )}
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
@@ -62,9 +69,10 @@ const SelectServices = () => {
                 title="timing"
                 subtitle="12 Mar, 04 pm"
                 modal="!"
-                linkText="Edit"
+                onClick={() => setOpenSection(1)}
+                linkText={highestReachedSection >= 1 && 'Edit'}
               />
-              <TimingSelector />
+              {openSection === 1 && <TimingSelector />}
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
@@ -72,68 +80,78 @@ const SelectServices = () => {
                 title="location"
                 subtitle="Home"
                 modal="!"
-                linkText="Edit"
+                onClick={() => setOpenSection(2)}
+                linkText={highestReachedSection >= 2 && 'Edit'}
               />
-              <div className="dv_add_divider">
-                <TabContainer
-                  defaultActiveKey="#saveaddress"
-                  activeKey={activePane || '#saveaddress'}
-                >
-                  <Nav
-                    as="ul"
-                    variant="tabs"
-                    className="dv_nav_tabs"
-                    defaultActiveKey="#saveaddress"
+              {openSection === 2 && (
+                <div className="dv_add_divider">
+                  <TabContainer
+                    activeKey={activeLocationPane}
+                    defaultActiveKey="saveaddress"
                   >
-                    <Nav.Item as="li">
-                      <Nav.Link
-                        as={Link}
-                        to="#saveaddress"
-                        eventKey="#saveaddress"
-                      >
-                        <MapPin size={24} />
-                        Address
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as="li">
-                      <Nav.Link
-                        as={Link}
-                        to="#addnewaddress"
-                        eventKey="#addnewaddress"
-                      >
-                        <PlusSquare size={24} />
-                        New
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as="li">
-                      <Nav.Link
-                        as={Link}
-                        to="#addcurrentlocation"
-                        eventKey="#addcurrentlocation"
-                      >
-                        <Geo size="1em" />
-                        Geolocation
-                      </Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  {/* Tab panes */}
-                  <TabContent className="dv_nav_tabs_content">
-                    <TabPane eventKey="#saveaddress">
-                      <SelectAddress />
-                    </TabPane>
-                    <TabPane
-                      eventKey="#addnewaddress"
-                      className="addnewaddress"
+                    <Nav
+                      as="ul"
+                      variant="tabs"
+                      className="dv_nav_tabs"
+                      activeKey={activeLocationPane}
+                      defaultActiveKey="saveaddress"
                     >
-                      <NewAddress />
-                    </TabPane>
-                    {/* <div id="addcurrentlocation" class="tab-pane fade">
+                      <Nav.Item as="li">
+                        <Nav.Link
+                          as={Link}
+                          onClick={() => {
+                            setActiveLocationPane('saveaddress');
+                          }}
+                          eventKey="saveaddress"
+                        >
+                          <MapPin size={24} />
+                          Address
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item as="li">
+                        <Nav.Link
+                          as={Link}
+                          onClick={() => {
+                            setActiveLocationPane('addnewaddress');
+                          }}
+                          eventKey="addnewaddress"
+                        >
+                          <PlusSquare size={24} />
+                          New
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item as="li">
+                        <Nav.Link
+                          as={Link}
+                          onClick={() => {
+                            setActiveLocationPane('addcurrentlocation');
+                          }}
+                          eventKey="addcurrentlocation"
+                        >
+                          <Geo size="1em" />
+                          Geolocation
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    {/* Tab panes */}
+                    <TabContent className="dv_nav_tabs_content">
+                      <TabPane eventKey="saveaddress">
+                        <SelectAddress />
+                      </TabPane>
+                      <TabPane
+                        eventKey="addnewaddress"
+                        className="addnewaddress"
+                      >
+                        <NewAddress />
+                      </TabPane>
+                      {/* <div id="addcurrentlocation" class="tab-pane fade">
                       <h3>Menu 1</h3>
                       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div> */}
-                  </TabContent>
-                </TabContainer>
-              </div>
+                    </TabContent>
+                  </TabContainer>
+                </div>
+              )}
               <div className="dv_divider_in_booking_request" />
             </Row>
             <Row>
@@ -141,9 +159,10 @@ const SelectServices = () => {
                 title="Payment"
                 subtitle="AED 114"
                 modal="!"
-                linkText="Edit"
+                onClick={() => setOpenSection(3)}
+                linkText={highestReachedSection >= 3 && 'Edit'}
               />
-              <Payment />
+              {openSection === 3 && <Payment />}
               <div className="dv_divider_in_booking_request" />
             </Row>
           </Container>
@@ -156,13 +175,25 @@ const SelectServices = () => {
         <Container>
           <ul>
             <li>
-              <Link to="#!" onClick={() => setCartOpen(true)}>
+              <Link onClick={() => setCartOpen(true)}>
                 <CartCheck size={20} style={{ margin: '-4px 5px 0 0' }} />
                 cart - 15
               </Link>
             </li>
             <li>
-              <Link to="/booking-details">Next </Link>
+              {highestReachedSection === 3 ? (
+                <Link to="/booking-details">Book Now</Link>
+              ) : (
+                <Link
+                  onClick={() => {
+                    highestReachedSection === openSection &&
+                      setHighestReachedSection(highestReachedSection + 1);
+                    setOpenSection(openSection + 1);
+                  }}
+                >
+                  Next
+                </Link>
+              )}
             </li>
           </ul>
         </Container>

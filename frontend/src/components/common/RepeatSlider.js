@@ -8,7 +8,7 @@ import SwiperCore, { Navigation } from 'swiper';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 import 'swiper/swiper-bundle.min.css';
-import sliderNames from '../../config/repeatSliders.json';
+import sliderNames from '../../config/services.json';
 
 SwiperCore.use([Navigation]);
 
