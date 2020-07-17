@@ -19,6 +19,8 @@ import CartModal from '../components/SelectServices/Cart';
 import SelectAddress from '../components/SelectServices/SelectAddress';
 import NewAddress from '../components/SelectServices/NewAddress';
 import Payment from '../components/SelectServices/Payment';
+import services from '../config/services.json';
+import { ReactComponent as Cleaners } from '../svgs/cleaners.svg';
 
 const SelectServices = () => {
   document.title = 'Services | Modern clap';
@@ -28,6 +30,27 @@ const SelectServices = () => {
   const [openSection, setOpenSection] = useState(0);
   const [highestReachedSection, setHighestReachedSection] = useState(0);
   const [activeLocationPane, setActiveLocationPane] = useState('');
+  const [activeServiceType, setActiveServiceType] = useState(-1);
+  const [activeServiceCategories, setActiveServiceCategories] = useState(
+    Object.keys(services).map(() => -1)
+  );
+
+  let serviceTypes, serviceCategories;
+  if (openSection === 0) {
+    serviceTypes = Object.keys(services).map(type => ({
+      name: type,
+      icon: <Cleaners />
+    }));
+
+    if (activeServiceType >= 0) {
+      serviceCategories = services[serviceTypes[activeServiceType].name].map(
+        category => ({
+          name: category.split('.')[0].replace(/-/g, ' '),
+          icon: <Cleaners />
+        })
+      );
+    }
+  }
 
   return (
     <>
@@ -53,13 +76,37 @@ const SelectServices = () => {
                 subtitle="2 services"
                 modal="!"
                 onClick={() => setOpenSection(0)}
-                linkText={highestReachedSection >= 0 && 'Edit'}
+                linkText={highestReachedSection >= 0 ? 'Edit' : ''}
               />
               {openSection === 0 && (
                 <React.Fragment>
-                  <CategoryList title="Type" />
-                  <CategoryList title="Category" />
-                  <ServicesList />
+                  <CategoryList
+                    title="Type"
+                    categories={serviceTypes}
+                    active={activeServiceType}
+                    setActive={index => setActiveServiceType(index)}
+                  />
+                  {activeServiceType >= 0 && (
+                    <React.Fragment>
+                      <CategoryList
+                        title="Category"
+                        categories={serviceCategories}
+                        active={activeServiceCategories[activeServiceType]}
+                        setActive={index => {
+                          const newActiveServiceCategories = [
+                            ...activeServiceCategories
+                          ];
+                          newActiveServiceCategories[activeServiceType] = index;
+                          setActiveServiceCategories(
+                            newActiveServiceCategories
+                          );
+                        }}
+                      />
+                      {activeServiceCategories[activeServiceType] >= 0 && (
+                        <ServicesList />
+                      )}
+                    </React.Fragment>
+                  )}
                 </React.Fragment>
               )}
               <div className="dv_divider_in_booking_request" />
@@ -70,7 +117,7 @@ const SelectServices = () => {
                 subtitle="12 Mar, 04 pm"
                 modal="!"
                 onClick={() => setOpenSection(1)}
-                linkText={highestReachedSection >= 1 && 'Edit'}
+                linkText={highestReachedSection >= 1 ? 'Edit' : ''}
               />
               {openSection === 1 && <TimingSelector />}
               <div className="dv_divider_in_booking_request" />
@@ -81,7 +128,7 @@ const SelectServices = () => {
                 subtitle="Home"
                 modal="!"
                 onClick={() => setOpenSection(2)}
-                linkText={highestReachedSection >= 2 && 'Edit'}
+                linkText={highestReachedSection >= 2 ? 'Edit' : ''}
               />
               {openSection === 2 && (
                 <div className="dv_add_divider">
@@ -98,6 +145,7 @@ const SelectServices = () => {
                     >
                       <Nav.Item as="li">
                         <Nav.Link
+                          to="#!"
                           as={Link}
                           onClick={() => {
                             setActiveLocationPane('saveaddress');
@@ -110,6 +158,7 @@ const SelectServices = () => {
                       </Nav.Item>
                       <Nav.Item as="li">
                         <Nav.Link
+                          to="#!"
                           as={Link}
                           onClick={() => {
                             setActiveLocationPane('addnewaddress');
@@ -122,6 +171,7 @@ const SelectServices = () => {
                       </Nav.Item>
                       <Nav.Item as="li">
                         <Nav.Link
+                          to="#!"
                           as={Link}
                           onClick={() => {
                             setActiveLocationPane('addcurrentlocation');
@@ -160,7 +210,7 @@ const SelectServices = () => {
                 subtitle="AED 114"
                 modal="!"
                 onClick={() => setOpenSection(3)}
-                linkText={highestReachedSection >= 3 && 'Edit'}
+                linkText={highestReachedSection >= 3 ? 'Edit' : ''}
               />
               {openSection === 3 && <Payment />}
               <div className="dv_divider_in_booking_request" />
@@ -175,7 +225,7 @@ const SelectServices = () => {
         <Container>
           <ul>
             <li>
-              <Link onClick={() => setCartOpen(true)}>
+              <Link to="#!" onClick={() => setCartOpen(true)}>
                 <CartCheck size={20} style={{ margin: '-4px 5px 0 0' }} />
                 cart - 15
               </Link>
@@ -185,6 +235,7 @@ const SelectServices = () => {
                 <Link to="/booking-details">Book Now</Link>
               ) : (
                 <Link
+                  to="#!"
                   onClick={() => {
                     highestReachedSection === openSection &&
                       setHighestReachedSection(highestReachedSection + 1);
