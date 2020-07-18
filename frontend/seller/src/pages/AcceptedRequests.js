@@ -25,7 +25,7 @@ const AcceptedRequests = () => {
         <Col xs={12}>
           <Card className="mb-4">
             <Card.Header>Accepted all Bookings</Card.Header>
-            <Card.Body>
+            <Card.Body className="p-0">
               <div className="dv_search_input_for_all">
                 <Search />
                 <input

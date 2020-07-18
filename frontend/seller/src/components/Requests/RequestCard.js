@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const RequestCard = ({ orderId, name, img, services, payment, status }) => {
@@ -19,7 +20,7 @@ const RequestCard = ({ orderId, name, img, services, payment, status }) => {
           </span>
           <span style={{ color: 'red', fontSize: '12px' }}>{status}</span>
         </div>
-        <a href={'/request/' + orderId}>view</a>
+        <Link to={'/request/' + orderId}>view</Link>
       </div>
     </Card>
   );

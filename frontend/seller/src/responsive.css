@@ -9,11 +9,20 @@
   .dv_toast_wrapper_details {
     font-size: 10px;
   }
+  #dv_close_mobile_menu {
+    display: block !important;
+  }
+  .show-mobile-991 {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
   .hide-mobile-767 {
     display: none;
+  }
+  .show-mobile-767 {
+    display: block;
   }
 }
 

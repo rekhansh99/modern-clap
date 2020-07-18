@@ -1,0 +1,22 @@
+.notification-dot {
+  position: absolute;
+  background: #ffffff;
+  color: #282828;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 19px;
+  margin: -8px 0 0 -28px;
+}
+.sb-sidenav-menu > .nav > .toggle {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  height: auto;
+  max-height: 0;
+}
+.sb-sidenav-menu > .nav > .toggle.toggle-open {
+  max-height: 130px;
+}

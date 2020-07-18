@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const NotificationCard = ({ icon, orderNo, message }) => {
@@ -8,8 +9,7 @@ const NotificationCard = ({ icon, orderNo, message }) => {
     <Card className="mb-3">
       <div className="dv_notification_to_details">
         {icon}
-        <a href="#!">{orderNo}</a> {message}
-        you.
+        <Link href="#!">{orderNo}</Link> {message}
       </div>
     </Card>
   );

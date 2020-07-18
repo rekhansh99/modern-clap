@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Codepen, MoreVertical } from 'react-feather';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ReactComponent as ChartSVG } from '../svgs/chart.svg';
 import NumberCard from '../components/common/NumberCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
+import Pagination from '../components/common/Pagination';
 
 const Dashboard = () => {
   return (
@@ -85,7 +86,7 @@ const Dashboard = () => {
         <Col xs={12}>
           <Card className="mb-4">
             <Card.Header>
-              <ChartSVG width={13} height={13} />
+              <FontAwesomeIcon icon="chart-area" className="mr-1" />
               Current week Bookings
             </Card.Header>
             <Card.Body>Area Chart Here</Card.Body>
@@ -94,7 +95,7 @@ const Dashboard = () => {
         <Col xs={12}>
           <Card className="mb-4">
             <Card.Header>
-              <ChartSVG width={13} height={13} />
+              <FontAwesomeIcon icon="table" className="mr-1" />
               Latest Bookings
             </Card.Header>
             <Card.Body>
@@ -191,6 +192,7 @@ const Dashboard = () => {
                   </tbody>
                 </table>
               </div>
+              <Pagination />
             </Card.Body>
           </Card>
         </Col>

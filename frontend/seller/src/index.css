@@ -10205,3 +10205,198 @@ ul.dv_daily_week_yesterday_sale > li > a {
 ul.dv_daily_week_yesterday_sale > li > a.active {
   font-family: Segoe ui bold;
 }
+
+.invoice-box {
+  max-width: 60%;
+  margin: 0 auto 40px auto;
+  padding: 15px;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  line-height: 24px;
+  color: #282828;
+}
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+}
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+.invoice-box table tr td:nth-child(2) {
+  text-align: right;
+}
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+.invoice-box table tr.top table td.title {
+  font-size: 24px;
+  line-height: 45px;
+  color: #333;
+  font-family: Segoe ui bold;
+}
+.invoice-box table tr.information table td {
+  padding-bottom: 40px;
+}
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-family: Segoe ui bold;
+}
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+.invoice-box table tr.item td {
+  border-bottom: 1px solid #eee;
+}
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+.invoice-box table tr.total td:nth-child(2) {
+  border-top: 2px solid #eee;
+  font-family: Segoe ui bold;
+}
+@media only screen and (max-width: 600px) {
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .invoice-box table tr.information table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+.show-mobile-767 {
+  display: none;
+}
+.dv_fixed_bottom_bar {
+  z-index: 2;
+  border-top: 1px solid #ebebeb;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+.dv_fixed_bottom_bar > ul {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.dv_fixed_bottom_bar > ul > li {
+  width: 100%;
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+}
+.dv_fixed_bottom_bar > ul > li > a {
+  font-size: 12px;
+  color: #b1afaf;
+  position: relative;
+}
+.dv_fixed_bottom_bar > ul > li > a > svg {
+  display: block;
+  margin: 0 auto;
+  width: 15px;
+  color: #b1afaf;
+}
+.dv_fixed_bottom_bar > ul > li > a.active,
+.dv_fixed_bottom_bar > ul > li > a.active > svg {
+  color: #007bff !important;
+}
+.dv_fixed_bottom_bar > ul > li > a > .dv_circle_notify {
+  background: #007bff;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: auto;
+  border-radius: 50%;
+  top: 2px;
+  border: 2px solid #ffffff;
+}
+.circle {
+  border-radius: 50%;
+  background-color: #007bff;
+  width: 10px;
+  height: 10px;
+  margin: -2px 0 0 -2px;
+  position: absolute;
+  opacity: 0;
+  animation: scaleIn 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
+#dv_close_mobile_menu {
+  position: fixed;
+  left: 195px;
+  top: 56px;
+  z-index: 1037;
+  color: #282828;
+  width: 30px;
+  height: 30px;
+  display: none;
+  background: #ffffff;
+  padding: 8px;
+}
+.show-mobile-991 {
+  display: none;
+}
+.dv_give_rating > i {
+  font-size: 24px;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+}
+.dv_give_rating {
+  border: 1px solid rgb(252, 215, 3);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+span.dv_section_heading {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background: #ffffff;
+  color: #282828;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-family: Segoe ui bold;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+}
+span.dv_section_heading > p {
+  font-family: Segoe ui regular;
+}
+.dv_section_heading > svg {
+  width: 20px;
+  float: left;
+  height: 20px;
+  margin: 5px 15px 0 0;
+}

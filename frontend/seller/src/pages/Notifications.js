@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Bell } from 'react-feather';
+import { Bell, XCircle, Clock } from 'react-feather';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import NotificationCard from '../components/Notifications/NotificationCard';
@@ -35,27 +35,27 @@ const Notifications = () => {
             unseen notification
           </span>
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<XCircle style={{ color: '#ff4a4a' }} />}
             orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
+            message="Requet cancelled by customer. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Clock style={{ color: '#FA801C' }} />}
             orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
+            message="Request has been rescheduled. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
@@ -67,30 +67,30 @@ const Notifications = () => {
               textTransform: 'capitalize'
             }}
           >
-            unseen notification
+            seen notification
           </span>
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
           <NotificationCard
-            icon={<Bell />}
+            icon={<Bell style={{ color: '#007bff' }} />}
             orderNo="MD 12345"
             message="Today 04:00 PM Appointment has shedule with you. "
           />
