@@ -17,14 +17,16 @@ const SectionHeading = ({
     <span className={'dv_section_heading ' + className}>
       <Tick />
       {title} <span className="dv_sm_overview"> {subtitle}</span>
-      <Link
-        to={'#' + modal}
-        onClick={onClick}
-        replace
-        className="dv_edit_for_all"
-      >
-        {linkText}
-      </Link>
+      {linkText && (
+        <Link
+          to={'#' + modal}
+          onClick={onClick}
+          replace
+          className="dv_edit_for_all"
+        >
+          {linkText}
+        </Link>
+      )}
     </span>
   );
 };
@@ -32,7 +34,7 @@ const SectionHeading = ({
 SectionHeading.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-  modal: PropTypes.string.isRequired,
+  modal: PropTypes.string,
   linkText: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func

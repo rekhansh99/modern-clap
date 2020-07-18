@@ -13,6 +13,8 @@ import { X, LogOut } from 'react-feather';
 
 import { ReactComponent as Avatar } from '../../svgs/avatar.svg';
 import { ReactComponent as Bookings } from '../../svgs/bookings.svg';
+import { ReactComponent as MyReviews } from '../../svgs/my-reviews.svg';
+import { ReactComponent as Provider } from '../../svgs/provider.svg';
 import { ReactComponent as AboutUs } from '../../svgs/about-us.svg';
 import { ReactComponent as TnC } from '../../svgs/tnc.svg';
 import { ReactComponent as PrivacyPolicy } from '../../svgs/privacy.svg';
@@ -86,13 +88,19 @@ const Menu = ({ open, showMenu }) => {
             </li>
             <li>
               <Link to="/my-reviews">
-                <Reviews />
+                <MyReviews />
                 My Reviews
               </Link>
             </li>
           </ul>
         </div>
         <ul className="dv_menu_links_a">
+          <li>
+            <Link to="/provider/login">
+              <Provider />
+              Become Provider
+            </Link>
+          </li>
           <li>
             <Link to="/about-us">
               <AboutUs />
