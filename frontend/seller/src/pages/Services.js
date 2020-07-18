@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { MoreVertical, Search, ChevronLeft, ChevronRight } from 'react-feather';
+import { Search, ChevronLeft, ChevronRight, MoreVertical } from 'react-feather';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 
-const AcceptedRequests = () => {
+const Services = () => {
   return (
     <Container fluid>
       <SwitchBusiness
@@ -19,13 +19,32 @@ const AcceptedRequests = () => {
         ]}
       />
       <h1 className="mt-4 dv_page_heading" id="myBtn">
-        Accepted Requests
+        Services
       </h1>
       <Row>
         <Col xs={12}>
           <Card className="mb-4">
-            <Card.Header>Accepted all Bookings</Card.Header>
-            <Card.Body>
+            <Card.Header>
+              Services
+              <a
+                href="/services/add"
+                style={{
+                  background: '#007bff',
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  padding: '5px',
+                  fontSize: '12px',
+                  borderRadius: '5px',
+                  float: 'right',
+                  position: 'absolute',
+                  right: '10px',
+                  top: '10px'
+                }}
+              >
+                add new
+              </a>
+            </Card.Header>
+            <Card.Body className="p-0">
               <div className="dv_search_input_for_all">
                 <Search />
                 <input
@@ -45,61 +64,32 @@ const AcceptedRequests = () => {
                 <table className="table" width="100%" cellSpacing={0}>
                   <thead>
                     <tr>
-                      <th>date </th>
-                      <th>Ref No </th>
-                      <th>customer </th>
-                      <th>booking </th>
-                      <th>pay. type </th>
-                      <th>pay. status </th>
+                      <th>Type </th>
+                      <th>category </th>
+                      <th>service </th>
+                      <th>active </th>
                       <th>amount </th>
                       <th>action </th>
-                    </tr>
-                    <tr>
-                      <th />
-                      <th />
-                      <th />
-                      <th />
-                      <th />
-                      <th />
-                      <th>AED 1245 </th>
-                      <th />
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>12/12/2020</td>
+                      <td>Cleaners</td>
+                      <td>deep cleaning </td>
+                      <td>kitchen deep cleaning </td>
                       <td>
-                        <a href="#!">MD12345</a>
-                      </td>
-                      <td>sarika kadam </td>
-                      <td>
-                        <span
-                          style={{
-                            textTransform: 'capitalize',
-                            color: 'green'
-                          }}
-                        >
-                          completed{' '}
-                        </span>{' '}
-                      </td>
-                      <td>
-                        <span>cash </span>{' '}
-                      </td>
-                      <td>
-                        <span
-                          style={{
-                            textTransform: 'capitalize',
-                            color: 'green'
-                          }}
-                        >
-                          successful{' '}
-                        </span>{' '}
+                        <div className="dv_status_in_list">
+                          <label className="form-switch">
+                            <input type="checkbox" defaultChecked />
+                            <i />
+                          </label>
+                        </div>
                       </td>
                       <td>AED 120 </td>
                       <td>
                         <a
                           className="dv_everytable_action dropdown-toggle"
-                          id="userDropdown"
+                          id="servicedrp"
                           href="#!"
                           role="button"
                           data-toggle="dropdown"
@@ -110,48 +100,31 @@ const AcceptedRequests = () => {
                         </a>
                         <div
                           className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="userDropdown"
+                          aria-labelledby="servicedrp"
                         >
                           <a className="dropdown-item" href="#!">
-                            View{' '}
-                          </a>
-                          <a className="dropdown-item" href="#!">
-                            Chat{' '}
+                            Edit{' '}
                           </a>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td>12/12/2020</td>
+                      <td>Cleaners</td>
+                      <td>deep cleaning </td>
+                      <td>kitchen deep cleaning </td>
                       <td>
-                        <a href="#!">MD12345</a>
-                      </td>
-                      <td>sarika kadam </td>
-                      <td>
-                        <span
-                          style={{ textTransform: 'capitalize', color: 'red' }}
-                        >
-                          cancelled{' '}
-                        </span>{' '}
-                      </td>
-                      <td>
-                        <span>cash </span>{' '}
-                      </td>
-                      <td>
-                        <span
-                          style={{
-                            textTransform: 'capitalize',
-                            color: 'green'
-                          }}
-                        >
-                          cancelled{' '}
-                        </span>{' '}
+                        <div className="dv_status_in_list">
+                          <label className="form-switch">
+                            <input type="checkbox" defaultChecked />
+                            <i />
+                          </label>
+                        </div>
                       </td>
                       <td>AED 120 </td>
                       <td>
                         <a
                           className="dv_everytable_action dropdown-toggle"
-                          id="userDropdown"
+                          id="servicedrp"
                           href="#!"
                           role="button"
                           data-toggle="dropdown"
@@ -162,51 +135,31 @@ const AcceptedRequests = () => {
                         </a>
                         <div
                           className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="userDropdown"
+                          aria-labelledby="servicedrp"
                         >
                           <a className="dropdown-item" href="#!">
-                            View{' '}
-                          </a>
-                          <a className="dropdown-item" href="#!">
-                            Chat{' '}
+                            Edit{' '}
                           </a>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td>12/12/2020</td>
+                      <td>Cleaners</td>
+                      <td>deep cleaning </td>
+                      <td>kitchen deep cleaning </td>
                       <td>
-                        <a href="#!">MD12345</a>
-                      </td>
-                      <td>sarika kadam </td>
-                      <td>
-                        <span
-                          style={{
-                            textTransform: 'capitalize',
-                            color: 'green'
-                          }}
-                        >
-                          resheduled{' '}
-                        </span>{' '}
-                      </td>
-                      <td>
-                        <span>cash </span>{' '}
-                      </td>
-                      <td>
-                        <span
-                          style={{
-                            textTransform: 'capitalize',
-                            color: '#ff9800'
-                          }}
-                        >
-                          pending{' '}
-                        </span>{' '}
+                        <div className="dv_status_in_list">
+                          <label className="form-switch">
+                            <input type="checkbox" defaultChecked />
+                            <i />
+                          </label>
+                        </div>
                       </td>
                       <td>AED 120 </td>
                       <td>
                         <a
                           className="dv_everytable_action dropdown-toggle"
-                          id="userDropdown"
+                          id="servicedrp"
                           href="#!"
                           role="button"
                           data-toggle="dropdown"
@@ -217,13 +170,80 @@ const AcceptedRequests = () => {
                         </a>
                         <div
                           className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="userDropdown"
+                          aria-labelledby="servicedrp"
                         >
                           <a className="dropdown-item" href="#!">
-                            View{' '}
+                            Edit{' '}
                           </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cleaners</td>
+                      <td>deep cleaning </td>
+                      <td>kitchen deep cleaning </td>
+                      <td>
+                        <div className="dv_status_in_list">
+                          <label className="form-switch">
+                            <input type="checkbox" defaultChecked />
+                            <i />
+                          </label>
+                        </div>
+                      </td>
+                      <td>AED 120 </td>
+                      <td>
+                        <a
+                          className="dv_everytable_action dropdown-toggle"
+                          id="servicedrp"
+                          href="#!"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <MoreVertical />
+                        </a>
+                        <div
+                          className="dropdown-menu dropdown-menu-right"
+                          aria-labelledby="servicedrp"
+                        >
                           <a className="dropdown-item" href="#!">
-                            Chat{' '}
+                            Edit{' '}
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cleaners</td>
+                      <td>deep cleaning </td>
+                      <td>kitchen deep cleaning </td>
+                      <td>
+                        <div className="dv_status_in_list">
+                          <label className="form-switch">
+                            <input type="checkbox" />
+                            <i />
+                          </label>
+                        </div>
+                      </td>
+                      <td>AED 120 </td>
+                      <td>
+                        <a
+                          className="dv_everytable_action dropdown-toggle"
+                          id="servicedrp"
+                          href="#!"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <MoreVertical />
+                        </a>
+                        <div
+                          className="dropdown-menu dropdown-menu-right"
+                          aria-labelledby="servicedrp"
+                        >
+                          <a className="dropdown-item" href="#!">
+                            Edit{' '}
                           </a>
                         </div>
                       </td>
@@ -268,4 +288,4 @@ const AcceptedRequests = () => {
   );
 };
 
-export default AcceptedRequests;
+export default Services;
