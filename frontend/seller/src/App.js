@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Notifications from './pages/Notifications';
 import Requests from './pages/Requests';
 import AcceptedRequests from './pages/AcceptedRequests';
+import Services from './pages/Services';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
       </Route>
       <Route exact path="/accepted-requests">
         <AcceptedRequests />
+      </Route>
+      <Route exact path="/services">
+        <Services />
       </Route>
     </Router>
   );
