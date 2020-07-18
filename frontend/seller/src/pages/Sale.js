@@ -150,10 +150,10 @@ const Sale = () => {
               className="dropdown-menu dropdown-menu-right"
               aria-labelledby="addnewshortcut"
             >
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="#!">
                 Excel
               </a>
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="#!">
                 CSV
               </a>
             </div>

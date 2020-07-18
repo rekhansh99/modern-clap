@@ -7,6 +7,7 @@ import Requests from './pages/Requests';
 import AcceptedRequests from './pages/AcceptedRequests';
 import Services from './pages/Services';
 import Sale from './pages/Sale';
+import Reviews from './pages/Review';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
       </Route>
       <Route exact path="/sale">
         <Sale />
+      </Route>
+      <Route exact path="/reviews">
+        <Reviews />
       </Route>
     </Router>
   );
