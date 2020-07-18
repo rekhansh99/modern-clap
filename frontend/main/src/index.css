@@ -2671,3 +2671,33 @@ ul.dv_filter_reviews > li > a.active {
 }
 
 /* End Review Filter css */
+
+ul.dv_login_regi_provider {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: center;
+}
+ul.dv_login_regi_provider > li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+ul.dv_login_regi_provider > li > a {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  transition: 300ms;
+  background: #ffffff;
+  color: #282828;
+  text-transform: capitalize;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+}
+ul.dv_login_regi_provider > li > a.active {
+  background: #2874f0;
+  color: #ffffff;
+}

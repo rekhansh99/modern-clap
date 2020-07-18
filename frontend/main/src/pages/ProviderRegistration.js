@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import FormFile from 'react-bootstrap/FormFile';
 import FormFileInput from 'react-bootstrap/FormFileInput';
 import FormFileLabel from 'react-bootstrap/FormFileLabel';
+import Button from 'react-bootstrap/Button';
 
 import Header from '../components/common/Header';
 import SectionHeading from '../components/common/SectionHeading';
 
 import { ReactComponent as GreenTickSVG } from '../svgs/tick-green.svg';
 
-const SellerRegistration = () => {
-  document.title = 'Seller Registration | Modern clap';
+const ProviderRegistration = () => {
+  document.title = 'Provider Registration | Modern clap';
 
   return (
     <div className="dv_wrapper">
@@ -24,6 +25,10 @@ const SellerRegistration = () => {
       <div className="dv_content">
         <div className="dv_seller_registration_wrapper">
           <div className="dv_seller_container">
+            <ul className="dv_login_regi_provider">
+              <li><Link to="/provider/login">Login </Link></li>
+              <li><Link to="/provider/register" className="active">Register </Link></li>
+            </ul>
             <span
               className="dv_section_heading"
               style={{
@@ -43,8 +48,8 @@ const SellerRegistration = () => {
                   margin: 0
                 }}
               >
-                Our respresentative will verify your document after only you can
-                login your account
+                Our respresentative will verify your document after only you can login
+                your account
               </p>
             </span>
             <SectionHeading
@@ -73,7 +78,7 @@ const SellerRegistration = () => {
               placeholder="Phone No"
             ></FormControl>
             <FormControl as="select" className="dv_careers_form_input">
-              <option value>Select Country</option>
+              <option>Select Country</option>
               <option>United arab emirates</option>
               <option>India</option>
               <option>United State of America</option>
@@ -113,25 +118,21 @@ const SellerRegistration = () => {
                 Attach Trade License
               </FormFileLabel>
             </FormFile>
-            <SectionHeading
-              className="mb-3"
-              title="Shop Details"
-              linkText="edit"
-            />
-            <FormControl as="select" className="dv_careers_form_input">
-              <option selected>Business Category </option>
-              <option>Cleaners </option>
-              <option>Online Fitness </option>
-              <option>Ladies Salon </option>
-              <option>Gents Salon </option>
-              <option>Disinfection </option>
-              <option>Deep Cleaning </option>
-              <option>Handyman </option>
-              <option>Electrician </option>
-              <option>Painters </option>
-              <option>Packers &amp; Movers </option>
-              <option>AC Technicians </option>
-              <option>Pest COntrol </option>
+            <SectionHeading className="mb-3" title="Shop Details" linkText="edit" />
+            <FormControl as="select" className="dv_careers_form_input" defaultValue={1}>
+              <option value={1}>Business Category </option>
+              <option value={2}>Cleaners </option>
+              <option value={3}>Online Fitness </option>
+              <option value={4}>Ladies Salon </option>
+              <option value={5}>Gents Salon </option>
+              <option value={6}>Disinfection </option>
+              <option value={7}>Deep Cleaning </option>
+              <option value={8}>Handyman </option>
+              <option value={9}>Electrician </option>
+              <option value={10}>Painters </option>
+              <option value={11}>Packers &amp; Movers </option>
+              <option value={12}>AC Technicians </option>
+              <option value={13}>Pest COntrol </option>
             </FormControl>
             <FormControl
               type="text"
@@ -148,13 +149,13 @@ const SellerRegistration = () => {
               className="dv_careers_form_input"
               placeholder="Contact No (optional)"
             />
-            <FormControl as="select" className="dv_careers_form_input">
-              <option selected>Emirates </option>
-              <option selected>Dubai </option>
+            <FormControl as="select" className="dv_careers_form_input" defaultValue="emirates">
+              <option value="emirates">Emirates </option>
+              <option value="dubai">Dubai </option>
               {/* <option disabled="">Sharjha </option>
-                  <option disabled="">Abu Dhabi </option>
-                  <option disabled="">Ras al khaim </option>
-                <option disabled="">Al ain </option> */}
+              <option disabled="">Abu Dhabi </option>
+              <option disabled="">Ras al khaim </option>
+              <option disabled="">Al ain </option> */}
             </FormControl>
             <FormControl
               type="text"
@@ -183,4 +184,4 @@ const SellerRegistration = () => {
   );
 };
 
-export default SellerRegistration;
+export default ProviderRegistration;

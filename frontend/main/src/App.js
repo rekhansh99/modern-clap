@@ -12,7 +12,8 @@ import PrivacyPolicy from './pages/static/PrivacyPolicy';
 import TermsAndConditions from './pages/static/TermsAndConditions';
 import Reviews from './pages/Reviews';
 import SelectServices from './pages/SelectServices';
-import SellerRegistration from './pages/SellerRegistration';
+import ProviderLogin from './pages/ProviderLogin';
+import ProviderRegistration from './pages/ProviderRegistration';
 import ServiceDetails from './pages/ServiceDetails';
 import ScrollToTop from './components/common/ScrollToTop';
 import MobileSeach from './pages/MobileSearch';
@@ -60,8 +61,11 @@ function App() {
         <Route exact path="/book-now">
           <SelectServices />
         </Route>
-        <Route exact path="/seller/register">
-          <SellerRegistration />
+        <Route exact path="/provider/login">
+          <ProviderLogin />
+        </Route>
+        <Route exact path="/provider/register">
+          <ProviderRegistration />
         </Route>
         <Route exact path="/service/:service">
           <ServiceDetails />
