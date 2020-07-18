@@ -29,7 +29,7 @@ const SelectServices = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [openSection, setOpenSection] = useState(0);
   const [highestReachedSection, setHighestReachedSection] = useState(0);
-  const [activeLocationPane, setActiveLocationPane] = useState('');
+  const [activeLocationPane, setActiveLocationPane] = useState('saveaddress');
   const [activeServiceType, setActiveServiceType] = useState(-1);
   const [activeServiceCategories, setActiveServiceCategories] = useState(
     Object.keys(services).map(() => -1)
