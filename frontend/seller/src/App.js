@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
@@ -7,7 +8,8 @@ import Requests from './pages/Requests';
 import AcceptedRequests from './pages/AcceptedRequests';
 import Services from './pages/Services';
 import Sale from './pages/Sale';
-import Reviews from './pages/Review';
+import Reviews from './pages/Reviews';
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
       </Route>
       <Route exact path="/reviews">
         <Reviews />
+      </Route>
+      <Route exact path="/settings">
+        <Settings />
       </Route>
     </Router>
   );
