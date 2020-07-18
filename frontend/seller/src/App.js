@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
 import Notifications from './pages/Notifications';
+import Requests from './pages/Requests';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       </Route>
       <Route exact path="/notifications">
         <Notifications />
+      </Route>
+      <Route exact path="/requests">
+        <Requests />
       </Route>
     </Router>
   );
