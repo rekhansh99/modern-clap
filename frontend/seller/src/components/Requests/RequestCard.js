@@ -5,7 +5,7 @@ const RequestCard = ({ orderId, name, img, services, payment, status }) => {
   return (
     <div className="card mb-3">
       <div className="dv_per_request_wrapper">
-        <img src={img} />
+        <img src={img} alt="" />
         <div className="dv_customer_name_id_details">
           <span>{name}</span>
           <span>
