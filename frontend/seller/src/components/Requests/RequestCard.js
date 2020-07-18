@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Card } from 'react-bootstrap';
+
 const RequestCard = ({ orderId, name, img, services, payment, status }) => {
   return (
-    <div className="card mb-3">
+    <Card className="mb-3">
       <div className="dv_per_request_wrapper">
         <img src={img} alt="" />
         <div className="dv_customer_name_id_details">
@@ -19,7 +21,7 @@ const RequestCard = ({ orderId, name, img, services, payment, status }) => {
         </div>
         <a href={'/request/' + orderId}>view</a>
       </div>
-    </div>
+    </Card>
   );
 };
 

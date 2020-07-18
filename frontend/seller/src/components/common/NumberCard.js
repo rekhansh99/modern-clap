@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 const NumberCard = props => {
   return (
-    <div className="card mb-4">
-      <div className="card-body">{props.title}</div>
+    <Card className="mb-4">
+      <Card.Body>{props.title}</Card.Body>
       <span className="dv_card_value_dashboard">
         {props.icon}
         {props.value}
       </span>
-    </div>
+    </Card>
   );
 };
 

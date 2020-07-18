@@ -6,6 +6,7 @@ import Notifications from './pages/Notifications';
 import Requests from './pages/Requests';
 import AcceptedRequests from './pages/AcceptedRequests';
 import Services from './pages/Services';
+import Sale from './pages/Sale';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
       </Route>
       <Route exact path="/services">
         <Services />
+      </Route>
+      <Route exact path="/sale">
+        <Sale />
       </Route>
     </Router>
   );
