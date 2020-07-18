@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Notifications from './pages/Notifications';
 import Requests from './pages/Requests';
+import AcceptedRequests from './pages/AcceptedRequests';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       </Route>
       <Route exact path="/requests">
         <Requests />
+      </Route>
+      <Route exact path="/accepted-requests">
+        <AcceptedRequests />
       </Route>
     </Router>
   );

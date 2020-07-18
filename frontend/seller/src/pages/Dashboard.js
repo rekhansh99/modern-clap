@@ -1,10 +1,7 @@
 import React from 'react';
 
 import { Codepen, MoreVertical } from 'react-feather';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import { ReactComponent as ChartSVG } from '../svgs/chart.svg';
 import NumberCard from '../components/common/NumberCard';
