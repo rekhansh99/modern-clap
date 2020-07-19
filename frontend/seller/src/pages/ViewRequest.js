@@ -1,10 +1,15 @@
 import React from 'react';
 
-import { Container, Card, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 
+import userDefaultImg from '../images/user-default.png';
+
 const ViewRequest = () => {
+  document.title = 'View Request - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness
@@ -20,35 +25,23 @@ const ViewRequest = () => {
       <h1 className="mt-4 dv_page_heading">View Request</h1>
       <Card className="mb-4">
         <Card.Header className="text-center">
-          <button type="button" className="btn btn-danger dv_accep_reject_btn">
-            Reject
-          </button>
-          <button type="button" className="btn btn-primary dv_accep_reject_btn">
-            Accept
-          </button>
+          {/* <Button variant="danger" className="dv_accep_reject_btn">Reject </Button> */}
+          {/* <Button variant="primary" className="dv_accep_reject_btn">Make </Button> */}
+          <Button variant="primary" className="dv_accep_reject_btn">
+            Make Payment
+          </Button>
         </Card.Header>
         <Card.Body className="p-0">
           <div className="dv_customer_details">
             <Row>
-              <Col className="p-0 dv_mobile_left_12" md={3}>
+              <Col md={3} className="p-0">
                 <h4
-                  style={{
-                    margin: '0px',
-                    fontSize: '14px',
-                    textAlign: 'left',
-                    textTransform: 'uppercase',
-                    borderBottom: '1px solid #d7d7d7',
-                    display: 'block',
-                    padding: '15px 15px 15px 25px',
-                    width: '100%',
-                    fontFamily: 'Segoe ui bold',
-                    borderTop: '1px solid #d7d7d7',
-                    background: '#ececec'
-                  }}
+                  className="view_request_title"
+                  style={{ paddingLeft: '25px' }}
                 >
                   Customer
                 </h4>
-                <div className="col-md-12 pr-0">
+                <Col md={12} className="pr-0">
                   <div className="dv_provider_customer_details p-0">
                     <ul
                       className="dv_booking_details"
@@ -60,7 +53,7 @@ const ViewRequest = () => {
                     >
                       <li>
                         <img
-                          src="../images/avatar.png"
+                          src={userDefaultImg}
                           style={{
                             opacity: '0.4',
                             float: 'left',
@@ -68,60 +61,45 @@ const ViewRequest = () => {
                             margin: '0 10px 0 0',
                             borderRadius: '50%'
                           }}
+                          alt=""
                         />
                         <strong>Sanjay sakpal </strong>
                       </li>
                       <li>
-                        Phone no <strong>971 56 876 8765</strong>{' '}
+                        Phone no <strong>971 56 876 8765</strong>
                       </li>
                       <li>
-                        email ID <strong>demo@gmail.com</strong>{' '}
+                        email ID <strong>demo@gmail.com</strong>
                       </li>
                       <li>
-                        PO Box <strong>81748</strong>{' '}
+                        PO Box <strong>81748</strong>
                       </li>
                       <li>
-                        city <strong>dubai</strong>{' '}
+                        city <strong>dubai</strong>
                       </li>
                       <li>
-                        state <strong>dubai</strong>{' '}
+                        state <strong>dubai</strong>
                       </li>
                       <li>
-                        country <strong>United Arab Emirates </strong>{' '}
+                        country <strong>United Arab Emirates </strong>
                       </li>
                       <li>
                         address{' '}
                         <strong>
                           <span>Home </span>... M-3, Buhaleeba plaza, al
-                          muraqabat road, Al rigga DUbai UAE PO Box 81748{' '}
+                          muraqabat road, Al rigga DUbai UAE PO Box 81748
                         </strong>{' '}
-                        <a style={{ display: 'block' }} href="#!">
-                          View in Map{' '}
-                        </a>{' '}
+                        <Link style={{ display: 'block' }} to="#!">
+                          View in Map
+                        </Link>
                       </li>
                     </ul>
                   </div>
-                </div>
+                </Col>
               </Col>
-              <Col className="p-0 dv_mobile_left_12" md={3}>
-                <h4
-                  style={{
-                    margin: '0px',
-                    fontSize: '14px',
-                    textAlign: 'left',
-                    textTransform: 'uppercase',
-                    borderBottom: '1px solid #d7d7d7',
-                    display: 'block',
-                    padding: '15px',
-                    width: '100%',
-                    fontFamily: 'Segoe ui bold',
-                    borderTop: '1px solid #d7d7d7',
-                    background: '#ececec'
-                  }}
-                >
-                  Provider{' '}
-                </h4>
-                <div className="col-md-12 p-0">
+              <Col md={3} className="p-0 dv_mobile_left_12">
+                <h4 className="view_request_title">Provider</h4>
+                <Col md={12} className="p-0">
                   <div className="dv_provider_customer_details p-0">
                     <ul
                       className="dv_booking_details"
@@ -133,7 +111,7 @@ const ViewRequest = () => {
                     >
                       <li>
                         <img
-                          src="images/user-default.png"
+                          src={userDefaultImg}
                           style={{
                             opacity: '0.4',
                             float: 'left',
@@ -141,56 +119,41 @@ const ViewRequest = () => {
                             margin: '0 10px 0 0',
                             borderRadius: '50%'
                           }}
+                          alt=""
                         />
                         <strong>Goodhand Technical Services </strong>
                       </li>
                       <li>
-                        Phone no <strong>971 56 876 1235</strong>{' '}
+                        Phone no <strong>971 56 876 1235</strong>
                       </li>
                       <li>
-                        email ID <strong>Goodhand@gmail.com</strong>{' '}
+                        email ID <strong>Goodhand@gmail.com</strong>
                       </li>
                       <li>
-                        PO Box <strong>81748</strong>{' '}
+                        PO Box <strong>81748</strong>
                       </li>
                       <li>
-                        city <strong>dubai</strong>{' '}
+                        city <strong>dubai</strong>
                       </li>
                       <li>
-                        state <strong>dubai</strong>{' '}
+                        state <strong>dubai</strong>
                       </li>
                       <li>
-                        country <strong>United Arab Emirates </strong>{' '}
+                        country <strong>United Arab Emirates </strong>
                       </li>
                       <li>
                         address{' '}
                         <strong>
                           12 Millennium Dr, Isle of Dogs, London E14 3GJ, UAE
-                        </strong>{' '}
+                        </strong>
                       </li>
                     </ul>
                   </div>
-                </div>
+                </Col>
               </Col>
-              <Col className="p-0 dv_mobile_left_12" md={3}>
-                <h4
-                  style={{
-                    margin: '0px',
-                    fontSize: '14px',
-                    textAlign: 'left',
-                    textTransform: 'uppercase',
-                    borderBottom: '1px solid #d7d7d7',
-                    display: 'block',
-                    padding: '15px',
-                    width: '100%',
-                    fontFamily: 'Segoe ui bold',
-                    borderTop: '1px solid #d7d7d7',
-                    background: '#ececec'
-                  }}
-                >
-                  booking details{' '}
-                </h4>
-                <div className="col-md-12 p-0">
+              <Col md={3} className="p-0 dv_mobile_left_12">
+                <h4 className="view_request_title">booking details</h4>
+                <Col md={12} className="p-0">
                   <div className="dv_provider_customer_details p-0">
                     <ul
                       className="dv_booking_details"
@@ -227,27 +190,11 @@ const ViewRequest = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </Col>
               </Col>
-              <Col className="p-0 dv_mobile_left_12" md={3}>
-                <h4
-                  style={{
-                    margin: '0px',
-                    fontSize: '14px',
-                    textAlign: 'left',
-                    textTransform: 'uppercase',
-                    borderBottom: '1px solid #d7d7d7',
-                    display: 'block',
-                    padding: '15px',
-                    width: '100%',
-                    fontFamily: 'Segoe ui bold',
-                    borderTop: '1px solid #d7d7d7',
-                    background: '#ececec'
-                  }}
-                >
-                  Services
-                </h4>
-                <div className="col-md-12 p-0">
+              <Col md={3} className="p-0 dv_mobile_left_12">
+                <h4 className="view_request_title">Services</h4>
+                <Col md={12} className="p-0">
                   <div className="dv_provider_customer_details p-0">
                     <ul
                       className="dv_booking_details"
@@ -280,7 +227,7 @@ const ViewRequest = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </Col>
               </Col>
             </Row>
           </div>
