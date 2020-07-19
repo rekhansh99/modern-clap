@@ -21,6 +21,8 @@ import Footer from './components/common/Footer';
 import BottomNav from './components/common/BottomNav';
 import AddService from './pages/AddService';
 import ViewRequest from './pages/ViewRequest';
+import Login from './pages/Login';
+import RecoverPassword from './pages/RecoverPassword';
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
@@ -86,6 +88,12 @@ function App() {
                 </Route>
                 <Route exact path="/settings">
                   <Settings />
+                </Route>
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+                <Route exact path="/recover-password">
+                  <RecoverPassword />
                 </Route>
               </Switch>
               <FlashCards cards={flashCards} />
