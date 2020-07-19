@@ -20,6 +20,7 @@ import './App.css';
 import Footer from './components/common/Footer';
 import BottomNav from './components/common/BottomNav';
 import AddService from './pages/AddService';
+import ViewRequest from './pages/ViewRequest';
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
@@ -67,6 +68,9 @@ function App() {
                 </Route>
                 <Route exact path="/accepted-requests">
                   <AcceptedRequests />
+                </Route>
+                <Route exact path="/request/:id">
+                  <ViewRequest />
                 </Route>
                 <Route exact path="/services">
                   <Services />
