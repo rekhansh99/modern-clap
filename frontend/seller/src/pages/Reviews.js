@@ -18,6 +18,8 @@ import Pagination from '../components/common/Pagination';
 import ReviewModal from '../components/Reviews/ReviewModal';
 
 const Reviews = () => {
+  document.title = 'Our Reviews - Modernclap';
+
   const [modalOpen, setModal] = useState(false);
 
   return (

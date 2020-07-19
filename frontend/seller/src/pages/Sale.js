@@ -18,6 +18,8 @@ import Pagination from '../components/common/Pagination';
 import { Link } from 'react-router-dom';
 
 const Sale = () => {
+  document.title = 'Sale - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

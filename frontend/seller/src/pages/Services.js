@@ -8,6 +8,8 @@ import Search from '../components/common/Search';
 import Pagination from '../components/common/Pagination';
 
 const Services = () => {
+  document.title = 'Services - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness
