@@ -19,14 +19,15 @@ const SideNav = ({ close }) => {
               Dashboard
             </Nav.Link>
             <Nav.Link as={Link} to="/notifications">
-              {' '}
-              Notification <span className="dv_pending_numbders">29</span>{' '}
+              Notification <span className="dv_pending_numbders">29</span>
             </Nav.Link>
             <Nav.Link as={Link} to="/inbox">
-              {' '}
-              Inbox <span className="dv_pending_numbders">12</span>{' '}
+              Inbox <span className="dv_pending_numbders">12</span>
             </Nav.Link>
             <Nav.Link
+              className={classnames({
+                collapsed: !reqMenu
+              })}
               onClick={e => {
                 e.preventDefault();
                 setReqMenu(!reqMenu);
@@ -43,10 +44,10 @@ const SideNav = ({ close }) => {
             >
               <Nav as="nav" className="sb-sidenav-menu-nested">
                 <Nav.Link as={Link} to="/requests">
-                  Request List <span className="dv_pending_numbders">5</span>{' '}
+                  Request List <span className="dv_pending_numbders">5</span>
                 </Nav.Link>
                 <Nav.Link as={Link} to="/accepted-requests">
-                  Accepted Request{' '}
+                  Accepted Request
                 </Nav.Link>
               </Nav>
             </div>

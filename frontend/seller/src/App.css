@@ -18,7 +18,7 @@
   max-height: 0;
 }
 .sb-sidenav-menu > .nav > .toggle.toggle-open {
-  max-height: 130px;
+  max-height: calc(3em + 64px);
 }
 .modal > .modal-dialog > .modal-content {
   border: none;

@@ -33,13 +33,13 @@ const Header = ({ toggleSideNav }) => {
           </Dropdown.Toggle>
           <Dropdown.Menu alignRight>
             <Dropdown.Item as={Link} to="#">
-              Add Parent Business{' '}
+              Add Parent Business
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">
-              Add New Service{' '}
+              Add New Service
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/requests">
-              View Request - <span>05 </span>{' '}
+              View Request - <span>05 </span>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
