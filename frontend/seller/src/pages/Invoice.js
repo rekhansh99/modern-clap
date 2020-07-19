@@ -3,6 +3,8 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 const Invoice = () => {
+  document.title = 'Invoice - Modernclap';
+
   return (
     <Container fluid>
       <h1 className="mt-4 dv_page_heading">Invoice </h1>

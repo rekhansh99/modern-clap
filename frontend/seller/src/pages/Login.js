@@ -7,6 +7,8 @@ import Footer from '../components/common/Footer';
 import loginBG from '../images/login-bg.jpg';
 
 const Login = () => {
+  document.title = 'Login - Modernclap';
+
   return (
     <div
       style={{

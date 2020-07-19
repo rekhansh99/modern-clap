@@ -8,6 +8,8 @@ import SelectMasterForm from '../components/AddService/SelectMasterForm';
 import CategoryRequestForm from '../components/common/CategoryRequestForm';
 
 const AddService = () => {
+  document.title = 'Add Service - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

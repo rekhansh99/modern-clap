@@ -5,6 +5,8 @@ import { Container, Row, Col, Card, Form } from 'react-bootstrap';
 import Footer from '../components/common/Footer';
 
 const RecoverPassword = () => {
+  document.title = 'Reset Password - Modernclap';
+
   return (
     <div className="bg-primary">
       <div id="layoutAuthentication">
