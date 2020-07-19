@@ -9,6 +9,7 @@ import NumberCard from '../components/common/NumberCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import Pagination from '../components/common/Pagination';
 import Search from '../components/common/Search';
+import AreaChart from '../components/Dashboard/AreaChart';
 
 const Dashboard = () => {
   return (
@@ -89,7 +90,9 @@ const Dashboard = () => {
               <FontAwesomeIcon icon="chart-area" className="mr-1" />
               Current week Bookings
             </Card.Header>
-            <Card.Body>Area Chart Here</Card.Body>
+            <Card.Body>
+              <AreaChart />
+            </Card.Body>
           </Card>
         </Col>
         <Col xs={12}>
