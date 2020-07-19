@@ -6,6 +6,7 @@ import Header from './components/common/Header';
 import SideNav from './components/common/SideNav';
 import Dashboard from './pages/Dashboard';
 import Notifications from './pages/Notifications';
+import Inbox from './pages/Inbox';
 import Requests from './pages/Requests';
 import AcceptedRequests from './pages/AcceptedRequests';
 import Services from './pages/Services';
@@ -56,6 +57,9 @@ function App() {
                 </Route>
                 <Route exact path="/notifications">
                   <Notifications />
+                </Route>
+                <Route exact path="/inbox">
+                  <Inbox />
                 </Route>
                 <Route exact path="/requests">
                   <Requests />
