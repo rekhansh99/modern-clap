@@ -1,13 +1,14 @@
 import React from 'react';
 import { Card, Row, Col, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SelectMasterForm = () => {
   return (
     <React.Fragment>
       <Card.Header>
         Select Master Form
-        <a
-          href="services.html"
+        <Link
+          to="/services"
           style={{
             background: '#007bff',
             color: '#ffffff',
@@ -22,15 +23,15 @@ const SelectMasterForm = () => {
           }}
         >
           View all
-        </a>
+        </Link>
       </Card.Header>
       <Row className="p-3">
         <Col xs={12} lg={4}>
           <Form.Group>
             <Form.Label>Type</Form.Label>
-            <select className="form-control dv_all_inputs">
-              <option selected>Select </option>
-              <option selected>Cleaners </option>
+            <Form.Control as="select" className="dv_all_inputs">
+              <option>Select </option>
+              <option>Cleaners </option>
               <option>Online Fitness </option>
               <option>Ladies Salon </option>
               <option>Gents Salon </option>
@@ -42,27 +43,27 @@ const SelectMasterForm = () => {
               <option>Packers &amp; Movers </option>
               <option>AC Technicians </option>
               <option>Pest COntrol </option>
-            </select>
+            </Form.Control>
           </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
           <Form.Group>
             <Form.Label>Category</Form.Label>
-            <select className="form-control dv_all_inputs">
-              <option selected>Category </option>
-              <option selected>Home</option>
+            <Form.Control as="select" className="dv_all_inputs">
+              <option>Category </option>
+              <option>Home</option>
               <option>Villa</option>
               <option>Office</option>
-            </select>
+            </Form.Control>
           </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
           <Form.Group>
             <Form.Label>Service</Form.Label>
-            <select className="form-control dv_all_inputs">
+            <Form.Control as="select" className="dv_all_inputs">
               <option>Category </option>
               <option>All </option>
-              <option selected>Kitchen cleaning </option>
+              <option>Kitchen cleaning </option>
               <option>Bedroom cleaning </option>
               <option>Bathroom cleaning </option>
               <option>Living Room cleaning </option>
@@ -71,7 +72,7 @@ const SelectMasterForm = () => {
               <option>Machine Laundry </option>
               <option>Refrigerator Cleaning </option>
               <option>Ovan &amp; Microwave Cleaning </option>
-            </select>
+            </Form.Control>
           </Form.Group>
         </Col>
       </Row>
