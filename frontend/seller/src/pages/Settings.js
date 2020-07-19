@@ -12,6 +12,8 @@ import ResetPassword from '../components/Settings/ResetPassword';
 import CategoryRequestForm from '../components/Settings/CategoryRequestForm';
 
 const Settings = () => {
+  document.title = 'Settings - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

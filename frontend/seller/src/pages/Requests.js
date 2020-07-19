@@ -7,6 +7,8 @@ import RequestCard from '../components/Requests/RequestCard';
 import avatar from '../images/avatar.png';
 
 const Requests = () => {
+  document.title = 'Booking List - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

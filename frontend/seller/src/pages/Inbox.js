@@ -9,6 +9,8 @@ import ChatDefaultImg from '../images/chat-default.png';
 import WhatsappMediaImg from '../images/whatapp-media.jpg';
 
 const Inbox = () => {
+  document.title = 'Inbox - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

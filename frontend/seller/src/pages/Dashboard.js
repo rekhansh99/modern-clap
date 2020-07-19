@@ -12,6 +12,8 @@ import Search from '../components/common/Search';
 import AreaChart from '../components/Dashboard/AreaChart';
 
 const Dashboard = () => {
+  document.title = 'Dashboard - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness

@@ -7,6 +7,8 @@ import NotificationCard from '../components/Notifications/NotificationCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 
 const Notifications = () => {
+  document.title = 'Notifications - Modernclap';
+
   return (
     <Container fluid>
       <SwitchBusiness
