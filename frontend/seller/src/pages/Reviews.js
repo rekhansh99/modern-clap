@@ -11,6 +11,8 @@ import {
   Dropdown
 } from 'react-bootstrap';
 import { MoreVertical, Star } from 'react-feather';
+import DateRangePicker from 'react-bootstrap-daterangepicker';
+import moment from 'moment';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import Search from '../components/common/Search';
@@ -21,6 +23,42 @@ const Reviews = () => {
   document.title = 'Our Reviews - Modernclap';
 
   const [modalOpen, setModal] = useState(false);
+  const [dateRange, setDateRange] = useState({
+    start: moment().startOf('hour'),
+    end: moment().startOf('hour').add(32, 'hour')
+  });
+
+  const onDateRangeChanged = (event, picker) => {
+    setDateRange({ start: picker.startDate, end: picker.endDate });
+  };
+
+  const getDateRange = () => {
+    return (
+      dateRange.start.format('M/DD hh:mm A') +
+      ' - ' +
+      dateRange.end.format('M/DD, hh:mm A')
+    );
+  };
+
+  const dateRangePickerConfig = {
+    timePicker: true,
+    startDate: dateRange.start,
+    endDate: dateRange.end,
+    locale: {
+      format: 'M/DD hh:mm A'
+    },
+    ranges: {
+      Today: [moment(), moment()],
+      Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      'This Month': [moment().startOf('month'), moment().endOf('month')],
+      'Last Month': [
+        moment().subtract(1, 'month').startOf('month'),
+        moment().subtract(1, 'month').endOf('month')
+      ]
+    }
+  };
 
   return (
     <Container fluid>
@@ -42,11 +80,19 @@ const Reviews = () => {
             <Col xs={12} lg={3}>
               <Form.Group className="mb-0">
                 <Form.Label>Date </Form.Label>
-                <Form.Control
-                  type="text"
-                  className="dv_all_inputs rangepicker"
-                  placeholder="Date"
-                />
+                <DateRangePicker
+                  {...dateRangePickerConfig}
+                  containerStyles={{ width: '100%' }}
+                  onApply={onDateRangeChanged}
+                >
+                  <Form.Control
+                    type="text"
+                    className="dv_all_inputs rangepicker"
+                    style={{ cursor: 'pointer' }}
+                    value={getDateRange()}
+                    readOnly
+                  />
+                </DateRangePicker>
               </Form.Group>
             </Col>
             <Col xs={12} lg={3}>

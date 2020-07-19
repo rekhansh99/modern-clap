@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Codepen } from 'react-feather';
 import {
@@ -10,6 +10,8 @@ import {
   Form,
   Dropdown
 } from 'react-bootstrap';
+import { DateRangePicker } from 'react-bootstrap-daterangepicker';
+import moment from 'moment';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import NumberCard from '../components/common/NumberCard';
@@ -19,6 +21,43 @@ import { Link } from 'react-router-dom';
 
 const Sale = () => {
   document.title = 'Sale - Modernclap';
+
+  const [dateRange, setDateRange] = useState({
+    start: moment().startOf('hour'),
+    end: moment().startOf('hour').add(32, 'hour')
+  });
+
+  const onDateRangeChanged = (event, picker) => {
+    setDateRange({ start: picker.startDate, end: picker.endDate });
+  };
+
+  const getDateRange = () => {
+    return (
+      dateRange.start.format('M/DD hh:mm A') +
+      ' - ' +
+      dateRange.end.format('M/DD, hh:mm A')
+    );
+  };
+
+  const dateRangePickerConfig = {
+    timePicker: true,
+    startDate: dateRange.start,
+    endDate: dateRange.end,
+    locale: {
+      format: 'M/DD hh:mm A'
+    },
+    ranges: {
+      Today: [moment(), moment()],
+      Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      'This Month': [moment().startOf('month'), moment().endOf('month')],
+      'Last Month': [
+        moment().subtract(1, 'month').startOf('month'),
+        moment().subtract(1, 'month').endOf('month')
+      ]
+    }
+  };
 
   return (
     <Container fluid>
@@ -50,28 +89,28 @@ const Sale = () => {
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
@@ -83,11 +122,19 @@ const Sale = () => {
             <Col xs={12} lg={3}>
               <Form.Group>
                 <Form.Label>Date </Form.Label>
-                <Form.Control
-                  type="text"
-                  className="dv_all_inputs rangepicker"
-                  placeholder="Date"
-                />
+                <DateRangePicker
+                  {...dateRangePickerConfig}
+                  containerStyles={{ width: '100%' }}
+                  onApply={onDateRangeChanged}
+                >
+                  <Form.Control
+                    type="text"
+                    className="dv_all_inputs rangepicker"
+                    style={{ cursor: 'pointer' }}
+                    value={getDateRange()}
+                    readOnly
+                  />
+                </DateRangePicker>
               </Form.Group>
             </Col>
             <Col xs={12} lg={3}>
@@ -144,7 +191,7 @@ const Sale = () => {
         <Card.Header>
           <Card.Title className="float-left">Total Sale</Card.Title>
           <Dropdown className="dv_download_report">
-            <Dropdown.Toggle as={Link} title="Add New" id="addnewshortcut">
+            <Dropdown.Toggle as="a" title="Add New" id="addnewshortcut">
               Export
             </Dropdown.Toggle>
             <Dropdown.Menu alignRight>
