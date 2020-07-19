@@ -19,6 +19,7 @@ import avatar from './images/avatar.png';
 import './App.css';
 import Footer from './components/common/Footer';
 import BottomNav from './components/common/BottomNav';
+import AddService from './pages/AddService';
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
@@ -69,6 +70,9 @@ function App() {
                 </Route>
                 <Route exact path="/services">
                   <Services />
+                </Route>
+                <Route exact path="/services/add">
+                  <AddService />
                 </Route>
                 <Route exact path="/sale">
                   <Sale />

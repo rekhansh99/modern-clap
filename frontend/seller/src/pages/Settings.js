@@ -9,7 +9,7 @@ import WorkingHours from '../components/Settings/WorkingHours';
 import Address from '../components/Settings/Address';
 import Media from '../components/Settings/Media';
 import ResetPassword from '../components/Settings/ResetPassword';
-import CategoryRequestForm from '../components/Settings/CategoryRequestForm';
+import CategoryRequestForm from '../components/common/CategoryRequestForm';
 
 const Settings = () => {
   return (
