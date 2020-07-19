@@ -19,9 +19,7 @@ const Notifications = () => {
           'TOG'
         ]}
       />
-      <h1 className="mt-4 dv_page_heading" id="myBtn">
-        Notifications
-      </h1>
+      <h1 className="mt-4 dv_page_heading">Notifications</h1>
       <Row>
         <Col xs={12}>
           <span

@@ -20,3 +20,7 @@
 .sb-sidenav-menu > .nav > .toggle.toggle-open {
   max-height: 130px;
 }
+.modal > .modal-dialog > .modal-content {
+  border: none;
+  border-radius: 15px;
+}

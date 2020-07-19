@@ -24,9 +24,7 @@ const Settings = () => {
           'TOG'
         ]}
       />
-      <h1 className="mt-4 dv_page_heading" id="myBtn">
-        Settings
-      </h1>
+      <h1 className="mt-4 dv_page_heading">Settings</h1>
       <Card className="mb-4">
         <Card.Header>Profile</Card.Header>
         <Card.Body className="p-0">

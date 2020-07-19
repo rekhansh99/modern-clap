@@ -19,9 +19,7 @@ const Requests = () => {
           'TOG'
         ]}
       />
-      <h1 className="mt-4 dv_page_heading" id="myBtn">
-        Request List
-      </h1>
+      <h1 className="mt-4 dv_page_heading">Request List</h1>
       <Row>
         <Col xs={12}>
           <span

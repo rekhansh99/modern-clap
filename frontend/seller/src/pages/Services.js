@@ -1,9 +1,11 @@
 import React from 'react';
-
-import { Search, ChevronLeft, ChevronRight, MoreVertical } from 'react-feather';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { MoreVertical } from 'react-feather';
+import { Container, Row, Col, Card, Table, Dropdown } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
+import Search from '../components/common/Search';
+import Pagination from '../components/common/Pagination';
 
 const Services = () => {
   return (
@@ -26,8 +28,8 @@ const Services = () => {
           <Card className="mb-4">
             <Card.Header>
               Services
-              <a
-                href="/services/add"
+              <Link
+                to="/services/add"
                 style={{
                   background: '#007bff',
                   color: '#ffffff',
@@ -42,244 +44,160 @@ const Services = () => {
                 }}
               >
                 add new
-              </a>
+              </Link>
             </Card.Header>
             <Card.Body className="p-0">
-              <div className="dv_search_input_for_all">
-                <Search />
-                <input
-                  type="text"
-                  name
-                  placeholder="Search"
-                  className="dv_search_anything_tbl"
-                />
-                <select className="form-control">
-                  <option>10 </option>
-                  <option>25</option>
-                  <option>50 </option>
-                  <option>100 </option>
-                </select>
-              </div>
-              <div className="table-responsive">
-                <table className="table" width="100%" cellSpacing={0}>
-                  <thead>
-                    <tr>
-                      <th>Type </th>
-                      <th>category </th>
-                      <th>service </th>
-                      <th>active </th>
-                      <th>amount </th>
-                      <th>action </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Cleaners</td>
-                      <td>deep cleaning </td>
-                      <td>kitchen deep cleaning </td>
-                      <td>
-                        <div className="dv_status_in_list">
-                          <label className="form-switch">
-                            <input type="checkbox" defaultChecked />
-                            <i />
-                          </label>
-                        </div>
-                      </td>
-                      <td>AED 120 </td>
-                      <td>
-                        <a
-                          className="dv_everytable_action dropdown-toggle"
-                          id="servicedrp"
-                          href="#!"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <MoreVertical />
-                        </a>
-                        <div
-                          className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="servicedrp"
-                        >
-                          <a className="dropdown-item" href="#!">
-                            Edit{' '}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cleaners</td>
-                      <td>deep cleaning </td>
-                      <td>kitchen deep cleaning </td>
-                      <td>
-                        <div className="dv_status_in_list">
-                          <label className="form-switch">
-                            <input type="checkbox" defaultChecked />
-                            <i />
-                          </label>
-                        </div>
-                      </td>
-                      <td>AED 120 </td>
-                      <td>
-                        <a
-                          className="dv_everytable_action dropdown-toggle"
-                          id="servicedrp"
-                          href="#!"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <MoreVertical />
-                        </a>
-                        <div
-                          className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="servicedrp"
-                        >
-                          <a className="dropdown-item" href="#!">
-                            Edit{' '}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cleaners</td>
-                      <td>deep cleaning </td>
-                      <td>kitchen deep cleaning </td>
-                      <td>
-                        <div className="dv_status_in_list">
-                          <label className="form-switch">
-                            <input type="checkbox" defaultChecked />
-                            <i />
-                          </label>
-                        </div>
-                      </td>
-                      <td>AED 120 </td>
-                      <td>
-                        <a
-                          className="dv_everytable_action dropdown-toggle"
-                          id="servicedrp"
-                          href="#!"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <MoreVertical />
-                        </a>
-                        <div
-                          className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="servicedrp"
-                        >
-                          <a className="dropdown-item" href="#!">
-                            Edit{' '}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cleaners</td>
-                      <td>deep cleaning </td>
-                      <td>kitchen deep cleaning </td>
-                      <td>
-                        <div className="dv_status_in_list">
-                          <label className="form-switch">
-                            <input type="checkbox" defaultChecked />
-                            <i />
-                          </label>
-                        </div>
-                      </td>
-                      <td>AED 120 </td>
-                      <td>
-                        <a
-                          className="dv_everytable_action dropdown-toggle"
-                          id="servicedrp"
-                          href="#!"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <MoreVertical />
-                        </a>
-                        <div
-                          className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="servicedrp"
-                        >
-                          <a className="dropdown-item" href="#!">
-                            Edit{' '}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cleaners</td>
-                      <td>deep cleaning </td>
-                      <td>kitchen deep cleaning </td>
-                      <td>
-                        <div className="dv_status_in_list">
-                          <label className="form-switch">
-                            <input type="checkbox" />
-                            <i />
-                          </label>
-                        </div>
-                      </td>
-                      <td>AED 120 </td>
-                      <td>
-                        <a
-                          className="dv_everytable_action dropdown-toggle"
-                          id="servicedrp"
-                          href="#!"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <MoreVertical />
-                        </a>
-                        <div
-                          className="dropdown-menu dropdown-menu-right"
-                          aria-labelledby="servicedrp"
-                        >
-                          <a className="dropdown-item" href="#!">
-                            Edit{' '}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="dv_pagination">
-                <ul>
-                  <li>
-                    <a href="#!">
-                      <ChevronLeft />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">1</a>
-                  </li>
-                  <li>
-                    <a href="#!">2</a>
-                  </li>
-                  <li>
-                    <a href="#!" className="dv_active_page">
-                      3
-                    </a>
-                  </li>
-                  <li>...</li>
-                  <li>
-                    <a href="#!">8</a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <ChevronRight />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <Search />
+              <Table width="100%" cellSpacing={0} responsive>
+                <thead>
+                  <tr>
+                    <th>Type </th>
+                    <th>category </th>
+                    <th>service </th>
+                    <th>active </th>
+                    <th>amount </th>
+                    <th>action </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cleaners</td>
+                    <td>deep cleaning </td>
+                    <td>kitchen deep cleaning </td>
+                    <td>
+                      <div className="dv_status_in_list">
+                        <label className="form-switch">
+                          <input type="checkbox" defaultChecked />
+                          <i />
+                        </label>
+                      </div>
+                    </td>
+                    <td>AED 120 </td>
+                    <Dropdown as="td">
+                      <Dropdown.Toggle
+                        as={Link}
+                        className="dv_everytable_action"
+                      >
+                        <MoreVertical />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu alignRight>
+                        <Dropdown.Item as={Link} to="#!">
+                          Edit
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </tr>
+                  <tr>
+                    <td>Cleaners</td>
+                    <td>deep cleaning </td>
+                    <td>kitchen deep cleaning </td>
+                    <td>
+                      <div className="dv_status_in_list">
+                        <label className="form-switch">
+                          <input type="checkbox" defaultChecked />
+                          <i />
+                        </label>
+                      </div>
+                    </td>
+                    <td>AED 120 </td>
+                    <Dropdown as="td">
+                      <Dropdown.Toggle
+                        as={Link}
+                        className="dv_everytable_action"
+                      >
+                        <MoreVertical />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu alignRight>
+                        <Dropdown.Item as={Link} to="#!">
+                          Edit
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </tr>
+                  <tr>
+                    <td>Cleaners</td>
+                    <td>deep cleaning </td>
+                    <td>kitchen deep cleaning </td>
+                    <td>
+                      <div className="dv_status_in_list">
+                        <label className="form-switch">
+                          <input type="checkbox" defaultChecked />
+                          <i />
+                        </label>
+                      </div>
+                    </td>
+                    <td>AED 120 </td>
+                    <Dropdown as="td">
+                      <Dropdown.Toggle
+                        as={Link}
+                        className="dv_everytable_action"
+                      >
+                        <MoreVertical />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu alignRight>
+                        <Dropdown.Item as={Link} to="#!">
+                          Edit
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </tr>
+                  <tr>
+                    <td>Cleaners</td>
+                    <td>deep cleaning </td>
+                    <td>kitchen deep cleaning </td>
+                    <td>
+                      <div className="dv_status_in_list">
+                        <label className="form-switch">
+                          <input type="checkbox" defaultChecked />
+                          <i />
+                        </label>
+                      </div>
+                    </td>
+                    <td>AED 120 </td>
+                    <Dropdown as="td">
+                      <Dropdown.Toggle
+                        as={Link}
+                        className="dv_everytable_action"
+                      >
+                        <MoreVertical />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu alignRight>
+                        <Dropdown.Item as={Link} to="#!">
+                          Edit
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </tr>
+                  <tr>
+                    <td>Cleaners</td>
+                    <td>deep cleaning </td>
+                    <td>kitchen deep cleaning </td>
+                    <td>
+                      <div className="dv_status_in_list">
+                        <label className="form-switch">
+                          <input type="checkbox" />
+                          <i />
+                        </label>
+                      </div>
+                    </td>
+                    <td>AED 120 </td>
+                    <Dropdown as="td">
+                      <Dropdown.Toggle
+                        as={Link}
+                        className="dv_everytable_action"
+                      >
+                        <MoreVertical />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu alignRight>
+                        <Dropdown.Item as={Link} to="#!">
+                          Edit
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </tr>
+                </tbody>
+              </Table>
+              <Pagination />
             </Card.Body>
           </Card>
         </Col>
