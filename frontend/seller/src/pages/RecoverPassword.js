@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Form } from 'react-bootstrap';
+import Footer from '../components/common/Footer';
 
 const RecoverPassword = () => {
   return (
@@ -21,7 +23,7 @@ const RecoverPassword = () => {
                       Enter your email address and we will send you a link to
                       reset your password.
                     </div>
-                    <form>
+                    <Form>
                       <Form.Group>
                         <Form.Label
                           className="small mb-1"
@@ -38,20 +40,21 @@ const RecoverPassword = () => {
                         ></Form.Control>
                       </Form.Group>
                       <Form.Group className="d-flex align-items-center justify-content-between mt-4 mb-0">
-                        <a className="small" href="login.html">
+                        <Link className="small" to="/login">
                           Return to login
-                        </a>
-                        <a className="btn btn-primary" href="login.html">
+                        </Link>
+                        <Link className="btn btn-primary" to="/reset-password">
                           Reset Password
-                        </a>
+                        </Link>
                       </Form.Group>
-                    </form>
+                    </Form>
                   </Card.Body>
                 </Card>
               </Col>
             </Row>
           </Container>
         </div>
+        <Footer />
       </div>
     </div>
   );

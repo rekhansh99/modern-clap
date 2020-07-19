@@ -1,8 +1,10 @@
 import React from 'react';
 
-import loginBG from '../images/login-bg.jpg';
-
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Form } from 'react-bootstrap';
+
+import Footer from '../components/common/Footer';
+import loginBG from '../images/login-bg.jpg';
 
 const Login = () => {
   return (
@@ -27,7 +29,7 @@ const Login = () => {
                       </h3>
                     </Card.Header>
                     <Card.Body>
-                      <form>
+                      <Form>
                         <Form.Group>
                           <input
                             className="form-control dv_login_form_input"
@@ -37,37 +39,30 @@ const Login = () => {
                           />
                         </Form.Group>
                         <Form.Group>
-                          <input
-                            className="form-control dv_login_form_input"
+                          <Form.Control
+                            className="dv_login_form_input"
                             id="inputPassword"
                             type="password"
                             placeholder="Password"
                           />
                         </Form.Group>
                         <Form.Group>
-                          <div className="custom-control custom-checkbox">
-                            <input
-                              className="custom-control-input"
-                              id="rememberPasswordCheck"
-                              type="checkbox"
-                            />
-                            <label
-                              className="custom-control-label"
-                              htmlFor="rememberPasswordCheck"
-                            >
+                          <Form.Check custom>
+                            <Form.Check.Input id="rememberPasswordCheck" />
+                            <Form.Check.Label htmlFor="rememberPasswordCheck">
                               Remember password
-                            </label>
-                          </div>
+                            </Form.Check.Label>
+                          </Form.Check>
                         </Form.Group>
                         <Form.Group className="d-flex align-items-center justify-content-between mt-4 mb-0">
-                          <a className="small" href="password.html">
+                          <Link className="small" to="/reset-password">
                             Forgot Password?
-                          </a>
-                          <a className="btn btn-primary" href="index.html">
+                          </Link>
+                          <Link className="btn btn-primary" href="/index">
                             Login
-                          </a>
+                          </Link>
                         </Form.Group>
-                      </form>
+                      </Form>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -75,6 +70,7 @@ const Login = () => {
             </Container>
           </main>
         </div>
+        <Footer />
       </div>
     </div>
   );
