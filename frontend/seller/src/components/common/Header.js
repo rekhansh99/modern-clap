@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
-import { AlignRight } from 'react-feather';
+import { AlignRight, PlusCircle } from 'react-feather';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = ({ toggleSideNav }) => {
@@ -28,22 +28,38 @@ const Header = ({ toggleSideNav }) => {
           </Nav.Link>
         </Nav.Item>
         <Dropdown as="li">
-          <Dropdown.Toggle as={Nav.Link}>
-            <FontAwesomeIcon icon="user" fixedWidth />
-            <span className="hide-mobile-767">Account</span>
+          <Dropdown.Toggle as={Nav.Link} title="Add New">
+            <PlusCircle size={24} />{' '}
           </Dropdown.Toggle>
           <Dropdown.Menu alignRight>
-            <Dropdown.Item as={Link} to=" #">
+            <Dropdown.Item as={Link} to="#">
+              Add Parent Business{' '}
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="#">
+              Add New Service{' '}
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/requests">
+              View Request - <span>05 </span>{' '}
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Dropdown as="li">
+          <Dropdown.Toggle as={Nav.Link}>
+            <FontAwesomeIcon icon="user" fixedWidth />
+            <span className="hide-mobile-767">Account </span>
+          </Dropdown.Toggle>
+          <Dropdown.Menu alignRight>
+            <Dropdown.Item as={Link} to="#">
               Profile
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">
-              Change Password{' '}
+              Change Password
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="#">
+            <Dropdown.Item as={Link} to="/settings">
               Settings
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">
-              Switch to another{' '}
+              Switch to another
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">
               Logout
