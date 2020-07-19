@@ -37,3 +37,24 @@
   border-top: 1px solid #d7d7d7;
   background: #ececec;
 }
+.dv_cards {
+  margin: 50% 0 0 0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 3px 4px 21px -5px #11559e;
+}
+.form-control.dv_login_form_input {
+  border-color: #ffffff;
+  padding: 15px;
+  height: 56px;
+  box-shadow: 0 8px 26px 0 rgba(0, 0, 0, 0.08);
+  margin: 0 0 15px 0;
+}
+.form-control.dv_login_form_input:focus {
+  border-color: #2874f0;
+}
+@media (max-width: 991px) {
+  .dv_cards {
+    margin: 20% 0 0 0;
+  }
+}
