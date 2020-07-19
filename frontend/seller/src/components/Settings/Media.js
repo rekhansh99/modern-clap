@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 
 const Media = () => {
   return (

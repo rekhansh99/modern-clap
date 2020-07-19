@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
-import { Row, Col, FormControl, FormGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Row, Col, FormControl, FormGroup } from 'react-bootstrap';
+
+import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 
 const ShopDetails = () => {
   return (

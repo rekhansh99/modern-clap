@@ -1,11 +1,11 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { MoreVertical } from 'react-feather';
 import { Container, Row, Col, Card, Table, Dropdown } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import Search from '../components/common/Search';
-import { Link } from 'react-router-dom';
 import Pagination from '../components/common/Pagination';
 
 const AcceptedRequests = () => {
@@ -83,10 +83,7 @@ const AcceptedRequests = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -127,10 +124,7 @@ const AcceptedRequests = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -174,10 +168,7 @@ const AcceptedRequests = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>

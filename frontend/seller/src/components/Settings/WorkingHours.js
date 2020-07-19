@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
+
+import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 
 const WorkingHours = () => {
   return (

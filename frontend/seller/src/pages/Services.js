@@ -74,10 +74,7 @@ const Services = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -101,10 +98,7 @@ const Services = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -128,10 +122,7 @@ const Services = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -155,10 +146,7 @@ const Services = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
@@ -182,10 +170,7 @@ const Services = () => {
                     </td>
                     <td>AED 120 </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>

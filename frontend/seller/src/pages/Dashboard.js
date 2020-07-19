@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { Codepen, MoreVertical } from 'react-feather';
 import { Container, Row, Col, Card, Table, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,6 @@ import NumberCard from '../components/common/NumberCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import Pagination from '../components/common/Pagination';
 import Search from '../components/common/Search';
-import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -132,10 +132,7 @@ const Dashboard = () => {
                       <span style={{ color: 'red' }}>pending</span>
                     </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>

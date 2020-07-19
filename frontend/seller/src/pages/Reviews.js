@@ -152,7 +152,7 @@ const Reviews = () => {
                   </span>
                 </td>
                 <Dropdown as="td">
-                  <Dropdown.Toggle as={Link} className="dv_everytable_action">
+                  <Dropdown.Toggle as="a" className="dv_everytable_action">
                     <MoreVertical />
                   </Dropdown.Toggle>
                   <Dropdown.Menu alignRight>
