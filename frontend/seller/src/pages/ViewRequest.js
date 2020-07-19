@@ -68,6 +68,7 @@ const ViewRequest = () => {
                             margin: '0 10px 0 0',
                             borderRadius: '50%'
                           }}
+                          alt=""
                         />
                         <strong>Sanjay sakpal </strong>
                       </li>
@@ -141,6 +142,7 @@ const ViewRequest = () => {
                             margin: '0 10px 0 0',
                             borderRadius: '50%'
                           }}
+                          alt=""
                         />
                         <strong>Goodhand Technical Services </strong>
                       </li>
