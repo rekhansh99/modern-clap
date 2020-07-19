@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
   return (
@@ -21,43 +22,40 @@ const ResetPassword = () => {
         }}
       >
         Reset Password
-        <a href="#!" className="float-right">
+        <Link to="#!" className="float-right">
           edit
-        </a>
+        </Link>
       </h4>
       <Row className="p-3">
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Current Password </label>
-            <input
+            <FormControl
               type="Password"
-              className="form-control dv_all_inputs dv_error_for_input"
-              name
+              className="dv_all_inputs dv_error_for_input"
               placeholder="Enter"
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>New Password </label>
-            <input
+            <FormControl
               type="Password"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter"
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Retype New Password </label>
-            <input
+            <FormControl
               type="Password"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter"
             />
-          </div>
+          </FormGroup>
         </Col>
       </Row>
     </div>

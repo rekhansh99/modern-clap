@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as TickSVG } from '../../svgs/chart.svg';
-import { Row, Col } from 'react-bootstrap';
+import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
+import { Row, Col, Alert, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const CategoryRequestForm = () => {
   return (
@@ -33,26 +34,25 @@ const CategoryRequestForm = () => {
       </h4>
       <Row className="p-3">
         <Col md={12}>
-          <div className="alert alert-warning">
+          <Alert variant="warning">
             <strong>Notice : </strong> If you want to add mutiple business in
             one account then add from here otherwise{' '}
-            <a href="#!">click here </a> to register as a new business.
-          </div>
+            <Link to="#!">click here </Link> to register as a new business.
+          </Alert>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Owner Full Name</label>
-            <input
+            <Form.Control
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Shyam Jadhav"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>
               Email Address
               <TickSVG
@@ -63,17 +63,16 @@ const CategoryRequestForm = () => {
                 }}
               />
             </label>
-            <input
+            <Form.Control
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="demo@gmail.com"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>
               Mobile No
               <TickSVG
@@ -84,156 +83,134 @@ const CategoryRequestForm = () => {
                 }}
               />
             </label>
-            <input
+            <Form.Control
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder={9222266992}
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Phone No</label>
-            <input
+            <Form.Control
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder={910456789}
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Select Country</label>
-            <input
+            <Form.Control
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="India"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Shop Name </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Name"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Contact Person </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Name"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Contact Number </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Number"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>State </label>
-            <select className="form-control dv_all_inputs">
+            <Form.Control as="select" className="dv_all_inputs">
               <option>Dubai </option>
               <option>Abu Dhabi </option>
               <option>Sharjha </option>
               <option>Ras al Khaimah </option>
               <option>Fujairah</option>
-            </select>
-          </div>
+            </Form.Control>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Address </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Address"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>PO Box</label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="e g : 81748"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Trade License (jpg, png, pdf) </label>
-            <div className="custom-file">
-              <label>Trade License </label>
-              <input
-                type="file"
-                className="custom-file-input"
-                id="customFile"
-              />
-              <label className="custom-file-label" htmlFor="customFile">
-                Choose file
-              </label>
-            </div>
-          </div>
+            <Form.File custom>
+              <Form.File.Input />
+              <Form.File.Label>Choose file</Form.File.Label>
+            </Form.File>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Trade License No </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Number"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <Form.Group>
             <label>Expiry Date </label>
-            <input
+            <Form.Control
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Enter Expiry Date"
             />
-          </div>
+          </Form.Group>
         </Col>
         <Col xs={12} className="pb-3">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck"
-              name="example1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck">
+          <Form.Check custom>
+            <Form.Check.Input id="customCheck" />
+            <Form.Check.Label htmlFor="customCheck">
               I accepted merge business <strong>terms &amp; condition </strong>
-            </label>
-          </div>
+            </Form.Check.Label>
+          </Form.Check>
         </Col>
       </Row>
     </div>

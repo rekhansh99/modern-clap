@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormControl } from 'react-bootstrap';
 
 const SwitchBusiness = ({ title, options }) => {
   const optionsJSX = options.map(option => (
@@ -9,7 +10,9 @@ const SwitchBusiness = ({ title, options }) => {
   return (
     <div className="dv_switch_to_another_business">
       {title}
-      <select className="form-control dv_all_inputs">{optionsJSX}</select>
+      <FormControl as="select" className="dv_all_inputs">
+        {optionsJSX}
+      </FormControl>
     </div>
   );
 };

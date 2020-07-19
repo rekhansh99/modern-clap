@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 
 const Address = () => {
   return (
@@ -32,55 +32,50 @@ const Address = () => {
       </h4>
       <Row className="p-3">
         <Col xs={12}>
-          <div className="form-group">
+          <FormGroup>
             <label>Address </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="M-2, Bualeeba plaza, near google plaza center, goregaon est, Mumbai - 400063"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>State </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="State"
               defaultValue="Maharashtra"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>City / Area </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="City Area"
               defaultValue="Mumbai"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Pincode </label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
-              placeholder
+              className="dv_all_inputs"
               defaultValue={81765}
             />
-          </div>
+          </FormGroup>
         </Col>
       </Row>
     </div>

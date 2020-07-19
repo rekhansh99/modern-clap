@@ -8,7 +8,7 @@ const FlashCards = ({ cards }) => {
       <div className="dv_toast_wrapper_details">
         <span>{card.name}</span>
         <span>
-          <strong>{card.service}</strong>
+          <strong>{card.service} </strong>
           {card.message}
         </span>
       </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as TickSVG } from '../../svgs/chart.svg';
-import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
+import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 
 const AccountDetails = () => {
   return (
@@ -22,25 +23,24 @@ const AccountDetails = () => {
         }}
       >
         Account Details
-        <a href="#!" className="float-right">
+        <Link to="#!" className="float-right">
           edit
-        </a>
+        </Link>
       </h4>
       <Row className="p-3">
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Owner Full Name</label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Shyam Jadhav"
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>
               Email Address
               <TickSVG
@@ -51,17 +51,16 @@ const AccountDetails = () => {
                 }}
               />
             </label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="demo@gmail.com"
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>
               Mobile No
               <TickSVG
@@ -72,38 +71,35 @@ const AccountDetails = () => {
                 }}
               />
             </label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder={9222266992}
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Phone No</label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder={910456789}
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Select Country</label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="India"
             />
-          </div>
+          </FormGroup>
         </Col>
       </Row>
     </div>

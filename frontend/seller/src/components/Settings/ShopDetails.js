@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as TickSVG } from '../../svgs/chart.svg';
-import { Row, Col } from 'react-bootstrap';
+import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
+import { Row, Col, FormControl, FormGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ShopDetails = () => {
   return (
@@ -22,49 +23,46 @@ const ShopDetails = () => {
         }}
       >
         Shop Details
-        <a href="#!" className="float-right">
+        <Link to="#!" className="float-right">
           edit
-        </a>
+        </Link>
       </h4>
       <Row className="p-3">
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Business Category </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               defaultValue="Cleaning"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Shop Name </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               defaultValue="Cleaning"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Contact Person </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               defaultValue="Shankar Gupta"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <TickSVG
               style={{
                 width: '15px',
@@ -73,26 +71,24 @@ const ShopDetails = () => {
               }}
             />
             <label>Contact Number </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               defaultValue={9222266992}
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Location </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               defaultValue="Dubai"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
       </Row>
     </div>

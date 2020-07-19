@@ -27,7 +27,6 @@ const SideNav = ({ close }) => {
               Inbox <span className="dv_pending_numbders">12</span>{' '}
             </Nav.Link>
             <Nav.Link
-              as={Link}
               onClick={e => {
                 e.preventDefault();
                 setReqMenu(!reqMenu);

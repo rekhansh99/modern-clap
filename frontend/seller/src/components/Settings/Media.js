@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Media = () => {
   return (
@@ -24,46 +25,43 @@ const Media = () => {
       </h4>
       <Row className="p-3">
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Trade License </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Trade License"
               defaultValue="KJ65423578JB23"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
+          <FormGroup>
             <label>Expiry Date </label>
-            <input
+            <FormControl
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Expiry Date"
               defaultValue="12/12/2020"
               disabled
             />
-          </div>
+          </FormGroup>
         </Col>
         <Col xs={12} lg={4}>
-          <div className="form-group">
-            <a href="#!" className="float-right">
-              Download{' '}
-            </a>
+          <FormGroup>
+            <Link to="#!" className="float-right">
+              Download
+            </Link>
             <label>Trade License Copy </label>
-            <input
+            <FormControl
               disabled
               type="text"
-              className="form-control dv_all_inputs"
-              name
+              className="dv_all_inputs"
               placeholder="Trade License Copy"
               defaultValue="tradeliesence.jpg"
             />
-          </div>
+          </FormGroup>
         </Col>
       </Row>
     </div>
