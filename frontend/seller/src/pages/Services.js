@@ -80,7 +80,7 @@ const Services = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/services/add">
                           Edit
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -104,7 +104,7 @@ const Services = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/services/add">
                           Edit
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -128,7 +128,7 @@ const Services = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/services/add">
                           Edit
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -152,7 +152,7 @@ const Services = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/services/add">
                           Edit
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -176,7 +176,7 @@ const Services = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/services/add">
                           Edit
                         </Dropdown.Item>
                       </Dropdown.Menu>

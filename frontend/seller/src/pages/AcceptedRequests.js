@@ -57,7 +57,7 @@ const AcceptedRequests = () => {
                   <tr>
                     <td>12/12/2020</td>
                     <td>
-                      <Link to="#!">MD12345</Link>
+                      <Link to="/request/MD12345">MD12345</Link>
                     </td>
                     <td>sarika kadam </td>
                     <td>
@@ -89,10 +89,10 @@ const AcceptedRequests = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/request/MD12345">
                           View
                         </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/inbox">
                           Chat
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -101,7 +101,7 @@ const AcceptedRequests = () => {
                   <tr>
                     <td>12/12/2020</td>
                     <td>
-                      <Link to="#!">MD12345</Link>
+                      <Link to="/request/MD12345">MD12345</Link>
                     </td>
                     <td>sarika kadam </td>
                     <td>
@@ -130,10 +130,10 @@ const AcceptedRequests = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/request/MD12345">
                           View
                         </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/inbox">
                           Chat
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -142,7 +142,7 @@ const AcceptedRequests = () => {
                   <tr>
                     <td>12/12/2020</td>
                     <td>
-                      <Link to="#!">MD12345</Link>
+                      <Link to="/request/MD12345">MD12345</Link>
                     </td>
                     <td>sarika kadam </td>
                     <td>
@@ -174,10 +174,10 @@ const AcceptedRequests = () => {
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/request/MD12345">
                           View
                         </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/inbox">
                           Chat
                         </Dropdown.Item>
                       </Dropdown.Menu>

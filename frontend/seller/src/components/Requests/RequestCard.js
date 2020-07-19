@@ -29,7 +29,7 @@ const RequestCard = ({ orderId, name, img, services, payment, status }) => {
 RequestCard.propTypes = {
   orderId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  img: PropTypes.object.isRequired,
+  img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   services: PropTypes.array.isRequired,
   payment: PropTypes.object.isRequired,
   status: PropTypes.string

@@ -7,7 +7,7 @@ import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 const WorkingHours = () => {
   return (
     <div className="dv_per_service_wrapper">
-      <h4 clasName="view_request_title">
+      <h4 className="view_request_title">
         Working Hours
         <a href="#!" className="float-right">
           edit

@@ -9,7 +9,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = ({ toggleSideNav }) => {
   return (
     <Navbar className="sb-topnav" variant="dark" bg="dark">
-      <Navbar.Brand as={Link} to="#">
+      <Navbar.Brand
+        as={Link}
+        to="https://mirrorssalonandspa.com/html/mirrors/img/react/"
+      >
         Modernclap
       </Navbar.Brand>
       <button
@@ -22,7 +25,7 @@ const Header = ({ toggleSideNav }) => {
       {/* Navbar */}
       <Nav as="ul" className="ml-auto mr-md-0">
         <Nav.Item as="li">
-          <Nav.Link as={Link} to="#">
+          <Nav.Link as={Link} to="/notifications">
             <FontAwesomeIcon icon="bell" fixedWidth />
             <span className="notification-dot">12</span>
           </Nav.Link>
@@ -35,7 +38,7 @@ const Header = ({ toggleSideNav }) => {
             <Dropdown.Item as={Link} to="#">
               Add Parent Business
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="#">
+            <Dropdown.Item as={Link} to="/service/add">
               Add New Service
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/requests">
@@ -52,13 +55,13 @@ const Header = ({ toggleSideNav }) => {
             <Dropdown.Item as={Link} to="#">
               Profile
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="#">
+            <Dropdown.Item as={Link} to="/reset-password">
               Change Password
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/settings">
               Settings
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="#">
+            <Dropdown.Item as={Link} to="/login">
               Switch to another
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">

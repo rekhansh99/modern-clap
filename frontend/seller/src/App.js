@@ -113,7 +113,7 @@ function App() {
                 <Footer />
               </div>
             </div>
-            <BottomNav />
+            <BottomNav toggleMenu={() => setSideNav(!sideNav)} />
           </Route>
         </Switch>
       </div>

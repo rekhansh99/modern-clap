@@ -175,7 +175,10 @@ const Reviews = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!" style={{ fontFamily: 'Segoe ui bold' }}>
+                  <Link
+                    to="/request/MD12345"
+                    style={{ fontFamily: 'Segoe ui bold' }}
+                  >
                     MD12345
                   </Link>
                 </td>
@@ -205,7 +208,7 @@ const Reviews = () => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu alignRight>
                     <Dropdown.Item
-                      as={Link}
+                      as="a"
                       onClick={e => {
                         e.preventDefault();
                         setModal(true);

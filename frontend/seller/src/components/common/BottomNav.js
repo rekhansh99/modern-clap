@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { FileText, ArrowDown, BarChart, UserCheck, Menu } from 'react-feather';
 import { Link } from 'react-router-dom';
 
-const BottomNav = () => {
+const BottomNav = ({ toggleMenu }) => {
   return (
     <div className="show-mobile-991 dv_fixed_bottom_bar">
       <ul>
@@ -37,7 +39,14 @@ const BottomNav = () => {
           </Link>
         </li>
         <li>
-          <Link to="#" id="mobilemenu">
+          <Link
+            to="#"
+            id="mobilemenu"
+            onClick={e => {
+              e.preventDefault();
+              toggleMenu();
+            }}
+          >
             <Menu size={24} />
             Menu
           </Link>
@@ -45,6 +54,10 @@ const BottomNav = () => {
       </ul>
     </div>
   );
+};
+
+BottomNav.propTypes = {
+  toggleMenu: PropTypes.func.isRequired
 };
 
 export default BottomNav;

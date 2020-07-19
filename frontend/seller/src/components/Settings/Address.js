@@ -5,7 +5,7 @@ import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 const Address = () => {
   return (
     <div className="dv_per_service_wrapper">
-      <h4 clasName="view_request_title">
+      <h4 className="view_request_title">
         Address
         <div className="float-right dv_setting_save_btn_wrapper">
           <button type="button" className="btn btn-sm text-dark">

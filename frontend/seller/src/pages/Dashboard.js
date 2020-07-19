@@ -31,56 +31,56 @@ const Dashboard = () => {
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard
             title="Total Appointments"
-            value="21"
+            value={21}
             icon={<Codepen />}
           />
         </Col>
@@ -144,7 +144,7 @@ const Dashboard = () => {
                         <Dropdown.Item
                           as={Link}
                           className="dropdown-item"
-                          to="#!"
+                          to="/request/MD542154"
                         >
                           View
                         </Dropdown.Item>
@@ -161,14 +161,11 @@ const Dashboard = () => {
                       <span style={{ color: 'green' }}>completed</span>
                     </td>
                     <Dropdown as="td">
-                      <Dropdown.Toggle
-                        as={Link}
-                        className="dv_everytable_action"
-                      >
+                      <Dropdown.Toggle as="a" className="dv_everytable_action">
                         <MoreVertical />
                       </Dropdown.Toggle>
                       <Dropdown.Menu alignRight>
-                        <Dropdown.Item as={Link} to="#!">
+                        <Dropdown.Item as={Link} to="/request/MD542154">
                           View
                         </Dropdown.Item>
                       </Dropdown.Menu>

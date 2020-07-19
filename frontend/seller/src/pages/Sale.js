@@ -233,7 +233,7 @@ const Sale = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!">MD12345 </Link>
+                  <Link to="/request/MD12345">MD12345 </Link>
                 </td>
                 <td>sanika shinde </td>
                 <td>AED 100</td>
@@ -244,7 +244,7 @@ const Sale = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!">MD12345 </Link>
+                  <Link to="/request/MD12345">MD12345 </Link>
                 </td>
                 <td>sanika shinde </td>
                 <td>AED 100</td>
@@ -255,7 +255,7 @@ const Sale = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!">MD12345 </Link>
+                  <Link to="/request/MD12345">MD12345 </Link>
                 </td>
                 <td>sanika shinde </td>
                 <td>AED 100</td>
@@ -266,7 +266,7 @@ const Sale = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!">MD12345 </Link>
+                  <Link to="/request/MD12345">MD12345 </Link>
                 </td>
                 <td>sanika shinde </td>
                 <td>AED 100</td>
@@ -277,7 +277,7 @@ const Sale = () => {
               <tr>
                 <td>12/12/2020 </td>
                 <td>
-                  <Link to="#!">MD12345 </Link>
+                  <Link to="/request/MD12345">MD12345 </Link>
                 </td>
                 <td>sanika shinde </td>
                 <td>AED 100</td>

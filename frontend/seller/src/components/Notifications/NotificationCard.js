@@ -9,7 +9,7 @@ const NotificationCard = ({ icon, orderNo, message }) => {
     <Card className="mb-3">
       <div className="dv_notification_to_details">
         {icon}
-        <Link to="#!">{orderNo}</Link> {message}
+        <Link to={'/request/' + orderNo}>{orderNo}</Link> {message}
       </div>
     </Card>
   );
