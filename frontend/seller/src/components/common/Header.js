@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,11 @@ import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { AlignRight, PlusCircle } from 'react-feather';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import SwitchBusinessModal from './SwitchBusinessModal';
+
 const Header = ({ toggleSideNav }) => {
+  const [switchBusinessModal, setSwitchBusinessModal] = useState(false);
+
   return (
     <Navbar className="sb-topnav" variant="dark" bg="dark">
       <Navbar.Brand
@@ -61,7 +65,14 @@ const Header = ({ toggleSideNav }) => {
             <Dropdown.Item as={Link} to="/settings">
               Settings
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/login">
+            <Dropdown.Item
+              as={Link}
+              to="#"
+              onClick={e => {
+                e.preventDefault();
+                setSwitchBusinessModal(true);
+              }}
+            >
               Switch to another
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="#">
@@ -70,6 +81,10 @@ const Header = ({ toggleSideNav }) => {
           </Dropdown.Menu>
         </Dropdown>
       </Nav>
+      <SwitchBusinessModal
+        isOpen={switchBusinessModal}
+        close={() => setSwitchBusinessModal(false)}
+      />
     </Navbar>
   );
 };
