@@ -2,11 +2,15 @@
 
 @font-face {
   font-family: Segoe ui regular;
-  src: url(./fonts/Segoe-UI.ttf);
+  src: url(./fonts/Segoe-UI.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: Segoe ui bold;
-  src: url(./fonts/Segoe-UI-Bold.ttf);
+  src: url(./fonts/Segoe-UI-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 :root {
@@ -10007,7 +10011,7 @@ ul.dv_chat_media_option > li > a {
   border-radius: 25px;
   margin: 0 10px 0 0;
   text-transform: uppercase;
-  font-family: Segoe ui medium;
+  font-family: Segoe ui regular;
 }
 a.nav-link.dv_active_menu {
   background: #343a40;
