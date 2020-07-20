@@ -45,6 +45,9 @@ const Header = ({ toggleSideNav }) => {
             <Dropdown.Item as={Link} to="/service/add">
               Add New Service
             </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/staff/add">
+              Add New Staff
+            </Dropdown.Item>
             <Dropdown.Item as={Link} to="/requests">
               View Request - <span>05 </span>
             </Dropdown.Item>

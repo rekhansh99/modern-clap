@@ -14,6 +14,7 @@ import AcceptedRequests from './pages/AcceptedRequests';
 import Services from './pages/Services';
 import AddService from './pages/AddService';
 import Staff from './pages/Staff';
+import AddStaff from './pages/AddStaff';
 import ViewRequest from './pages/ViewRequest';
 import Login from './pages/Login';
 import Invoice from './pages/Invoice';
@@ -92,6 +93,9 @@ function App() {
                     </Route>
                     <Route exact path="/staffs">
                       <Staff />
+                    </Route>
+                    <Route exact path="/staff/add">
+                      <AddStaff />
                     </Route>
                     <Route exact path="/sale">
                       <Sale />

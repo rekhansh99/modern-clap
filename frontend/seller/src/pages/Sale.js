@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { Codepen } from 'react-feather';
 import {
   Container,
   Col,
@@ -87,32 +86,16 @@ const Sale = () => {
           </li>
         </ul>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
       </Row>
       <Card className="mb-4">

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import { Codepen, MoreVertical } from 'react-feather';
+import { MoreVertical } from 'react-feather';
 import { Container, Row, Col, Card, Table, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -29,60 +29,28 @@ const Dashboard = () => {
       <h1 className="mt-4 dv_page_heading">Dashboard</h1>
       <Row>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
         <Col xs={12} md={6} xl={3}>
-          <NumberCard
-            title="Total Appointments"
-            value={21}
-            icon={<Codepen />}
-          />
+          <NumberCard title="Total Appointments" value={21} />
         </Col>
       </Row>
       <Row>
