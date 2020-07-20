@@ -14,8 +14,8 @@ const Header = ({ toggleSideNav }) => {
   return (
     <Navbar className="sb-topnav" variant="dark" bg="dark">
       <Navbar.Brand
-        as={Link}
-        to="https://mirrorssalonandspa.com/html/mirrors/img/react/"
+        as="a"
+        href="https://mirrorssalonandspa.com/html/mirrors/img/react/"
       >
         Modernclap
       </Navbar.Brand>
