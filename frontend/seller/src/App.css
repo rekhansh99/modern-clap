@@ -64,3 +64,9 @@
 .dv_give_rating > svg {
   margin-right: 10px;
 }
+.pending {
+  color: red;
+}
+.completed {
+  color: green;
+}
