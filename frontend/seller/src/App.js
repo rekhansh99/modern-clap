@@ -22,28 +22,28 @@ import RecoverPassword from './pages/RecoverPassword';
 import Sale from './pages/Sale';
 import Reviews from './pages/Reviews';
 import Settings from './pages/Settings';
-import FlashCards from './components/common/FlashCards';
-import avatar from './images/avatar.png';
+// import FlashCards from './components/common/FlashCards';
+// import avatar from './images/avatar.png';
 
 import './App.css';
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
 
-  const flashCards = [
-    {
-      name: 'Rupali Sharma',
-      img: avatar,
-      service: 'Cleaners',
-      message: 'New request recieved!'
-    },
-    {
-      name: 'Rupali Sharma',
-      img: avatar,
-      service: 'Cleaners',
-      message: 'New request recieved!'
-    }
-  ];
+  // const flashCards = [
+  //   {
+  //     name: 'Rupali Sharma',
+  //     img: avatar,
+  //     service: 'Cleaners',
+  //     message: 'New request recieved!'
+  //   },
+  //   {
+  //     name: 'Rupali Sharma',
+  //     img: avatar,
+  //     service: 'Cleaners',
+  //     message: 'New request recieved!'
+  //   }
+  // ];
 
   return (
     // eslint-disable-next-line no-undef
@@ -116,7 +116,7 @@ function App() {
                       <Invoice />
                     </Route>
                   </Switch>
-                  <FlashCards cards={flashCards} />
+                  {/* <FlashCards cards={flashCards} /> */}
                 </main>
                 <Footer />
               </div>

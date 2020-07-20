@@ -84,11 +84,11 @@ const Notifications = () => {
         ]}
       />
       <h1 className="mt-4 dv_page_heading">Notifications</h1>
-      <span className="seen_unseen_notification">unseen notification</span>
+      <span className="subtitle">unseen notification</span>
       {unseenNotification.map((notification, index) => (
         <NotificationCard key={index} {...notification} />
       ))}
-      <span className="seen_unseen_notification">seen notification</span>
+      <span className="subtitle">seen notification</span>
       {seenNotification.map((notification, index) => (
         <NotificationCard key={index} {...notification} />
       ))}

@@ -9,6 +9,57 @@ import avatar from '../images/avatar.png';
 const Requests = () => {
   document.title = 'Booking List - Modernclap';
 
+  const requests = [
+    {
+      id: 'MD12345',
+      customer: 'Rupali Sharma',
+      avatar: null,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'pending'
+    },
+    {
+      id: 'MD12345',
+      customer: 'Sanjay Chavan',
+      avatar: avatar,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'missed'
+    },
+    {
+      id: 'MD12345',
+      customer: 'Dipali Jadhav',
+      avatar: avatar,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'accepted'
+    },
+    {
+      id: 'MD12345',
+      customer: 'Rupali Sharma',
+      avatar: null,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'pending'
+    },
+    {
+      id: 'MD12345',
+      customer: 'Sanjay Chavan',
+      avatar: avatar,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'missed'
+    },
+    {
+      id: 'MD12345',
+      customer: 'Dipali Jadhav',
+      avatar: avatar,
+      services: ['Haircut', 'Spa'],
+      payment: 250,
+      status: 'accepted'
+    }
+  ];
+
   return (
     <Container fluid>
       <SwitchBusiness
@@ -22,64 +73,19 @@ const Requests = () => {
         ]}
       />
       <h1 className="mt-4 dv_page_heading">Request List</h1>
-      <span
-        style={{
-          color: '#adadad',
-          display: 'block',
-          margin: '0 0 10px 0',
-          textTransform: 'capitalize'
-        }}
-      >
-        pending request
-      </span>
-      <RequestCard
-        orderId="MD12345"
-        name="rupali sharma"
-        img={avatar}
-        services={['Haircut', 'Spa']}
-        payment={{ currency: 'AED', total: 250 }}
-        status="Requested Accepted"
-      />
-      <RequestCard
-        orderId="MD12345"
-        name="rupali sharma"
-        img={avatar}
-        services={['Haircut', 'Spa']}
-        payment={{ currency: 'AED', total: 250 }}
-        status="Requested Accepted"
-      />
-      <RequestCard
-        orderId="MD12345"
-        name="rupali sharma"
-        img={avatar}
-        services={['Haircut', 'Spa']}
-        payment={{ currency: 'AED', total: 250 }}
-        status="Requested Accepted"
-      />
-      <RequestCard
-        orderId="MD12345"
-        name="rupali sharma"
-        img={avatar}
-        services={['Haircut', 'Spa']}
-        payment={{ currency: 'AED', total: 250 }}
-        status="Requested Accepted"
-      />
-      <RequestCard
-        orderId="MD12345"
-        name="rupali sharma"
-        img={avatar}
-        services={['Haircut', 'Spa']}
-        payment={{ currency: 'AED', total: 250 }}
-        status="Requested Accepted"
-      />
-      <span
-        style={{
-          color: '#adadad',
-          display: 'block',
-          margin: '0 0 10px 0',
-          textTransform: 'inherit'
-        }}
-      >
+      <span className="subtitle">pending request</span>
+      {requests.map((request, index) => (
+        <RequestCard
+          key={index}
+          orderId={request.id}
+          name={request.customer}
+          img={request.avatar}
+          services={request.services}
+          payment={request.payment}
+          status={request.status}
+        />
+      ))}
+      <span className="subtitle" style={{ textTransform: 'inherit' }}>
         Total we have sent you <strong>120 request </strong>
       </span>
     </Container>
