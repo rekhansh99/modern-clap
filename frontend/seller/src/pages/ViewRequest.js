@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { Container, Card, Button, Row, Col } from 'react-bootstrap';
+import {
+  Container,
+  Card,
+  Button,
+  Row,
+  Col,
+  FormGroup,
+  FormControl
+} from 'react-bootstrap';
+import { ChevronLeft } from 'react-feather';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
+import StarRating from '../components/Reviews/StarRating';
 
 import userDefaultImg from '../images/user-default.png';
+import { ReactComponent as GreenTickSVG } from '../svgs/tick-green.svg';
 
 const ViewRequest = () => {
   document.title = 'View Request - Modernclap';
+
+  const [toolsRating, setToolsRating] = useState(0);
+  const [workRating, setWorkRating] = useState(0);
+  const [behaviourRating, setBehaviourRating] = useState(0);
+  const [overallRating, setOverallRating] = useState(0);
 
   return (
     <Container fluid>
@@ -233,6 +249,82 @@ const ViewRequest = () => {
           </div>
         </Card.Body>
       </Card>
+      <Row>
+        <Col md={6} xs={12} style={{ margin: '0 auto' }}>
+          <span
+            className="dv_section_heading"
+            style={{
+              margin: '0 0 15px 0',
+              background: 'rgb(63, 199, 63, 0.3)',
+              color: '#1b901b'
+            }}
+          >
+            <GreenTickSVG />
+            Payment Done
+            <p
+              style={{
+                fontSize: '12px',
+                textTransform: 'initial',
+                fontWeight: 400,
+                padding: '0 0 0 32px',
+                margin: 0
+              }}
+            >
+              We have received your payment against <strong>MD123443 </strong>{' '}
+              invoice on <strong>12/12/2020</strong>. Please shaare your
+              feedback to improve our quality service for you.
+            </p>
+          </span>
+          <Card className="mb-4">
+            <Card.Header>
+              <ChevronLeft size={24} /> Review - MD12345
+            </Card.Header>
+            <Card.Body>
+              <Row>
+                <Col md={12}>
+                  <FormGroup>
+                    <label>Review </label>
+                    <FormControl
+                      type="text"
+                      className="dv_all_inputs"
+                      style={{ height: '100px', width: '100%' }}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={12}>
+                  <FormGroup>
+                    <label>Tools </label>
+                    <StarRating value={toolsRating} onChange={setToolsRating} />
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Work </label>
+                    <StarRating value={workRating} onChange={setWorkRating} />
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Behaviour </label>
+                    <StarRating
+                      value={behaviourRating}
+                      onChange={setBehaviourRating}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Overall Rating </label>
+                    <StarRating
+                      value={overallRating}
+                      onChange={setOverallRating}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Button style={{ padding: '10px 0' }} block>
+                      Submit Review{' '}
+                    </Button>
+                  </FormGroup>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };
