@@ -54,6 +54,9 @@ const SideNav = ({ close }) => {
             <Nav.Link as={Link} to="/services">
               Services
             </Nav.Link>
+            <Nav.Link as={Link} to="/staffs">
+              Staff
+            </Nav.Link>
             <Nav.Link as={Link} to="/sale">
               sale
             </Nav.Link>
