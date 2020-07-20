@@ -1,13 +1,75 @@
 import React from 'react';
 
-import { Bell, XCircle, Clock } from 'react-feather';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import NotificationCard from '../components/Notifications/NotificationCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 
 const Notifications = () => {
   document.title = 'Notifications - Modernclap';
+
+  const unseenNotification = [
+    {
+      orderNo: 'MD12345',
+      message: 'Today 04:00 PM Appointment has shedule with you.',
+      type: 'info'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'New Request has received..!',
+      type: 'info'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request cancelled by customer',
+      type: 'cancel'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request has been reshduled.',
+      type: 'time'
+    },
+    { orderNo: 'MD12345', message: 'New Request has received..!', type: 'info' }
+  ];
+
+  const seenNotification = [
+    {
+      orderNo: 'MD12345',
+      message: 'New Request has received..!',
+      type: 'info'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request cancelled by customer',
+      type: 'cancel'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request has been reshduled.',
+      type: 'time'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'New Request has received..!',
+      type: 'info'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'New Request has received..!',
+      type: 'info'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request cancelled by customer',
+      type: 'cancel'
+    },
+    {
+      orderNo: 'MD12345',
+      message: 'Request has been reshduled.',
+      type: 'time'
+    },
+    { orderNo: 'MD12345', message: 'New Request has received..!', type: 'info' }
+  ];
 
   return (
     <Container fluid>
@@ -22,80 +84,14 @@ const Notifications = () => {
         ]}
       />
       <h1 className="mt-4 dv_page_heading">Notifications</h1>
-      <Row>
-        <Col xs={12}>
-          <span
-            style={{
-              color: '#adadad',
-              display: 'block',
-              margin: '0 0 10px 0',
-              textTransform: 'capitalize'
-            }}
-          >
-            unseen notification
-          </span>
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<XCircle style={{ color: '#ff4a4a' }} />}
-            orderNo="MD 12345"
-            message="Requet cancelled by customer. "
-          />
-          <NotificationCard
-            icon={<Clock style={{ color: '#FA801C' }} />}
-            orderNo="MD 12345"
-            message="Request has been rescheduled. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <span
-            style={{
-              color: '#adadad',
-              display: 'block',
-              margin: '0 0 10px 0',
-              textTransform: 'capitalize'
-            }}
-          >
-            seen notification
-          </span>
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-          <NotificationCard
-            icon={<Bell style={{ color: '#007bff' }} />}
-            orderNo="MD 12345"
-            message="Today 04:00 PM Appointment has shedule with you. "
-          />
-        </Col>
-      </Row>
+      <span className="seen_unseen_notification">unseen notification</span>
+      {unseenNotification.map((notification, index) => (
+        <NotificationCard key={index} {...notification} />
+      ))}
+      <span className="seen_unseen_notification">seen notification</span>
+      {seenNotification.map((notification, index) => (
+        <NotificationCard key={index} {...notification} />
+      ))}
     </Container>
   );
 };

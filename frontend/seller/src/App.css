@@ -70,3 +70,9 @@
 .completed {
   color: green;
 }
+.seen_unseen_notification {
+  color: #adadad;
+  display: block;
+  margin: 0 0 10px 0;
+  text-transform: capitalize;
+}
