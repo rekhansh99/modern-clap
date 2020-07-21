@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 
-import {
-  Container,
-  Card,
-  Row,
-  Col,
-  Alert,
-  Table,
-  FormCheck,
-  FormFile,
-  Button
-} from 'react-bootstrap';
+import { Container, Card, Row, Col, Button } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import { Link } from 'react-router-dom';
@@ -18,6 +8,8 @@ import NumberCard from '../components/common/NumberCard';
 import BasicDetails from '../components/AddStaff/BasicDetails';
 import UserPermissions from '../components/AddStaff/UserPermissions';
 import AccountDetails from '../components/AddStaff/AccountDetails';
+import Certification from '../components/AddStaff/Certification';
+import OtherBusinesses from '../components/AddStaff/OtherBusinesses';
 
 const AddStaff = () => {
   document.title = 'Add Staff - Modernclap';
@@ -53,7 +45,17 @@ const AddStaff = () => {
     password: '',
     reenterPassword: ''
   });
-  console.log(accountDetails);
+
+  const [otherBusinesses, setOtherBusinesses] = useState({
+    cleaners: false,
+    onlineFitness: false,
+    ladiesSalon: false,
+    gentsSalon: false,
+    deepCleaning: false,
+    handymen: false,
+    acTechnician: false,
+    painters: false
+  });
 
   return (
     <Container fluid>
@@ -124,146 +126,13 @@ const AddStaff = () => {
               setAccountDetails({ ...accountDetails, ...input })
             }
           />
-          <div className="dv_per_service_wrapper">
-            <h4 className="view_request_title">Certification</h4>
-            <Row className="p-3">
-              <Col md={12}>
-                <Alert variant="warning">
-                  <strong>Note : </strong> After submitting certificate you will
-                  get certified badge within 1 week in working days.
-                </Alert>
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>Profession Certificate 1 </label>
-                <FormFile custom id="cert1">
-                  <FormFile.Input />
-                  <FormFile.Label>Choose file</FormFile.Label>
-                </FormFile>
-                <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                  <li
-                    style={{ display: 'inline-block', margin: 0, padding: 0 }}
-                  >
-                    <Link to="#!">Download</Link>
-                  </li>
-                </ul>
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>Profession Certificate 2 </label>
-                <FormFile custom id="cert2">
-                  <FormFile.Input />
-                  <FormFile.Label>Choose file</FormFile.Label>
-                </FormFile>
-                <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                  <li
-                    style={{ display: 'inline-block', margin: 0, padding: 0 }}
-                  >
-                    <Link to="#!">Download</Link>
-                  </li>
-                </ul>
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>Profession Certificate 3 </label>
-                <FormFile custom id="cert3">
-                  <FormFile.Input />
-                  <FormFile.Label>Choose file</FormFile.Label>
-                </FormFile>
-                <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                  <li
-                    style={{ display: 'inline-block', margin: 0, padding: 0 }}
-                  >
-                    <Link to="#!">Download</Link>
-                  </li>
-                </ul>
-              </Col>
-            </Row>
-          </div>
-          <div className="dv_per_service_wrapper">
-            <h4 className="view_request_title">Add to other business also</h4>
-            <Row>
-              <Table>
-                <thead>
-                  <tr>
-                    <th className="pl-4">Page access </th>
-                    <th>also add to </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="pl-4 text-capitalize">cleaners </td>
-                    <td>
-                      <FormCheck custom id="cleaners">
-                        <FormCheck.Input defaultChecked />
-                        <FormCheck.Label>Default</FormCheck.Label>
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">online fitness </td>
-                    <td>
-                      <FormCheck custom id="onlinefitness">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">Ladies Salon </td>
-                    <td>
-                      <FormCheck custom id="ladiessalon">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">gents salon </td>
-                    <td>
-                      <FormCheck custom id="gentssalon">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">deep cleaning </td>
-                    <td>
-                      <FormCheck custom id="deepcleaning">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">handyman </td>
-                    <td>
-                      <FormCheck custom id="handyman">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">AC technician </td>
-                    <td>
-                      <FormCheck custom id="actech">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">painters </td>
-                    <td>
-                      <FormCheck custom id="painters">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-            </Row>
-          </div>
+          <Certification />
+          <OtherBusinesses
+            {...otherBusinesses}
+            onChange={input =>
+              setOtherBusinesses({ ...otherBusinesses, ...input })
+            }
+          />
         </Card.Body>
       </Card>
       <Col md={12} className="text-center mb-4">
