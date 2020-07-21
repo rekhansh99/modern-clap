@@ -67,7 +67,7 @@ const LatestBookingsTable = () => {
                   <MoreVertical />
                 </Dropdown.Toggle>
                 <Dropdown.Menu alignRight>
-                  <Dropdown.Item as={Link} to="/request/MD542154">
+                  <Dropdown.Item as={Link} to={'/request/' + req.requestNo}>
                     View
                   </Dropdown.Item>
                 </Dropdown.Menu>
