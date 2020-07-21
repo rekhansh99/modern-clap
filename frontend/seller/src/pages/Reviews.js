@@ -1,64 +1,74 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
-import {
-  Container,
-  Card,
-  Row,
-  Col,
-  Form,
-  Table,
-  Dropdown
-} from 'react-bootstrap';
-import { MoreVertical, Star } from 'react-feather';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
+import { Container, Card } from 'react-bootstrap';
 import moment from 'moment';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
-import Search from '../components/common/Search';
-import Pagination from '../components/common/Pagination';
 import ReviewModal from '../components/Reviews/ReviewModal';
+import Filters from '../components/Reviews/Filters';
+import ReviewsTable from '../components/Reviews/ReviewsTable';
 
 const Reviews = () => {
   document.title = 'Our Reviews - Modernclap';
 
-  const [modalOpen, setModal] = useState(false);
-  const [dateRange, setDateRange] = useState({
-    start: moment().startOf('hour'),
-    end: moment().startOf('hour').add(32, 'hour')
-  });
-
-  const onDateRangeChanged = (event, picker) => {
-    setDateRange({ start: picker.startDate, end: picker.endDate });
-  };
-
-  const getDateRange = () => {
-    return (
-      dateRange.start.format('M/DD hh:mm A') +
-      ' - ' +
-      dateRange.end.format('M/DD, hh:mm A')
-    );
-  };
-
-  const dateRangePickerConfig = {
-    timePicker: true,
-    startDate: dateRange.start,
-    endDate: dateRange.end,
-    locale: {
-      format: 'M/DD hh:mm A'
+  const reviews = [
+    {
+      date: '12/12/2020',
+      orderId: 'MD12345',
+      toolsRating: 4,
+      workRating: 3,
+      behaviourRating: 5,
+      overallRating: 4,
+      text: 'very smart service they given to us really appreciate'
     },
-    ranges: {
-      Today: [moment(), moment()],
-      Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-      'This Month': [moment().startOf('month'), moment().endOf('month')],
-      'Last Month': [
-        moment().subtract(1, 'month').startOf('month'),
-        moment().subtract(1, 'month').endOf('month')
-      ]
+    {
+      date: '12/12/2020',
+      orderId: 'MD12345',
+      toolsRating: 4,
+      workRating: 3,
+      behaviourRating: 5,
+      overallRating: 4,
+      text: 'very smart service they given to us really appreciate'
+    },
+    {
+      date: '12/12/2020',
+      orderId: 'MD12345',
+      toolsRating: 4,
+      workRating: 3,
+      behaviourRating: 5,
+      overallRating: 4,
+      text: 'very smart service they given to us really appreciate'
+    },
+    {
+      date: '12/12/2020',
+      orderId: 'MD12345',
+      toolsRating: 4,
+      workRating: 3,
+      behaviourRating: 5,
+      overallRating: 4,
+      text: 'very smart service they given to us really appreciate'
+    },
+    {
+      date: '12/12/2020',
+      orderId: 'MD12345',
+      toolsRating: 4,
+      workRating: 3,
+      behaviourRating: 5,
+      overallRating: 4,
+      text: 'very smart service they given to us really appreciate'
     }
-  };
+  ];
+
+  const [modal, setModal] = useState({ index: 0, isOpen: false });
+  const [filters, setFilters] = useState({
+    dateRange: {
+      start: moment().startOf('hour'),
+      end: moment().startOf('hour').add(32, 'hour')
+    },
+    type: 'select',
+    rating: 'select',
+    payment: 'select'
+  });
 
   return (
     <Container fluid>
@@ -72,159 +82,29 @@ const Reviews = () => {
           'TOG'
         ]}
       />
+
       <h1 className="mt-4 dv_page_heading">Reviews</h1>
-      <Card className="mb-4">
-        <Card.Header>Search</Card.Header>
-        <Card.Body>
-          <Row>
-            <Col xs={12} lg={3}>
-              <Form.Group className="mb-0">
-                <Form.Label>Date </Form.Label>
-                <DateRangePicker
-                  {...dateRangePickerConfig}
-                  containerStyles={{ width: '100%' }}
-                  onApply={onDateRangeChanged}
-                >
-                  <Form.Control
-                    type="text"
-                    className="dv_all_inputs rangepicker"
-                    style={{ cursor: 'pointer' }}
-                    value={getDateRange()}
-                    readOnly
-                  />
-                </DateRangePicker>
-              </Form.Group>
-            </Col>
-            <Col xs={12} lg={3}>
-              <Form.Group className="mb-0">
-                <label>Category </label>
-                <Form.Control as="select" className="dv_all_inputs">
-                  <option>Select </option>
-                  <option>Cleaners </option>
-                  <option>Online Fitness </option>
-                  <option>Ladies Salon </option>
-                  <option>Gents Salon </option>
-                  <option>Disinfection </option>
-                  <option>Deep Cleaning </option>
-                  <option>Handyman </option>
-                  <option>Electrician </option>
-                  <option>Painters </option>
-                  <option>Packers &amp; Movers </option>
-                  <option>AC Technicians </option>
-                  <option>Pest COntrol </option>
-                </Form.Control>
-              </Form.Group>
-            </Col>
-            <Col xs={12} lg={3}>
-              <Form.Group className="mb-0">
-                <label>Star </label>
-                <Form.Control as="select" className="dv_all_inputs">
-                  <option>Select </option>
-                  <option>1 Star </option>
-                  <option>2 Star </option>
-                  <option>3 Star </option>
-                  <option>4 Star </option>
-                  <option>5 Star </option>
-                  <option>Tool </option>
-                  <option>Work </option>
-                  <option>Behaviour </option>
-                </Form.Control>
-              </Form.Group>
-            </Col>
-            <Col xs={12} lg={3}>
-              <Form.Group className="mb-0">
-                <label>Payment </label>
-                <Form.Control as="select" className="dv_all_inputs">
-                  <option>Select </option>
-                  <option>Cash </option>
-                  <option>Card </option>
-                </Form.Control>
-              </Form.Group>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
+
+      <Filters
+        {...filters}
+        onChange={newFilters => setFilters({ ...filters, ...newFilters })}
+      />
+
       <Card className="mb-4">
         <Card.Header>Ratings and Reviews</Card.Header>
         <Card.Body className="p-0">
-          <Search />
-          <Table width="100%" cellSpacing={0} responsive>
-            <thead>
-              <tr>
-                <th>date </th>
-                <th>ref id </th>
-                <th>tools </th>
-                <th>work </th>
-                <th>behaviour </th>
-                <th>rating </th>
-                <th>review </th>
-                <th>action </th>
-              </tr>
-              <tr>
-                <th />
-                <th />
-                <th>3.8</th>
-                <th>4.3</th>
-                <th>2.9</th>
-                <th>4.1</th>
-                <th>234</th>
-                <th />
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>12/12/2020 </td>
-                <td>
-                  <Link
-                    to="/request/MD12345"
-                    style={{ fontFamily: 'Segoe ui bold' }}
-                  >
-                    MD12345
-                  </Link>
-                </td>
-                <td>3.4</td>
-                <td>3.4</td>
-                <td>3.4</td>
-                <td>
-                  <Star width={15} height={15} fill="gold" strokeWidth={0} />{' '}
-                  3.4
-                </td>
-                <td>
-                  <span
-                    style={{
-                      display: 'block',
-                      width: '80px',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap'
-                    }}
-                  >
-                    very smart service they given to us really appricite
-                  </span>
-                </td>
-                <Dropdown as="td">
-                  <Dropdown.Toggle as="a" className="dv_everytable_action">
-                    <MoreVertical />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu alignRight>
-                    <Dropdown.Item
-                      as="a"
-                      onClick={e => {
-                        e.preventDefault();
-                        setModal(true);
-                      }}
-                    >
-                      View Review
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </tr>
-            </tbody>
-          </Table>
-          <Pagination />
+          <ReviewsTable
+            reviews={reviews}
+            viewReview={index => setModal({ index: index, isOpen: true })}
+          />
         </Card.Body>
       </Card>
-      <ReviewModal isOpen={modalOpen} close={() => setModal(false)} />
+      <ReviewModal
+        isOpen={modal.isOpen}
+        orderId={reviews[modal.index].orderId}
+        body={reviews[modal.index].text}
+        close={() => setModal({ index: 0, isOpen: false })}
+      />
     </Container>
   );
 };
