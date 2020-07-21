@@ -6,26 +6,7 @@ import { Card } from 'react-bootstrap';
 
 import DefaultUserImg from '../../images/user-default.png';
 
-const RequestCard = ({ orderId, name, img, services, payment, status }) => {
-  let statusColor;
-
-  switch (status) {
-    case 'accepted':
-      statusColor = '#007bff';
-      break;
-    case 'pending':
-      statusColor = '#adadad';
-      break;
-    case 'missed':
-      statusColor = 'red';
-      break;
-    case 'rejected':
-      statusColor = '#999';
-      break;
-    default:
-      statusColor = '#999';
-  }
-
+const RequestCard = ({ orderId, name, img, services, amount, status }) => {
   return (
     <Card className="mb-3">
       <div className="dv_per_request_wrapper">
@@ -37,9 +18,12 @@ const RequestCard = ({ orderId, name, img, services, payment, status }) => {
             <span style={{ fontFamily: 'Segoe ui bold' }}>
               {services.map(service => service + ' ')}
             </span>{' '}
-            - AED {payment}
+            - AED {amount}
           </span>
-          <span style={{ color: statusColor, fontSize: '12px' }}>
+          <span
+            className={status}
+            style={{ fontSize: '12px', fontFamily: 'Segoe ui bold' }}
+          >
             Request {status}
           </span>
         </div>
@@ -54,7 +38,7 @@ RequestCard.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   services: PropTypes.array.isRequired,
-  payment: PropTypes.number.isRequired,
+  amount: PropTypes.number.isRequired,
   status: PropTypes.string
 };
 

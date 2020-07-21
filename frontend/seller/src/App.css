@@ -65,10 +65,27 @@
   margin-right: 10px;
 }
 .pending {
+  text-transform: capitalize;
+  color: #ff9800;
+}
+.completed,
+.successful,
+.rescheduled {
+  text-transform: capitalize;
+  color: green;
+}
+.cancelled,
+.missed {
+  text-transform: capitalize;
   color: red;
 }
-.completed {
-  color: green;
+.accepted {
+  text-transform: capitalize;
+  color: #007bff;
+}
+.rejected {
+  text-transform: capitalize;
+  color: #999;
 }
 .subtitle {
   color: #adadad;

@@ -81,7 +81,7 @@ const Requests = () => {
           name={request.customer}
           img={request.avatar}
           services={request.services}
-          payment={request.payment}
+          amount={request.payment}
           status={request.status}
         />
       ))}
