@@ -6,7 +6,6 @@ import decamelize from '../../utils/decamelize';
 
 const UserPermissions = ({ onChange, ...props }) => {
   const onInputChange = (e, level) => {
-    console.log(e.target);
     onChange({ [e.target.name]: e.target.checked ? level : level - 1 });
   };
 
@@ -18,10 +17,7 @@ const UserPermissions = ({ onChange, ...props }) => {
           <FormCheck.Input
             name={permission}
             checked={props[permission] >= 1}
-            onChange={e => {
-              console.log('hello');
-              onInputChange(e, 1);
-            }}
+            onChange={e => onInputChange(e, 1)}
           />
           <FormCheck.Label />
         </FormCheck>
