@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Container,
@@ -17,9 +17,23 @@ import {
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import { Link } from 'react-router-dom';
 import NumberCard from '../components/common/NumberCard';
+import BasicDetails from '../components/AddStaff/BasicDetails';
 
-const AddService = () => {
+const AddStaff = () => {
   document.title = 'Add Staff - Modernclap';
+
+  const averageRating = 4.5;
+  const toolsRating = 4.5;
+  const workRating = 4.5;
+  const behaviourRating = 4.5;
+
+  const [basicDetails, setBasicDetails] = useState({
+    title: 'Mr',
+    firstName: '',
+    lastName: '',
+    mobile: '',
+    profession: ''
+  });
 
   return (
     <Container fluid>
@@ -53,7 +67,7 @@ const AddService = () => {
               top: '10px'
             }}
           >
-            View all{' '}
+            View all
           </Link>
         </Card.Header>
         <Card.Body className="p-0">
@@ -61,63 +75,23 @@ const AddService = () => {
             <h4 className="view_request_title">Performance</h4>
             <Row className="p-3">
               <Col xl={3} md={6} xs={12}>
-                <NumberCard title="Average Rating" value={4.5} />
+                <NumberCard title="Average Rating" value={averageRating} />
               </Col>
               <Col xl={3} md={6} xs={12}>
-                <NumberCard title="Tools Rating" value={3.3} />
+                <NumberCard title="Tools Rating" value={toolsRating} />
               </Col>
               <Col xl={3} md={6} xs={12}>
-                <NumberCard title="Work Rating" value={3.9} />
+                <NumberCard title="Work Rating" value={workRating} />
               </Col>
               <Col xl={3} md={6} xs={12}>
-                <NumberCard title="Behaviour Rating" value={3.9} />
+                <NumberCard title="Behaviour Rating" value={behaviourRating} />
               </Col>
             </Row>
           </div>
-          <div className="dv_per_service_wrapper">
-            <h4 className="view_request_title">Basic Details</h4>
-            <Row className="p-3">
-              <Col lg={4} xs={12}>
-                <label>Mrs </label>
-                <FormControl as="select" className="dv_all_inputs">
-                  <option>Mr </option>
-                  <option>Ms </option>
-                </FormControl>
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>First Name</label>
-                <FormControl
-                  type="text"
-                  className="dv_all_inputs"
-                  placeholder="Enter"
-                />
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>Last Name</label>
-                <FormControl
-                  type="text"
-                  className="dv_all_inputs"
-                  placeholder="Enter"
-                />
-              </Col>
-              <Col lg={4} xs={12}>
-                <label>Mobile No </label>
-                <FormControl
-                  type="text"
-                  className="dv_all_inputs"
-                  placeholder="Enter"
-                />
-              </Col>
-              <Col xs={12}>
-                <label>Add Profession </label>
-                <FormControl
-                  type="text"
-                  className="dv_all_inputs"
-                  placeholder="Enter"
-                />
-              </Col>
-            </Row>
-          </div>
+          <BasicDetails
+            {...basicDetails}
+            onChange={input => setBasicDetails({ ...basicDetails, ...input })}
+          />
           <div className="dv_per_service_wrapper">
             <h4 className="view_request_title">User Permission</h4>
             <Row className="p-3">
@@ -482,4 +456,4 @@ const AddService = () => {
   );
 };
 
-export default AddService;
+export default AddStaff;
