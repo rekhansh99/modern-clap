@@ -18,6 +18,7 @@ import SwitchBusiness from '../components/common/SwitchBusiness';
 import { Link } from 'react-router-dom';
 import NumberCard from '../components/common/NumberCard';
 import BasicDetails from '../components/AddStaff/BasicDetails';
+import UserPermissions from '../components/AddStaff/UserPermissions';
 
 const AddStaff = () => {
   document.title = 'Add Staff - Modernclap';
@@ -33,6 +34,19 @@ const AddStaff = () => {
     lastName: '',
     mobile: '',
     profession: ''
+  });
+
+  const [userPermissions, setUserPermissions] = useState({
+    dashboard: 0,
+    notification: 0,
+    inbox: 0,
+    requestList: 0,
+    acceptedRequest: 0,
+    service: 0,
+    staff: 0,
+    sale: 0,
+    review: 0,
+    setting: 0
   });
 
   return (
@@ -92,180 +106,12 @@ const AddStaff = () => {
             {...basicDetails}
             onChange={input => setBasicDetails({ ...basicDetails, ...input })}
           />
-          <div className="dv_per_service_wrapper">
-            <h4 className="view_request_title">User Permission</h4>
-            <Row className="p-3">
-              <Col md={12}>
-                <Alert variant="warning" className="m-0">
-                  <strong>Note : </strong> Users can see business access pages
-                  in their account by read only and edit.
-                </Alert>
-              </Col>
-            </Row>
-            <Row>
-              <Table>
-                <thead>
-                  <tr>
-                    <th className="pl-4">Page access </th>
-                    <th>view only </th>
-                    <th>Edit </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="pl-4 text-capitalize">dashboard </td>
-                    <td>
-                      <FormCheck custom id="viewdashboard">
-                        <FormCheck.Input defaultChecked />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editdashboard">
-                        <FormCheck.Input defaultChecked />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">notifiaction </td>
-                    <td>
-                      <FormCheck custom id="viewnotification">
-                        <FormCheck.Input defaultChecked />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editnotification">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">inbox </td>
-                    <td>
-                      <FormCheck custom id="viewinbox">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editinbox">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">request list </td>
-                    <td>
-                      <FormCheck custom id="viewrequests">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editrequests">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">accepted request </td>
-                    <td>
-                      <FormCheck custom id="viewacceptedrequests">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editacceptedrequests">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">service </td>
-                    <td>
-                      <FormCheck custom id="viewservices">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editservices">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">staff </td>
-                    <td>
-                      <FormCheck custom id="viewstaffs">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editstaffs">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">Sale </td>
-                    <td>
-                      <FormCheck custom id="viewsale">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editsale">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">review </td>
-                    <td>
-                      <FormCheck custom id="viewreviews">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editreviews">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="pl-4 text-capitalize">setting </td>
-                    <td>
-                      <FormCheck custom id="viewsettings">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                    <td>
-                      <FormCheck custom id="editsettings">
-                        <FormCheck.Input />
-                        <FormCheck.Label />
-                      </FormCheck>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-            </Row>
-          </div>
+          <UserPermissions
+            {...userPermissions}
+            onChange={input => {
+              setUserPermissions({ ...userPermissions, ...input });
+            }}
+          />
           <div className="dv_per_service_wrapper">
             <h4 className="view_request_title">Account Details</h4>
             <Row className="p-3">
