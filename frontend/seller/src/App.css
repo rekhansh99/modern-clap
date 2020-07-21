@@ -93,3 +93,15 @@
   margin: 0 0 10px 0;
   text-transform: capitalize;
 }
+.add_new_button {
+  background: #007bff;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
