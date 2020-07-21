@@ -5,11 +5,9 @@ import {
   Card,
   Row,
   Col,
-  FormControl,
   Alert,
   Table,
   FormCheck,
-  FormGroup,
   FormFile,
   Button
 } from 'react-bootstrap';
@@ -19,6 +17,7 @@ import { Link } from 'react-router-dom';
 import NumberCard from '../components/common/NumberCard';
 import BasicDetails from '../components/AddStaff/BasicDetails';
 import UserPermissions from '../components/AddStaff/UserPermissions';
+import AccountDetails from '../components/AddStaff/AccountDetails';
 
 const AddStaff = () => {
   document.title = 'Add Staff - Modernclap';
@@ -48,6 +47,13 @@ const AddStaff = () => {
     review: 0,
     setting: 0
   });
+
+  const [accountDetails, setAccountDetails] = useState({
+    email: '',
+    password: '',
+    reenterPassword: ''
+  });
+  console.log(accountDetails);
 
   return (
     <Container fluid>
@@ -112,47 +118,12 @@ const AddStaff = () => {
               setUserPermissions({ ...userPermissions, ...input });
             }}
           />
-          <div className="dv_per_service_wrapper">
-            <h4 className="view_request_title">Account Details</h4>
-            <Row className="p-3">
-              <Col md={12}>
-                <Alert variant="warning">
-                  <strong>Note : </strong> Using there credentials you can login
-                  your account.
-                </Alert>
-              </Col>
-              <Col lg={4} xs={12}>
-                <FormGroup>
-                  <label>Email ID </label>
-                  <FormControl
-                    type="text"
-                    className="dv_all_inputs"
-                    placeholder="Enter"
-                  />
-                </FormGroup>
-              </Col>
-              <Col lg={4} xs={12}>
-                <FormGroup>
-                  <label>Password </label>
-                  <FormControl
-                    type="Password"
-                    className="dv_all_inputs"
-                    placeholder="Enter"
-                  />
-                </FormGroup>
-              </Col>
-              <Col lg={4} xs={12}>
-                <FormGroup>
-                  <label>Re-enter Password </label>
-                  <FormControl
-                    type="Password"
-                    className="dv_all_inputs"
-                    placeholder="Enter"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-          </div>
+          <AccountDetails
+            {...accountDetails}
+            onChange={input =>
+              setAccountDetails({ ...accountDetails, ...input })
+            }
+          />
           <div className="dv_per_service_wrapper">
             <h4 className="view_request_title">Certification</h4>
             <Row className="p-3">
