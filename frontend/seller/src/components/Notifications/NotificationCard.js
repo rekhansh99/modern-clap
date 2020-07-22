@@ -32,7 +32,7 @@ const NotificationCard = ({ type, orderNo, message }) => {
 };
 
 NotificationCard.propTypes = {
-  type: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired,
   orderNo: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 };

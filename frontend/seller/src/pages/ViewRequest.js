@@ -14,9 +14,11 @@ import { ChevronLeft } from 'react-feather';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import StarRating from '../components/Reviews/StarRating';
+import askConfirmation from '../utils/askConfirmation';
 
 import userDefaultImg from '../images/user-default.png';
 import { ReactComponent as GreenTickSVG } from '../svgs/tick-green.svg';
+import ConfirmationModal from '../components/common/ConfirmationModal';
 
 const ViewRequest = () => {
   document.title = 'View Request - Modernclap';
@@ -25,6 +27,13 @@ const ViewRequest = () => {
   const [workRating, setWorkRating] = useState(0);
   const [behaviourRating, setBehaviourRating] = useState(0);
   const [overallRating, setOverallRating] = useState(0);
+  const [confirmationOpen, setConfirmationOpen] = useState(false);
+
+  const handleMakePayment = () => {
+    askConfirmation(setConfirmationOpen, () => {
+      console.log('YES was clicked!');
+    });
+  };
 
   return (
     <Container fluid>
@@ -43,7 +52,11 @@ const ViewRequest = () => {
         <Card.Header className="text-center">
           {/* <Button variant="danger" className="dv_accep_reject_btn">Reject </Button> */}
           {/* <Button variant="primary" className="dv_accep_reject_btn">Make </Button> */}
-          <Button variant="primary" className="dv_accep_reject_btn">
+          <Button
+            variant="primary"
+            className="dv_accep_reject_btn"
+            onClick={handleMakePayment}
+          >
             Make Payment
           </Button>
         </Card.Header>
@@ -325,6 +338,10 @@ const ViewRequest = () => {
           </Card>
         </Col>
       </Row>
+      <ConfirmationModal
+        isOpen={confirmationOpen}
+        close={() => setConfirmationOpen(false)}
+      />
     </Container>
   );
 };
