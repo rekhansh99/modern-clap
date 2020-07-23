@@ -1,10 +1,13 @@
 const Provider = require("../../../models/provider");
 
+const { category } = require("./category");
+
 exports.transformProvider = (provider) => {
   return {
     ...provider._doc,
     _id: provider.id,
-    password: null
+    password: null,
+    businessCategory: () => category(provider._doc.businessCategory),
   };
 };
 

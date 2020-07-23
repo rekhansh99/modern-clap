@@ -44,7 +44,7 @@ type RootMutation {
   sendOTP(mobile: String!): String!
   loginCustomer(mobile: String!, otp: Int!): Customer!
   registerProvider(provider: RegisterProviderInput!): Provider!
-  loginProvider(username: String!, password: String!): Provider!
+  loginProvider(email: String!, password: String!): Provider!
   updateProvider(newData: UpdateProviderInput): Provider!
 }
 
