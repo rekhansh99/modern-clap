@@ -15,8 +15,34 @@ import { ReactComponent as GreenTickSVG } from '../svgs/tick-green.svg';
 const ProviderRegistration = () => {
   document.title = 'Provider Registration | Modern clap';
 
+  const [provider, setProvider] = useState({
+    ownerName: '',
+    ownerEmail: '',
+    ownerMobile: '',
+    ownerPhone: '',
+    country: '',
+    password: '',
+    confirmPassword: '', // Delete before sending to backend
+    tradeLicenseNo: '',
+    tradeLicenseDate: '',
+    tradeLicenseDoc: '',
+    businessCategory: 1,
+    shopName: '',
+    contactPersonName: '',
+    contactPersonMobile: '',
+    city: '',
+    pincode: '',
+    address: '',
+    area: ''
+  });
   const [openSection, setOpenSection] = useState(0);
   const [highestReachedSection, setHighestReachedSection] = useState(0);
+
+  const onInputChange = e => {
+    setProvider({ ...provider, [e.target.name]: e.target.value });
+  };
+
+  console.log(provider);
 
   return (
     <div className="dv_wrapper">
@@ -73,23 +99,41 @@ const ProviderRegistration = () => {
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Owner Full Name"
+                  name="ownerName"
+                  value={provider.ownerName}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormControl
                   type="email"
                   className="dv_careers_form_input"
                   placeholder="Email Address"
+                  name="ownerEmail"
+                  value={provider.ownerEmail}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormControl
                   type="tel"
                   className="dv_careers_form_input"
                   placeholder="Mobile No"
+                  name="ownerMobile"
+                  value={provider.ownerMobile}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormControl
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Phone No"
+                  name="ownerPhone"
+                  value={provider.ownerPhone}
+                  onChange={onInputChange}
                 ></FormControl>
-                <FormControl as="select" className="dv_careers_form_input">
+                <FormControl
+                  as="select"
+                  className="dv_careers_form_input"
+                  name="country"
+                  value={provider.country}
+                  onChange={onInputChange}
+                >
                   <option>Select Country</option>
                   <option>United arab emirates</option>
                   <option>India</option>
@@ -99,11 +143,17 @@ const ProviderRegistration = () => {
                   type="password"
                   className="dv_careers_form_input"
                   placeholder="Password"
+                  name="password"
+                  value={provider.password}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormControl
                   type="password"
                   className="dv_careers_form_input"
                   placeholder="Retype Password"
+                  name="confirmPassword"
+                  value={provider.confirmPassword}
+                  onChange={onInputChange}
                 ></FormControl>
               </React.Fragment>
             )}
@@ -119,11 +169,17 @@ const ProviderRegistration = () => {
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Trade License No"
+                  name="tradeLicenseNo"
+                  value={provider.tradeLicenseNo}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormControl
                   type="date"
                   className="dv_careers_form_input"
                   title="Expiry Date"
+                  name="tradeLicenseDate"
+                  value={provider.tradeLicenseDate}
+                  onChange={onInputChange}
                 ></FormControl>
                 <FormFile custom style={{ height: 'auto' }}>
                   <FormFileInput
@@ -151,7 +207,9 @@ const ProviderRegistration = () => {
                 <FormControl
                   as="select"
                   className="dv_careers_form_input"
-                  defaultValue={1}
+                  name="businessCategory"
+                  value={provider.businessCategory}
+                  onChange={onInputChange}
                 >
                   <option value={1}>Business Category </option>
                   <option value={2}>Cleaners </option>
@@ -171,21 +229,32 @@ const ProviderRegistration = () => {
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Shop Name"
+                  name="shopName"
+                  value={provider.shopName}
+                  onChange={onInputChange}
                 />
                 <FormControl
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Contact Person (optional)"
+                  name="contactPersonName"
+                  value={provider.contactPersonName}
+                  onChange={onInputChange}
                 />
                 <FormControl
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Contact No (optional)"
+                  name="contactPersonMobile"
+                  value={provider.contactPersonMobile}
+                  onChange={onInputChange}
                 />
                 <FormControl
                   as="select"
                   className="dv_careers_form_input"
-                  defaultValue="emirates"
+                  name="city"
+                  value={provider.city}
+                  onChange={onInputChange}
                 >
                   <option value="emirates">Emirates </option>
                   <option value="dubai">Dubai </option>
@@ -198,16 +267,25 @@ const ProviderRegistration = () => {
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Address"
+                  name="address"
+                  value={provider.address}
+                  onChange={onInputChange}
                 />
                 <FormControl
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="Area"
+                  name="area"
+                  value={provider.area}
+                  onChange={onInputChange}
                 />
                 <FormControl
                   type="text"
                   className="dv_careers_form_input"
                   placeholder="P.O Box "
+                  name="pincode"
+                  value={provider.pincode}
+                  onChange={onInputChange}
                 />
               </React.Fragment>
             )}
