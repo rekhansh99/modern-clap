@@ -1,3 +1,5 @@
+const Provider = require('../../models/provider');
+
 module.exports = {
   providers: (args, req) => {
     // TODO
@@ -9,6 +11,10 @@ module.exports = {
 
   registerProvider: (args, req) => {
     // TODO
+    console.log(provider);
+    const provider = new Provider({
+      ...args
+    })
   },
 
   loginProvider: (args, req) => {
