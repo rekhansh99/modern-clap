@@ -1,10 +1,20 @@
+const Request = require("../../models/request");
+const { transformRequest, requests } = require("./transformers/request");
+
+
 module.exports = {
-  requests: (args, req) => {
-    // TODO
+  requests: (args, ctx) => {
+    let requests = [];
+    if (args.customer) {
+      requests = await Request.findOne({ customer: args.customer });
+    } else if (args.provider) {
+      requests = await Request.findOne({ provider: args.provider });
+    }
+    return requests.map(request => transformRequest(request));
   },
 
   request: (args, req) => {
-    // TODO
+    return requests(args.id);
   },
 
   bookRequest: (args, req) => {
