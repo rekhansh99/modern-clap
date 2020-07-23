@@ -2,19 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './app/store';
-import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import config from './config';
 
 import './fontawesome';
 import './index.css';
 import './responsive.css';
 
+const client = new ApolloClient({
+  uri: config.BACKEND_URL + '/graphql',
+  cache: new InMemoryCache()
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ApolloProvider client={client}>
       <App />
-    </Provider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
