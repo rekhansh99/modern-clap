@@ -70,7 +70,13 @@ const staffSchema = {
     required: true
   },
   certificates: [String],
-  businessCategories: [String]
+  businessCategories: [String],
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Review'
+    }
+  ]
 };
 
-module.exports = mongoose.model('staff', staffSchema);
+module.exports = mongoose.model('Staff', staffSchema);

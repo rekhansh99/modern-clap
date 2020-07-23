@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -48,11 +48,97 @@ const providerSchema = new Schema({
   },
   contactPersonName: String,
   contactPersonMobile: String,
+  businessHours: {
+    mon: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    tue: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    wed: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    thu: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    fri: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    sat: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    },
+    sun: {
+      open: {
+        type: Number,
+        min: 0,
+        max: 24
+      },
+      close: {
+        type: Number,
+        min: 0,
+        max: 24
+      }
+    }
+  },
   city: {
     type: String,
     required: true
   },
-  POBox: {
+  pincode: {
     type: String,
     required: true
   },
@@ -66,4 +152,4 @@ const providerSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('provider', providerSchema);
+module.exports = mongoose.model("Provider", providerSchema);

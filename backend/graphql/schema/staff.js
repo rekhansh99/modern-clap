@@ -1,0 +1,40 @@
+module.exports = `
+type Staff {
+  _id: ID!
+  firstName: String!
+  lastName: String!
+  mobile: String!
+  profession: String!
+  permissions: Permissions!
+  email: String!
+  password: String!
+  certificaties: [String!]!
+  businessCategories: [String!]!
+  reviews: [Review!]!
+}
+
+type Permissions {
+  dashboard: String!
+  notification: String!
+  inbox: String!
+  requests: String!
+  acceptedRequests: String!
+  service:  String!
+  staff: String!
+  sale: String!
+  review: String!
+  settings: String!
+}
+
+input StaffInput {
+  firstName: String!
+  lastName: String!
+  mobile: String!
+  profession: String!
+  permissions: Permissions!
+  email: String!
+  password: String!
+  certificaties: [String!]!
+  businessCategories: [String!]!
+}
+`
