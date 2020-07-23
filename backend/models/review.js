@@ -29,14 +29,6 @@ const reviewSchema = {
     max: 5
   },
   message: String,
-  customer: {
-    type: Schema.Types.ObjectId,
-    ref: 'Customer'
-  },
-  provider: {
-    type: Schema.Types.ObjectId,
-    ref: 'Provider'
-  }
 };
 
-module.exports = mongoose.model('review', reviewSchema);
+module.exports = mongoose.model('Review', reviewSchema);

@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const requestSchema = {
+  _id: {
+    type: String,
+    required: true
+  },
   services: [
     {
       service: {
@@ -14,11 +18,7 @@ const requestSchema = {
           type: Schema.Types.ObjectId,
           ref: "Staff"
         }
-      ],
-      review: {
-        type: Schema.Types.ObjectId,
-        ref: "Review"
-      }
+      ]
     }
   ],
   time: {
@@ -61,7 +61,19 @@ const requestSchema = {
   status: {
     type: String,
     required: true
+  },
+  review: {
+    type: Schema.Types.ObjectId,
+    ref: "Review"
+  },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: 'Customer'
+  },
+  provider: {
+    type: Schema.Types.ObjectId,
+    ref: 'Provider'
   }
 };
 
-module.exports = mongoose.model("request", requestSchema);
+module.exports = mongoose.model("Request", requestSchema);
