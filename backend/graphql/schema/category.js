@@ -7,6 +7,5 @@ type Category {
 
 input CategoryInput {
   name: String!
-  services: [ID!]
 }
 `

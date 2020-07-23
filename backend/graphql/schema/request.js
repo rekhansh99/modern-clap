@@ -16,7 +16,7 @@ type ServiceRequest {
 
 type Location {
   flatNo: String!
-  buinding: String!
+  building: String!
   area: String!
   landmark: String
   addressType: String!
@@ -32,15 +32,17 @@ type Payment {
 }
 
 input RequestInput {
-  services: [ServiceRequest!]!
+  services: [ID!]!
   time: String!
-  location: Location!
-  Payment Payment!
-}
-
-input UpdateRequestInput {
-  services: [ServiceRequest!]
-  time: String
-  review: Review
+  flatNo: String!
+  building: String!
+  area: String!
+  landmark: String
+  addressType: String!
+  mode: String!
+  subtotal: Float!
+  vat: Float!
+  discount: Float!
+  total: Float!
 }
 `

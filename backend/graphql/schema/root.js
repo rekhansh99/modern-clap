@@ -1,6 +1,5 @@
 const { buildSchema } = require('graphql');
 
-const authSchema = require('./auth');
 const categorySchema = require('./category');
 const customerSchema = require('./customer');
 const providerSchema = require('./provider');
@@ -10,7 +9,6 @@ const serviceSchema = require('./service');
 const staffSchema = require('./staff');
 
 module.exports = buildSchema(`
-${authSchema}
 ${categorySchema}
 ${customerSchema}
 ${providerSchema}
@@ -40,7 +38,7 @@ type RootMutation {
   createService(service: ServiceInput!): Service!
   bookRequest(request: RequestInput): Request!
   cancelRequest(id: ID!): String!
-  updateRequest(id: ID!, newData: UpdateRequestInput): Request!
+  updateRequest(id: ID!, newTime: String!): Request!
   createReview(review: ReviewInput!): Review!
   createStaff(staff: StaffInput): Staff!
   sendOTP(mobile: String!): String!

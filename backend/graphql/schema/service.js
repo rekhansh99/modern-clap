@@ -14,8 +14,13 @@ type FAQ {
 
 input ServiceInput {
   name: String!
-  category: ID!
-  faqs: [FAQ!]
-  providers: [Provider!]
+  category: String!
+  faqs: [FAQInput!]
+  providers: [ID!]
+}
+
+input FAQInput {
+  question: String!
+  answer: String!
 }
 `
