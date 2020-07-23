@@ -2,15 +2,16 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const Provider = require("../../models/provider");
-const { transformProvider } = require("./transformers/provider");
+const { transformProvider, provider } = require("./transformers/provider");
 
 module.exports = {
-  providers: (args, req) => {
-    // TODO
+  providers: async (args, req) => {
+    const providers = await Provider.find();
+    return providers.map((provider) => transformProvider(provider));
   },
 
   provider: (args, req) => {
-    // TODO
+    return provider(args.id);
   },
 
   registerProvider: async (args) => {
