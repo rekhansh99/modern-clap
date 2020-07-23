@@ -1,10 +1,20 @@
+const Customer = require("../../models/customer");
+const { transformCustomer } = require("./transformers/customer");
+
 module.exports = {
-  customers: (args, req) => {
-    // TODO
+  customers: async (args, req) => {
+    const customers = await Customer.find();
+    return customers.map((customer) => transformCustomer(customer));
   },
 
-  customer: (args, req) => {
-    // TODO
+  customer: async (args, req) => {
+    let customer = {};
+    if (args.id) {
+      customer = await Customer.findById(args.id);
+    } else if (args.mobile) {
+      customer = await Customer.findOne({ mobile: args.mobile });
+    }
+    return transformCustomer(customer);
   },
 
   sendOTP: (args, req) => {
@@ -13,5 +23,5 @@ module.exports = {
 
   loginCustomer: (args, req) => {
     // TODO
-  }
-}
+  },
+};
