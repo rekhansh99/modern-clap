@@ -38,9 +38,9 @@ const providerSchema = new Schema({
     type: String,
     required: true
   },
-  businesCategory: {
-    type: String,
-    required: true
+  businessCategory: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
   },
   shopName: {
     type: String,

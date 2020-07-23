@@ -1,4 +1,6 @@
-const Provider = require('../../models/provider');
+const Provider = require("../../models/provider");
+
+const { transformProvider } = require("./transformers/provider");
 
 module.exports = {
   providers: (args, req) => {
@@ -9,19 +11,19 @@ module.exports = {
     // TODO
   },
 
-  registerProvider: (args, req) => {
-    // TODO
-    console.log(provider);
-    const provider = new Provider({
-      ...args
-    })
+  registerProvider: async (args, req) => {
+    const newProvider = new Provider({
+      ...args.provider,
+    });
+    const provider = await newProvider.save();
+    return transformProvider(provider);
   },
 
   loginProvider: (args, req) => {
-
+    // TODO
   },
 
   updateProvider: (args, req) => {
     // TODO
   }
-}
+};

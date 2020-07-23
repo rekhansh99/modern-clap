@@ -6,7 +6,7 @@ exports.transformCategory = (category) => {
   return {
     ...category._doc,
     _id: category.id,
-    services: services.bind(this, category._doc.services)
+    services: () => services(category._doc.services)
   };
 };
 
