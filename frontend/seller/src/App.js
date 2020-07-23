@@ -54,12 +54,6 @@ function App() {
         })}
       >
         <Switch>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/reset-password">
-            <RecoverPassword />
-          </Route>
           <Route>
             <Header toggleSideNav={() => setSideNav(!sideNav)} />
             <div id="layoutSidenav">
