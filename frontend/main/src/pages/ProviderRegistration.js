@@ -42,8 +42,6 @@ const ProviderRegistration = () => {
     setProvider({ ...provider, [e.target.name]: e.target.value });
   };
 
-  console.log(provider);
-
   return (
     <div className="dv_wrapper">
       <Header

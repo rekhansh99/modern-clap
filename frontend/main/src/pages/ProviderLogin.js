@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
@@ -9,6 +9,15 @@ import SectionHeading from '../components/common/SectionHeading';
 
 const SellerLogin = () => {
   document.title = 'Provider Login | Modern clap';
+
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: ''
+  });
+
+  const onInputChange = e => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="dv_wrapper">
@@ -21,15 +30,32 @@ const SellerLogin = () => {
         <div className="dv_seller_registration_wrapper">
           <div className="dv_seller_container">
             <ul className="dv_login_regi_provider">
-              <li><Link to="/provider/login" className="active">Login </Link></li>
-              <li><Link to="/provider/register">Register </Link></li>
+              <li>
+                <Link to="/provider/login" className="active">
+                  Login{' '}
+                </Link>
+              </li>
+              <li>
+                <Link to="/provider/register">Register </Link>
+              </li>
             </ul>
-            <SectionHeading
-              title="Login as a Provider"
-              className="mb-3"
+            <SectionHeading title="Login as a Provider" className="mb-3" />
+            <FormControl
+              type="email"
+              className="dv_careers_form_input"
+              placeholder="Email"
+              name="email"
+              value={loginData.email}
+              onChange={onInputChange}
             />
-            <FormControl type="email" className="dv_careers_form_input" placeholder="User Name" />
-            <FormControl type="password" className="dv_careers_form_input" placeholder="Password" />
+            <FormControl
+              type="password"
+              className="dv_careers_form_input"
+              placeholder="Password"
+              name="password"
+              value={loginData.password}
+              onChange={onInputChange}
+            />
           </div>
         </div>
       </div>
