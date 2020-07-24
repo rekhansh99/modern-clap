@@ -7,6 +7,8 @@ type Request {
   payment: Payment!
   status: String!
   review: Review
+  customer: Customer!
+  provider: Provider!
 }
 
 type ServiceRequest {
@@ -44,7 +46,6 @@ input RequestInput {
   vat: Float!
   discount: Float!
   total: Float!
-  customer: Customer!
-  provider: Provider!
+  provider: ID!
 }
 `;

@@ -15,8 +15,8 @@ exports.transformRequest = request => {
         staffsAssigned: () => staffs(s.staffsAssigned)
       })),
     review: () => review(request.review),
-    customer: () => customer(request.customer),
-    provider: () => provider(request.provider)
+    customer: () => ({ name: customer(request.customer).name }),
+    provider: () => ({ shopName: provider(request.provider).shopName })
   };
 };
 
