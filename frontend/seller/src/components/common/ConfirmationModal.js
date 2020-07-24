@@ -7,7 +7,7 @@ const ConfirmationModal = ({ isOpen, close }) => {
   return (
     <Modal
       id="areyoursuremodal"
-      className="fade p-0 show"
+      className="fade p-0"
       show={isOpen}
       onHide={close}
       style={{ margin: '10% auto 0px', display: 'block', paddingRight: '12px' }}

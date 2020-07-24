@@ -105,3 +105,26 @@
   right: 10px;
   top: 10px;
 }
+ul.dv_verification_pending {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.dv_verification_pending > li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+ul.dv_verification_pending > li > a {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+  border-bottom: 1px solid #00000012;
+}
+ul.dv_verification_pending > li > a:hover,
+ul.dv_verification_pending > li > a:focus {
+  text-decoration: none;
+}
