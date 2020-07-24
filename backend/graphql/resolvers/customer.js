@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const springedge = require('springedge');
 
 const Customer = require('../../models/customer');
 const { transformCustomer } = require('./transformers/customer');
@@ -28,8 +29,44 @@ module.exports = {
     return transformCustomer(customer);
   },
 
-  sendOTP: () => {
-    // TODO
+  sendOTP: async args => {
+    try {
+      let otp = '';
+      for (let i = 0; i < 6; i++) {
+        otp += Math.floor(Math.random() * 10);
+      }
+      // `Your OTP from Modern Clap is ${otp}` // Send this string in production (Only template string works now)
+      const params = {
+        sender: process.env.SE_SENDER,
+        apikey: process.env.SE_APIKEY,
+        to: [args.mobile],
+        message: 'Hi, this is a test message from spring edge',
+        format: 'json'
+      };
+      await new Promise((resolve, reject) => {
+        springedge.messages.send(params, 5000, (err, res) => {
+          if (err) {
+            reject(new Error("Message can't be sent"));
+          }
+          resolve(res);
+        });
+      });
+      const hashedOTP = await bcrypt.hash(otp, 12);
+      await Customer.findOneAndUpdate(
+        { mobile: args.mobile },
+        {
+          otp: hashedOTP,
+          otpSent: true,
+          otpTime: Date.now()
+        },
+        {
+          useFindAndModify: false
+        }
+      );
+      return 'Message sent';
+    } catch (err) {
+      return "Message can't be sent";
+    }
   },
 
   loginCustomer: async (args, ctx) => {
