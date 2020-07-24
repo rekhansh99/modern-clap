@@ -1,4 +1,5 @@
 import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 
 import { Link } from 'react-router-dom';
 import { Table, Dropdown } from 'react-bootstrap';
@@ -7,25 +8,33 @@ import { MoreVertical } from 'react-feather';
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
 
-const LatestBookingsTable = () => {
-  const data = [
-    {
-      requestNo: 'MD542154',
-      customer: 'sanjay sakpal',
-      service: 'waxing',
-      location: 'al rigga',
-      amount: 'AED 450',
-      status: 'pending'
-    },
-    {
-      requestNo: 'MD542154',
-      customer: 'sanjay sakpal',
-      service: 'waxing',
-      location: 'al rigga',
-      amount: 'AED 450',
-      status: 'completed'
+const GET_REQUESTS = gql`
+  query Requests {
+    requests {
+      _id
+      customer {
+        name
+      }
+      services {
+        service {
+          name
+        }
+      }
+      location {
+        area
+      }
+      payment {
+        total
+      }
+      status
     }
-  ];
+  }
+`;
+
+const LatestBookingsTable = () => {
+  const { loading, data } = useQuery(GET_REQUESTS);
+
+  if (loading || !data) return <p>Loading</p>;
 
   return (
     <>
@@ -52,13 +61,17 @@ const LatestBookingsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((req, index) => (
+          {data.requests.map((req, index) => (
             <tr key={index}>
-              <td>{req.requestNo}</td>
-              <td>{req.customer}</td>
-              <td>{req.service}</td>
-              <td>{req.location}</td>
-              <td>{req.amount}</td>
+              <td>{req._id}</td>
+              <td>{req.customer.name}</td>
+              <td>
+                {req.services
+                  .reduce((total, service) => total + ', ' + service.name, '')
+                  .slice(2)}
+              </td>
+              <td>{req.location.area}</td>
+              <td>{req.payment.total}</td>
               <td>
                 <span className={req.status}>{req.status}</span>
               </td>
@@ -67,7 +80,7 @@ const LatestBookingsTable = () => {
                   <MoreVertical />
                 </Dropdown.Toggle>
                 <Dropdown.Menu alignRight>
-                  <Dropdown.Item as={Link} to={'/request/' + req.requestNo}>
+                  <Dropdown.Item as={Link} to={'/request/' + req._id}>
                     View
                   </Dropdown.Item>
                 </Dropdown.Menu>
