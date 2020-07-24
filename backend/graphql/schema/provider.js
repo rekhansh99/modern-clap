@@ -30,7 +30,7 @@ input RegisterProviderInput {
   tradeLicenseNo: String!
   tradeLicenseDate: String!
   tradeLicenseDoc: String!
-  businessCategory: ID!
+  businessCategory: String!
   shopName: String!
   contactPersonName: String
   contactPersonMobile: String

@@ -3,12 +3,12 @@ const { transformRequest, requests } = require("./transformers/request");
 
 
 module.exports = {
-  requests: (args, ctx) => {
+  requests: async (args, ctx) => {
     let requests = [];
     if (args.customer) {
-      requests = await Request.findOne({ customer: args.customer });
+      requests = await Request.find({ customer: args.customer });
     } else if (args.provider) {
-      requests = await Request.findOne({ provider: args.provider });
+      requests = await Request.find({ provider: args.provider });
     }
     return requests.map(request => transformRequest(request));
   },

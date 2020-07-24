@@ -27,16 +27,20 @@ const ProviderRegistration = () => {
   document.title = 'Provider Registration | Modern clap';
 
   const form = useRef(null);
-  const contactGroup = useRef(null);
 
   const [openSection, setOpenSection] = useState(0);
   const [highestReachedSection, setHighestReachedSection] = useState(0);
+  const [selectedFileName, setSelectedFile] = useState('Attach Trade License');
 
   const [registerProvider, { data }] = useMutation(REGISTER_PROVIDER);
 
   const handleNext = async event => {
     event.preventDefault();
     const formData = form.current.elements;
+
+    /* validation code here
+    *  if current section input values pass validation move to next section or register
+    */
 
     if (openSection === 2) {
       registerProvider({ variables: { provider: {
@@ -81,7 +85,7 @@ const ProviderRegistration = () => {
               </li>
               <li>
                 <Link to="/provider/register" className="active">
-                  Register{' '}
+                  Register
                 </Link>
               </li>
             </ul>
@@ -116,7 +120,7 @@ const ProviderRegistration = () => {
                 onClick={() => setOpenSection(0)}
                 linkText={highestReachedSection >= 0 ? 'Edit' : ''}
               />
-                <FormGroup id="fg1" style={{display: openSection === 0 ? "block" : "none"}} ref={contactGroup}>
+                <FormGroup style={{display: openSection === 0 ? "block" : "none"}}>
                   <FormControl
                     type="text"
                     className="dv_careers_form_input"
@@ -211,12 +215,13 @@ const ProviderRegistration = () => {
                       name="tradeLicenseDoc"
                       id="tradeLicenseDoc"
                       required
+                      onChange={e => setSelectedFile(e.target.files[0].name)}
                     />
                     <FormFileLabel
                       className="dv_attach_resume"
                       htmlFor="customFile"
                     >
-                      Attach Trade License
+                      {selectedFileName}
                     </FormFileLabel>
                   </FormFile>
                 </FormGroup>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { gql, useQuery } from '@apollo/client';
 
+import { Link } from 'react-router-dom';
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { AlignRight, PlusCircle } from 'react-feather';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +11,13 @@ import SwitchBusinessModal from './SwitchBusinessModal';
 
 const Header = ({ toggleSideNav }) => {
   const [switchBusinessModal, setSwitchBusinessModal] = useState(false);
+  const { data } = useQuery(gql`
+    query NotificationCount {
+      notifications {
+        count
+      }
+    }
+  `);
 
   return (
     <Navbar className="sb-topnav" variant="dark" bg="dark">
@@ -30,8 +38,12 @@ const Header = ({ toggleSideNav }) => {
       <Nav as="ul" className="ml-auto mr-md-0">
         <Nav.Item as="li">
           <Nav.Link as={Link} to="/notifications">
-            <FontAwesomeIcon icon="bell" fixedWidth />
-            <span className="notification-dot">12</span>
+            {data && data.notifications.count && (
+              <>
+                <FontAwesomeIcon icon="bell" fixedWidth />
+                <span className="notification-dot">12</span>
+              </>
+            )}
           </Nav.Link>
         </Nav.Item>
         <Dropdown as="li">

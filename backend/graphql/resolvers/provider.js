@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const Provider = require("../../models/provider");
+const Category = require("../../models/category");
 const { transformProvider, provider } = require("./transformers/provider");
 
 module.exports = {
@@ -16,9 +17,14 @@ module.exports = {
 
   registerProvider: async (args) => {
     const hashedPassword = await bcrypt.hash(args.provider.password, 12);
+    const category = await Category.findOne({
+      name: args.provider.businessCategory
+    });
+
     const newProvider = new Provider({
       ...args.provider,
-      password: hashedPassword,
+      businessCategory: category._id,
+      password: hashedPassword
     });
     const provider = await newProvider.save();
     return transformProvider(provider);
@@ -41,19 +47,19 @@ module.exports = {
       {
         uid: provider.id,
         role: "provider",
-        exp: Math.floor(Date.now() / 1000) + jwtValidity,
+        exp: Math.floor(Date.now() / 1000) + jwtValidity
       },
       process.env.JWT_SECRET
     );
     ctx.res.cookie("jwt", token, {
       httpOnly: true,
       secure: true,
-      maxAge: jwtValidity * 1000,
+      maxAge: jwtValidity * 1000
     });
     return transformProvider(provider);
   },
 
   updateProvider: (args, req) => {
     // TODO
-  },
+  }
 };
