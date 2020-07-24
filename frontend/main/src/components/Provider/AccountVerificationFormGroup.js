@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import FormControl from 'react-bootstrap/FormControl';
-import FormGroup from 'react-bootstrap/FormGroup';
-import FormFile from 'react-bootstrap/FormFile'
+import { FormControl, FormGroup, FormFile } from 'react-bootstrap';
 
-const AccountVerificationFormGroup = ({ isOpen }) => {
+const AccountVerificationFormGroup = ({ isOpen, errors }) => {
   const [selectedFileName, setSelectedFile] = useState('Attach Trade License');
 
   return (
@@ -15,21 +13,24 @@ const AccountVerificationFormGroup = ({ isOpen }) => {
         className="dv_careers_form_input"
         placeholder="Trade License No"
         name="tradeLicenseNo"
+        isInvalid={errors.tradeLicenseNo}
         required
       ></FormControl>
+      <FormControl.Feedback type="invalid">{errors.tradeLicenseNo}</FormControl.Feedback>
       <FormControl
         type="date"
         className="dv_careers_form_input"
         title="Expiry Date"
         name="tradeLicenseDate"
+        isInvalid={errors.tradeLicenseDate}
         required
       ></FormControl>
+      <FormControl.Feedback type="invalid">{errors.tradeLicenseDate}</FormControl.Feedback>
       <FormFile custom style={{ height: 'auto' }}>
         <FormFile.Input
           type="file"
           className="form-control dv_careers_form_input"
           name="tradeLicenseDoc"
-
           required
           onChange={e => setSelectedFile(e.target.files[0].name)}
         />
@@ -42,7 +43,8 @@ const AccountVerificationFormGroup = ({ isOpen }) => {
 };
 
 AccountVerificationFormGroup.propTypes = {
-  isOpen: PropTypes.bool.isRequired
+  isOpen: PropTypes.bool.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 export default AccountVerificationFormGroup;

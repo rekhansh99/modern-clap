@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation, gql } from '@apollo/client';
+import validator from 'validator';
 import config from '../config';
 
 import { Link } from 'react-router-dom';
@@ -24,6 +25,7 @@ const SellerLogin = () => {
     email: '',
     password: ''
   });
+  const [errors, setErrors] = useState({});
   const [sendLoginRequest, { data }] = useMutation(LOGIN_PROVIDER);
 
   const onInputChange = e => {
@@ -31,6 +33,17 @@ const SellerLogin = () => {
   };
 
   const login = () => {
+    const errors = {};
+    if (!validator.isEmail(loginData.email)) {
+      errors.email = 'Email is not valid';
+    }
+    if (!validator.isLength(loginData.password, {min: 8, max: 24})) {
+      errors.password = 'Password length should be between 8 - 24'
+    }
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      return;
+    }
     sendLoginRequest({ variables: loginData });
   };
 
@@ -65,7 +78,11 @@ const SellerLogin = () => {
               name="email"
               value={loginData.email}
               onChange={onInputChange}
+              isInvalid={errors.email}
             />
+            <FormControl.Feedback type="invalid">
+              {errors.email}
+            </FormControl.Feedback>
             <FormControl
               type="password"
               className="dv_careers_form_input"
@@ -73,13 +90,19 @@ const SellerLogin = () => {
               name="password"
               value={loginData.password}
               onChange={onInputChange}
+              isInvalid={errors.password}
             />
+            <FormControl.Feedback type="invalid">
+              {errors.password}
+            </FormControl.Feedback>
           </div>
         </div>
       </div>
       <div className="dv_continue_next">
         <div className="dv_seller_container pb-2  pt-2">
-          <Button className="btn-default dv_seller_submit_btn" onClick={login}>Login</Button>
+          <Button className="btn-default dv_seller_submit_btn" onClick={login}>
+            Login
+          </Button>
         </div>
       </div>
     </div>
