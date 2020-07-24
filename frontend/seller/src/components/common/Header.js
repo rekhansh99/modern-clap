@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SwitchBusinessModal from './SwitchBusinessModal';
 
+import { ReactComponent as LogoSVG } from '../../svgs/logo.svg';
+
 const Header = ({ toggleSideNav }) => {
   const [switchBusinessModal, setSwitchBusinessModal] = useState(false);
   const { data } = useQuery(gql`
@@ -25,7 +27,7 @@ const Header = ({ toggleSideNav }) => {
         as="a"
         href="https://mirrorssalonandspa.com/html/mirrors/img/react/"
       >
-        Modernclap
+        <LogoSVG className="dv_logo_svg" />
       </Navbar.Brand>
       <button
         className="btn btn-link btn-sm order-1 order-lg-0"
