@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const categorySchema = {
+const categorySchema = new Schema({
   name: {
     type: String,
     required: true
@@ -13,6 +13,6 @@ const categorySchema = {
       ref: 'Service'
     }
   ]
-};
+});
 
 module.exports = mongoose.model('Category', categorySchema);
