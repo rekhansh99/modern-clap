@@ -22,7 +22,7 @@ type RootQuery {
   customers: [Customer!]!
   providers: [Provider!]!
   requests(customer: ID, provider: ID): [Request!]!
-  reviews(customer: ID, provider: ID): [Review!]!
+  reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
   category(name: String!): Category!
   customer(id: ID, mobile: String): Customer!
