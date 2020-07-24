@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useMutation, gql } from '@apollo/client';
+import config from '../config';
 
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 
 import Header from '../components/common/Header';
 import SectionHeading from '../components/common/SectionHeading';
+
+const LOGIN_PROVIDER = gql`
+  mutation LoginProvider($email: String!, $password: String!) {
+    loginProvider(email: $email, password: $password) {
+      _id
+    }
+  }
+`;
 
 const SellerLogin = () => {
   document.title = 'Provider Login | Modern clap';
@@ -14,10 +24,18 @@ const SellerLogin = () => {
     email: '',
     password: ''
   });
+  const [sendLoginRequest, { data }] = useMutation(LOGIN_PROVIDER);
 
   const onInputChange = e => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   };
+
+  const login = () => {
+    sendLoginRequest({ variables: loginData });
+  };
+
+  if (data && data.loginProvider._id)
+    window.location.href = config.PROVIDER_URL;
 
   return (
     <div className="dv_wrapper">
@@ -61,7 +79,7 @@ const SellerLogin = () => {
       </div>
       <div className="dv_continue_next">
         <div className="dv_seller_container pb-2  pt-2">
-          <Button className="btn-default dv_seller_submit_btn">Login</Button>
+          <Button className="btn-default dv_seller_submit_btn" onClick={login}>Login</Button>
         </div>
       </div>
     </div>
