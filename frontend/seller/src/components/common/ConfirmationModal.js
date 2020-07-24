@@ -2,42 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Modal, Button } from 'react-bootstrap';
-import { X } from 'react-feather';
 
-const ConfirmationModal = ({ isOpen, close, question }) => {
+const ConfirmationModal = ({ isOpen, close }) => {
   return (
-    <Modal show={isOpen} onHide={close}>
-      <Modal.Header>
-        <Modal.Title>{question || 'Are you sure?'}</Modal.Title>
-        <X
-          size={24}
-          style={{ float: 'right', cursor: 'pointer' }}
-          onClick={close}
-        />
+    <Modal
+      id="areyoursuremodal"
+      className="fade p-0 show"
+      show={isOpen}
+      onHide={close}
+      style={{ margin: '10% auto 0px', display: 'block', paddingRight: '12px' }}
+      size="sm"
+    >
+      <Modal.Header className="justify-content-center">
+        <Modal.Title>Alert</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div className="text-center">
-          <Button
-            className="mx-2"
-            id="confirmation_yes"
-            variant="success"
-            autoFocus={true}
-          >
-            YES
-          </Button>
-          <Button className="mx-2" variant="danger" onClick={close}>
-            NO
-          </Button>
-        </div>
+      <Modal.Body className="text-center">
+        are you sure you want to proceed ?
       </Modal.Body>
+      <Modal.Footer className="d-block" style={{ textAlign: 'center' }}>
+        <Button variant="outline-light" className="text-dark" onClick={close}>
+          Wait
+        </Button>
+        <Button
+          className="btn-primary border-radius-11"
+          id="confirmation_yes"
+          autoFocus={true}
+        >
+          Yes
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };
 
 ConfirmationModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
-  question: PropTypes.string
+  close: PropTypes.func.isRequired
 };
 
 export default ConfirmationModal;
