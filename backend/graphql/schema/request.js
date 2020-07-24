@@ -45,4 +45,4 @@ input RequestInput {
   discount: Float!
   total: Float!
 }
-`
+`;

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -14,19 +14,19 @@ const customerSchema = {
   pendingRequests: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Request"
+      ref: 'Request'
     }
   ],
   completedRequests: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Request"
+      ref: 'Request'
     }
   ],
   cancelledRequests: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Request"
+      ref: 'Request'
     }
   ],
   reviews: [
@@ -37,4 +37,4 @@ const customerSchema = {
   ]
 };
 
-module.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model('Customer', customerSchema);

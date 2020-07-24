@@ -1,4 +1,4 @@
-module.exports =  `
+module.exports = `
 type Category {
   _id: ID!
   name: String!
@@ -8,4 +8,4 @@ type Category {
 input CategoryInput {
   name: String!
 }
-`
+`;

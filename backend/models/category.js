@@ -7,10 +7,12 @@ const categorySchema = {
     type: String,
     required: true
   },
-  services: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Service'
-  }]
+  services: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Service'
+    }
+  ]
 };
 
 module.exports = mongoose.model('Category', categorySchema);

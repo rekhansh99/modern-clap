@@ -1,13 +1,13 @@
 module.exports = {
-  staffs: (args, req) => {
+  staffs: () => {
     // TODO
   },
 
-  staff: (args, req) => {
+  staff: () => {
     // TODO
   },
 
-  createStaff: (args, req) => {
+  createStaff: () => {
     // TODO
   }
-}
+};

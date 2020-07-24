@@ -28,7 +28,7 @@ const reviewSchema = {
     min: 1,
     max: 5
   },
-  message: String,
+  message: String
 };
 
 module.exports = mongoose.model('Review', reviewSchema);

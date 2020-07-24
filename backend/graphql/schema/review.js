@@ -17,4 +17,4 @@ input ReviewInput {
   overallRating: Int!
   message: String
 }
-`
+`;

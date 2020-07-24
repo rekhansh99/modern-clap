@@ -1,9 +1,8 @@
-const Request = require("../../models/request");
-const { transformRequest, requests } = require("./transformers/request");
-
+const Request = require('../../models/request');
+const { transformRequest, requests } = require('./transformers/request');
 
 module.exports = {
-  requests: async (args, ctx) => {
+  requests: async args => {
     let requests = [];
     if (args.customer) {
       requests = await Request.find({ customer: args.customer });
@@ -13,19 +12,19 @@ module.exports = {
     return requests.map(request => transformRequest(request));
   },
 
-  request: (args, req) => {
+  request: args => {
     return requests(args.id);
   },
 
-  bookRequest: (args, req) => {
+  bookRequest: () => {
     // TODO
   },
 
-  cancelRequest: (args, req) => {
+  cancelRequest: () => {
     // TODO
   },
 
-  updateRequest: (args, req) => {
+  updateRequest: () => {
     // TODO
   }
-}
+};

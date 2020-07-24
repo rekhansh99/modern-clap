@@ -1,31 +1,22 @@
-const Category = require("../../models/category");
+const Category = require('../../models/category');
 
 const { transformCategory } = require('./transformers/category');
 
 module.exports = {
   categories: async () => {
-    try {
-      const categories = await Category.find();
-      return categories.map((category) => transformCategory(category));
-    } catch (err) {
-      throw err;
-    }
+    const categories = await Category.find();
+    return categories.map(category => transformCategory(category));
   },
 
   category: async ({ name }) => {
-    try {
-      const category = await Category.findOne({ name });
-      return category._doc;
-    } catch (err) {
-      throw err;
-    }
+    const category = await Category.findOne({ name });
+    return category._doc;
   },
 
-  createCategory: async ({ category }, req) => {
+  createCategory: async ({ category }) => {
     const existingCategory = await Category.findOne({ name: category.name });
 
-    if (existingCategory)
-      throw new Error('Category name taken!');
+    if (existingCategory) throw new Error('Category name taken!');
 
     const newCategory = new Category({
       name: category.name,

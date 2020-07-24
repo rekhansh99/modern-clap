@@ -1,4 +1,4 @@
-const categoryResolver = require("./category");
+const categoryResolver = require('./category');
 const customerResolver = require('./customer');
 const providerResolver = require('./provider');
 const requestResolver = require('./request');
@@ -14,4 +14,4 @@ module.exports = {
   ...reviewResolver,
   ...serviceResolver,
   ...staffResolver
-}
+};

@@ -8,4 +8,4 @@ type Customer {
   cancelledRequests: [Request!]!
   reviews: [Review!]!
 }
-`
+`;

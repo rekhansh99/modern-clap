@@ -1,9 +1,9 @@
 module.exports = {
-  service: (args, req) => {
+  service: () => {
     // TODO
   },
 
-  createService: (args, req) => {
+  createService: () => {
     // TODO
   }
-}
+};

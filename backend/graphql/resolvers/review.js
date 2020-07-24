@@ -1,13 +1,13 @@
 module.exports = {
-  reviews: (args, req) => {
+  reviews: () => {
     // TODO
   },
 
-  review: (args, req) => {
+  review: () => {
     // TODO
   },
 
-  createReview: (args, req) => {
+  createReview: () => {
     // TODO
   }
-}
+};

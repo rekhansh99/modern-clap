@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -11,12 +11,12 @@ const requestSchema = {
     {
       service: {
         type: Schema.Types.ObjectId,
-        ref: "Service"
+        ref: 'Service'
       },
       staffsAssigned: [
         {
           type: Schema.Types.ObjectId,
-          ref: "Staff"
+          ref: 'Staff'
         }
       ]
     }
@@ -64,7 +64,7 @@ const requestSchema = {
   },
   review: {
     type: Schema.Types.ObjectId,
-    ref: "Review"
+    ref: 'Review'
   },
   customer: {
     type: Schema.Types.ObjectId,
@@ -76,4 +76,4 @@ const requestSchema = {
   }
 };
 
-module.exports = mongoose.model("Request", requestSchema);
+module.exports = mongoose.model('Request', requestSchema);

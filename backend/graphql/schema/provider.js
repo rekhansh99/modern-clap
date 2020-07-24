@@ -30,7 +30,7 @@ input RegisterProviderInput {
   tradeLicenseNo: String!
   tradeLicenseDate: String!
   tradeLicenseDoc: String!
-  businessCategory: String!
+  businessCategory: ID!
   shopName: String!
   contactPersonName: String
   contactPersonMobile: String
@@ -59,4 +59,4 @@ input UpdateProviderInput {
   address: String
   area:  String
 }
-`
+`;

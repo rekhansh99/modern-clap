@@ -23,4 +23,4 @@ input FAQInput {
   question: String!
   answer: String!
 }
-`
+`;

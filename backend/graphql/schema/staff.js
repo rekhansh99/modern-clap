@@ -50,4 +50,4 @@ input PermissionsInput {
   review: String!
   settings: String!
 }
-`
+`;

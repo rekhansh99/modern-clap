@@ -1,13 +1,13 @@
-const Customer = require("../../models/customer");
-const { transformCustomer } = require("./transformers/customer");
+const Customer = require('../../models/customer');
+const { transformCustomer } = require('./transformers/customer');
 
 module.exports = {
-  customers: async (args, req) => {
+  customers: async () => {
     const customers = await Customer.find();
-    return customers.map((customer) => transformCustomer(customer));
+    return customers.map(customer => transformCustomer(customer));
   },
 
-  customer: async (args, req) => {
+  customer: async args => {
     let customer = {};
     if (args.id) {
       customer = await Customer.findById(args.id);
@@ -17,11 +17,11 @@ module.exports = {
     return transformCustomer(customer);
   },
 
-  sendOTP: (args, req) => {
+  sendOTP: () => {
     // TODO
   },
 
-  loginCustomer: (args, req) => {
+  loginCustomer: () => {
     // TODO
-  },
+  }
 };
