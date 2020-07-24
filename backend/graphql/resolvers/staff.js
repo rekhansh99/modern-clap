@@ -1,13 +1,24 @@
+const bcrypt = require('bcryptjs');
+
+const Staff = require('../../models/staff');
+const { staff, transformStaff } = require('./transformers/staff');
+
 module.exports = {
   staffs: () => {
     // TODO
   },
 
-  staff: () => {
-    // TODO
+  staff: args => {
+    return staff(args.id);
   },
 
-  createStaff: () => {
-    // TODO
+  createStaff: async args => {
+    const hashedPassword = await bcrypt.hash(args.staff.password, 12);
+    const newStaff = new Staff({
+      ...args.staff,
+      password: hashedPassword
+    });
+    const staff = await newStaff.save();
+    return transformStaff(staff);
   }
 };
