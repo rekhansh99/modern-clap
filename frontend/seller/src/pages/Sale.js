@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 import { Link } from 'react-router-dom';
-import { Container, Col, Row, Card, Dropdown } from 'react-bootstrap';
+import { Container, Col, Row, Card, Dropdown, Alert } from 'react-bootstrap';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import NumberCard from '../components/common/NumberCard';
 import Filters from '../components/Sale/Filters';
@@ -18,7 +18,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     },
     {
@@ -27,7 +28,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     },
     {
@@ -36,7 +38,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     },
     {
@@ -45,7 +48,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     },
     {
@@ -54,7 +58,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     },
     {
@@ -63,7 +68,8 @@ const Sale = () => {
       customer: 'sanika shinde',
       totalAmount: 100,
       revenue: 20,
-      modernclapRevenue: 80,
+      mdRevenue: 80,
+      penalty: 5,
       paymentType: 'cash'
     }
   ];
@@ -119,6 +125,16 @@ const Sale = () => {
         </Col>
         <Col xs={12} md={6} xl={3}>
           <NumberCard title="Rejected" value={21} />
+        </Col>
+      </Row>
+
+      <Row className="mb-4">
+        <Col md={12}>
+          <Alert variant="warning" className="m-0 border-radius-11">
+            <strong>Notice: </strong> If you want to send money to modernclap
+            account of commssion then <Link to="#!">click here </Link> to get Bank
+            Details of Modernclap company.
+          </Alert>
         </Col>
       </Row>
 
