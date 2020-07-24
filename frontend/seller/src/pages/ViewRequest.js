@@ -8,7 +8,10 @@ import {
   Row,
   Col,
   FormGroup,
-  FormControl
+  FormControl,
+  Alert,
+  InputGroup,
+  FormCheck
 } from 'react-bootstrap';
 import { ChevronLeft } from 'react-feather';
 
@@ -57,7 +60,7 @@ const ViewRequest = () => {
             className="dv_accep_reject_btn"
             onClick={handleMakePayment}
           >
-            Make Payment
+            Add OTP For Review
           </Button>
         </Card.Header>
         <Card.Body className="p-0">
@@ -217,6 +220,9 @@ const ViewRequest = () => {
                       <li>
                         Distance : <strong>3.2 KM </strong>
                       </li>
+                      <li>
+                        Penalty : <strong>AED 15 </strong>, 10 min Late Reach
+                      </li>
                     </ul>
                   </div>
                 </Col>
@@ -264,7 +270,7 @@ const ViewRequest = () => {
       </Card>
       <Row>
         <Col md={6} xs={12} style={{ margin: '0 auto' }}>
-          <span
+          {/* <span
             className="dv_section_heading"
             style={{
               margin: '0 0 15px 0',
@@ -287,24 +293,73 @@ const ViewRequest = () => {
               invoice on <strong>12/12/2020</strong>. Please shaare your
               feedback to improve our quality service for you.
             </p>
-          </span>
+          </span> */}
           <Card className="mb-4">
             <Card.Header>
-              <ChevronLeft size={24} /> Review - MD12345
+              <ChevronLeft size={24} /> Add Review - MD12345
             </Card.Header>
             <Card.Body>
+              <span
+                className="dv_section_heading"
+                style={{
+                  margin: '0 0 15px 0',
+                  background: 'rgb(63, 199, 63, 0.3)',
+                  color: '#1b901b'
+                }}
+              >
+                <GreenTickSVG />
+                OTP Added Successfully.
+                <p
+                  style={{
+                    fontSize: '12px',
+                    textTransform: 'initial',
+                    fontWeight: 400,
+                    padding: '0 0 0 32px',
+                    margin: 0
+                  }}
+                >
+                  Please give us your valuale review to make our service more
+                  better for customer.
+                </p>
+              </span>
               <Row>
                 <Col md={12}>
-                  <FormGroup>
-                    <label>Review </label>
-                    <FormControl
-                      type="text"
-                      className="dv_all_inputs"
-                      style={{ height: '100px', width: '100%' }}
-                    />
-                  </FormGroup>
+                  <Alert variant="danger">
+                    Enter correct OTP to write the review.
+                  </Alert>
                 </Col>
                 <Col md={12}>
+                  <InputGroup className="mb-3">
+                    <label>Add OTP for Review </label>
+                    <FormControl
+                      type="tel"
+                      className="dv_all_inputs"
+                      placeholder="****"
+                    />
+                    <InputGroup.Append>
+                      <Button
+                        className="height-44"
+                        type="submit"
+                      >
+                        Submit
+                      </Button>
+                    </InputGroup.Append>
+                  </InputGroup>
+                </Col>
+                <Col md={12}>
+                  <FormGroup>
+                    <label>Staff Late reach minutes </label>
+                    <FormControl as="select" className="dv_all_inputs">
+                      <option>Before Service time </option>
+                      <option>Exact on Service Time </option>
+                      <option>5 Min Late </option>
+                      <option>10 Min Late </option>
+                      <option>15 Min Late </option>
+                      <option>25 Min Late </option>
+                      <option>30 Min Late </option>
+                      <option>More than 30 min </option>
+                    </FormControl>
+                  </FormGroup>
                   <FormGroup>
                     <label>Tools </label>
                     <StarRating value={toolsRating} onChange={setToolsRating} />
@@ -328,8 +383,54 @@ const ViewRequest = () => {
                     />
                   </FormGroup>
                   <FormGroup>
+                    <label>Review </label>
+                    <FormControl
+                      type="text"
+                      className="dv_all_inputs"
+                      style={{ height: '100px', width: '100%' }}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Any Suggestion </label>
+                    <FormControl
+                      type="text"
+                      className="dv_all_inputs"
+                      style={{ height: '100px', width: '100%' }}
+                    />
+                  </FormGroup>
+                  <FormGroup>
                     <Button style={{ padding: '10px 0' }} block>
-                      Submit Review{' '}
+                      Submit
+                    </Button>
+                  </FormGroup>
+                  <FormGroup>
+                    <FormCheck custom id="cash">
+                      <FormCheck.Input />
+                      <FormCheck.Label>Paying through cash</FormCheck.Label>
+                    </FormCheck>
+                  </FormGroup>
+                  <FormGroup>
+                    <FormCheck custom id="card">
+                      <FormCheck.Input />
+                      <FormCheck.Label>Paying through card</FormCheck.Label>
+                    </FormCheck>
+                  </FormGroup>
+                  <FormGroup>
+                    <Button style={{ padding: '10px 0' }} block>
+                      Pay Amount
+                    </Button>
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Transaction No </label>
+                    <FormControl
+                      type="text"
+                      className="dv_all_inputs"
+                      placeholder="Enter"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Button style={{ padding: '10px 0' }} block>
+                      Complete Your Transaction
                     </Button>
                   </FormGroup>
                 </Col>
