@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
 const { graphqlHTTP } = require('express-graphql');
 const mongoose = require('mongoose');
 
@@ -13,13 +12,15 @@ const graphqlResolver = require('./graphql/resolvers/root');
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URLS.split(' '),
-    methods: ['POST', 'GET', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Cookie']
-  })
-);
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Cookie');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
 app.use(cookieParser());
 app.use(isAuth);
 
