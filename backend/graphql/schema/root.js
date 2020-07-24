@@ -21,7 +21,7 @@ type RootQuery {
   categories: [Category!]!
   customers: [Customer!]!
   providers: [Provider!]!
-  requests(customer: ID, provider: ID): [Request!]!
+  requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): [Request!]!
   reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
   category(name: String!): Category!
@@ -42,7 +42,7 @@ type RootMutation {
   createReview(review: ReviewInput!): Review!
   createStaff(staff: StaffInput): Staff!
   sendOTP(mobile: String!): String!
-  loginCustomer(mobile: String!, otp: Int!): Customer!
+  loginCustomer(mobile: String!, otp: String!): Customer!
   registerProvider(provider: RegisterProviderInput!): Provider!
   loginProvider(email: String!, password: String!): Provider!
   updateProvider(newData: UpdateProviderInput): Provider!

@@ -2,15 +2,17 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const customerSchema = {
+const customerSchema = new Schema({
   name: {
-    type: String,
-    required: true
+    type: String
   },
   mobile: {
     type: String,
     required: true
   },
+  otp: String,
+  otpSent: Boolean,
+  otpTime: Date,
   pendingRequests: [
     {
       type: Schema.Types.ObjectId,
@@ -35,6 +37,6 @@ const customerSchema = {
       ref: 'Review'
     }
   ]
-};
+});
 
 module.exports = mongoose.model('Customer', customerSchema);

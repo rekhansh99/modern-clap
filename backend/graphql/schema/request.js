@@ -44,5 +44,7 @@ input RequestInput {
   vat: Float!
   discount: Float!
   total: Float!
+  customer: Customer!
+  provider: Provider!
 }
 `;

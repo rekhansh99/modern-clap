@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const reviewSchema = {
+const reviewSchema = new Schema({
   request: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -29,6 +29,6 @@ const reviewSchema = {
     max: 5
   },
   message: String
-};
+});
 
 module.exports = mongoose.model('Review', reviewSchema);

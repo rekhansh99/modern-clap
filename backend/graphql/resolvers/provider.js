@@ -55,7 +55,7 @@ module.exports = {
     );
     ctx.res.cookie('jwt', token, {
       httpOnly: true,
-      secure: true,
+      // secure: true,
       maxAge: jwtValidity * 1000
     });
     return transformProvider(provider);

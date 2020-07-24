@@ -4,8 +4,8 @@ const { reviews } = require('./review');
 
 exports.transformCustomer = customer => {
   return {
-    ...customer._doc,
     _id: customer.id,
+    name: customer.name,
     pendingRequests: () => requests(customer.pendingRequests),
     completedRequests: () => requests(customer.completedRequests),
     cancelledRequests: () => requests(customer.cancelledRequests),

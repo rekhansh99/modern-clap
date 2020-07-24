@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const staffSchema = {
+const staffSchema = new Schema({
   firstName: {
     type: String,
     required: true
@@ -77,6 +77,6 @@ const staffSchema = {
       ref: 'Review'
     }
   ]
-};
+});
 
 module.exports = mongoose.model('Staff', staffSchema);

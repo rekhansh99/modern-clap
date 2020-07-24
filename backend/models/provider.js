@@ -149,7 +149,13 @@ const providerSchema = new Schema({
   area: {
     type: String,
     required: true
-  }
+  },
+  requests: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Request'
+    }
+  ]
 });
 
 module.exports = mongoose.model('Provider', providerSchema);
