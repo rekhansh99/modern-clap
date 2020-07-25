@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 
 import { Container, Card } from 'react-bootstrap';
-import moment from 'moment';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import ReviewModal from '../components/Reviews/ReviewModal';
-import Filters from '../components/Reviews/Filters';
 import ReviewsTable from '../components/Reviews/ReviewsTable';
 
 const Reviews = () => {
@@ -60,38 +57,39 @@ const Reviews = () => {
   ];
 
   const [modal, setModal] = useState({ index: 0, isOpen: false });
-  const [filters, setFilters] = useState({
-    dateRange: {
-      start: moment().startOf('hour'),
-      end: moment().startOf('hour').add(32, 'hour')
-    },
-    type: 'select',
-    rating: 'select',
-    payment: 'select'
-  });
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
-
       <h1 className="mt-4 dv_page_heading">Reviews</h1>
-
-      <Filters
-        {...filters}
-        onChange={newFilters => setFilters({ ...filters, ...newFilters })}
-      />
-
       <Card className="mb-4">
-        <Card.Header>Ratings and Reviews</Card.Header>
+        <Card.Header>
+          <Card.Title className="float-left">RATINGS AND REVIEWS</Card.Title>
+          <div className="dv_download_report dropdown">
+            <a
+              title="Add New"
+              className="dropdown-toggle"
+              id="addnewshortcut"
+              href="#!"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Export{' '}
+            </a>
+            <div
+              className="dropdown-menu dropdown-menu-right"
+              aria-labelledby="addnewshortcut"
+            >
+              <a className="dropdown-item" href="#!">
+                Excel
+              </a>
+              <a className="dropdown-item" href="#!">
+                CSV
+              </a>
+            </div>
+          </div>
+        </Card.Header>
         <Card.Body className="p-0">
           <ReviewsTable
             reviews={reviews}

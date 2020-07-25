@@ -6,7 +6,6 @@ import { Table, Dropdown } from 'react-bootstrap';
 import { MoreVertical, Star } from 'react-feather';
 
 import Search from '../common/Search';
-import Pagination from '../common/Pagination';
 
 const ReviewsTable = ({ reviews, viewReview }) => {
   return (
@@ -15,30 +14,35 @@ const ReviewsTable = ({ reviews, viewReview }) => {
       <Table className="table" width="100%" cellSpacing={0} responsive>
         <thead>
           <tr>
-            <th>date </th>
             <th>ref id </th>
+            <th>from </th>
+            <th>to </th>
             <th>tools </th>
             <th>work </th>
             <th>behaviour </th>
             <th>rating </th>
             <th>review </th>
+            <th>created </th>
+            <th>active </th>
             <th>action </th>
           </tr>
           <tr>
             <th />
             <th />
-            <th>3.8</th>
-            <th>4.3</th>
-            <th>2.9</th>
-            <th>4.1</th>
+            <th />
+            <th />
+            <th />
+            <th />
+            <th />
             <th>234</th>
+            <th />
+            <th>213</th>
             <th />
           </tr>
         </thead>
         <tbody>
           {reviews.map((review, index) => (
             <tr key={index}>
-              <td>{review.date}</td>
               <td>
                 <Link
                   to={'/request/' + review.orderId}
@@ -46,6 +50,12 @@ const ReviewsTable = ({ reviews, viewReview }) => {
                 >
                   {review.orderId}
                 </Link>
+              </td>
+              <td>
+                <Link to={'/request/' + review.orderId}>sanjay</Link>
+              </td>
+              <td>
+                <Link to={'/request/' + review.orderId}>Goohand</Link>
               </td>
               <td>{review.toolsRating}</td>
               <td>{review.workRating}</td>
@@ -67,6 +77,15 @@ const ReviewsTable = ({ reviews, viewReview }) => {
                   {review.text}
                 </span>
               </td>
+              <td>{review.date}</td>
+              <td>
+                <div className="dv_status_in_list">
+                  <label className="form-switch">
+                    <input type="checkbox" defaultChecked={review.active} />
+                    <i />
+                  </label>
+                </div>
+              </td>
               <Dropdown as="td">
                 <Dropdown.Toggle as="a" className="dv_everytable_action">
                   <MoreVertical />
@@ -87,7 +106,6 @@ const ReviewsTable = ({ reviews, viewReview }) => {
           ))}
         </tbody>
       </Table>
-      <Pagination />
     </>
   );
 };
