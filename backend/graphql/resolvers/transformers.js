@@ -40,6 +40,7 @@ exports.transformRequest = async request => {
   return {
     ...(request._doc || request),
     _id: request.id || request._id.toString(),
+    time: request.time.toISOString(),
     services: () =>
       request.services.map(s => ({
         service: () => service(s.service),
