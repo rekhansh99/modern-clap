@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const Staff = require('../../models/staff');
-const { staff, transformStaff } = require('./transformers/staff');
+const { staff, transformStaff } = require('./transformers');
 
 module.exports = {
   staffs: () => {

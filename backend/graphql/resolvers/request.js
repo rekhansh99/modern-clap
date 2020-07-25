@@ -1,36 +1,69 @@
+const mongoose = require('mongoose');
+
 const Request = require('../../models/request');
 const Customer = require('../../models/customer');
-const { transformRequest, request } = require('./transformers/request');
+const { transformRequest, request } = require('./transformers');
 
 module.exports = {
   requests: async (args, ctx) => {
-    let requests;
+    let requestlist = {};
     if (!ctx.req.isAuth) throw new Error('Unauthorized');
 
     switch (ctx.req.role) {
       case 'provider':
       case 'customer':
-        requests = await Request.find({ [ctx.req.role]: ctx.req.uid })
-          .sort({ createdAt: 'desc' })
-          .skip((args.page - 1) * args.limit)
-          .limit(args.limit);
+        requestlist = (
+          await Request.aggregate()
+            .match({ [ctx.req.role]: mongoose.Types.ObjectId(ctx.req.uid) })
+            .sort({ createdAt: 'desc' })
+            .facet({
+              requests: [
+                { $skip: (args.page - 1) * args.limit },
+                { $limit: args.limit }
+              ],
+              count: [{ $count: 'count' }]
+            })
+        )[0];
         break;
 
       case 'admin':
         if (args.customer) {
-          requests = await Request.find({ customer: args.customer })
-            .sort({ createdAt: 'desc' })
-            .skip((args.page - 1) * args.limit)
-            .limit(args.limit);
+          requestlist = (
+            await Request.aggregate
+              .match({ customer: args.customer })
+              .sort({ createdAt: 'desc' })
+              .facet({
+                requests: [
+                  { $skip: (args.page - 1) * args.limit },
+                  { $limit: args.limit }
+                ],
+                count: [{ $count: 'count' }]
+              })
+          )[0];
         } else if (args.provider) {
-          requests = await Request.find({ provider: args.provider })
-            .sort({ createdAt: 'desc' })
-            .skip((args.page - 1) * args.limit)
-            .limit(args.limit);
+          requestlist = (
+            await Request.find({ provider: args.provider })
+              .sort({ createdAt: 'desc' })
+              .facet({
+                requests: [
+                  { $skip: (args.page - 1) * args.limit },
+                  { $limit: args.limit }
+                ],
+                count: [{ $count: 'count' }]
+              })
+          )[0];
         }
     }
 
-    return requests.map(request => transformRequest(request));
+    return {
+      requests: requestlist.requests.map(request => transformRequest(request)),
+      pagination: {
+        page: args.page,
+        limit: args.limit,
+        totalPages:
+          Math.floor((requestlist.count[0].count - 1) / args.limit) + 1
+      }
+    };
   },
 
   request: async (args, ctx) => {

@@ -1,4 +1,9 @@
 module.exports = `
+type RequestList {
+  requests: [Request!]!
+  pagination: Pagination
+}
+
 type Request {
   _id: ID!
   services: [ServiceRequest!]!

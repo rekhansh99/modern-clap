@@ -1,6 +1,6 @@
 const Review = require('../../models/review');
 const Customer = require('../../models/customer');
-const { transformReview } = require('./transformers/review');
+const { transformReview } = require('./transformers');
 
 module.exports = {
   reviews: async args => {

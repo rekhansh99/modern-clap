@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const Provider = require('../../models/provider');
 const Category = require('../../models/category');
-const { transformProvider, provider } = require('./transformers/provider');
+const { transformProvider, provider } = require('./transformers');
 
 module.exports = {
   providers: async () => {

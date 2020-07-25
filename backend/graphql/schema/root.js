@@ -9,6 +9,12 @@ const serviceSchema = require('./service');
 const staffSchema = require('./staff');
 
 module.exports = buildSchema(`
+type Pagination {
+  page: Int!
+  limit: Int!
+  totalPages: Int!
+}
+
 ${categorySchema}
 ${customerSchema}
 ${providerSchema}
@@ -21,7 +27,7 @@ type RootQuery {
   categories: [Category!]!
   customers: [Customer!]!
   providers: [Provider!]!
-  requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): [Request!]!
+  requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): RequestList!
   reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
   category(name: String!): Category!
