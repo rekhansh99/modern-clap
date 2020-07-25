@@ -12,7 +12,8 @@ import './responsive.css';
 
 const client = new ApolloClient({
   uri: config.BACKEND_URL + '/graphql',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  credentials: 'include'
 });
 
 ReactDOM.render(

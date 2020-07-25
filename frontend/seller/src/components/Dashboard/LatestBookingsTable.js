@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 import { Link } from 'react-router-dom';
@@ -9,36 +9,73 @@ import Search from '../common/Search';
 import Pagination from '../common/Pagination';
 
 const GET_REQUESTS = gql`
-  query Requests {
-    requests {
-      _id
-      customer {
-        name
-      }
-      services {
-        service {
+  query Requests($page: Int = 1, $limit: Int = 10) {
+    requests(page: $page, limit: $limit) {
+      requests {
+        _id
+        customer {
           name
         }
+        services {
+          service {
+            name
+          }
+        }
+        location {
+          area
+        }
+        payment {
+          total
+        }
+        status
       }
-      location {
-        area
+      pagination {
+        totalPages
       }
-      payment {
-        total
-      }
-      status
     }
   }
 `;
 
 const LatestBookingsTable = () => {
-  const { loading, data } = useQuery(GET_REQUESTS);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(2);
+
+  const { loading, data } = useQuery(GET_REQUESTS, {
+    errorPolicy: 'all',
+    variables: { page, limit }
+  });
 
   if (loading || !data) return <p>Loading</p>;
 
+  const {
+    requests,
+    pagination: { totalPages }
+  } = data.requests;
+
+  // const data = {
+  //   requests: [
+  //     {
+  //       _id: 'MD542154',
+  //       customer: { name: 'sanjay sakpal'},
+  //       services: [{service: {name: 'waxing'}}],
+  //       location: {area:'al rigga'},
+  //       payment: {total: 'AED 450'},
+  //       status: 'pending'
+  //     },
+  //     {
+  //       _id: 'MD542154',
+  //       customer: { name: 'sanjay sakpal'},
+  //       services: [{service: {name: 'waxing'}}],
+  //       location: {area:'al rigga'},
+  //       payment: {total: 'AED 450'},
+  //       status: 'completed'
+  //     }
+  //   ]
+  // };
+
   return (
     <>
-      <Search />
+      <Search limit={limit} setLimit={setLimit} />
       <Table id="dataTable" width="100%" cellSpacing={0} responsive>
         <thead>
           <tr>
@@ -61,13 +98,16 @@ const LatestBookingsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.requests.map((req, index) => (
+          {requests.map((req, index) => (
             <tr key={index}>
               <td>{req._id}</td>
               <td>{req.customer.name}</td>
               <td>
                 {req.services
-                  .reduce((total, service) => total + ', ' + service.name, '')
+                  .reduce(
+                    (total, service) => total + ', ' + service.service.name,
+                    ''
+                  )
                   .slice(2)}
               </td>
               <td>{req.location.area}</td>
@@ -89,7 +129,7 @@ const LatestBookingsTable = () => {
           ))}
         </tbody>
       </Table>
-      <Pagination />
+      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
     </>
   );
 };
