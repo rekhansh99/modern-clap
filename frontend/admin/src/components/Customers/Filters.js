@@ -6,33 +6,16 @@ import { DateRangePicker } from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 const Filters = ({ onChange, ...props }) => {
-  const types = [
-    'Cleaners',
-    'Online Fitness',
-    'Ladies Salon',
-    'Gents Salon',
-    'Disinfection',
-    'Deep Cleaning',
-    'Handymen',
-    'Electrician',
-    'Painter',
-    'Packers & Movers',
-    'AC Technicians',
-    'Pest Control'
+  const customerTypes = [
+    'All',
+    'New customer',
+    'Existing customer',
+    'Waller payment'
   ];
 
-  const categories = [
-    'All',
-    'Kitchen cleaning',
-    'Bedroom cleaning',
-    'Bathroom cleaning',
-    'Living Room cleaning',
-    'Untesil cleaning',
-    'Iron with folding cloths',
-    'Machine Laundry',
-    'Refrigerator Cleaning',
-    'Ovan & Microwave Cleaning'
-  ];
+  const bookings = ['All'];
+  for (let i = 1; i <= 10; i++) bookings.push(`${i} Time`);
+  bookings.push('10+ Time');
 
   const getDateRange = () => {
     return (
@@ -100,59 +83,40 @@ const Filters = ({ onChange, ...props }) => {
             </Form.Group>
           </Col>
 
-          {/* Type Filter */}
+          {/* Customer Type Filter */}
           <Col xs={12} lg={3}>
             <Form.Group>
-              <label>Type </label>
+              <label>Customer Type </label>
               <Form.Control
                 as="select"
                 className="dv_all_inputs"
-                value={props.type}
+                value={props.customerType}
                 onChange={e => onChange({ type: e.target.value })}
               >
-                <option value="select">Select</option>
-                {types.map((type, index) => (
+                {customerTypes.map((customerType, index) => (
                   <option key={index} value={index}>
-                    {type}
+                    {customerType}
                   </option>
                 ))}
               </Form.Control>
             </Form.Group>
           </Col>
 
-          {/* Category Filter */}
+          {/* Number of bookings Filter */}
           <Col xs={12} lg={3}>
             <Form.Group>
-              <label>Category </label>
+              <label>Bookings</label>
               <Form.Control
                 as="select"
                 className="dv_all_inputs"
-                value={props.category}
+                value={props.booking}
                 onChange={e => onChange({ category: e.target.value })}
               >
-                <option value="select">Select</option>
-                {categories.map((category, index) => (
+                {bookings.map((booking, index) => (
                   <option key={index} value={index}>
-                    {category}
+                    {booking}
                   </option>
                 ))}
-              </Form.Control>
-            </Form.Group>
-          </Col>
-
-          {/* Payment Method Filter */}
-          <Col xs={12} lg={3}>
-            <Form.Group>
-              <label>Payment </label>
-              <Form.Control
-                as="select"
-                className="dv_all_inputs"
-                value={props.payment}
-                onChange={e => onChange({ payment: e.target.value })}
-              >
-                <option value="select">Select</option>
-                <option value="cash">Cash</option>
-                <option value="card">Card</option>
               </Form.Control>
             </Form.Group>
           </Col>
@@ -167,9 +131,8 @@ Filters.propTypes = {
     start: PropTypes.object.isRequired,
     end: PropTypes.object.isRequired
   }).isRequired,
-  type: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  payment: PropTypes.string.isRequired,
+  customerType: PropTypes.string.isRequired,
+  booking: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 };
 
