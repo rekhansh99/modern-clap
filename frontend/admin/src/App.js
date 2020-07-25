@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import classnames from 'classnames';
 
-import AddCustomer from './pages/AddCustomer';
 import AddService from './pages/AddService';
-import BookingDetails from './pages/BookingDetails';
 import Bookings from './pages/Bookings';
 import Categories from './pages/Categories';
 import Customers from './pages/Customers';
@@ -19,6 +17,8 @@ import Reviews from './pages/Reviews';
 import Services from './pages/Services';
 import Settings from './pages/Settings';
 import Types from './pages/Types';
+import ViewBooking from './pages/ViewBooking';
+import ViewCustomer from './pages/ViewCustomer';
 import ViewProvider from './pages/ViewProvider';
 
 import Header from './components/common/Header';
@@ -64,14 +64,8 @@ function App() {
               <div id="layoutSidenav_content">
                 <main>
                   <Switch>
-                    <Route exact path="/customer/add">
-                      <AddCustomer />
-                    </Route>
                     <Route exact path="/service/add">
                       <AddService />
-                    </Route>
-                    <Route exact path="/booking/:id">
-                      <BookingDetails />
                     </Route>
                     <Route exact path="/bookings">
                       <Bookings />
@@ -114,6 +108,12 @@ function App() {
                     </Route>
                     <Route exact path="/types">
                       <Types />
+                    </Route>
+                    <Route exact path="/booking/:id">
+                      <ViewBooking />
+                    </Route>
+                    <Route exact path="/customer/:id">
+                      <ViewCustomer />
                     </Route>
                     <Route exact path="/provider/:id">
                       <ViewProvider />
