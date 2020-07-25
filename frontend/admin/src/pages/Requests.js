@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Container } from 'react-bootstrap';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import RequestCard from '../components/Requests/RequestCard';
 import avatar from '../images/avatar.png';
 
@@ -62,16 +61,6 @@ const Requests = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Request List</h1>
       <span className="subtitle">pending request</span>
       {requests.map((request, index) => (

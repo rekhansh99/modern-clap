@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Container, Card } from 'react-bootstrap';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import RequestCard from '../components/Requests/RequestCard';
 import AcceptedRequestsTable from '../components/Requests/AcceptedRequestsTable';
 
@@ -58,16 +57,6 @@ const AcceptedRequests = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Accepted Requests</h1>
 
       <div className="show-mobile-767">

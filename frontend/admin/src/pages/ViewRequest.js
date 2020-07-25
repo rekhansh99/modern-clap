@@ -15,7 +15,6 @@ import {
 } from 'react-bootstrap';
 import { ChevronLeft } from 'react-feather';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import StarRating from '../components/Reviews/StarRating';
 import askConfirmation from '../utils/askConfirmation';
 
@@ -40,16 +39,6 @@ const ViewRequest = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">View Request</h1>
       <Card className="mb-4">
         <Card.Header className="text-center">

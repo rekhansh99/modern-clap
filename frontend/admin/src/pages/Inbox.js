@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import ChatList from '../components/Inbox/ChatList';
 import ChatHeader from '../components/Inbox/ChatHeader';
 import Message from '../components/Inbox/Message';
@@ -149,17 +148,6 @@ const Inbox = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
-
       <h1 className="mt-4 dv_page_heading">Inbox</h1>
       <Card className="mb-4">
         <Row className="no-gutters">

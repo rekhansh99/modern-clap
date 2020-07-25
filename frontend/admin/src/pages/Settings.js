@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Container, Card } from 'react-bootstrap';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import AccountDetails from '../components/Settings/AccountDetails';
 import ShopDetails from '../components/Settings/ShopDetails';
 import WorkingHours from '../components/Settings/WorkingHours';
@@ -16,16 +15,6 @@ const Settings = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Settings</h1>
       <Card className="mb-4">
         <Card.Header>Profile</Card.Header>

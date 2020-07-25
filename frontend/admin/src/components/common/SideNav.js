@@ -78,10 +78,10 @@ const SideNav = ({ close }) => {
               })}
             >
               <Nav as="nav" className="sb-sidenav-menu-nested">
-                <Nav.Link as={Link} to="/type">
+                <Nav.Link as={Link} to="/types">
                   Type<span className="dv_pending_numbders">5</span>
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category">
+                <Nav.Link as={Link} to="/categories">
                   Category
                 </Nav.Link>
                 <Nav.Link as={Link} to="/services">
@@ -95,7 +95,7 @@ const SideNav = ({ close }) => {
             <Nav.Link as={Link} to="/revenue">
               Revenue
             </Nav.Link>
-            <Nav.Link as={Link} to="/offers">
+            <Nav.Link as={Link} to="/promo-codes">
               Promo Cards / Offers
             </Nav.Link>
             <Nav.Link as={Link} to="/reviews">

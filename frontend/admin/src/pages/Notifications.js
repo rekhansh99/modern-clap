@@ -3,7 +3,6 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 import NotificationCard from '../components/Notifications/NotificationCard';
-import SwitchBusiness from '../components/common/SwitchBusiness';
 
 const Notifications = () => {
   document.title = 'Notifications - Modernclap';
@@ -73,16 +72,6 @@ const Notifications = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Notifications</h1>
       <span className="subtitle">unseen notification</span>
       {unseenNotification.map((notification, index) => (

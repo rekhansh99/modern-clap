@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Container, Card, Button } from 'react-bootstrap';
 
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import ServiceCard from '../components/AddService/ServiceCard';
 import SelectMasterForm from '../components/AddService/SelectMasterForm';
 import CategoryRequestForm from '../components/common/CategoryRequestForm';
@@ -12,16 +11,6 @@ const AddService = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Service</h1>
       <Card className="mb-4">
         <SelectMasterForm />

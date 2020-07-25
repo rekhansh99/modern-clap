@@ -4,7 +4,6 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NumberCard from '../components/common/NumberCard';
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import AreaChart from '../components/Dashboard/AreaChart';
 import LatestBookingsTable from '../components/Dashboard/LatestBookingsTable';
 
@@ -13,16 +12,6 @@ const Dashboard = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
       <h1 className="mt-4 dv_page_heading">Dashboard</h1>
       <Row>
         <Col xs={12} md={6} xl={3}>

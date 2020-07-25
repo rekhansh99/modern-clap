@@ -3,7 +3,6 @@ import moment from 'moment';
 
 import { Link } from 'react-router-dom';
 import { Container, Col, Row, Card, Dropdown, Alert } from 'react-bootstrap';
-import SwitchBusiness from '../components/common/SwitchBusiness';
 import NumberCard from '../components/common/NumberCard';
 import Filters from '../components/Sale/Filters';
 import SalesTable from '../components/Sale/SalesTable';
@@ -86,17 +85,6 @@ const Sale = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
-
       <h1 className="mt-4 dv_page_heading">Sale</h1>
 
       <Row>
