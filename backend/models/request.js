@@ -69,10 +69,12 @@ const requestSchema = new Schema(
     },
     customer: {
       type: Schema.Types.ObjectId,
+      required: true,
       ref: 'Customer'
     },
     provider: {
       type: Schema.Types.ObjectId,
+      required: true,
       ref: 'Provider'
     }
   },
