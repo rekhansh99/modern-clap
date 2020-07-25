@@ -1,4 +1,4 @@
-export default (setConfirmationOpen) => {
+export default setConfirmationOpen => {
   setConfirmationOpen(true);
   // document
   //   .getElementById('confirmation_yes')
