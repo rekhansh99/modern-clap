@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const springedge = require('springedge');
 
 const Customer = require('../../models/customer');
-const { transformCustomer } = require('./transformers/customer');
+const { transformCustomer } = require('./transformers');
 
 module.exports = {
   customers: async (args, ctx) => {

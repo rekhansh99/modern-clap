@@ -1,6 +1,6 @@
 const Category = require('../../models/category');
 
-const { transformCategory } = require('./transformers/category');
+const { transformCategory } = require('./transformers');
 
 module.exports = {
   categories: async () => {

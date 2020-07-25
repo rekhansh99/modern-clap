@@ -1,5 +1,5 @@
 const Service = require('../../models/service');
-const { service, transformService } = require('./transformers/service');
+const { service, transformService } = require('./transformers');
 
 module.exports = {
   service: args => {
@@ -10,7 +10,7 @@ module.exports = {
     const newService = new Service({
       ...args.service
     });
-    const service = newService.save();
+    const service = await newService.save();
     return transformService(service);
   }
 };

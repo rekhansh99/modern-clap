@@ -1,39 +1,86 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-const Pagination = () => {
+const Pagination = ({ totalPages, page, setPage }) => {
+  const pageLinksJSX = [];
+
+  if (totalPages <= 3) {
+    for (let i = 1; i <= totalPages; i++)
+      pageLinksJSX.push(
+        <li key={i}>
+          <a href="#!" className={classnames({ dv_active_page: i === page })}>{i}</a>
+        </li>
+      );
+
+    return (
+      <div className="dv_pagination">
+        <ul>{pageLinksJSX}</ul>
+      </div>
+    );
+  }
+
   return (
     <div className="dv_pagination">
       <ul>
+        {page !== 1 && (
+          <li>
+            <a href="#!" onClick={() => setPage(page - 1)}>
+              <ChevronLeft />
+            </a>
+          </li>
+        )}
         <li>
-          <Link to="#">
-            <ChevronLeft />
-          </Link>
+          <a
+            href="#!"
+            onClick={() => setPage(1)}
+            className={classnames({ dv_active_page: page === 1 })}
+          >
+            1
+          </a>
         </li>
+        {page > 2 && <li>...</li>}
+        {page === 1 ? (
+          <li>
+            <a href="#!" onClick={() => setPage(2)}>2</a>
+          </li>
+        ) : page === totalPages ? (
+          <li>
+            <a href="#!" onClick={() => setPage(totalPages - 1)}>{totalPages - 1}</a>
+          </li>
+        ) : (
+          <li>
+            <a href="#!" className="dv_active_page">{page}</a>
+          </li>
+        )}
+        {page < totalPages - 1 && <li>...</li>}
         <li>
-          <Link to="#">1</Link>
+          <a
+            href="#!"
+            onClick={() => setPage(totalPages)}
+            className={classnames({ dv_active_page: page === totalPages })}
+          >
+            {totalPages}
+          </a>
         </li>
-        <li>
-          <Link to="#">2</Link>
-        </li>
-        <li>
-          <Link to="#" className="dv_active_page">
-            3
-          </Link>
-        </li>
-        <li>...</li>
-        <li>
-          <Link to="#">8</Link>
-        </li>
-        <li>
-          <Link to="#">
-            <ChevronRight />
-          </Link>
-        </li>
+        {page !== totalPages && (
+          <li>
+            <a href="#!" onClick={() => setPage(page + 1)}>
+              <ChevronRight />
+            </a>
+          </li>
+        )}
       </ul>
     </div>
   );
 };
+
+Pagination.propTypes = {
+  totalPages: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired
+}
 
 export default Pagination;
