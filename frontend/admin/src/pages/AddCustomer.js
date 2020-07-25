@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Dashboard = () => {
+const AddCustomer = () => {
   return <h1>I am a page</h1>;
 };
 
-export default Dashboard;
+export default AddCustomer;
