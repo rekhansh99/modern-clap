@@ -17,8 +17,11 @@
   height: auto;
   max-height: 0;
 }
-.sb-sidenav-menu > .nav > .toggle.toggle-open {
+.sb-sidenav-menu > .nav > .toggle.toggle-open2 {
   max-height: calc(3em + 64px);
+}
+.sb-sidenav-menu > .nav > .toggle.toggle-open3 {
+  max-height: calc(5em + 96px);
 }
 .modal > .modal-dialog > .modal-content {
   border: none;

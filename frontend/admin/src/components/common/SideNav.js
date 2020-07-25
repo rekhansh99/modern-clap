@@ -43,7 +43,7 @@ const SideNav = ({ close }) => {
             <div
               id="usersManagement"
               className={classnames('toggle', {
-                'toggle-open': openMenu === 'usersManagement'
+                'toggle-open2': openMenu === 'usersManagement'
               })}
             >
               <Nav as="nav" className="sb-sidenav-menu-nested">
@@ -74,7 +74,7 @@ const SideNav = ({ close }) => {
             <div
               id="Request"
               className={classnames('toggle', {
-                'toggle-open': openMenu === 'categoryManagement'
+                'toggle-open3': openMenu === 'categoryManagement'
               })}
             >
               <Nav as="nav" className="sb-sidenav-menu-nested">
