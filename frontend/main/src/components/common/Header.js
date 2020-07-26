@@ -10,6 +10,7 @@ import { Menu } from 'react-feather';
 
 import MenuModal from './Menu';
 import SearchBar from '../Landing/Search';
+import { ReactComponent as LogoSVG } from '../../svgs/logo.svg';
 
 const items = [
   'dubai',
@@ -78,7 +79,7 @@ class Header extends React.Component {
             })}
             to="/"
           >
-            ModernClap
+            <LogoSVG width={150} />
           </Navbar.Brand>
           {/* Links */}
           <Nav as="ul" className="float-right dv_menu_top">
