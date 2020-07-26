@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card } from 'react-bootstrap';
 
 import ServicesTable from '../components/Services/ServicesTable.';
+import Filters from '../components/Services/Filters';
 
 const Services = () => {
   document.title = 'Services - Modernclap';
@@ -13,49 +14,53 @@ const Services = () => {
       type: 'Cleaners',
       category: 'deep cleeaning',
       name: 'kitchen cleaning service',
-      active: true,
-      price: 120
+      active: true
     },
     {
       id: 'SD1234',
       type: 'Cleaners',
       category: 'deep cleeaning',
       name: 'kitchen cleaning service',
-      active: true,
-      price: 120
+      active: true
     },
     {
       id: 'SD1234',
       type: 'Cleaners',
       category: 'deep cleeaning',
       name: 'kitchen cleaning service',
-      active: true,
-      price: 120
+      active: true
     },
     {
       id: 'SD1234',
       type: 'Cleaners',
       category: 'deep cleeaning',
       name: 'kitchen cleaning service',
-      active: true,
-      price: 120
+      active: true
     },
     {
       id: 'SD1234',
       type: 'Cleaners',
       category: 'deep cleeaning',
       name: 'kitchen cleaning service',
-      active: false,
-      price: 120
+      active: false
     }
   ];
+
+  const [filters, setFilters] = useState({
+    type: 'select',
+    category: 'select'
+  });
 
   return (
     <Container fluid>
       <h1 className="mt-4 dv_page_heading">Services</h1>
+      <Filters
+        {...filters}
+        onChange={newFilters => setFilters({ ...filters, ...newFilters })}
+      />
       <Card className="mb-4">
         <Card.Header>
-          Services
+          All Services
           <Link to="/services/add" className="add_new_button">
             add new
           </Link>

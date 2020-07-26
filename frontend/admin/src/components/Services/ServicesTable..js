@@ -19,8 +19,14 @@ const ServicesTable = ({ services }) => {
             <th>category </th>
             <th>service </th>
             <th>active </th>
-            <th>amount </th>
             <th>action </th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>14</th>
+            <th>54</th>
+            <th>30</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -37,7 +43,6 @@ const ServicesTable = ({ services }) => {
                   </label>
                 </div>
               </td>
-              <td>AED 120 </td>
               <Dropdown as="td">
                 <Dropdown.Toggle as="a" className="dv_everytable_action">
                   <MoreVertical />
@@ -64,8 +69,7 @@ ServicesTable.propTypes = {
       type: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      active: PropTypes.bool.isRequired,
-      price: PropTypes.number.isRequired
+      active: PropTypes.bool.isRequired
     })
   ).isRequired
 };
