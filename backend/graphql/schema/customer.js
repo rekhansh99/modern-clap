@@ -7,5 +7,7 @@ type Customer {
   completedRequests: [Request!]!
   cancelledRequests: [Request!]!
   reviews: [Review!]!
+  createdAt: String
+  updatedAt: String
 }
 `;

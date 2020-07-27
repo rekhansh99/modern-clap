@@ -7,6 +7,8 @@ type Review {
   behaviourRating: Int!
   overallRating: Int!
   message: String
+  createdAt: String
+  updatedAt: String
 }
 
 input ReviewInput {

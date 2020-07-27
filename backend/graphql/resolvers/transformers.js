@@ -23,7 +23,9 @@ exports.transformCustomer = customer => {
     pendingRequests: () => this.requests(customer.pendingRequests),
     completedRequests: () => this.requests(customer.completedRequests),
     cancelledRequests: () => this.requests(customer.cancelledRequests),
-    reviews: () => this.reviews(customer.reviews)
+    reviews: () => this.reviews(customer.reviews),
+    createdAt: customer.createdAt.toISOString(),
+    updatedAt: customer.updatedAt.toISOString()
   };
 };
 
@@ -32,7 +34,9 @@ exports.transformProvider = provider => {
     ...provider._doc,
     _id: provider.id,
     password: null,
-    businessCategory: () => this.category(provider._doc.businessCategory)
+    businessCategory: () => this.category(provider._doc.businessCategory),
+    createdAt: provider.createdAt.toISOString(),
+    updatedAt: provider.updatedAt.toISOString()
   };
 };
 
@@ -52,7 +56,9 @@ exports.transformRequest = async request => {
     }),
     provider: async () => ({
       shopName: (await this.provider(request.provider)).shopName
-    })
+    }),
+    createdAt: request.createdAt.toISOString(),
+    updatedAt: request.updatedAt.toISOString()
   };
 };
 
@@ -60,7 +66,9 @@ exports.transformReview = review => {
   return {
     ...review._doc,
     _id: review.id,
-    request: () => this.request(review.request)
+    request: () => this.request(review.request),
+    createdAt: review.createdAt.toISOString(),
+    updatedAt: review.updatedAt.toISOString()
   };
 };
 
@@ -77,7 +85,9 @@ exports.transformStaff = staff => {
   return {
     ...staff._doc,
     _id: staff.id,
-    reviews: () => this.reviews(staff.reviews)
+    reviews: () => this.reviews(staff.reviews),
+    createdAt: staff.createdAt.toISOString(),
+    updatedAt: staff.updatedAt.toISOString()
   };
 };
 

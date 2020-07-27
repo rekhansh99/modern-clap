@@ -18,6 +18,8 @@ type Provider {
   pincode: String!
   address: String!
   area:  String!
+  createdAt: String
+  updatedAt: String
 }
 
 input RegisterProviderInput {

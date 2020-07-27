@@ -11,6 +11,8 @@ type Staff {
   certificaties: [String!]!
   businessCategories: [String!]!
   reviews: [Review!]!
+  createdAt: String
+  updatedAt: String
 }
 
 type Permissions {
