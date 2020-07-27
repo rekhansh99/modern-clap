@@ -59,9 +59,9 @@ exports.transformRequest = async request => {
       service: s.service.toString(),
       staffsAssigned: s.staffsAssigned.map(id => id.toString())
     })),
-    reviewId: request.review.toString(),
-    customerId: request.customer.toString(),
-    providerId: request.provider.toString(),
+    reviewId: request.review && request.review.toString(),
+    customerId: request.customer && request.customer.toString(),
+    providerId: request.provider && request.provider.toString(),
     services: () =>
       request.services.map(s => ({
         service: () => this.service(s.service),
@@ -84,7 +84,7 @@ exports.transformReview = review => {
     ...review._doc,
     __typename: 'Review',
     _id: review.id,
-    requestId: review.request.toString(),
+    requestId: review.request && review.request.toString(),
     request: () => this.request(review.request),
     createdAt: review.createdAt.toISOString(),
     updatedAt: review.updatedAt.toISOString()
@@ -96,8 +96,8 @@ exports.transformService = service => {
     ...service._doc,
     __typename: 'Service',
     _id: service.id,
-    categoryId: service.category.toString(),
-    providerId: service.provider.toString(),
+    categoryId: service.category && service.category.toString(),
+    providerId: service.provider && service.provider.toString(),
     category: () => this.category(service._doc.category),
     provider: () => this.provider(service._doc.provider)
   };
