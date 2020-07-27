@@ -38,8 +38,8 @@ const Blogs = () => {
     }
   ];
 
-  const blogsJSX = blogs.map(blog => (
-    <Col key={blog.heading} xs={12} sm={6} md={4}>
+  const blogsJSX = blogs.map((blog, index) => (
+    <Col key={index} xs={12} sm={6} md={4}>
       <BlogCard
         heading={blog.heading}
         desc={blog.desc}

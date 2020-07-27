@@ -116,8 +116,8 @@ const Reviews = () => {
     </li>
   ));
 
-  const reviewsJSX = reviews.filter(filter).map(review => (
-    <Col className="p-0" key={review.name} xs={12}>
+  const reviewsJSX = reviews.filter(filter).map((review, index) => (
+    <Col className="p-0" key={index} xs={12}>
       <ReviewCard
         name={review.name}
         serviceName={review.serviceName}

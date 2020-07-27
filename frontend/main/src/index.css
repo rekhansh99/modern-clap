@@ -2493,6 +2493,7 @@ div#resheduletime:before {
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
+  top: 0;
 }
 .dropdown.dv_more_seller_information {
   position: absolute;

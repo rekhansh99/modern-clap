@@ -50,9 +50,9 @@ const MyReviews = () => {
 
   const active = useLocation().hash || '#completed';
 
-  const completedReviewsJSX = completedReviews.map(review => (
+  const completedReviewsJSX = completedReviews.map((review, index) => (
     <ReviewCard
-      key={review.name}
+      key={index}
       name={review.name}
       serviceName={review.serviceName}
       reviewerName={review.reviewerName}

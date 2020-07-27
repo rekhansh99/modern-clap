@@ -24,8 +24,8 @@ const Careers = () => {
           <Container>
             <div className="dv_career_container">
               <label className="dv_career_section">Personal Details </label>
-              <Form.Control as="select" className="dv_careers_form_input">
-                <option value>Job title</option>
+              <Form.Control as="select" className="dv_careers_form_input" defaultValue="">
+                <option value="" hidden disabled>Job title</option>
                 <option value="Fresher">Fresher</option>
                 <option value="Jr. Asp.net Developer">
                   Jr. Asp.net Developer (0.6 to 3 year)
@@ -121,11 +121,11 @@ const Careers = () => {
                 className="dv_careers_form_input"
                 placeholder="City"
               />
-              <Form.Control as="select" className="dv_careers_form_input">
-                <option value>Martial Status </option>
-                <option>Married </option>
-                <option>unmarried </option>
-                <option>Divorced </option>
+              <Form.Control as="select" className="dv_careers_form_input" defaultValue="">
+                <option value="">Martial Status </option>
+                <option value="Married">Married </option>
+                <option value="unmarried">unmarried </option>
+                <option value="Divorced">Divorced </option>
               </Form.Control>
               <label className="dv_career_section">Academic Details </label>
               <Form.Control
@@ -164,8 +164,8 @@ const Careers = () => {
                 placeholder="Other Details"
               />
               <label className="dv_career_section">Experience Details </label>
-              <Form.Control as="select" className="dv_careers_form_input">
-                <option value selected>
+              <Form.Control as="select" className="dv_careers_form_input" defaultValue="">
+                <option value="" hidden disabled>
                   Total Experice
                 </option>
                 <option value="Fresher">Fresher</option>
@@ -181,8 +181,8 @@ const Careers = () => {
                 <option value="9 year">9 year</option>
                 <option value="10+ year">10 year</option>
               </Form.Control>
-              <Form.Control as="select" className="dv_careers_form_input">
-                <option value>Notice Period </option>
+              <Form.Control as="select" className="dv_careers_form_input" defaultValue="">
+                <option value="" hidden disabled>Notice Period </option>
                 <option value="Immediate">Immediate</option>
                 <option value="1 week">1 week</option>
                 <option value="1 months">1 month</option>

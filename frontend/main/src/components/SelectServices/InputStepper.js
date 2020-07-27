@@ -16,7 +16,7 @@ const InputStepper = ({ value, onChange }) => {
       >
         <Minus size={24} />
       </button>
-      <FormControl type="text" className="dv_input_qty" value={value} />
+      <FormControl type="text" className="dv_input_qty" value={value} readOnly />
       <button
         type="button"
         className="btn btn-default dv_plus_minusbtn"

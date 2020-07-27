@@ -20,6 +20,7 @@ import MobileSeach from './pages/MobileSearch';
 import MyReviews from './pages/MyReviews';
 
 function App() {
+  console.log('test');
   return (
     // eslint-disable-next-line no-undef
     <Router basename={process.env.PUBLIC_URL}>
