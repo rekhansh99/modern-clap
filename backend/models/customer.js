@@ -3,13 +3,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const customerSchema = new Schema({
-  name: {
-    type: String
-  },
+  name: String,
+  email: String,
+  avatar: String,
   mobile: {
     type: String,
     required: true
   },
+  addresses: [
+    {
+      flatNo: String,
+      buildingName: String,
+      area: String,
+      landmark: String,
+      POBox: String,
+      type: {
+        type: String,
+        enum: ['home', 'work', 'other']
+      }
+    }
+  ],
   otp: String,
   otpSent: Boolean,
   otpTime: Date,
