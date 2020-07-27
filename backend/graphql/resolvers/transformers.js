@@ -13,6 +13,7 @@ exports.transformCategory = category => {
     ...category._doc,
     __typename: 'Category',
     _id: category.id,
+    serviceIds: category.services.map(id => id.toString()),
     services: () => this.services(category._doc.services)
   };
 };
@@ -22,10 +23,16 @@ exports.transformCustomer = customer => {
     __typename: 'Customer',
     _id: customer.id,
     name: customer.name,
+    pendingRequestIds: customer.pendingRequests.map(id => id.toString()),
+    completedRequestIds: customer.completedRequests.map(id => id.toString()),
+    cancelledRequestIds: customer.cancelledRequests.map(id => id.toString()),
+    reviewIds: customer.reviews.map(id => id.toString()),
     pendingRequests: () => this.requests(customer.pendingRequests),
     completedRequests: () => this.requests(customer.completedRequests),
     cancelledRequests: () => this.requests(customer.cancelledRequests),
-    reviews: () => this.reviews(customer.reviews)
+    reviews: () => this.reviews(customer.reviews),
+    createdAt: customer.createdAt.toISOString(),
+    updatedAt: customer.updatedAt.toISOString()
   };
 };
 
@@ -35,7 +42,10 @@ exports.transformProvider = provider => {
     __typename: 'Provider',
     _id: provider.id,
     password: null,
-    businessCategory: () => this.category(provider._doc.businessCategory)
+    businessCategoryId: provider.businessCategory.toString(),
+    businessCategory: () => this.category(provider._doc.businessCategory),
+    createdAt: provider.createdAt.toISOString(),
+    updatedAt: provider.updatedAt.toISOString()
   };
 };
 
@@ -45,6 +55,13 @@ exports.transformRequest = async request => {
     __typename: 'Request',
     _id: request.id || request._id.toString(),
     time: request.time.toISOString(),
+    serviceIds: request.services.map(s => ({
+      service: s.service.toString(),
+      staffsAssigned: s.staffsAssigned.map(id => id.toString())
+    })),
+    reviewId: request.review.toString(),
+    customerId: request.customer.toString(),
+    providerId: request.provider.toString(),
     services: () =>
       request.services.map(s => ({
         service: () => this.service(s.service),
@@ -56,7 +73,9 @@ exports.transformRequest = async request => {
     }),
     provider: async () => ({
       shopName: (await this.provider(request.provider)).shopName
-    })
+    }),
+    createdAt: request.createdAt.toISOString(),
+    updatedAt: request.updatedAt.toISOString()
   };
 };
 
@@ -65,7 +84,10 @@ exports.transformReview = review => {
     ...review._doc,
     __typename: 'Review',
     _id: review.id,
-    request: () => this.request(review.request)
+    requestId: review.request.toString(),
+    request: () => this.request(review.request),
+    createdAt: review.createdAt.toISOString(),
+    updatedAt: review.updatedAt.toISOString()
   };
 };
 
@@ -74,6 +96,8 @@ exports.transformService = service => {
     ...service._doc,
     __typename: 'Service',
     _id: service.id,
+    categoryId: service.category.toString(),
+    providerId: service.provider.toString(),
     category: () => this.category(service._doc.category),
     provider: () => this.provider(service._doc.provider)
   };
@@ -84,7 +108,10 @@ exports.transformStaff = staff => {
     ...staff._doc,
     __typename: 'Staff',
     _id: staff.id,
-    reviews: () => this.reviews(staff.reviews)
+    reviewIds: staff.reviews.map(id => id.toString()),
+    reviews: () => this.reviews(staff.reviews),
+    createdAt: staff.createdAt.toISOString(),
+    updatedAt: staff.updatedAt.toISOString()
   };
 };
 

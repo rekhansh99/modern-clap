@@ -2,160 +2,163 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const providerSchema = new Schema({
-  ownerName: {
-    type: String,
-    required: true
-  },
-  ownerEmail: {
-    type: String,
-    required: true
-  },
-  ownerMobile: {
-    type: String,
-    required: true
-  },
-  ownerPhone: {
-    type: String
-  },
-  country: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  tradeLicenseNo: {
-    type: String,
-    required: true
-  },
-  tradeLicenseDate: {
-    type: Date,
-    required: true
-  },
-  tradeLicenseDoc: {
-    type: String,
-    required: true
-  },
-  businessCategory: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category'
-  },
-  shopName: {
-    type: String,
-    required: true
-  },
-  contactPersonName: String,
-  contactPersonMobile: String,
-  businessHours: {
-    mon: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+const providerSchema = new Schema(
+  {
+    ownerName: {
+      type: String,
+      required: true
     },
-    tue: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+    ownerEmail: {
+      type: String,
+      required: true
     },
-    wed: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+    ownerMobile: {
+      type: String,
+      required: true
     },
-    thu: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+    ownerPhone: {
+      type: String
     },
-    fri: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+    country: {
+      type: String,
+      required: true
     },
-    sat: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
+    password: {
+      type: String,
+      required: true
     },
-    sun: {
-      open: {
-        type: Number,
-        min: 0,
-        max: 24
-      },
-      close: {
-        type: Number,
-        min: 0,
-        max: 24
-      }
-    }
-  },
-  city: {
-    type: String,
-    required: true
-  },
-  pincode: {
-    type: String,
-    required: true
-  },
-  address: {
-    type: String,
-    required: true
-  },
-  area: {
-    type: String,
-    required: true
-  },
-  requests: [
-    {
+    tradeLicenseNo: {
+      type: String,
+      required: true
+    },
+    tradeLicenseDate: {
+      type: Date,
+      required: true
+    },
+    tradeLicenseDoc: {
+      type: String,
+      required: true
+    },
+    businessCategory: {
       type: Schema.Types.ObjectId,
-      ref: 'Request'
-    }
-  ]
-});
+      ref: 'Category'
+    },
+    shopName: {
+      type: String,
+      required: true
+    },
+    contactPersonName: String,
+    contactPersonMobile: String,
+    businessHours: {
+      mon: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      tue: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      wed: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      thu: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      fri: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      sat: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      },
+      sun: {
+        open: {
+          type: Number,
+          min: 0,
+          max: 24
+        },
+        close: {
+          type: Number,
+          min: 0,
+          max: 24
+        }
+      }
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    pincode: {
+      type: String,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
+    },
+    area: {
+      type: String,
+      required: true
+    },
+    requests: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Request'
+      }
+    ]
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model('Provider', providerSchema);

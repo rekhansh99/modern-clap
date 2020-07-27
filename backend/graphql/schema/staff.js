@@ -10,7 +10,10 @@ type Staff {
   password: String!
   certificaties: [String!]!
   businessCategories: [String!]!
+  reviewIds: [ID!]!
   reviews: [Review!]!
+  createdAt: String
+  updatedAt: String
 }
 
 type Permissions {

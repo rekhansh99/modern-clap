@@ -10,6 +10,7 @@ type Provider {
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
+  businessCategoryId: Category!
   businessCategory: Category!
   shopName: String!
   contactPersonName: String
@@ -18,6 +19,8 @@ type Provider {
   pincode: String!
   address: String!
   area:  String!
+  createdAt: String
+  updatedAt: String
 }
 
 input RegisterProviderInput {

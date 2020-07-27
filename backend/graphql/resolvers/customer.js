@@ -35,7 +35,7 @@ module.exports = {
       for (let i = 0; i < 6; i++) {
         otp += Math.floor(Math.random() * 10);
       }
-      console.log(otp);
+      console.log('OTP: ' + otp);
       // `Your OTP from Modern Clap is ${otp}` // Send this string in production (Only template string works now)
       const params = {
         sender: process.env.SE_SENDER,
@@ -92,7 +92,6 @@ module.exports = {
         role: 'customer',
         exp: Math.floor(Date.now() / 1000) + jwtValidity
       },
-      // eslint-disable-next-line no-undef
       process.env.JWT_SECRET
     );
     ctx.res.cookie('jwt', token, {

@@ -1,11 +1,15 @@
 const Review = require('../../models/review');
 const Customer = require('../../models/customer');
-const { transformReview } = require('./transformers');
+const { transformReview, reviews } = require('./transformers');
 
 module.exports = {
   reviews: async args => {
     if (args.customer) {
-      // TODO
+      const customer = await Customer.findById(args.customer);
+      return reviews(customer.reviews);
+    } else {
+      const reviews = await Review.find();
+      return reviews.map(transformReview);
     }
   },
 
