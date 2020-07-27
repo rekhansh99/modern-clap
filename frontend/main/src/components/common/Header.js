@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { gql, useQuery } from '@apollo/client';
 
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -38,36 +39,34 @@ const items = [
   'Task'
 ];
 
-class Header extends React.Component {
-  state = {
-    fixed: false,
-    menuOpen: false
+const IS_LOGGED_IN = gql`
+  query {
+    isLoggedIn @client
+  }
+`;
+
+const Header = props => {
+  const [fixed, setFixed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
+  const handleScroll = () => {
+    if (window.scrollY >= 100 ? !fixed : fixed) setFixed(window.scrollY >= 100);
   };
 
-  componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll);
-  };
+  const { data } = useQuery(IS_LOGGED_IN);
 
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll);
-  };
-
-  handleScroll = () => {
-    if (window.scrollY >= 100 ? !this.state.fixed : this.state.fixed)
-      this.setState({ fixed: window.scrollY >= 100 });
-  };
-
-  showMenu = show => {
-    this.setState({ menuOpen: show });
-  };
-
-  render = () => (
-    <header className={this.props.headerClassName}>
+  return (
+    <header className={props.headerClassName}>
       <Navbar
         expand="sm"
         variant="none"
         className={classnames('dv_fixed_navbar', {
-          dv_fixed_menu: this.state.fixed
+          dv_fixed_menu: fixed
         })}
       >
         <Container>
@@ -75,7 +74,7 @@ class Header extends React.Component {
           <Navbar.Brand
             as={Link}
             className={classnames('dv_logo_icon', {
-              dv_menu_scroll_style: this.state.fixed
+              dv_menu_scroll_style: fixed
             })}
             to="/"
           >
@@ -95,14 +94,14 @@ class Header extends React.Component {
                 as={Link}
                 to="#"
                 className={classnames({
-                  dv_menu_scroll_style: this.state.fixed
+                  dv_menu_scroll_style: fixed
                 })}
                 onClick={e => {
                   e.preventDefault();
-                  this.showMenu(true);
+                  setMenuOpen(true);
                 }}
               >
-                Login <Menu size={24} />
+                {!(data && data.isLoggedIn) && 'Login'} <Menu size={24} />
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -110,23 +109,26 @@ class Header extends React.Component {
       </Navbar>
       <div className="dv_heading_search">
         <Container>
-          <h1 className="dv_home_Service_content">{this.props.title}</h1>
-          <p className="dv_home_Service_content_p">{this.props.desc}</p>
-          {this.props.bookNow ? (
+          <h1 className="dv_home_Service_content">{props.title}</h1>
+          <p className="dv_home_Service_content_p">{props.desc}</p>
+          {props.bookNow ? (
             <Link to="/book-now" className="dv_book_now_service">
               book now
             </Link>
           ) : (
             ''
           )}
-          {this.props.search ? <SearchBar items={items} /> : ''}
+          {props.search ? <SearchBar items={items} /> : ''}
         </Container>
       </div>
 
-      <MenuModal open={this.state.menuOpen} showMenu={this.showMenu} />
+      <MenuModal
+        open={menuOpen}
+        showMenu={setMenuOpen}
+      />
     </header>
   );
-}
+};
 
 Header.propTypes = {
   headerClassName: PropTypes.string.isRequired,

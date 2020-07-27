@@ -11,6 +11,7 @@ const Staff = require('../../models/staff');
 exports.transformCategory = category => {
   return {
     ...category._doc,
+    __typename: 'Category',
     _id: category.id,
     services: () => this.services(category._doc.services)
   };
@@ -18,6 +19,7 @@ exports.transformCategory = category => {
 
 exports.transformCustomer = customer => {
   return {
+    __typename: 'Customer',
     _id: customer.id,
     name: customer.name,
     pendingRequests: () => this.requests(customer.pendingRequests),
@@ -30,6 +32,7 @@ exports.transformCustomer = customer => {
 exports.transformProvider = provider => {
   return {
     ...provider._doc,
+    __typename: 'Provider',
     _id: provider.id,
     password: null,
     businessCategory: () => this.category(provider._doc.businessCategory)
@@ -39,6 +42,7 @@ exports.transformProvider = provider => {
 exports.transformRequest = async request => {
   return {
     ...(request._doc || request),
+    __typename: 'Request',
     _id: request.id || request._id.toString(),
     time: request.time.toISOString(),
     services: () =>
@@ -59,6 +63,7 @@ exports.transformRequest = async request => {
 exports.transformReview = review => {
   return {
     ...review._doc,
+    __typename: 'Review',
     _id: review.id,
     request: () => this.request(review.request)
   };
@@ -67,6 +72,7 @@ exports.transformReview = review => {
 exports.transformService = service => {
   return {
     ...service._doc,
+    __typename: 'Service',
     _id: service.id,
     category: () => this.category(service._doc.category),
     provider: () => this.provider(service._doc.provider)
@@ -76,6 +82,7 @@ exports.transformService = service => {
 exports.transformStaff = staff => {
   return {
     ...staff._doc,
+    __typename: 'Staff',
     _id: staff.id,
     reviews: () => this.reviews(staff.reviews)
   };

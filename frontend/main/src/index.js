@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, ApolloProvider } from '@apollo/client';
 import config from './config';
+import { cache } from './app/cache';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -11,7 +12,8 @@ import './responsive.css';
 
 const client = new ApolloClient({
   uri: config.BACKEND_URL + '/graphql',
-  cache: new InMemoryCache()
+  cache: cache,
+  credentials: 'include'
 });
 
 ReactDOM.render(

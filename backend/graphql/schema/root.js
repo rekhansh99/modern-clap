@@ -23,7 +23,10 @@ ${reviewSchema}
 ${serviceSchema}
 ${staffSchema}
 
+union User = Provider | Customer
+
 type RootQuery {
+  isAuthenticated: User!
   categories: [Category!]!
   customers: [Customer!]!
   providers: [Provider!]!
@@ -51,6 +54,7 @@ type RootMutation {
   loginCustomer(mobile: String!, otp: String!): Customer!
   registerProvider(provider: RegisterProviderInput!): Provider!
   loginProvider(email: String!, password: String!): Provider!
+  logout: Boolean!
   updateProvider(newData: UpdateProviderInput): Provider!
 }
 

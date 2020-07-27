@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { gql, useQuery } from '@apollo/client';
 
 import AboutUs from './pages/static/AboutUs';
 import Blogs from './pages/Blogs';
@@ -19,8 +20,29 @@ import ScrollToTop from './components/common/ScrollToTop';
 import MobileSeach from './pages/MobileSearch';
 import MyReviews from './pages/MyReviews';
 
+import { setLoggedIn, currentUser } from './app/cache';
+
+const IS_LOGGED_IN = gql`
+  query IsLoggedIn {
+    isAuthenticated {
+      __typename
+      ...on Customer {
+        _id
+        name
+      }
+    }
+  }
+`;
+
 function App() {
-  console.log('test');
+  const { loading, data } = useQuery(IS_LOGGED_IN);
+
+  if (!loading && data) {
+    console.log(data.isAuthenticated);
+    setLoggedIn(true);
+    currentUser(data.isAuthenticated);
+  }
+
   return (
     // eslint-disable-next-line no-undef
     <Router basename={process.env.PUBLIC_URL}>

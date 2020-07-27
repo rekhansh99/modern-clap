@@ -35,6 +35,7 @@ module.exports = {
       for (let i = 0; i < 6; i++) {
         otp += Math.floor(Math.random() * 10);
       }
+      console.log(otp);
       // `Your OTP from Modern Clap is ${otp}` // Send this string in production (Only template string works now)
       const params = {
         sender: process.env.SE_SENDER,
