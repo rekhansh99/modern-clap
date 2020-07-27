@@ -6,14 +6,23 @@ type RequestList {
 
 type Request {
   _id: ID!
+  serviceIds: [ServiceRequestId!]!
   services: [ServiceRequest!]!
   time: String!
   location: Location!
   payment: Payment!
   status: String!
+  reviewId: ID
+  customerId: ID!
+  providerId: ID!
   review: Review
   customer: Customer!
   provider: Provider!
+}
+
+type ServiceRequestId {
+  service: ID!
+  staffsAssigned: [ID!]!
 }
 
 type ServiceRequest {

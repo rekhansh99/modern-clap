@@ -1,6 +1,7 @@
 module.exports = `
 type Review {
   _id: ID!
+  requestId: ID!
   request: Request!
   toolsRating: Int!
   workRating: Int!

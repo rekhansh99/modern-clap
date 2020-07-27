@@ -10,6 +10,7 @@ type Provider {
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
+  businessCategoryId: Category!
   businessCategory: Category!
   shopName: String!
   contactPersonName: String

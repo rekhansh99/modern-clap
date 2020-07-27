@@ -2,8 +2,10 @@ module.exports = `
 type Service {
   _id: ID!
   name: String!
+  categoryId: ID!
   category: Category!
   faqs: [FAQ!]!
+  providerId: ID!
   providers: [Provider!]!
 }
 
