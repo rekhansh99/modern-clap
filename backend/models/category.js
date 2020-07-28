@@ -8,6 +8,11 @@ const categorySchema = new Schema({
     required: true
   },
   icon: String,
+  type: {
+    type: Schema.Types.ObjectId,
+    ref: 'Type',
+    required: true
+  },
   services: [
     {
       type: Schema.Types.ObjectId,
