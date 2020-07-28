@@ -6,6 +6,7 @@ const requestResolver = require('./request');
 const reviewResolver = require('./review');
 const serviceResolver = require('./service');
 const staffResolver = require('./staff');
+const typeResolver = require('./type');
 
 module.exports = {
   ...authResolver,
@@ -15,5 +16,6 @@ module.exports = {
   ...requestResolver,
   ...reviewResolver,
   ...serviceResolver,
-  ...staffResolver
+  ...staffResolver,
+  ...typeResolver
 };

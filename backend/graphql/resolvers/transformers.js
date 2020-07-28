@@ -7,12 +7,15 @@ const Request = require('../../models/request');
 const Review = require('../../models/review');
 const Service = require('../../models/service');
 const Staff = require('../../models/staff');
+const Type = require('../../models/type');
 
 exports.transformCategory = category => {
   return {
     ...category._doc,
     __typename: 'Category',
     _id: category.id,
+    typeId: category.type.toString(),
+    type: () => this.type(category.type),
     serviceIds: category.services.map(id => id.toString()),
     services: () => this.services(category._doc.services)
   };
@@ -115,6 +118,16 @@ exports.transformStaff = staff => {
   };
 };
 
+exports.transformType = type => {
+  return {
+    ...type._doc,
+    __typename: 'Type',
+    _id: type.id,
+    categoryIds: type.categories.map(id => id.toString()),
+    categories: () => this.categories(type.categories)
+  };
+};
+
 exports.category = async categoryId => {
   const category = await Category.findById(categoryId);
   return this.transformCategory(category);
@@ -122,9 +135,7 @@ exports.category = async categoryId => {
 
 exports.categories = async categoryIds => {
   const categories = await Category.find({ _id: { $in: categoryIds } });
-  return categories.map(category => {
-    return this.transformCategory(category);
-  });
+  return categories.map(this.transformCategory);
 };
 
 exports.customer = async customerId => {
@@ -134,9 +145,7 @@ exports.customer = async customerId => {
 
 exports.customers = async customerIds => {
   const customers = await Customer.find({ _id: { $in: customerIds } });
-  return customers.map(customer => {
-    return this.transformCustomer(customer);
-  });
+  return customers.map(this.transformCustomer);
 };
 
 exports.provider = async providerId => {
@@ -146,9 +155,7 @@ exports.provider = async providerId => {
 
 exports.providers = async providerIds => {
   const providers = await Provider.find({ _id: { $in: providerIds } });
-  return providers.map(provider => {
-    return this.transformProvider(provider);
-  });
+  return providers.map(this.transformProvider);
 };
 
 exports.request = async requestId => {
@@ -158,9 +165,7 @@ exports.request = async requestId => {
 
 exports.requests = async requestIds => {
   const requests = await Request.find({ _id: { $in: requestIds } });
-  return requests.map(request => {
-    return this.transformRequest(request);
-  });
+  return requests.map(this.transformReview);
 };
 
 exports.review = async reviewId => {
@@ -170,9 +175,7 @@ exports.review = async reviewId => {
 
 exports.reviews = async reviewIds => {
   const reviews = await Review.find({ _id: { $in: reviewIds } });
-  return reviews.map(review => {
-    return this.transformReview(review);
-  });
+  return reviews.map(this.transformReview);
 };
 
 exports.service = async serviceId => {
@@ -182,9 +185,7 @@ exports.service = async serviceId => {
 
 exports.services = async serviceIds => {
   const services = await Service.find({ _id: { $in: serviceIds } });
-  return services.map(service => {
-    return this.transformService(service);
-  });
+  return services.map(this.transformService);
 };
 
 exports.staff = async staffId => {
@@ -194,7 +195,15 @@ exports.staff = async staffId => {
 
 exports.staffs = async staffIds => {
   const staffs = await Staff.find({ _id: { $in: staffIds } });
-  return staffs.map(staff => {
-    return this.transformStaff(staff);
-  });
+  return staffs.map(this.transformStaff);
+};
+
+exports.type = async typeId => {
+  const type = await Type.findById(typeId);
+  return this.transformType(type);
+};
+
+exports.types = async typeIds => {
+  const types = await Type.find({ _id: { $in: typeIds } });
+  return types.map(this.transformType);
 };
