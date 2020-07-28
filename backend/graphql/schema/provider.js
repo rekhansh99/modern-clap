@@ -10,8 +10,9 @@ type Provider {
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
-  businessCategoryId: Category!
-  businessCategory: Category!
+  businessCategoryIds: [ID!]!
+  businessCategories: [Category!]!
+  services: [ServiceProvider!]!
   shopName: String!
   contactPersonName: String
   contactPersonMobile: String
@@ -33,8 +34,8 @@ input RegisterProviderInput {
   tradeLicenseNo: String!
   tradeLicenseDate: String!
   tradeLicenseDoc: String!
-  businessCategory: ID!
   shopName: String!
+  businessCategories: [ID!]!
   contactPersonName: String
   contactPersonMobile: String
   city: String!
@@ -53,7 +54,8 @@ input UpdateProviderInput {
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
-  businessCategory: ID
+  businessCategories: [ID!]!
+  services: [ServiceProvider!]!
   shopName: String
   contactPersonName: String
   contactPersonMobile: String
@@ -62,4 +64,13 @@ input UpdateProviderInput {
   address: String
   area:  String
 }
+
+type ServiceProvider {
+  service: Service!
+  serviceId: ID!
+  cutPrice: Float!
+  salePrice: Float!
+  active: Boolean!
+}
+
 `;

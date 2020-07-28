@@ -39,10 +39,34 @@ const providerSchema = new Schema(
       type: String,
       required: true
     },
-    businessCategory: {
-      type: Schema.Types.ObjectId,
-      ref: 'Category'
-    },
+    businessCategories: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
+      }
+    ],
+    services: [
+      {
+        service: {
+          type: Schema.Types.ObjectId,
+          ref: 'Service',
+          required: true
+        },
+        cutPrice: {
+          type: Number,
+          required: true
+        },
+        salePrice: {
+          type: Number,
+          required: true
+        },
+        active: {
+          type: Boolean,
+          required: true,
+          default: false
+        }
+      }
+    ],
     shopName: {
       type: String,
       required: true

@@ -45,8 +45,13 @@ exports.transformProvider = provider => {
     __typename: 'Provider',
     _id: provider.id,
     password: null,
-    businessCategoryId: provider.businessCategory.toString(),
-    businessCategory: () => this.category(provider._doc.businessCategory),
+    businessCategoryIds: provider.businessCategories.map(id => id.toString()),
+    businessCategories: () => this.categories(provider._doc.businessCategories),
+    services: provider.services.map(s => ({
+      ...s,
+      service: () => this.service(s.service),
+      serviceId: s.service.toString(),
+    })),
     createdAt: provider.createdAt.toISOString(),
     updatedAt: provider.updatedAt.toISOString()
   };
