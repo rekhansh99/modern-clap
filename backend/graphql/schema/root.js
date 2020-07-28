@@ -7,6 +7,7 @@ const requestSchema = require('./request');
 const reviewSchema = require('./review');
 const serviceSchema = require('./service');
 const staffSchema = require('./staff');
+const typeSchema = require('./type');
 
 module.exports = buildSchema(`
 type Pagination {
@@ -22,6 +23,7 @@ ${requestSchema}
 ${reviewSchema}
 ${serviceSchema}
 ${staffSchema}
+${typeSchema}
 
 union User = Provider | Customer
 
@@ -33,6 +35,7 @@ type RootQuery {
   requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): RequestList!
   reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
+  types: [Type!]!
   category(name: String!): Category!
   customer(id: ID, mobile: String): Customer!
   provider(id: ID!): Provider!
@@ -40,9 +43,11 @@ type RootQuery {
   review(requestId: ID!): Review!
   service(id: ID!): Service!
   staff(id: ID!): Staff!
+  type(id: ID!): Type!
 }
 
 type RootMutation {
+  createType(type: TypeInput!): Type!
   createCategory(category: CategoryInput!): Category!
   createService(service: ServiceInput!): Service!
   bookRequest(request: RequestInput): Request!
