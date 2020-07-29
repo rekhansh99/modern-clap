@@ -6,7 +6,6 @@ type Provider {
   ownerMobile: String
   ownerPhone: String
   country: String!
-  password: String
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String

@@ -1,75 +1,39 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 
 import { Container } from 'react-bootstrap';
 
 import NotificationCard from '../components/Notifications/NotificationCard';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 
+const GET_NOTIFICATIONS = gql`
+  query {
+    notifications {
+      data {
+        type
+        requestId
+        message
+        seen
+      }
+      count
+    }
+  }
+`;
+
 const Notifications = () => {
   document.title = 'Notifications - Modernclap';
 
-  const unseenNotification = [
-    {
-      orderNo: 'MD12345',
-      message: 'Today 04:00 PM Appointment has shedule with you.',
-      type: 'info'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'New Request has received..!',
-      type: 'info'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request cancelled by customer',
-      type: 'cancel'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request has been reshduled.',
-      type: 'time'
-    },
-    { orderNo: 'MD12345', message: 'New Request has received..!', type: 'info' }
-  ];
+  const { data } = useQuery(GET_NOTIFICATIONS, { pollInterval: 2000 });
 
-  const seenNotification = [
-    {
-      orderNo: 'MD12345',
-      message: 'New Request has received..!',
-      type: 'info'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request cancelled by customer',
-      type: 'cancel'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request has been reshduled.',
-      type: 'time'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'New Request has received..!',
-      type: 'info'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'New Request has received..!',
-      type: 'info'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request cancelled by customer',
-      type: 'cancel'
-    },
-    {
-      orderNo: 'MD12345',
-      message: 'Request has been reshduled.',
-      type: 'time'
-    },
-    { orderNo: 'MD12345', message: 'New Request has received..!', type: 'info' }
-  ];
+  const unseenNotification = [],
+    seenNotification = [];
+
+  if (data) {
+    data.notifications.data.forEach(notification => {
+      if (notification.seen) seenNotification.push(notification);
+      else unseenNotification.push(notification);
+    });
+  }
 
   return (
     <Container fluid>

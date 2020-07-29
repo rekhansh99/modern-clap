@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { gql, useQuery } from '@apollo/client';
 
+import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { X } from 'react-feather';
 
+const NOTIFICATIONS = gql`
+  query NotificationCount {
+    notifications {
+      count
+    }
+  }
+`;
+
 const SideNav = ({ close }) => {
   const [reqMenu, setReqMenu] = useState(false);
+  const { data } = useQuery(NOTIFICATIONS, { pollInterval: 2000 });
 
   return (
     <div id="layoutSidenav_nav">
@@ -19,7 +29,12 @@ const SideNav = ({ close }) => {
               Dashboard
             </Nav.Link>
             <Nav.Link as={Link} to="/notifications">
-              Notification <span className="dv_pending_numbders">29</span>
+              Notification{' '}
+              {data && data.notifications.count && (
+                <span className="dv_pending_numbders">
+                  {data.notifications.count}
+                </span>
+              )}
             </Nav.Link>
             <Nav.Link as={Link} to="/inbox">
               Inbox <span className="dv_pending_numbders">12</span>
