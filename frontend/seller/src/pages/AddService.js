@@ -19,7 +19,7 @@ const GET_TYPES = gql`
 const AddService = () => {
   document.title = 'Add Service - Modernclap';
 
-  const { loading, error, data } = useQuery(GET_TYPES);
+  const { loading, error } = useQuery(GET_TYPES);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>An Error Occured</p>;

@@ -37,7 +37,7 @@ const ServicesTable = ({ services }) => {
                   </label>
                 </div>
               </td>
-              <td>AED 120 </td>
+              <td>AED {service.price || 10}</td>
               <Dropdown as="td">
                 <Dropdown.Toggle as="a" className="dv_everytable_action">
                   <MoreVertical />
