@@ -6,9 +6,23 @@ import SwitchBusiness from '../components/common/SwitchBusiness';
 import ServiceCard from '../components/AddService/ServiceCard';
 import SelectMasterForm from '../components/AddService/SelectMasterForm';
 import CategoryRequestForm from '../components/common/CategoryRequestForm';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_TYPES = gql`
+  query Types {
+    types {
+      name
+    }
+  }
+`;
 
 const AddService = () => {
   document.title = 'Add Service - Modernclap';
+
+  const { loading, error, data } = useQuery(GET_TYPES);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>An Error Occured</p>;
 
   return (
     <Container fluid>

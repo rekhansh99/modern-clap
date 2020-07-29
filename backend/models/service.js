@@ -7,10 +7,6 @@ const serviceSchema = new Schema({
     type: String,
     required: true
   },
-  type: {
-    type: String,
-    required: true
-  },
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
@@ -28,12 +24,10 @@ const serviceSchema = new Schema({
       }
     }
   ],
-  providers: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Provider'
-    }
-  ]
+  image: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = mongoose.model('Service', serviceSchema);
