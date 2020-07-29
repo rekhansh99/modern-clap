@@ -18,6 +18,12 @@ const categorySchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Service'
     }
+  ],
+  providers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Provider'
+    }
   ]
 });
 

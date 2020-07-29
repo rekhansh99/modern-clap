@@ -1,12 +1,13 @@
 module.exports = `
+scalar Upload
+
 type Service {
   _id: ID!
   name: String!
   categoryId: ID!
   category: Category!
   faqs: [FAQ!]!
-  providerId: ID!
-  providers: [Provider!]!
+  image: String!
 }
 
 type FAQ {
@@ -16,9 +17,9 @@ type FAQ {
 
 input ServiceInput {
   name: String!
-  category: String!
+  category: ID!
   faqs: [FAQInput!]
-  providers: [ID!]
+  image: Upload!
 }
 
 input FAQInput {

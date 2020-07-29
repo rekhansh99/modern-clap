@@ -1,4 +1,5 @@
 const Category = require('../../models/category');
+const Type = require('../../models/type');
 
 const { transformCategory } = require('./transformers');
 
@@ -14,16 +15,26 @@ module.exports = {
   },
 
   createCategory: async ({ category }) => {
-    const existingCategory = await Category.findOne({ name: category.name });
+    const existingCategory = await Category.findOne({
+      name: category.name,
+      type: category.typeId
+    });
+    if (existingCategory)
+      throw new Error('Category name already taken for this type!');
 
-    if (existingCategory) throw new Error('Category name taken!');
+    const type = await Type.findById(category.type);
+    if (!type) throw new Error('Type not found!');
 
     const newCategory = new Category({
-      name: category.name,
-      services: []
+      ...category,
+      services: [],
+      providers: []
     });
-
     const result = await newCategory.save();
+
+    type.categories.push(result.id);
+    await type.save();
+
     return transformCategory(result);
   }
 };
