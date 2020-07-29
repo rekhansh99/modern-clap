@@ -4,12 +4,19 @@ module.exports = {
 
     if (ctx.req.role === 'customer') return null;
 
-    return ctx.req.user.notifications
+    let count = 0;
+    const data = ctx.req.user.notifications
       .reverse()
       .slice(0, 20)
-      .map(notification => ({
-        ...notification._doc,
-        requestId: notification.requestId.toString()
-      }));
+      .map(notification => {
+        if (!notification.seen)
+          count++;
+        return {
+          ...notification._doc,
+          requestId: notification.requestId.toString()
+        }
+      });
+    
+    return { data, count };
   }
 };

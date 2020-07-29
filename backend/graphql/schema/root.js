@@ -46,7 +46,7 @@ type RootQuery {
   service(id: ID!): Service!
   staff(id: ID!): Staff!
   type(id: ID!): Type!
-  notifications: [Notification!]!
+  notifications: Notifications!
 }
 
 type RootMutation {

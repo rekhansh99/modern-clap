@@ -5,4 +5,9 @@ type Notification {
   message: String
   seen: Boolean
 }
+
+type Notifications {
+  data: [Notification!]!
+  count: Int!
+}
 `;

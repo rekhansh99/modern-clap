@@ -11,15 +11,17 @@ import SwitchBusinessModal from './SwitchBusinessModal';
 
 import { ReactComponent as LogoSVG } from '../../svgs/logo.svg';
 
+const NOTIFICATIONS = gql`
+  query NotificationCount {
+    notifications {
+      count
+    }
+  }
+`;
+
 const Header = ({ toggleSideNav }) => {
   const [switchBusinessModal, setSwitchBusinessModal] = useState(false);
-  const { data } = useQuery(gql`
-    query NotificationCount {
-      notifications {
-        count
-      }
-    }
-  `);
+  const { data } = useQuery(NOTIFICATIONS, { pollInterval: 2000 });
 
   return (
     <Navbar className="sb-topnav" variant="dark" bg="dark">
@@ -43,7 +45,9 @@ const Header = ({ toggleSideNav }) => {
             {data && data.notifications.count && (
               <>
                 <FontAwesomeIcon icon="bell" fixedWidth />
-                <span className="notification-dot">12</span>
+                <span className="notification-dot">
+                  {data.notifications.count}
+                </span>
               </>
             )}
           </Nav.Link>

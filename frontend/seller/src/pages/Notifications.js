@@ -9,10 +9,13 @@ import SwitchBusiness from '../components/common/SwitchBusiness';
 const GET_NOTIFICATIONS = gql`
   query {
     notifications {
-      type
-      requestId
-      message
-      seen
+      data {
+        type
+        requestId
+        message
+        seen
+      }
+      count
     }
   }
 `;
@@ -22,14 +25,13 @@ const Notifications = () => {
 
   const { data } = useQuery(GET_NOTIFICATIONS, { pollInterval: 2000 });
 
-  const unseenNotification = [], seenNotification = [];
+  const unseenNotification = [],
+    seenNotification = [];
 
   if (data) {
-    data.notifications.forEach(notification => {
-      if(notification.seen)
-        seenNotification.push(notification);
-      else
-        unseenNotification.push(notification);
+    data.notifications.data.forEach(notification => {
+      if (notification.seen) seenNotification.push(notification);
+      else unseenNotification.push(notification);
     });
   }
 
