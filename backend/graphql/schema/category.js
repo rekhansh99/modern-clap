@@ -7,11 +7,13 @@ type Category {
   type: Type!
   serviceIds: [ID!]!,
   services: [Service!]!
+  providerIds: [ID!]!
+  providers: [Provider!]!
 }
 
 input CategoryInput {
   name: String!
   icon: String
-  typeId: ID!
+  type: ID!
 }
 `;
