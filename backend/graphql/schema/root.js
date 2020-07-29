@@ -60,7 +60,7 @@ type RootMutation {
   registerProvider(provider: RegisterProviderInput!): Provider!
   loginProvider(email: String!, password: String!): Provider!
   logout: Boolean!
-  updateProvider(newData: UpdateProviderInput): Provider!
+  updateProvider(id: ID, newData: UpdateProviderInput): Provider!
 }
 
 schema {

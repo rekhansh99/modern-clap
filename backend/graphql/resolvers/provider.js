@@ -11,14 +11,21 @@ module.exports = {
     return providers.map(provider => transformProvider(provider));
   },
 
-  provider: args => {
-    return provider(args.id);
+  provider: (args, ctx) => {
+    if (!ctx.req.isAuth) throw new Error('Not authenticated!');
+    if (args.id) {
+      return provider(args.id);
+    } else if (ctx.req.role === 'provider' && ctx.req.uid) {
+      return provider(ctx.req.uid);
+    } else {
+      throw new Error('Either pass a provider ID or login');
+    }
   },
 
   registerProvider: async args => {
     const hashedPassword = await bcrypt.hash(args.provider.password, 12);
     const validCategory = await Category.exists({
-      _id: args.provider.businessCategory
+      _id: args.provider.businessCategories[0]
     });
 
     if (!validCategory) throw new Error('Invalid Category');
@@ -61,7 +68,17 @@ module.exports = {
     return transformProvider(provider);
   },
 
-  updateProvider: () => {
-    // TODO
+  updateProvider: async (args, ctx) => {
+    if (!ctx.req.isAuth) throw new Error('Not authenticated!');
+    let providerId = ctx.req.uid;
+    if (args.id) {
+      providerId = args.id;
+    }
+    const provider = await Provider.findById(providerId);
+    Object.keys(args.newData).map(key => {
+      provider[key] = args.newData[key];
+    });
+    await provider.save();
+    return transformProvider(provider);
   }
 };
