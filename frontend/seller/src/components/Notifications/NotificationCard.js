@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { Bell, XCircle, Clock } from 'react-feather';
 
-const NotificationCard = ({ type, orderNo, message }) => {
+const NotificationCard = ({ type, requestId, message }) => {
   let icon;
 
   switch (type) {
@@ -25,7 +25,7 @@ const NotificationCard = ({ type, orderNo, message }) => {
     <Card className="mb-3">
       <div className="dv_notification_to_details">
         {icon}
-        <Link to={'/request/' + orderNo}>{orderNo}</Link> {message}
+        <Link to={'/request/' + requestId}>{requestId}</Link> {message}
       </div>
     </Card>
   );
@@ -33,7 +33,7 @@ const NotificationCard = ({ type, orderNo, message }) => {
 
 NotificationCard.propTypes = {
   type: PropTypes.string.isRequired,
-  orderNo: PropTypes.string.isRequired,
+  requestId: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 };
 

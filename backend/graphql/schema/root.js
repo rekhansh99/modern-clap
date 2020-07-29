@@ -8,6 +8,7 @@ const reviewSchema = require('./review');
 const serviceSchema = require('./service');
 const staffSchema = require('./staff');
 const typeSchema = require('./type');
+const notificationSchema = require('./notification');
 
 module.exports = buildSchema(`
 type Pagination {
@@ -24,6 +25,7 @@ ${reviewSchema}
 ${serviceSchema}
 ${staffSchema}
 ${typeSchema}
+${notificationSchema}
 
 union User = Provider | Customer
 
@@ -44,6 +46,7 @@ type RootQuery {
   service(id: ID!): Service!
   staff(id: ID!): Staff!
   type(id: ID!): Type!
+  notifications: [Notification!]!
 }
 
 type RootMutation {

@@ -180,6 +180,20 @@ const providerSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Request'
       }
+    ],
+    notifications: [
+      {
+        type: { type: String },
+        requestId: {
+          type: Schema.Types.ObjectId,
+          ref: 'Request'
+        },
+        message: String,
+        seen: {
+          type: Boolean,
+          default: false
+        }
+      }
     ]
   },
   { timestamps: true }
