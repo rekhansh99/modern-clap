@@ -6,6 +6,7 @@ import { Container, Card } from 'react-bootstrap';
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import RequestCard from '../components/Requests/RequestCard';
 import AcceptedRequestsTable from '../components/Requests/AcceptedRequestsTable';
+import Loading from '../components/common/Loading';
 
 const GET_REQUESTS = gql`
   query AcceptedRequests($page: Int = 1, $limit: Int = 10) {
@@ -40,7 +41,7 @@ const AcceptedRequests = () => {
 
   const {loading, data, fetchMore} = useQuery(GET_REQUESTS, {errorPolicy: 'all'});
   
-  if (loading) return <h1>Loading</h1>;
+  if (loading) return <Loading />;
 
   const requests = data.requests.requests;
 

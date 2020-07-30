@@ -14,7 +14,7 @@ const AcceptedRequestsTable = ({ requests, totalPages, loadMore }) => {
   const [limit, setLimit] = useState(10);
 
   const requestsJSX = [];
-  console.log(requests);
+
   for (let i = 0; i < limit; i++) {
     if (i + (page - 1) * limit >= requests.length) break;
 

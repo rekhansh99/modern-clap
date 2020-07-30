@@ -1,4 +1,5 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 
 import { Container, Card, Button } from 'react-bootstrap';
 
@@ -6,7 +7,7 @@ import SwitchBusiness from '../components/common/SwitchBusiness';
 import ServiceCard from '../components/AddService/ServiceCard';
 import SelectMasterForm from '../components/AddService/SelectMasterForm';
 import CategoryRequestForm from '../components/common/CategoryRequestForm';
-import { gql, useQuery } from '@apollo/client';
+import Loading from '../components/common/Loading';
 
 const GET_TYPES = gql`
   query Types {
@@ -21,7 +22,7 @@ const AddService = () => {
 
   const { loading, error } = useQuery(GET_TYPES);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>An Error Occured</p>;
 
   return (

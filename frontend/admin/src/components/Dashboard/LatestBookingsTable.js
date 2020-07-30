@@ -7,6 +7,7 @@ import { MoreVertical } from 'react-feather';
 
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
+import Loading from '../common/Loading';
 
 const GET_REQUESTS = gql`
   query Requests {
@@ -34,7 +35,7 @@ const GET_REQUESTS = gql`
 const LatestBookingsTable = () => {
   const { loading, data } = useQuery(GET_REQUESTS);
 
-  if (loading || !data) return <p>Loading</p>;
+  if (loading || !data) return <Loading />;
 
   return (
     <>
