@@ -52,7 +52,7 @@ const Header = props => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   const handleScroll = () => {
     if (window.scrollY >= 100 ? !fixed : fixed) setFixed(window.scrollY >= 100);

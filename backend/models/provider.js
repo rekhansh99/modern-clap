@@ -183,6 +183,7 @@ const providerSchema = new Schema(
     ],
     notifications: [
       {
+        id: String,
         type: { type: String },
         requestId: {
           type: Schema.Types.ObjectId,

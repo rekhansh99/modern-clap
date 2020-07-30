@@ -42,13 +42,11 @@ const Header = ({ toggleSideNav }) => {
       <Nav as="ul" className="ml-auto mr-md-0">
         <Nav.Item as="li">
           <Nav.Link as={Link} to="/notifications">
-            {data && data.notifications.count && (
-              <>
-                <FontAwesomeIcon icon="bell" fixedWidth />
-                <span className="notification-dot">
-                  {data.notifications.count}
-                </span>
-              </>
+            <FontAwesomeIcon icon="bell" fixedWidth />
+            {data && data.notifications.count > 0 && (
+              <span className="notification-dot">
+                {data.notifications.count}
+              </span>
             )}
           </Nav.Link>
         </Nav.Item>

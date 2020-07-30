@@ -1,5 +1,5 @@
-import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import React, { useEffect } from 'react';
+import { gql, useQuery, useMutation } from '@apollo/client';
 
 import { Container } from 'react-bootstrap';
 
@@ -10,6 +10,7 @@ const GET_NOTIFICATIONS = gql`
   query {
     notifications {
       data {
+        id
         type
         requestId
         message
@@ -20,20 +21,35 @@ const GET_NOTIFICATIONS = gql`
   }
 `;
 
+const MARK_AS_READ = gql`
+  mutation MarkAsRead($id: String!) {
+    markAsRead(id: $id)
+  }
+`;
+
 const Notifications = () => {
   document.title = 'Notifications - Modernclap';
 
   const { data } = useQuery(GET_NOTIFICATIONS, { pollInterval: 2000 });
+  const [markAsRead] = useMutation(MARK_AS_READ);
 
   const unseenNotification = [],
     seenNotification = [];
 
   if (data) {
-    data.notifications.data.forEach(notification => {
-      if (notification.seen) seenNotification.push(notification);
-      else unseenNotification.push(notification);
-    });
+    for (let i = 0; i < data.notifications.data.length; i++) {
+      if (data.notifications.data[i].seen) {
+        seenNotification.push(...data.notifications.data.slice(i));
+        break;
+      } else {
+        unseenNotification.push(data.notifications.data[i]);
+      }
+    }
   }
+
+  useEffect(() => () => {
+    if (data) markAsRead({ variables: { id: data.notifications.data[0].id } });
+  }, [data, markAsRead]);
 
   return (
     <Container fluid>

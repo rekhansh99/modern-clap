@@ -64,6 +64,7 @@ type RootMutation {
   loginProvider(email: String!, password: String!): Provider!
   logout: Boolean!
   updateProvider(id: ID, newData: UpdateProviderInput): Provider!
+  markAsRead(id: String): Boolean
 }
 
 schema {
