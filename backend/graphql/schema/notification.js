@@ -1,7 +1,8 @@
 module.exports = `
 type Notification {
+  id: ID!
   type: String
-  requestId: ID
+  requestId: String
   message: String
   seen: Boolean
 }

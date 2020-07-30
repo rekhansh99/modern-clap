@@ -30,7 +30,7 @@ const SideNav = ({ close }) => {
             </Nav.Link>
             <Nav.Link as={Link} to="/notifications">
               Notification{' '}
-              {data && data.notifications.count && (
+              {data && data.notifications.count > 0 && (
                 <span className="dv_pending_numbders">
                   {data.notifications.count}
                 </span>
