@@ -17,9 +17,7 @@ exports.transformCategory = category => {
     typeId: category.type.toString(),
     type: () => this.type(category.type),
     serviceIds: category.services.map(id => id.toString()),
-    providerIds: category.providers && category.providers.map(id => id.toString()),
-    services: () => this.services(category._doc.services),
-    providers: () => this.providers(category._doc.providers)
+    services: () => this.services(category._doc.services)
   };
 };
 
@@ -52,7 +50,7 @@ exports.transformProvider = provider => {
     services: provider.services.map(s => ({
       ...s,
       service: () => this.service(s.service),
-      serviceId: s.service.toString(),
+      serviceId: s.service.toString()
     })),
     createdAt: provider.createdAt.toISOString(),
     updatedAt: provider.updatedAt.toISOString()
@@ -107,7 +105,7 @@ exports.transformService = service => {
     __typename: 'Service',
     _id: service.id,
     categoryId: service.category && service.category.toString(),
-    category: () => this.category(service._doc.category),
+    category: () => this.category(service._doc.category)
   };
 };
 

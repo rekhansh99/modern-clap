@@ -49,12 +49,12 @@ input UpdateProviderInput {
   ownerMobile: String
   ownerPhone: String
   country: String
-  password: String!
+  password: String
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
-  businessCategories: [ID!]!
-  services: [ServiceProviderInput!]!
+  businessCategories: [ID!]
+  services: [ServiceProviderInput!]
   shopName: String
   contactPersonName: String
   contactPersonMobile: String
@@ -73,9 +73,9 @@ type ServiceProvider {
 }
 
 input ServiceProviderInput {
-  service: ID
-  cutPrice: Float
-  salePrice: Float
-  active: Boolean
+  service: ID!
+  cutPrice: Float!
+  salePrice: Float!
+  active: Boolean!
 }
 `;

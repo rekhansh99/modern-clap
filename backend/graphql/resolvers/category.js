@@ -27,8 +27,7 @@ module.exports = {
 
     const newCategory = new Category({
       ...category,
-      services: [],
-      providers: []
+      services: []
     });
     const result = await newCategory.save();
 

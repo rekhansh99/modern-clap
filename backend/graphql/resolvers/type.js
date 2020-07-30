@@ -2,8 +2,9 @@ const Type = require('../../models/type');
 const { transformType } = require('./transformers');
 
 module.exports = {
-  types: () => {
-    // TODO
+  types: async () => {
+    const types = await Type.find();
+    return types.map(transformType);
   },
 
   type: () => {
