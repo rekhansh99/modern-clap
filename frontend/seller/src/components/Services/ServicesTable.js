@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { gql, useQuery } from '@apollo/client';
 
 import { Link } from 'react-router-dom';
 import { Table, Dropdown } from 'react-bootstrap';
@@ -7,8 +7,56 @@ import { MoreVertical } from 'react-feather';
 
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
+import Loading from '../common/Loading';
 
-const ServicesTable = ({ services }) => {
+const GET_SERVICES = gql`
+  query Services($id: ID!) {
+    provider(id: $id) {
+      businessCategories {
+        name
+        type {
+          name
+        }
+        services {
+          _id
+          name
+        }
+      }
+      services {
+        serviceId
+        active
+        salePrice
+      }
+    }
+  }
+`;
+
+const ServicesTable = () => {
+  const { loading, error, data } = useQuery(GET_SERVICES, {
+    variables: {
+      id: '5f198e857ae7adef1dc89c86'
+    }
+  });
+
+  if (loading) return <Loading />;
+  if (error) return 'An error occured!';
+
+  let services = [];
+  for (let category of data.provider.businessCategories) {
+    for (let service of category.services) {
+      services.push({
+        id: service._id,
+        name: service.name,
+        category: category.name,
+        type: category.type.name
+      });
+    }
+  }
+  services = services.map(service => ({
+    ...service,
+    ...data.provider.services.find(s => s.serviceiId === service._id)
+  }));
+
   return (
     <>
       <Search />
@@ -55,19 +103,6 @@ const ServicesTable = ({ services }) => {
       <Pagination />
     </>
   );
-};
-
-ServicesTable.propTypes = {
-  services: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      active: PropTypes.bool.isRequired,
-      price: PropTypes.number.isRequired
-    })
-  ).isRequired
 };
 
 export default ServicesTable;

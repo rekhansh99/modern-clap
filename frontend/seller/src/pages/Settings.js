@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container, Card } from 'react-bootstrap';
 
@@ -13,6 +13,8 @@ import CategoryRequestForm from '../components/common/CategoryRequestForm';
 
 const Settings = () => {
   document.title = 'Settings - Modernclap';
+
+  const [activeSection, setActiveSection] = useState('');
 
   return (
     <Container fluid>
@@ -30,13 +32,34 @@ const Settings = () => {
       <Card className="mb-4">
         <Card.Header>Profile</Card.Header>
         <Card.Body className="p-0">
-          <AccountDetails />
-          <ShopDetails />
-          <WorkingHours />
-          <Address />
-          <Media />
-          <ResetPassword />
-          <CategoryRequestForm />
+          <AccountDetails
+            setActive={setActiveSection}
+            active={activeSection === 'accountDetails'}
+          />
+          <ShopDetails
+            setActive={setActiveSection}
+            active={activeSection === 'shopDetails'}
+          />
+          <WorkingHours
+            setActive={setActiveSection}
+            active={activeSection === 'workingHours'}
+          />
+          <Address
+            setActive={setActiveSection}
+            active={activeSection === 'address'}
+          />
+          <Media
+            setActive={setActiveSection}
+            active={activeSection === 'media'}
+          />
+          <ResetPassword
+            setActive={setActiveSection}
+            active={activeSection === 'resetPassword'}
+          />
+          <CategoryRequestForm
+            setActive={setActiveSection}
+            active={activeSection === 'categoryRequestForm'}
+          />
         </Card.Body>
       </Card>
     </Container>

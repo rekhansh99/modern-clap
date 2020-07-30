@@ -1,13 +1,45 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { gql, useMutation } from '@apollo/client';
 
-import { Link } from 'react-router-dom';
-import { Container, Row, Col, Card, Form } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 import Footer from '../components/common/Footer';
 import loginBG from '../images/login-bg.jpg';
 
+const LOGIN = gql`
+  mutation Login($email: String!, $password: String!) {
+    loginProvider(email: $email, password: $password) {
+      ownerName
+    }
+  }
+`;
+
 const Login = () => {
   document.title = 'Login - Modernclap';
+
+  const loginForm = useRef(null);
+  const [loginProvider, { called, loading, data }] = useMutation(LOGIN);
+
+  const onLogin = async e => {
+    try {
+      e.preventDefault();
+      const loginData = loginForm.current.elements;
+      await loginProvider({
+        variables: {
+          email: loginData.email.value,
+          password: loginData.password.value
+        }
+      });
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  const history = useHistory();
+  if (called && data) {
+    history.push('/');
+  }
 
   return (
     <div
@@ -31,18 +63,20 @@ const Login = () => {
                       </h3>
                     </Card.Header>
                     <Card.Body>
-                      <Form>
+                      <Form id="loginForm" ref={loginForm}>
                         <Form.Group>
                           <input
                             className="form-control dv_login_form_input"
+                            name="email"
                             id="inputEmailAddress"
                             type="email"
-                            placeholder="Username or Email address"
+                            placeholder="Email address"
                           />
                         </Form.Group>
                         <Form.Group>
                           <Form.Control
                             className="dv_login_form_input"
+                            name="password"
                             id="inputPassword"
                             type="password"
                             placeholder="Password"
@@ -60,9 +94,13 @@ const Login = () => {
                           <Link className="small" to="/reset-password">
                             Forgot Password?
                           </Link>
-                          <Link className="btn btn-primary" href="/index">
-                            Login
-                          </Link>
+                          <Button
+                            className="btn btn-primary"
+                            form="loginForm"
+                            onClick={onLogin}
+                          >
+                            {loading ? 'Logging in...' : 'Login'}
+                          </Button>
                         </Form.Group>
                       </Form>
                     </Card.Body>
