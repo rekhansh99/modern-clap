@@ -16,7 +16,7 @@ const RequestCard = ({ orderId, name, img, services, amount, status }) => {
           <span>
             {services.length} Services in{' '}
             <span style={{ fontFamily: 'Segoe ui bold' }}>
-              {services.map(service => service + ' ')}
+              {services.map(service => service.service.name + ' ')}
             </span>{' '}
             - AED {amount}
           </span>

@@ -1,64 +1,91 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 
 import { Container } from 'react-bootstrap';
 
 import SwitchBusiness from '../components/common/SwitchBusiness';
 import RequestCard from '../components/Requests/RequestCard';
-import avatar from '../images/avatar.png';
 
+const GET_REQUESTS = gql`
+  query Requests {
+    requests {
+      requests {
+        _id
+        services {
+          service {
+            name
+          }
+        }
+        customer {
+          name
+        }
+        payment {
+          total
+        }
+        status
+        time
+      }
+    }
+  }
+`;
 const Requests = () => {
   document.title = 'Booking List - Modernclap';
 
-  const requests = [
-    {
-      id: 'MD12345',
-      customer: 'Rupali Sharma',
-      avatar: null,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'pending'
-    },
-    {
-      id: 'MD12345',
-      customer: 'Sanjay Chavan',
-      avatar: avatar,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'missed'
-    },
-    {
-      id: 'MD12345',
-      customer: 'Dipali Jadhav',
-      avatar: avatar,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'accepted'
-    },
-    {
-      id: 'MD12345',
-      customer: 'Rupali Sharma',
-      avatar: null,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'pending'
-    },
-    {
-      id: 'MD12345',
-      customer: 'Sanjay Chavan',
-      avatar: avatar,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'missed'
-    },
-    {
-      id: 'MD12345',
-      customer: 'Dipali Jadhav',
-      avatar: avatar,
-      services: ['Haircut', 'Spa'],
-      payment: 250,
-      status: 'accepted'
-    }
-  ];
+  const {loading, data} = useQuery(GET_REQUESTS, { errorPolicy: 'all' })
+
+  if (loading) return <h1>Loading</h1>;
+
+  const requests = data.requests.requests;
+  // const requests = [
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Rupali Sharma',
+  //     avatar: null,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'pending'
+  //   },
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Sanjay Chavan',
+  //     avatar: avatar,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'missed'
+  //   },
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Dipali Jadhav',
+  //     avatar: avatar,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'accepted'
+  //   },
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Rupali Sharma',
+  //     avatar: null,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'pending'
+  //   },
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Sanjay Chavan',
+  //     avatar: avatar,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'missed'
+  //   },
+  //   {
+  //     id: 'MD12345',
+  //     customer: 'Dipali Jadhav',
+  //     avatar: avatar,
+  //     services: ['Haircut', 'Spa'],
+  //     payment: 250,
+  //     status: 'accepted'
+  //   }
+  // ];
 
   return (
     <Container fluid>
@@ -77,11 +104,11 @@ const Requests = () => {
       {requests.map((request, index) => (
         <RequestCard
           key={index}
-          orderId={request.id}
-          name={request.customer}
+          orderId={request._id}
+          name={request.customer.name}
           img={request.avatar}
           services={request.services}
-          amount={request.payment}
+          amount={request.payment.total}
           status={request.status}
         />
       ))}
