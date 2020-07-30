@@ -16,7 +16,6 @@ module.exports = {
           requestId: notification.requestId.toString()
         }
       });
-    
     return { data, count };
   }
 };
