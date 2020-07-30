@@ -7,6 +7,7 @@ import { MoreVertical } from 'react-feather';
 
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
+import Loading from '../common/Loading';
 
 const GET_SERVICES = gql`
   query Services($id: ID!) {
@@ -37,7 +38,7 @@ const ServicesTable = () => {
     }
   });
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return 'An error occured!';
 
   let services = [];
