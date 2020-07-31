@@ -40,7 +40,7 @@ type RootQuery {
   types: [Type!]!
   category(name: String!): Category!
   customer(id: ID, mobile: String): Customer!
-  provider(id: ID!): Provider!
+  provider(id: ID): Provider!
   request(id: ID!): Request!
   review(requestId: ID!): Review!
   service(id: ID!): Service!
@@ -65,6 +65,7 @@ type RootMutation {
   logout: Boolean!
   updateProvider(id: ID, newData: UpdateProviderInput): Provider!
   markAsRead(id: String): Boolean
+  storeEmailForNotifications(email: String!, role: String!): String
 }
 
 schema {

@@ -8,6 +8,7 @@ const serviceResolver = require('./service');
 const staffResolver = require('./staff');
 const typeResolver = require('./type');
 const notificationResolver = require('./notification');
+const storeEmailResolver = require('./storeEmail');
 
 module.exports = {
   ...authResolver,
@@ -19,5 +20,6 @@ module.exports = {
   ...serviceResolver,
   ...staffResolver,
   ...typeResolver,
-  ...notificationResolver
+  ...notificationResolver,
+  ...storeEmailResolver
 };
