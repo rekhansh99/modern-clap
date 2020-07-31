@@ -14,7 +14,7 @@ module.exports = buildSchema(`
 type Pagination {
   page: Int!
   limit: Int!
-  totalPages: Int!
+  total: Int!
 }
 
 ${categorySchema}

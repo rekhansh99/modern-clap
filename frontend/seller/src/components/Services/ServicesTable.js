@@ -6,7 +6,6 @@ import { Table, Dropdown } from 'react-bootstrap';
 import { MoreVertical } from 'react-feather';
 
 import Search from '../common/Search';
-import Pagination from '../common/Pagination';
 import Loading from '../common/Loading';
 
 const GET_SERVICES = gql`
@@ -59,7 +58,7 @@ const ServicesTable = () => {
 
   return (
     <>
-      <Search />
+      <Search noLimit />
       <Table width="100%" cellSpacing={0} responsive>
         <thead>
           <tr>
@@ -100,7 +99,6 @@ const ServicesTable = () => {
           ))}
         </tbody>
       </Table>
-      <Pagination />
     </>
   );
 };

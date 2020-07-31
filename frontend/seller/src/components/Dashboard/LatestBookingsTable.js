@@ -31,7 +31,7 @@ const GET_REQUESTS = gql`
         status
       }
       pagination {
-        totalPages
+        total
       }
     }
   }
@@ -39,7 +39,7 @@ const GET_REQUESTS = gql`
 
 const LatestBookingsTable = () => {
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(2);
+  const [limit, setLimit] = useState(5);
 
   const { loading, data } = useQuery(GET_REQUESTS, {
     errorPolicy: 'all',
@@ -50,7 +50,7 @@ const LatestBookingsTable = () => {
 
   const {
     requests,
-    pagination: { totalPages }
+    pagination: { total }
   } = data.requests;
 
   // const data = {
@@ -130,7 +130,7 @@ const LatestBookingsTable = () => {
           ))}
         </tbody>
       </Table>
-      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
+      <Pagination total={total} page={page} limit={limit} setPage={setPage} />
     </>
   );
 };

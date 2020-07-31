@@ -60,8 +60,7 @@ module.exports = {
       pagination: {
         page: args.page,
         limit: args.limit,
-        totalPages:
-          Math.floor((requestlist.count[0].count - 1) / args.limit) + 1
+        total: requestlist.count[0].count
       }
     };
   },

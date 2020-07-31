@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
@@ -9,52 +9,14 @@ import { MoreVertical } from 'react-feather';
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
 
-const AcceptedRequestsTable = ({ requests, totalPages, loadMore }) => {
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
-
-  const requestsJSX = [];
-
-  for (let i = 0; i < limit; i++) {
-    if (i + (page - 1) * limit >= requests.length) break;
-
-    const request = requests[i + (page - 1) * limit];
-    requestsJSX.push(
-      <tr key={i}>
-        <td>{moment(request.time).format('DD/MM/YYYY')}</td>
-        <td>
-          <Link to={'/request/' + request._id}>{request._id}</Link>
-        </td>
-        <td>{request.customer.name}</td>
-        <td>
-          <span className={request.status}>{request.status}</span>
-        </td>
-        <td>
-          <span>{request.payment.mode}</span>
-        </td>
-        <td>
-          <span className={request.payment.status}>
-            {request.payment.status}
-          </span>
-        </td>
-        <td>AED {request.payment.total}</td>
-        <Dropdown as="td">
-          <Dropdown.Toggle as="a" className="dv_everytable_action">
-            <MoreVertical />
-          </Dropdown.Toggle>
-          <Dropdown.Menu alignRight>
-            <Dropdown.Item as={Link} to={'/request/' + request._id}>
-              View
-            </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/inbox">
-              Chat
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </tr>
-    );
-  }
-
+const AcceptedRequestsTable = ({
+  requests,
+  total,
+  limit,
+  setLimit,
+  page,
+  setPage
+}) => {
   return (
     <>
       <Search limit={limit} setLimit={setLimit} />
@@ -81,16 +43,44 @@ const AcceptedRequestsTable = ({ requests, totalPages, loadMore }) => {
             <th />
           </tr>
         </thead>
-        <tbody>{requestsJSX}</tbody>
+        <tbody>
+          {requests.map((request, index) => (
+            <tr key={index}>
+              <td>{moment(request.time).format('DD/MM/YYYY')}</td>
+              <td>
+                <Link to={'/request/' + request._id}>{request._id}</Link>
+              </td>
+              <td>{request.customer.name}</td>
+              <td>
+                <span className={request.status}>{request.status}</span>
+              </td>
+              <td>
+                <span>{request.payment.mode}</span>
+              </td>
+              <td>
+                <span className={request.payment.status}>
+                  {request.payment.status}
+                </span>
+              </td>
+              <td>AED {request.payment.total}</td>
+              <Dropdown as="td">
+                <Dropdown.Toggle as="a" className="dv_everytable_action">
+                  <MoreVertical />
+                </Dropdown.Toggle>
+                <Dropdown.Menu alignRight>
+                  <Dropdown.Item as={Link} to={'/request/' + request._id}>
+                    View
+                  </Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/inbox">
+                    Chat
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </tr>
+          ))}
+        </tbody>
       </Table>
-      <Pagination
-        totalPages={totalPages}
-        page={page}
-        setPage={page => {
-          loadMore(page, limit);
-          setPage(page);
-        }}
-      />
+      <Pagination total={total} page={page} limit={limit} setPage={setPage} />
     </>
   );
 };
@@ -105,8 +95,11 @@ AcceptedRequestsTable.propTypes = {
       status: PropTypes.string.isRequired
     })
   ).isRequired,
-  totalPages: PropTypes.number.isRequired,
-  loadMore: PropTypes.func.isRequired
+  total: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
+  setLimit: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired
 };
 
 export default AcceptedRequestsTable;

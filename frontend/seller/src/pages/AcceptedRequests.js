@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 import { Container, Card } from 'react-bootstrap';
@@ -30,7 +30,7 @@ const GET_REQUESTS = gql`
         time
       }
       pagination {
-        totalPages
+        total
       }
     }
   }
@@ -39,8 +39,16 @@ const GET_REQUESTS = gql`
 const AcceptedRequests = () => {
   document.title = 'Accepted Requests - Modernclap';
 
-  const {loading, data, fetchMore} = useQuery(GET_REQUESTS, {errorPolicy: 'all'});
-  
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const { loading, data } = useQuery(GET_REQUESTS, {
+    errorPolicy: 'all',
+    variables: {
+      limit: limit,
+      page: page
+    }
+  });
+
   if (loading) return <Loading />;
 
   const requests = data.requests.requests;
@@ -91,23 +99,6 @@ const AcceptedRequests = () => {
   //     bookingStatus: 'rescheduled'
   //   }
   // ];
-  const loadMore = (page, limit) => {
-    fetchMore({
-      variables: {
-        page: page,
-        limit: limit
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult) return prev;
-        return {
-          requests: {
-            requests: [...prev.requests.requests, ...fetchMoreResult.requests.requests],
-            pagination: fetchMoreResult.requests.pagination
-          }
-        };
-      }
-    });
-  };
 
   return (
     <Container fluid>
@@ -140,7 +131,14 @@ const AcceptedRequests = () => {
       <Card className="mb-4 hide-mobile-767">
         <Card.Header>Accepted all Bookings</Card.Header>
         <Card.Body className="p-0">
-          <AcceptedRequestsTable requests={requests} totalPages={data.requests.pagination.totalPages} loadMore={loadMore} />
+          <AcceptedRequestsTable
+            requests={requests}
+            total={data.requests.pagination.total}
+            limit={limit}
+            setLimit={setLimit}
+            page={page}
+            setPage={setPage}
+          />
         </Card.Body>
       </Card>
     </Container>

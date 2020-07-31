@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-const Pagination = ({ totalPages, page, setPage }) => {
+const Pagination = ({ total, page, limit, setPage }) => {
   const pageLinksJSX = [];
+  const totalPages = Math.floor((total - 1) / limit) + 1;
 
   if (totalPages <= 3) {
     for (let i = 1; i <= totalPages; i++)
@@ -114,8 +115,9 @@ const Pagination = ({ totalPages, page, setPage }) => {
 };
 
 Pagination.propTypes = {
-  totalPages: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired
 };
 
