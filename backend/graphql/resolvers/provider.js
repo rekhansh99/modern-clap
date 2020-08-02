@@ -8,7 +8,7 @@ const { transformProvider, provider } = require('./transformers');
 module.exports = {
   providers: async () => {
     const providers = await Provider.find();
-    return providers.map(provider => transformProvider(provider));
+    return providers.map(transformProvider);
   },
 
   provider: (args, ctx) => {

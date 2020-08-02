@@ -2,6 +2,7 @@ const authResolver = require('./auth');
 const categoryResolver = require('./category');
 const customerResolver = require('./customer');
 const providerResolver = require('./provider');
+const businessResolver = require('./business');
 const requestResolver = require('./request');
 const reviewResolver = require('./review');
 const serviceResolver = require('./service');
@@ -15,6 +16,7 @@ module.exports = {
   ...categoryResolver,
   ...customerResolver,
   ...providerResolver,
+  ...businessResolver,
   ...requestResolver,
   ...reviewResolver,
   ...serviceResolver,

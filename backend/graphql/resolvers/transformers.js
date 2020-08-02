@@ -3,6 +3,7 @@
 const Category = require('../../models/category');
 const Customer = require('../../models/customer');
 const Provider = require('../../models/provider');
+const Business = require('../../models/business');
 const Request = require('../../models/request');
 const Review = require('../../models/review');
 const Service = require('../../models/service');
@@ -45,15 +46,34 @@ exports.transformProvider = provider => {
     __typename: 'Provider',
     _id: provider.id,
     password: null,
-    businessCategoryIds: provider.businessCategories.map(id => id.toString()),
-    businessCategories: () => this.categories(provider._doc.businessCategories),
-    services: provider.services.map(s => ({
+    businessIds: provider.businesses.map(id => id.toString()),
+    businesses: this.businesses(provider.businesses),
+    notifications: provider.notifications.map(n => ({
+      ...n,
+      request: () => this.request(n.request),
+      requestId: n.request.toString()
+    })),
+    createdAt: provider.createdAt.toISOString(),
+    updatedAt: provider.updatedAt.toISOString()
+  };
+};
+
+exports.transformBusiness = business => {
+  return {
+    ...business._doc,
+    __typename: 'Business',
+    _id: business.id,
+    typeId: business.type.toString(),
+    type: () => this.type(business.type),
+    services: business.services.map(s => ({
       ...s,
       service: () => this.service(s.service),
       serviceId: s.service.toString()
     })),
-    createdAt: provider.createdAt.toISOString(),
-    updatedAt: provider.updatedAt.toISOString()
+    providerId: business.provider.toString(),
+    provider: () => this.provider(business.business),
+    requestIds: business.requests.map(id => id.toString()),
+    requests: () => this.requests(business.requests)
   };
 };
 
@@ -166,6 +186,18 @@ exports.providers = async providerIds => {
   const providers = await Provider.find({ _id: { $in: providerIds } });
   return providers.map(this.transformProvider);
 };
+
+exports.business = async businessId => {
+  if (!businessId) return null;
+  const business = await Business.findById(businessId);
+  return this.transformBusiness(business);
+}
+
+exports.businesses = async businessIds => {
+  if (!businessIds) return [];
+  const businesses = await Business.find({ _id: { $in: businessIds } });
+  return businesses.map(this.transformBusiness);
+}
 
 exports.request = async requestId => {
   if (!requestId) return null;
