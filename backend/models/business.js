@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const busniessSchema = new Schema(
+const businessSchema = new Schema(
   {
     ownerName: {
       type: String,
@@ -173,4 +173,4 @@ const busniessSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Business', busniessSchema);
+module.exports = mongoose.model('Business', businessSchema);

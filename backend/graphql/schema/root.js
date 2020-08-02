@@ -61,7 +61,7 @@ type RootMutation {
   cancelRequest(id: ID!): String!
   updateRequest(id: ID!, newTime: String!): Request!
   createReview(review: ReviewInput!): Review!
-  createStaff(staff: StaffInput): Staff!
+  createStaff(staff: StaffInput!): Staff!
   sendOTP(mobile: String!): String!
   loginCustomer(mobile: String!, otp: String!): Customer!
   registerProvider(provider: RegisterProviderInput!): Provider!
@@ -70,6 +70,7 @@ type RootMutation {
   updateProvider(id: ID, newData: UpdateProviderInput): Provider!
   markAsRead(id: String): Boolean
   storeEmailForNotifications(email: String!, role: String!): String
+  createBusiness(business: CreateBusinessInput!): Business
 }
 
 schema {
