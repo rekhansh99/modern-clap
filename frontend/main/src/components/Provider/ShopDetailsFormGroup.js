@@ -5,9 +5,9 @@ import { useQuery, gql } from '@apollo/client';
 import FormControl from 'react-bootstrap/FormControl';
 import FormGroup from 'react-bootstrap/FormGroup';
 
-const CATEROGIES = gql`
-  query GetCategories {
-    categories {
+const GET_TYPES = gql`
+  query GetTypes {
+    types {
       _id
       name
     }
@@ -15,26 +15,26 @@ const CATEROGIES = gql`
 `;
 
 const ShopDetailsFormGroup = ({ isOpen, errors }) => {
-  const { loading, data } = useQuery(CATEROGIES);
+  const { loading, data } = useQuery(GET_TYPES);
 
   return (
     <FormGroup style={{ display: isOpen ? 'block' : 'none' }}>
       <FormControl
         as="select"
         className="dv_careers_form_input"
-        name="businessCategory"
+        name="type"
         defaultValue="null"
-        isInvalid={errors.businessCategory}
+        isInvalid={errors.type}
         required
       >
         <option value="null" hidden disabled>
-          Business Category
+          Business Type
         </option>
         {!loading &&
           data &&
-          data.categories.map((category, index) => (
-            <option key={index} value={category._id}>
-              {category.name}
+          data.types.map((type, index) => (
+            <option key={index} value={type._id}>
+              {type.name}
             </option>
           ))}
       </FormControl>

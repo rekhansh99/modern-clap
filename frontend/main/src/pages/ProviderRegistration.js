@@ -15,8 +15,11 @@ import ShopDetailsFormGroup from '../components/Provider/ShopDetailsFormGroup';
 import validator from 'validator';
 
 const REGISTER_PROVIDER = gql`
-  mutation RegisterProvider($provider: RegisterProviderInput!) {
-    registerProvider(provider: $provider) {
+  mutation RegisterProvider(
+    $provider: RegisterProviderInput!
+    $business: CreateBusinessInput
+  ) {
+    registerProvider(provider: $provider, business: $business) {
       _id
     }
   }
@@ -55,8 +58,8 @@ const ProviderRegistration = () => {
       errors.password = 'Password length should be between 8 - 24';
     if (formData.password.value !== formData.confirmPassword.value)
       errors.confirmPassword = 'Passwords do not match';
-    if (formData.businessCategory.value === 'null')
-      errors.businessCategory = 'Select a category';
+    if (formData.type.value === 'null')
+      errors.type = 'Select a type';
     if (
       formData.contactPersonMobile.value !== '' &&
       !validator.isMobilePhone(formData.contactPersonMobile.value)
@@ -69,16 +72,18 @@ const ProviderRegistration = () => {
         registerProvider({
           variables: {
             provider: {
-              ownerName: formData.ownerName.value,
               ownerEmail: formData.ownerEmail.value,
               ownerMobile: formData.ownerMobile.value,
+              password: formData.password.value
+            },
+            business: {
+              ownerName: formData.ownerName.value,
               ownerPhone: formData.ownerPhone.value,
               country: formData.country.value,
-              password: formData.password.value,
               tradeLicenseNo: formData.tradeLicenseNo.value,
               tradeLicenseDate: formData.tradeLicenseDate.value,
               tradeLicenseDoc: formData.tradeLicenseDoc.value,
-              businessCategory: formData.businessCategory.value,
+              type: formData.type.value,
               shopName: formData.shopName.value,
               contactPersonName: formData.contactPersonName.value,
               contactPersonMobile: formData.contactPersonMobile.value,
