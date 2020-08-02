@@ -64,7 +64,7 @@ type RootMutation {
   createStaff(staff: StaffInput!): Staff!
   sendOTP(mobile: String!): String!
   loginCustomer(mobile: String!, otp: String!): Customer!
-  registerProvider(provider: RegisterProviderInput!): Provider!
+  registerProvider(provider: RegisterProviderInput!, business: CreateBusinessInput!): Provider!
   loginProvider(email: String!, password: String!): Provider!
   logout: Boolean!
   updateProvider(id: ID, newData: UpdateProviderInput): Provider!

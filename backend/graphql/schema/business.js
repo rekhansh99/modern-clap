@@ -1,5 +1,6 @@
 module.exports = `
 type Business {
+  _id: ID
 	ownerName: String
   ownerPhone: String
   country: String!
@@ -26,7 +27,7 @@ input CreateBusinessInput {
   tradeLicenseDate: String!
   tradeLicenseDoc: String!
 	shopName: String!
-	typeId: ID!
+	type: ID!
   contactPersonName: String
   contactPersonMobile: String
   city: String!
