@@ -3,6 +3,7 @@ const { buildSchema } = require('graphql');
 const categorySchema = require('./category');
 const customerSchema = require('./customer');
 const providerSchema = require('./provider');
+const businessSchema = require('./business');
 const requestSchema = require('./request');
 const reviewSchema = require('./review');
 const serviceSchema = require('./service');
@@ -20,6 +21,7 @@ type Pagination {
 ${categorySchema}
 ${customerSchema}
 ${providerSchema}
+${businessSchema}
 ${requestSchema}
 ${reviewSchema}
 ${serviceSchema}
@@ -34,6 +36,7 @@ type RootQuery {
   categories: [Category!]!
   customers: [Customer!]!
   providers: [Provider!]!
+  businesses: [Business!]!
   requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): RequestList!
   reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
@@ -41,6 +44,7 @@ type RootQuery {
   category(name: String!): Category!
   customer(id: ID, mobile: String): Customer!
   provider(id: ID): Provider!
+  business(id: ID): Business!
   request(id: ID!): Request!
   review(requestId: ID!): Review!
   service(id: ID!): Service!
