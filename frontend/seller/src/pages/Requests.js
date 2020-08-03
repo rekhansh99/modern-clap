@@ -8,8 +8,8 @@ import RequestCard from '../components/Requests/RequestCard';
 import Loading from '../components/common/Loading';
 
 const GET_REQUESTS = gql`
-  query Requests {
-    requests {
+  query Requests($business: ID!) {
+    requests(business: $business) {
       requests {
         _id
         services {
@@ -29,77 +29,24 @@ const GET_REQUESTS = gql`
     }
   }
 `;
+
 const Requests = () => {
   document.title = 'Booking List - Modernclap';
 
-  const {loading, data} = useQuery(GET_REQUESTS, { errorPolicy: 'all' })
+  const currBusiness = '5f26a44bd129a3a8d95e109e';
+  const { loading, error, data } = useQuery(GET_REQUESTS, {
+    errorPolicy: 'all',
+    variables: { business: currBusiness }
+  });
 
   if (loading) return <Loading />;
+  if (error) return 'Something went wrong!';
 
   const requests = data.requests.requests;
-  // const requests = [
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Rupali Sharma',
-  //     avatar: null,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'pending'
-  //   },
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Sanjay Chavan',
-  //     avatar: avatar,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'missed'
-  //   },
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Dipali Jadhav',
-  //     avatar: avatar,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'accepted'
-  //   },
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Rupali Sharma',
-  //     avatar: null,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'pending'
-  //   },
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Sanjay Chavan',
-  //     avatar: avatar,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'missed'
-  //   },
-  //   {
-  //     id: 'MD12345',
-  //     customer: 'Dipali Jadhav',
-  //     avatar: avatar,
-  //     services: ['Haircut', 'Spa'],
-  //     payment: 250,
-  //     status: 'accepted'
-  //   }
-  // ];
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
+      <SwitchBusiness />
       <h1 className="mt-4 dv_page_heading">Request List</h1>
       <span className="subtitle">pending request</span>
       {requests.map((request, index) => (
