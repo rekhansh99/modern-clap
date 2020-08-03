@@ -1,6 +1,8 @@
 module.exports = `
 type Provider {
   _id: ID!
+	ownerName: String
+  ownerPhone: String
   ownerEmail: String!
   ownerMobile: String!
   businessIds: [ID!]!
@@ -10,12 +12,16 @@ type Provider {
 }
 
 input RegisterProviderInput {
+  ownerName: String!
+  ownerPhone: String!
   ownerEmail: String!
   ownerMobile: String!
   password: String!
 }
 
 input UpdateProviderInput {
+  ownerName: String
+  ownerPhone: String
   ownerEmail: String
   ownerMobile: String
   password: String

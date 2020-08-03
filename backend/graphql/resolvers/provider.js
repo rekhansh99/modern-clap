@@ -25,7 +25,6 @@ module.exports = {
   },
 
   registerProvider: async args => {
-    console.log(args);
     const validType = await Type.exists({
       _id: args.business.type
     });

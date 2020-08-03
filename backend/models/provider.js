@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 
 const providerSchema = new Schema(
   {
+    ownerName: {
+      type: String,
+      required: true
+    },
+    ownerPhone: String,
     ownerEmail: {
       type: String,
       required: true

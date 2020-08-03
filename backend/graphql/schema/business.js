@@ -1,8 +1,6 @@
 module.exports = `
 type Business {
   _id: ID
-	ownerName: String
-  ownerPhone: String
   country: String!
   tradeLicenseNo: String
   tradeLicenseDate: String
@@ -20,8 +18,6 @@ type Business {
 }
 
 input CreateBusinessInput {
-	ownerName: String!
-  ownerPhone: String
   country: String!
   tradeLicenseNo: String!
   tradeLicenseDate: String!
@@ -37,8 +33,6 @@ input CreateBusinessInput {
 }
 
 input UpdateBusinessInput {
-	ownerName: String
-  ownerPhone: String
   country: String
   tradeLicenseNo: String
   tradeLicenseDate: String

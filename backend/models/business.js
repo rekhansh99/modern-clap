@@ -4,11 +4,6 @@ const Schema = mongoose.Schema;
 
 const businessSchema = new Schema(
   {
-    ownerName: {
-      type: String,
-      required: true
-    },
-    ownerPhone: String,
     country: {
       type: String,
       required: true

@@ -44,7 +44,7 @@ type RootQuery {
   category(name: String!): Category!
   customer(id: ID, mobile: String): Customer!
   provider(id: ID): Provider!
-  business(id: ID): Business!
+  business(id: ID!): Business!
   request(id: ID!): Request!
   review(requestId: ID!): Review!
   service(id: ID!): Service!
