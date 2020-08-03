@@ -9,8 +9,8 @@ import AcceptedRequestsTable from '../components/Requests/AcceptedRequestsTable'
 import Loading from '../components/common/Loading';
 
 const GET_REQUESTS = gql`
-  query AcceptedRequests($page: Int = 1, $limit: Int = 10) {
-    requests(page: $page, limit: $limit) {
+  query AcceptedRequests($page: Int = 1, $limit: Int = 10, $business: ID!) {
+    requests(page: $page, limit: $limit, business: $business) {
       requests {
         _id
         services {
@@ -36,22 +36,34 @@ const GET_REQUESTS = gql`
   }
 `;
 
+// const GET_ACTIVE_BUSINESS = gql`
+//   query {
+//     activeBusiness @client
+//   }
+// `;
+
 const AcceptedRequests = () => {
   document.title = 'Accepted Requests - Modernclap';
 
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
-  const { loading, data } = useQuery(GET_REQUESTS, {
+
+  // const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
+  const currBusiness = '5f26a44bd129a3a8d95e109e';
+
+  const { loading, data, error } = useQuery(GET_REQUESTS, {
     errorPolicy: 'all',
     variables: {
       limit: limit,
-      page: page
+      page: page,
+      business: currBusiness
     }
   });
 
   if (loading) return <Loading />;
+  if (error) return 'Something went wrong!';
 
-  const requests = data.requests.requests;
+  const requests = data ? data.requests.requests : [];
 
   // const requests = [
   //   {
@@ -102,16 +114,7 @@ const AcceptedRequests = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
+      <SwitchBusiness />
       <h1 className="mt-4 dv_page_heading">Accepted Requests</h1>
 
       <div className="show-mobile-767">

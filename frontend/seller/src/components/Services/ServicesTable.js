@@ -9,16 +9,16 @@ import Search from '../common/Search';
 import Loading from '../common/Loading';
 
 const GET_SERVICES = gql`
-  query Services($id: ID!) {
-    provider(id: $id) {
-      businessCategories {
+  query Services($business: ID!) {
+    business(id: $business) {
+      type {
         name
-        type {
+        categories {
           name
-        }
-        services {
-          _id
-          name
+          services {
+            _id
+            name
+          }
         }
       }
       services {
@@ -30,10 +30,16 @@ const GET_SERVICES = gql`
   }
 `;
 
+// const UPDATE_BUSINESS = gql`
+//   mutation {
+
+//   }
+// `;
+
 const ServicesTable = () => {
   const { loading, error, data } = useQuery(GET_SERVICES, {
     variables: {
-      id: '5f198e857ae7adef1dc89c86'
+      business: '5f26a44bd129a3a8d95e109e'
     }
   });
 
@@ -41,20 +47,25 @@ const ServicesTable = () => {
   if (error) return 'An error occured!';
 
   let services = [];
-  for (let category of data.provider.businessCategories) {
+  for (let category of data.business.type.categories) {
     for (let service of category.services) {
       services.push({
         id: service._id,
         name: service.name,
         category: category.name,
-        type: category.type.name
+        type: data.business.type.name
       });
     }
   }
   services = services.map(service => ({
     ...service,
-    ...data.provider.services.find(s => s.serviceiId === service._id)
+    ...data.business.services.find(s => s.serviceiId === service._id)
   }));
+
+  const setActive = async e => {
+    console.log(e.target.name);
+    console.log(e.target.checked);
+  };
 
   return (
     <>
@@ -79,7 +90,12 @@ const ServicesTable = () => {
               <td>
                 <div className="dv_status_in_list">
                   <label className="form-switch">
-                    <input type="checkbox" defaultChecked={service.active} />
+                    <input
+                      type="checkbox"
+                      name={service.id}
+                      defaultChecked={service.active}
+                      onChange={setActive}
+                    />
                     <i />
                   </label>
                 </div>
