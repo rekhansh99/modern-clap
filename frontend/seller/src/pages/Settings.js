@@ -12,13 +12,18 @@ import Media from '../components/Settings/Media';
 import ResetPassword from '../components/Settings/ResetPassword';
 import CategoryRequestForm from '../components/common/CategoryRequestForm';
 import Loading from '../components/common/Loading';
-import { activeBusiness } from '../app/cache';
 
 const UPDATE_PROVIDER = gql`
   mutation UpdateProvider($newData: UpdateProviderInput) {
     updateProvider(newData: $newData) {
       __typename
     }
+  }
+`;
+
+const GET_ACTIVE_BUSINESS = gql`
+  query {
+    activeBusiness @client
   }
 `;
 
@@ -45,11 +50,15 @@ const GET_BUSINESS = gql`
 const Settings = () => {
   document.title = 'Settings - Modernclap';
 
+  const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
+
+  // if (activeBusinessLoading) return <Loading />;
+
   const { data: getBusinessData, loading: getBusinessLoading } = useQuery(
     GET_BUSINESS,
     {
       variables: {
-        id: activeBusiness()
+        id: activeBusinessData.activeBusiness
       }
     }
   );

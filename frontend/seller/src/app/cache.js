@@ -1,3 +1,17 @@
-import { makeVar } from '@apollo/client';
+import { makeVar, InMemoryCache } from '@apollo/client';
 
-export const activeBusiness = makeVar('');
+export const setActiveBusiness = makeVar('');
+
+export const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        activeBusiness: {
+          read() {
+            return setActiveBusiness();
+          }
+        }
+      }
+    }
+  }
+});

@@ -3,7 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 import { FormControl } from 'react-bootstrap';
 import Loading from './Loading';
 
-import { activeBusiness } from '../../app/cache';
+import { setActiveBusiness } from '../../app/cache';
 
 const GET_PROVIDER = gql`
   query {
@@ -16,17 +16,24 @@ const GET_PROVIDER = gql`
   }
 `;
 
+const GET_ACTIVE_BUSINESS = gql`
+  query {
+    activeBusiness @client
+  }
+`;
+
 const SwitchBusiness = () => {
-  const { loading, error, data } = useQuery(GET_PROVIDER);
-  
-  if (loading) return <Loading />;
-  if (error) return 'An error occured!';
-  
-  const options = data.provider.businesses;
-  
-  let currBusiness = activeBusiness();
+  const provider = useQuery(GET_PROVIDER);
+  const activeBusiness = useQuery(GET_ACTIVE_BUSINESS);
+
+  if (provider.loading || activeBusiness.loading) return <Loading />;
+  if (provider.error) return 'An error occured!';
+
+  const options = provider.data.provider.businesses;
+
+  let currBusiness = activeBusiness.data.activeBusiness;
   if (currBusiness === '') {
-    activeBusiness(options[0]._id);
+    setActiveBusiness(options[0]._id);
   }
 
   let title = '';
@@ -46,7 +53,7 @@ const SwitchBusiness = () => {
         as="select"
         className="dv_all_inputs"
         value={currBusiness}
-        onChange={e => activeBusiness(e.target.value)}
+        onChange={e => setActiveBusiness(e.target.value)}
       >
         {optionsJSX}
       </FormControl>

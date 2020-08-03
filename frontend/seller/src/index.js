@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider, ApolloClient } from '@apollo/client';
 import config from './config';
+import { cache } from './app/cache';
 
 import './fontawesome';
 import './index.css';
@@ -12,7 +13,7 @@ import './responsive.css';
 
 const client = new ApolloClient({
   uri: config.BACKEND_URL + '/graphql',
-  cache: new InMemoryCache(),
+  cache: cache,
   credentials: 'include'
 });
 
