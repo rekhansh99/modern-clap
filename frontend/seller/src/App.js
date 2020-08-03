@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import classnames from 'classnames';
+import { gql, useQuery } from '@apollo/client';
 
 import Header from './components/common/Header';
 import SideNav from './components/common/SideNav';
@@ -26,9 +27,27 @@ import Settings from './pages/Settings';
 // import avatar from './images/avatar.png';
 
 import './App.css';
+import Loading from './components/common/Loading';
+import { setActiveBusiness } from './app/cache';
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
+
+  const { loading, data } = useQuery(gql`
+    query {
+      isAuthenticated {
+        __typename
+        ... on Provider {
+          _id
+          businesses {
+            _id
+            shopName
+          }
+          ownerName
+        }
+      }
+    }
+  `);
 
   // const flashCards = [
   //   {
@@ -44,6 +63,13 @@ function App() {
   //     message: 'New request recieved!'
   //   }
   // ];
+
+  if (loading) return <Loading />;
+
+  if (!data) return <h1>Unauthenticated!</h1>;
+
+  if (localStorage.getItem('activeBusiness') === null)
+    setActiveBusiness(data.isAuthenticated.businesses[0]._id);
 
   return (
     // eslint-disable-next-line no-undef

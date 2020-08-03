@@ -2,7 +2,6 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { FormControl } from 'react-bootstrap';
 import Loading from './Loading';
-
 import { setActiveBusiness } from '../../app/cache';
 
 const GET_PROVIDER = gql`
@@ -30,11 +29,7 @@ const SwitchBusiness = () => {
   if (provider.error) return 'An error occured!';
 
   const options = provider.data.provider.businesses;
-
-  let currBusiness = activeBusiness.data.activeBusiness;
-  if (currBusiness === '') {
-    setActiveBusiness(options[0]._id);
-  }
+  const currBusiness = activeBusiness.data.activeBusiness;
 
   let title = '';
   const optionsJSX = options.map(option => {
@@ -52,9 +47,10 @@ const SwitchBusiness = () => {
       <FormControl
         as="select"
         className="dv_all_inputs"
-        value={currBusiness}
+        value="Change"
         onChange={e => setActiveBusiness(e.target.value)}
       >
+        <option value="Change" disabled hidden>Change</option>
         {optionsJSX}
       </FormControl>
     </div>

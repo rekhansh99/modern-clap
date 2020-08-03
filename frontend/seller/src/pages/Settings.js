@@ -21,12 +21,6 @@ const UPDATE_PROVIDER = gql`
   }
 `;
 
-const GET_ACTIVE_BUSINESS = gql`
-  query {
-    activeBusiness @client
-  }
-`;
-
 const GET_PROVIDER = gql`
   query {
     provider {
@@ -40,6 +34,7 @@ const GET_PROVIDER = gql`
 
 const GET_BUSINESS = gql`
   query GetBusiness($id: ID!) {
+    activeBusiness @client @export(as: "id")
     business(id: $id) {
       country
       shopName
@@ -50,32 +45,22 @@ const GET_BUSINESS = gql`
 const Settings = () => {
   document.title = 'Settings - Modernclap';
 
-  const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
+  const providerQuery = useQuery(GET_PROVIDER);
+  const businessQuery = useQuery(GET_BUSINESS);
 
   // if (activeBusinessLoading) return <Loading />;
 
-  const { data: getBusinessData, loading: getBusinessLoading } = useQuery(
-    GET_BUSINESS,
-    {
-      variables: {
-        id: activeBusinessData.activeBusiness
-      }
-    }
-  );
-  const { data: getProviderData, loading: getProviderLoading } = useQuery(
-    GET_PROVIDER
-  );
-  console.log(getProviderData);
-  console.log(getBusinessData);
-  const [updateProvider, { loading: updateProviderLoading }] = useMutation(
+  console.log(providerQuery.data);
+  console.log(businessQuery.data);
+  const [updateProvider, { loading: providerLoading }] = useMutation(
     UPDATE_PROVIDER
   );
   const [settings, setSettings] = useState({});
   const [activeSection, setActiveSection] = useState('');
   const [changed, setChanged] = useState(false);
 
-  const provider = getProviderData && getProviderData.provider;
-  const business = getBusinessData && getBusinessData.business;
+  const provider = providerQuery.data && providerQuery.data.provider;
+  const business = businessQuery.data && businessQuery.data.business;
 
   useEffect(() => {
     setChanged(true);
@@ -94,8 +79,6 @@ const Settings = () => {
     }
   }, [provider, business]);
 
-  // console.log(getBusinessLoading, getProviderLoading, updateProviderLoading);
-  // console.log(settings);
   const onSaveSettings = async settingsList => {
     try {
       let newData = {};
@@ -113,7 +96,7 @@ const Settings = () => {
 
   return (
     <Container fluid>
-      {(getProviderLoading || getBusinessLoading || updateProviderLoading) && (
+      {(providerQuery.loading || businessQuery.loading || providerLoading) && (
         <Loading />
       )}
       <SwitchBusiness
