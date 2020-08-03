@@ -14,10 +14,10 @@ type Request {
   status: String!
   reviewId: ID
   customerId: ID!
-  providerId: ID!
+  businessId: ID!
   review: Review
   customer: Customer!
-  provider: Provider!
+  business: Business!
 }
 
 type ServiceRequestId {
@@ -60,6 +60,6 @@ input RequestInput {
   vat: Float!
   discount: Float!
   total: Float!
-  provider: ID!
+  business: ID!
 }
 `;

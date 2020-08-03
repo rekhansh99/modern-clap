@@ -37,7 +37,7 @@ type RootQuery {
   customers: [Customer!]!
   providers: [Provider!]!
   businesses: [Business!]!
-  requests(page: Int = 1, limit: Int = 10, customer: ID, provider: ID): RequestList!
+  requests(page: Int = 1, limit: Int = 10, customer: ID, business: ID): RequestList!
   reviews(customer: ID): [Review!]!
   staffs(provider: ID!): [Staff!]!
   types: [Type!]!

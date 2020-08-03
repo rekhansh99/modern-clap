@@ -1,66 +1,61 @@
-const mongoose = require('mongoose');
+const ObjectId = require('mongoose').Types.ObjectId;
 
 const Request = require('../../models/request');
+const Business = require('../../models/business');
 const Customer = require('../../models/customer');
 const { transformRequest, request } = require('./transformers');
 
 module.exports = {
   requests: async (args, ctx) => {
-    let requestlist = {};
     if (!ctx.req.isAuth) throw new Error('Unauthorized');
 
+    const match = {};
     switch (ctx.req.role) {
-      case 'provider':
       case 'customer':
-        requestlist = (
-          await Request.aggregate()
-            .match({ [ctx.req.role]: mongoose.Types.ObjectId(ctx.req.uid) })
-            .sort({ createdAt: 'desc' })
-            .facet({
-              requests: [
-                { $skip: (args.page - 1) * args.limit },
-                { $limit: args.limit }
-              ],
-              count: [{ $count: 'count' }]
-            })
-        )[0];
+        match['customer'] = ObjectId(ctx.req.uid);
+        break;
+
+      case 'provider':
+        if (!args.business) throw new Error('Pass business to the query');
+        if (
+          !(await Business.exists({
+            _id: args.business,
+            provider: ctx.req.uid
+          }))
+        )
+          throw new Error('Business not found or does not belongs to you!');
+        match['business'] = ObjectId(args.business);
+        if (args.customer) match['customer'] = ObjectId(args.customer);
         break;
 
       case 'admin':
-        if (args.customer) {
-          requestlist = (
-            await Request.aggregate
-              .match({ customer: args.customer })
-              .sort({ createdAt: 'desc' })
-              .facet({
-                requests: [
-                  { $skip: (args.page - 1) * args.limit },
-                  { $limit: args.limit }
-                ],
-                count: [{ $count: 'count' }]
-              })
-          )[0];
-        } else if (args.provider) {
-          requestlist = (
-            await Request.find({ provider: args.provider })
-              .sort({ createdAt: 'desc' })
-              .facet({
-                requests: [
-                  { $skip: (args.page - 1) * args.limit },
-                  { $limit: args.limit }
-                ],
-                count: [{ $count: 'count' }]
-              })
-          )[0];
-        }
+        if (args.business) match['business'] = ObjectId(args.business);
+        if (args.customer) match['customer'] = ObjectId(args.customer);
+        break;
+
+      default:
+        throw new Error('Something went wrong!');
     }
 
+    let requestList = (
+      await Request.aggregate()
+        .match(match)
+        .sort({ createdAt: 'desc' })
+        .facet({
+          requests: [
+            { $skip: (args.page - 1) * args.limit },
+            { $limit: args.limit }
+          ],
+          count: [{ $count: 'count' }]
+        })
+    )[0];
+
     return {
-      requests: requestlist.requests.map(request => transformRequest(request)),
+      requests: requestList.requests.map(request => transformRequest(request)),
       pagination: {
         page: args.page,
         limit: args.limit,
-        total: requestlist.count[0].count
+        total: requestList.count[0] ? requestList.count[0].count : 0
       }
     };
   },

@@ -89,19 +89,15 @@ exports.transformRequest = async request => {
     })),
     reviewId: request.review && request.review.toString(),
     customerId: request.customer && request.customer.toString(),
-    providerId: request.provider && request.provider.toString(),
+    businessId: request.business && request.business.toString(),
     services: () =>
       request.services.map(s => ({
         service: () => this.service(s.service),
         staffsAssigned: () => this.staffs(s.staffsAssigned)
       })),
     review: () => this.review(request.review),
-    customer: async () => ({
-      name: (await this.customer(request.customer)).name
-    }),
-    provider: async () => ({
-      shopName: (await this.provider(request.provider)).shopName
-    }),
+    customer: () => this.customer(request.customer),
+    business: () => this.business(request.business),
     createdAt: request.createdAt.toISOString(),
     updatedAt: request.updatedAt.toISOString()
   };

@@ -72,10 +72,10 @@ const requestSchema = new Schema(
       required: true,
       ref: 'Customer'
     },
-    provider: {
+    business: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: 'Provider'
+      ref: 'Business'
     }
   },
   { timestamps: true }
