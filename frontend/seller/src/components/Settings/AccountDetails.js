@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
 
-const AccountDetails = ({ active, setActive }) => {
+const AccountDetails = ({
+  active,
+  setActive,
+  onSubmit,
+  settings,
+  setSettings
+}) => {
+  const onInputChange = e => {
+    setSettings({ [e.target.name]: e.target.value });
+  };
+
   return (
     <div className="dv_per_service_wrapper">
       <h4 className="view_request_title">
@@ -19,7 +29,11 @@ const AccountDetails = ({ active, setActive }) => {
             >
               Cancel
             </button>
-            <button type="button" className="btn btn-sm btn-primary">
+            <button
+              type="button"
+              className="btn btn-sm btn-primary"
+              onClick={() => onSubmit(['ownerName', 'ownerEmail', 'ownerMobile', 'ownerPhone', 'country'])}
+            >
               Save
             </button>
           </div>
@@ -39,10 +53,12 @@ const AccountDetails = ({ active, setActive }) => {
             <FormGroup>
               <label>Owner Full Name</label>
               <FormControl
-                disabled
+                name="ownerName"
                 type="text"
                 className="dv_all_inputs"
-                placeholder="Shyam Jadhav"
+                placeholder="Owner Name"
+                value={settings.ownerName || ''}
+                onChange={onInputChange}
               />
             </FormGroup>
           </Col>
@@ -59,10 +75,12 @@ const AccountDetails = ({ active, setActive }) => {
                 />
               </label>
               <FormControl
-                disabled
-                type="text"
+                name="ownerEmail"
+                type="email"
                 className="dv_all_inputs"
-                placeholder="demo@gmail.com"
+                placeholder="Owner Email"
+                value={settings.ownerEmail || ''}
+                onChange={onInputChange}
               />
             </FormGroup>
           </Col>
@@ -79,10 +97,12 @@ const AccountDetails = ({ active, setActive }) => {
                 />
               </label>
               <FormControl
-                disabled
+                name="ownerMobile"
                 type="text"
                 className="dv_all_inputs"
-                placeholder={9222266992}
+                placeholder="Owner Mobile Number"
+                value={settings.ownerMobile || ''}
+                onChange={onInputChange}
               />
             </FormGroup>
           </Col>
@@ -90,10 +110,12 @@ const AccountDetails = ({ active, setActive }) => {
             <FormGroup>
               <label>Phone No</label>
               <FormControl
-                disabled
+                name="ownerPhone"
                 type="text"
                 className="dv_all_inputs"
-                placeholder={910456789}
+                placeholder="Owner Phone Number"
+                value={settings.ownerPhone || ''}
+                onChange={onInputChange}
               />
             </FormGroup>
           </Col>
@@ -101,10 +123,12 @@ const AccountDetails = ({ active, setActive }) => {
             <FormGroup>
               <label>Select Country</label>
               <FormControl
-                disabled
+                name="country"
                 type="text"
                 className="dv_all_inputs"
-                placeholder="India"
+                placeholder="Country"
+                value={settings.country || ''}
+                onChange={onInputChange}
               />
             </FormGroup>
           </Col>
@@ -116,7 +140,10 @@ const AccountDetails = ({ active, setActive }) => {
 
 AccountDetails.propTypes = {
   active: PropTypes.bool.isRequired,
-  setActive: PropTypes.func.isRequired
+  setActive: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  settings: PropTypes.object.isRequired,
+  setSettings: PropTypes.func.isRequired
 };
 
 export default AccountDetails;
