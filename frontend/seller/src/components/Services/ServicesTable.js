@@ -30,6 +30,12 @@ const GET_SERVICES = gql`
   }
 `;
 
+const GET_ACTIVE_BUSINESS = gql`
+  query {
+    activeBusiness @client
+  }
+`;
+
 // const UPDATE_BUSINESS = gql`
 //   mutation {
 
@@ -37,9 +43,11 @@ const GET_SERVICES = gql`
 // `;
 
 const ServicesTable = () => {
+  const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
+  
   const { loading, error, data } = useQuery(GET_SERVICES, {
     variables: {
-      business: '5f26a44bd129a3a8d95e109e'
+      business: activeBusinessData.activeBusiness
     }
   });
 

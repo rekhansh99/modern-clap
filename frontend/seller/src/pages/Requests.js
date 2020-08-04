@@ -30,13 +30,19 @@ const GET_REQUESTS = gql`
   }
 `;
 
+const GET_ACTIVE_BUSINESS = gql`
+  query {
+    activeBusiness @client
+  }
+`;
+
 const Requests = () => {
   document.title = 'Booking List - Modernclap';
 
-  const currBusiness = '5f26a44bd129a3a8d95e109e';
+  const {data: activeBusinessData} = useQuery(GET_ACTIVE_BUSINESS);
   const { loading, error, data } = useQuery(GET_REQUESTS, {
     errorPolicy: 'all',
-    variables: { business: currBusiness }
+    variables: { business: activeBusinessData.activeBusiness }
   });
 
   if (loading) return <Loading />;
