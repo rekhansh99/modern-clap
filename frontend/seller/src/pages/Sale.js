@@ -86,16 +86,7 @@ const Sale = () => {
 
   return (
     <Container fluid>
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
+      <SwitchBusiness />
 
       <h1 className="mt-4 dv_page_heading">Sale</h1>
 
