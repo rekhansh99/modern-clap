@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import { Link } from 'react-router-dom';
 import { Table, Dropdown } from 'react-bootstrap';
@@ -8,10 +9,18 @@ import { MoreVertical, Star } from 'react-feather';
 import Search from '../common/Search';
 import Pagination from '../common/Pagination';
 
-const ReviewsTable = ({ reviews, viewReview }) => {
+const ReviewsTable = ({
+  reviews,
+  viewReview,
+  total,
+  limit,
+  setLimit,
+  page,
+  setPage
+}) => {
   return (
     <>
-      <Search />
+      <Search limit={limit} setLimit={setLimit} />
       <Table className="table" width="100%" cellSpacing={0} responsive>
         <thead>
           <tr>
@@ -38,13 +47,13 @@ const ReviewsTable = ({ reviews, viewReview }) => {
         <tbody>
           {reviews.map((review, index) => (
             <tr key={index}>
-              <td>{review.date}</td>
+              <td>{moment(review.createdAt).format('DD/MM/YYYY')}</td>
               <td>
                 <Link
-                  to={'/request/' + review.orderId}
+                  to={'/request/' + review._id}
                   style={{ fontFamily: 'Segoe ui bold' }}
                 >
-                  {review.orderId}
+                  {review._id}
                 </Link>
               </td>
               <td>{review.toolsRating}</td>
@@ -64,7 +73,7 @@ const ReviewsTable = ({ reviews, viewReview }) => {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  {review.text}
+                  {review.message}
                 </span>
               </td>
               <Dropdown as="td">
@@ -87,7 +96,7 @@ const ReviewsTable = ({ reviews, viewReview }) => {
           ))}
         </tbody>
       </Table>
-      <Pagination />
+      <Pagination total={total} page={page} limit={limit} setPage={setPage} />
     </>
   );
 };
@@ -104,7 +113,12 @@ ReviewsTable.propTypes = {
       text: PropTypes.string.isRequired
     })
   ),
-  viewReview: PropTypes.func.isRequired
+  viewReview: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
+  setLimit: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired
 };
 
 export default ReviewsTable;
