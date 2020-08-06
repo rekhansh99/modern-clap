@@ -61,7 +61,7 @@ module.exports = {
 
   createReview: async (args, ctx) => {
     if (!ctx.req.isAuth) throw new Error('Unauthenticated!');
-    if (ctx.req.role != 'customer') throw new Error('You are not a customer!');
+    if (ctx.req.role !== 'customer') throw new Error('You are not a customer!');
 
     const request = await Request.findById(args.review.request);
     if (!request) throw new Error('Request not found!');

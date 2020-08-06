@@ -35,7 +35,8 @@ app.use('/graphql', (req, res) =>
 mongoose
   .connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   })
   .then(() => {
     app.listen(process.env.PORT);
