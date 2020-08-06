@@ -105,9 +105,9 @@ exports.transformRequest = async request => {
 
 exports.transformReview = review => {
   return {
-    ...review._doc,
+    ...(review._doc || review),
     __typename: 'Review',
-    _id: review.id,
+    _id: review.id || review._id.toString(),
     requestId: review.request && review.request.toString(),
     request: () => this.request(review.request),
     createdAt: review.createdAt.toISOString(),

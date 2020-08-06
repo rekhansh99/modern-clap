@@ -36,11 +36,11 @@ const GET_REQUESTS = gql`
   }
 `;
 
-// const GET_ACTIVE_BUSINESS = gql`
-//   query {
-//     activeBusiness @client
-//   }
-// `;
+const GET_ACTIVE_BUSINESS = gql`
+  query {
+    activeBusiness @client
+  }
+`;
 
 const AcceptedRequests = () => {
   document.title = 'Accepted Requests - Modernclap';
@@ -48,15 +48,14 @@ const AcceptedRequests = () => {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
 
-  // const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
-  const currBusiness = '5f26a44bd129a3a8d95e109e';
+  const { data: activeBusinessData } = useQuery(GET_ACTIVE_BUSINESS);
 
   const { loading, data, error } = useQuery(GET_REQUESTS, {
     errorPolicy: 'all',
     variables: {
       limit: limit,
       page: page,
-      business: currBusiness
+      business: activeBusinessData.activeBusiness
     }
   });
 

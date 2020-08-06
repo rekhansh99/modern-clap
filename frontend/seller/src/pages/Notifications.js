@@ -35,7 +35,7 @@ const Notifications = () => {
   const [markAsRead] = useMutation(MARK_AS_READ);
 
   useEffect(() => () => {
-    if (data) markAsRead({ variables: { id: data.notifications.data[0].id } });
+    if (data && data.notifications.data.length > 0) markAsRead({ variables: { id: data.notifications.data[0].id } });
   }, [data, markAsRead]);
 
   const unseenNotification = [],

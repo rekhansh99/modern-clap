@@ -6,20 +6,20 @@ import { DateRangePicker } from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 const Filters = ({ onChange, ...props }) => {
-  const types = [
-    'Cleaners',
-    'Online Fitness',
-    'Ladies Salon',
-    'Gents Salon',
-    'Disinfection',
-    'Deep Cleaning',
-    'Handymen',
-    'Electrician',
-    'Painter',
-    'Packers & Movers',
-    'AC Technicians',
-    'Pest Control'
-  ];
+  // const types = [
+  //   'Cleaners',
+  //   'Online Fitness',
+  //   'Ladies Salon',
+  //   'Gents Salon',
+  //   'Disinfection',
+  //   'Deep Cleaning',
+  //   'Handymen',
+  //   'Electrician',
+  //   'Painter',
+  //   'Packers & Movers',
+  //   'AC Technicians',
+  //   'Pest Control'
+  // ];
 
   const getDateRange = () => {
     return (
@@ -88,7 +88,7 @@ const Filters = ({ onChange, ...props }) => {
           </Col>
 
           {/* Type Filter */}
-          <Col xs={12} lg={3}>
+          {/* <Col xs={12} lg={3}>
             <Form.Group>
               <label>Type </label>
               <Form.Control
@@ -105,7 +105,7 @@ const Filters = ({ onChange, ...props }) => {
                 ))}
               </Form.Control>
             </Form.Group>
-          </Col>
+          </Col> */}
 
           {/* Rating Filter */}
           <Col xs={12} lg={3}>
