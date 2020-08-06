@@ -66,7 +66,7 @@ exports.transformBusiness = business => {
     typeId: business.type.toString(),
     type: () => this.type(business.type),
     services: business.services.map(s => ({
-      ...s,
+      ...s._doc,
       service: () => this.service(s.service),
       serviceId: s.service.toString()
     })),

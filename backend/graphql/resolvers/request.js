@@ -76,7 +76,7 @@ module.exports = {
       throw new Error('Unauthorized');
 
     const newRequest = new Request({
-      serivces: args.request.serivces.map(service => ({
+      serivces: args.request.services.map(service => ({
         service: service,
         staffAssigned: []
       })),
@@ -89,10 +89,11 @@ module.exports = {
       },
       payment: {
         mode: args.request.mode,
-        subTotal: args.request.subTotal,
+        subtotal: args.request.subtotal,
         vat: args.request.vat,
         discount: args.request.discount,
-        total: args.request.total
+        total: args.request.total,
+        status: 'pending'
       },
       status: 'pending',
       customer: ctx.req.uid

@@ -60,6 +60,6 @@ input RequestInput {
   vat: Float!
   discount: Float!
   total: Float!
-  business: ID!
+  business: ID
 }
 `;
