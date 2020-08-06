@@ -1,5 +1,6 @@
 module.exports = `
 	type Type {
+    _id: ID!
 		name: String!
 		icon: String
 		categoryIds: [ID!]!

@@ -3,8 +3,12 @@ type Provider {
   _id: ID!
 	ownerName: String
   ownerPhone: String
+  ownerPhoneVerified: Boolean
   ownerEmail: String!
+  ownerEmailVerified: Boolean!
   ownerMobile: String!
+  ownerMobileVerified: Boolean!
+  country: String!
   businessIds: [ID!]!
   businesses: [Business!]!
   createdAt: String
@@ -16,6 +20,7 @@ input RegisterProviderInput {
   ownerPhone: String!
   ownerEmail: String!
   ownerMobile: String!
+  country: String!
   password: String!
 }
 
@@ -24,7 +29,7 @@ input UpdateProviderInput {
   ownerPhone: String
   ownerEmail: String
   ownerMobile: String
-  password: String
+  country: String
   businesses: [UpdateBusinessInput!]
 }
 `;

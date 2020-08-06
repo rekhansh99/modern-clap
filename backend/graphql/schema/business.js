@@ -1,7 +1,6 @@
 module.exports = `
 type Business {
   _id: ID
-  country: String!
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
@@ -11,14 +10,30 @@ type Business {
   services: [ServiceBusiness!]!
   contactPersonName: String
   contactPersonMobile: String
+  contactPersonMobileVerified: Boolean
+  businessHours: BusinessHours
   city: String!
   pincode: String!
   address: String!
-  area:  String!
+  state:  String!
+}
+
+type BusinessHours {
+  open: Days!
+  close: Days!
+}
+
+type Days {
+  mon: Int
+  tue: Int
+  wed: Int
+  thu: Int
+  fri: Int
+  sat: Int
+  sun: Int
 }
 
 input CreateBusinessInput {
-  country: String!
   tradeLicenseNo: String!
   tradeLicenseDate: String!
   tradeLicenseDoc: String!
@@ -29,23 +44,23 @@ input CreateBusinessInput {
   city: String!
   pincode: String!
   address: String!
-  area:  String!
+  state:  String!
 }
 
 input UpdateBusinessInput {
-  country: String
   tradeLicenseNo: String
   tradeLicenseDate: String
   tradeLicenseDoc: String
   businessCategories: [ID!]
   services: [ServiceBusinessInput!]
+  businessHours: BusinessHoursInput
   shopName: String
   contactPersonName: String
   contactPersonMobile: String
   city: String
   pincode: String
   address: String
-  area:  String
+  state:  String
 }
 
 type ServiceBusiness {
@@ -61,5 +76,20 @@ input ServiceBusinessInput {
   cutPrice: Float!
   salePrice: Float!
   active: Boolean!
+}
+
+input BusinessHoursInput {
+  open: DaysInput
+  close: DaysInput
+}
+
+input DaysInput {
+  mon: Int
+  tue: Int
+  wed: Int
+  thu: Int
+  fri: Int
+  sat: Int
+  sun: Int
 }
 `;

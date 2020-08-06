@@ -1,52 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import validator from 'validator';
 
-import { Link } from 'react-router-dom';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 import { ReactComponent as TickSVG } from '../../svgs/tick.svg';
+import SectionHeading from '../common/SectionHeading';
 
 const AccountDetails = ({
   active,
   setActive,
   onSubmit,
   settings,
-  setSettings
+  setSettings,
+  changed,
+  setChanged
 }) => {
+  const [errors, setErrors] = useState({});
   const onInputChange = e => {
     setSettings({ [e.target.name]: e.target.value });
   };
 
+  const validateSettings = async () => {
+    const errors = {};
+    if (!validator.isLength(settings.ownerName, { min: 3 }))
+      errors.ownerName = "Owner's name should contain atleast 3 letters";
+    if (!validator.isEmail(settings.ownerEmail))
+      errors.ownerEmail = 'Email is not valid';
+    if (!validator.isMobilePhone(settings.ownerMobile))
+      errors.ownerMobile = 'Mobile number is not valid';
+    if (
+      settings.ownerPhone !== '' &&
+      settings.ownerPhone !== null &&
+      !validator.isMobilePhone(settings.ownerPhone)
+    )
+      errors.ownerPhone = 'Phone number is not valid';
+    if (settings.country === 'Select Country')
+      errors.country = 'Select a country';
+    setErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      await onSubmit({
+        ownerName: settings.ownerName,
+        ownerEmail: settings.ownerEmail,
+        ownerMobile: settings.ownerMobile,
+        ownerPhone: settings.ownerPhone,
+        country: settings.country
+      });
+      setChanged(false);
+    }
+  };
+
   return (
     <div className="dv_per_service_wrapper">
-      <h4 className="view_request_title">
-        Account Details
-        {active ? (
-          <div className="float-right dv_setting_save_btn_wrapper">
-            <button
-              type="button"
-              className="btn btn-sm text-dark"
-              onClick={() => setActive('')}
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              className="btn btn-sm btn-primary"
-              onClick={() => onSubmit(['ownerName', 'ownerEmail', 'ownerMobile', 'ownerPhone', 'country'])}
-            >
-              Save
-            </button>
-          </div>
-        ) : (
-          <Link
-            to="#!"
-            className="float-right"
-            onClick={() => setActive('accountDetails')}
-          >
-            edit
-          </Link>
-        )}
-      </h4>
+      <SectionHeading
+        title="Account Details"
+        active={active}
+        setActive={setActive}
+        changed={changed}
+        onSubmit={validateSettings}
+      />
       {active && (
         <Row className="p-3">
           <Col xs={12} lg={4}>
@@ -59,7 +71,9 @@ const AccountDetails = ({
                 placeholder="Owner Name"
                 value={settings.ownerName || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.ownerName}
               />
+              <FormControl.Feedback type="invalid">{errors.ownerName}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -68,6 +82,7 @@ const AccountDetails = ({
                 Email Address
                 <TickSVG
                   style={{
+                    display: settings.ownerEmailVerified ? 'block' : 'none',
                     width: '15px',
                     float: 'left',
                     margin: '3px 10px 0 0'
@@ -81,7 +96,9 @@ const AccountDetails = ({
                 placeholder="Owner Email"
                 value={settings.ownerEmail || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.ownerEmail}
               />
+              <FormControl.Feedback type="invalid">{errors.ownerEmail}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -90,6 +107,7 @@ const AccountDetails = ({
                 Mobile No
                 <TickSVG
                   style={{
+                    display: settings.ownerMobileVerified ? 'block' : 'none',
                     width: '15px',
                     float: 'left',
                     margin: '3px 10px 0 0'
@@ -103,7 +121,9 @@ const AccountDetails = ({
                 placeholder="Owner Mobile Number"
                 value={settings.ownerMobile || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.ownerMobile}
               />
+              <FormControl.Feedback type="invalid">{errors.ownerMobile}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -116,7 +136,9 @@ const AccountDetails = ({
                 placeholder="Owner Phone Number"
                 value={settings.ownerPhone || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.ownerPhone}
               />
+              <FormControl.Feedback type="invalid">{errors.ownerPhone}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -128,7 +150,7 @@ const AccountDetails = ({
                 className="dv_all_inputs"
                 placeholder="Country"
                 value={settings.country || ''}
-                onChange={onInputChange}
+                disabled
               />
             </FormGroup>
           </Col>
@@ -141,6 +163,8 @@ const AccountDetails = ({
 AccountDetails.propTypes = {
   active: PropTypes.bool.isRequired,
   setActive: PropTypes.func.isRequired,
+  changed: PropTypes.bool.isRequired,
+  setChanged: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   settings: PropTypes.object.isRequired,
   setSettings: PropTypes.func.isRequired

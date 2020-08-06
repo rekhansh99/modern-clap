@@ -3,45 +3,32 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
+import SectionHeading from '../common/SectionHeading';
 
-const Media = ({ active, setActive }) => {
+const Media = ({
+  active,
+  setActive,
+  settings
+}) => {
   return (
     <div className="dv_per_service_wrapper">
-      <h4 className="view_request_title">
-        Media
-        {active ? (
-          <div className="float-right dv_setting_save_btn_wrapper">
-            <button
-              type="button"
-              className="btn btn-sm text-dark"
-              onClick={() => setActive('')}
-            >
-              Cancel
-            </button>
-            <button type="button" className="btn btn-sm btn-primary">
-              Save
-            </button>
-          </div>
-        ) : (
-          <Link
-            to="#!"
-            className="float-right"
-            onClick={() => setActive('media')}
-          >
-            edit
-          </Link>
-        )}
-      </h4>
+      <SectionHeading
+        title="Media"
+        active={active}
+        setActive={setActive}
+        changed={false}
+      />
       {active && (
         <Row className="p-3">
           <Col xs={12} lg={4}>
             <FormGroup>
               <label>Trade License </label>
               <FormControl
+                name="tradeLicenseNo"
                 type="text"
                 className="dv_all_inputs"
                 placeholder="Trade License"
-                defaultValue="KJ65423578JB23"
+                value={settings.tradeLicenseNo}
                 disabled
               />
             </FormGroup>
@@ -69,7 +56,7 @@ const Media = ({ active, setActive }) => {
                 type="text"
                 className="dv_all_inputs"
                 placeholder="Trade License Copy"
-                defaultValue="tradeliesence.jpg"
+                value={settings.tradeLicenseDoc}
               />
             </FormGroup>
           </Col>
@@ -81,7 +68,8 @@ const Media = ({ active, setActive }) => {
 
 Media.propTypes = {
   active: PropTypes.bool.isRequired,
-  setActive: PropTypes.func.isRequired
+  setActive: PropTypes.func.isRequired,
+  settings:  PropTypes.object.isRequired
 };
 
 export default Media;

@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const businessSchema = new Schema(
   {
-    country: {
-      type: String,
-      required: true
-    },
     tradeLicenseNo: {
       type: String,
       required: true
@@ -52,89 +48,83 @@ const businessSchema = new Schema(
     },
     contactPersonName: String,
     contactPersonMobile: String,
+    contactPersonMobileVerified: {
+      type: Boolean,
+      default: false
+    },
     businessHours: {
-      mon: {
-        open: {
+      open: {
+        mon: {
           type: Number,
           min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        tue: {
           type: Number,
           min: 0,
-          max: 24
+          max: 23
+        },
+        wed: {
+          type: Number,
+          min: 0,
+          max: 23
+        },
+        thu: {
+          type: Number,
+          min: 0,
+          max: 23
+        },
+        fri: {
+          type: Number,
+          min: 0,
+          max: 23
+        },
+        sat: {
+          type: Number,
+          min: 0,
+          max: 23
+        },
+        sun: {
+          type: Number,
+          min: 0,
+          max: 23
         }
       },
-      tue: {
-        open: {
+      close: {
+        mon: {
           type: Number,
           min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        tue: {
           type: Number,
           min: 0,
-          max: 24
-        }
-      },
-      wed: {
-        open: {
-          type: Number,
-          min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        wed: {
           type: Number,
           min: 0,
-          max: 24
-        }
-      },
-      thu: {
-        open: {
-          type: Number,
-          min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        thu: {
           type: Number,
           min: 0,
-          max: 24
-        }
-      },
-      fri: {
-        open: {
-          type: Number,
-          min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        fri: {
           type: Number,
           min: 0,
-          max: 24
-        }
-      },
-      sat: {
-        open: {
-          type: Number,
-          min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        sat: {
           type: Number,
           min: 0,
-          max: 24
-        }
-      },
-      sun: {
-        open: {
-          type: Number,
-          min: 0,
-          max: 24
+          max: 23
         },
-        close: {
+        sun: {
           type: Number,
           min: 0,
-          max: 24
+          max: 23
         }
       }
     },
@@ -150,7 +140,7 @@ const businessSchema = new Schema(
       type: String,
       required: true
     },
-    area: {
+    state: {
       type: String,
       required: true
     },
@@ -159,11 +149,11 @@ const businessSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Request'
       }
-		],
-		provider: {
-			type: Schema.Types.ObjectId,
-			ref: 'Provider'
-		}
+    ],
+    provider: {
+      type: Schema.Types.ObjectId,
+      ref: 'Provider'
+    }
   },
   { timestamps: true }
 );

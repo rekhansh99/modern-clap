@@ -9,15 +9,31 @@ const providerSchema = new Schema(
       required: true
     },
     ownerPhone: String,
+    ownerPhoneVerified: {
+      type: Boolean,
+      default: false
+    },
     ownerEmail: {
       type: String,
       required: true
+    },
+    ownerEmailVerified: {
+      type: Boolean,
+      default: false
     },
     ownerMobile: {
       type: String,
       required: true
     },
+    ownerMobileVerified: {
+      type: Boolean,
+      default: false
+    },
     password: {
+      type: String,
+      required: true
+    },
+    country: {
       type: String,
       required: true
     },

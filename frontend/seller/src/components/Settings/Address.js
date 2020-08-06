@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import SectionHeading from '../common/SectionHeading';
 
 const Address = ({
   active,
@@ -10,45 +10,50 @@ const Address = ({
   onSubmit,
   settings,
   setSettings,
-  changed
+  changed,
+  setChanged
 }) => {
+  const [errors, setErrors] = useState({});
   const onInputChange = e => {
     setSettings({ [e.target.name]: e.target.value });
   };
 
+  const validateSettings = async () => {
+    const errors = {};
+ 
+    if (settings.address === '')
+      errors.address = 'This is required';
+ 
+      if (settings.city === '')
+      errors.city = 'This is required';
+      
+      if (settings.state === '')
+        errors.state = 'This is required';
+   
+    if (settings.pincode === '')
+      errors.pincode = 'This is required';
+    setErrors(errors);
+
+    if(Object.keys(errors).length === 0) {
+      await onSubmit({
+        address: settings.address,
+        state: settings.state,
+        city: settings.city,
+        pincode: settings.pincode
+      });
+      setChanged(false);
+    }
+  };
+
   return (
     <div className="dv_per_service_wrapper">
-      <h4 className="view_request_title">
-        Address
-        {active ? (
-          changed && (
-            <div className="float-right dv_setting_save_btn_wrapper">
-              <button
-                type="button"
-                className="btn btn-sm text-dark"
-                onClick={() => setActive('')}
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-sm btn-primary"
-                onClick={() => onSubmit(['address', 'area', 'city', 'pincode'])}
-              >
-                Save
-              </button>
-            </div>
-          )
-        ) : (
-          <Link
-            to="#!"
-            className="float-right"
-            onClick={() => setActive('address')}
-          >
-            edit
-          </Link>
-        )}
-      </h4>
+      <SectionHeading
+        title="Address"
+        active={active}
+        setActive={setActive}
+        changed={changed}
+        onSubmit={validateSettings}
+      />
       {active && (
         <Row className="p-3">
           <Col xs={12}>
@@ -61,20 +66,9 @@ const Address = ({
                 placeholder="Address"
                 value={settings.address || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.address}
               />
-            </FormGroup>
-          </Col>
-          <Col xs={12} lg={4}>
-            <FormGroup>
-              <label>Area</label>
-              <FormControl
-                name="area"
-                type="text"
-                className="dv_all_inputs"
-                placeholder="Area"
-                value={settings.area || ''}
-                onChange={onInputChange}
-              />
+              <FormControl.Feedback type="invalid">{errors.address}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -87,7 +81,24 @@ const Address = ({
                 placeholder="City"
                 value={settings.city || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.city}
               />
+              <FormControl.Feedback type="invalid">{errors.city}</FormControl.Feedback>
+            </FormGroup>
+          </Col>
+          <Col xs={12} lg={4}>
+            <FormGroup>
+              <label>State</label>
+              <FormControl
+                name="state"
+                type="text"
+                className="dv_all_inputs"
+                placeholder="State"
+                value={settings.state || ''}
+                onChange={onInputChange}
+                isInvalid={!!errors.state}
+              />
+              <FormControl.Feedback type="invalid">{errors.state}</FormControl.Feedback>
             </FormGroup>
           </Col>
           <Col xs={12} lg={4}>
@@ -100,7 +111,9 @@ const Address = ({
                 placeholder="Pincode"
                 value={settings.pincode || ''}
                 onChange={onInputChange}
+                isInvalid={!!errors.pincode}
               />
+              <FormControl.Feedback type="invalid">{errors.pincode}</FormControl.Feedback>
             </FormGroup>
           </Col>
         </Row>
@@ -115,7 +128,8 @@ Address.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   settings: PropTypes.object.isRequired,
   setSettings: PropTypes.func.isRequired,
-  changed: PropTypes.bool.isRequired
+  changed: PropTypes.bool.isRequired,
+  setChanged: PropTypes.func.isRequired
 };
 
 export default Address;

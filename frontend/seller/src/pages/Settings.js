@@ -16,28 +16,69 @@ import Loading from '../components/common/Loading';
 const UPDATE_PROVIDER = gql`
   mutation UpdateProvider($newData: UpdateProviderInput) {
     updateProvider(newData: $newData) {
-      __typename
+      _id
     }
   }
 `;
 
-const GET_PROVIDER = gql`
-  query {
+const UPDATE_BUSINESS = gql`
+  mutation UpdateBusiness($id: String!, $newData: UpdateBusinessInput!) {
+    updateBusiness(id: $id, newData: $newData) {
+      _id
+    }
+  }
+`;
+
+const GET_PROVIDER_AND_BUSINESS = gql`
+  query GetProviderAndBusiness($id: ID!) {
     provider {
       ownerName
       ownerPhone
+      ownerPhoneVerified
       ownerEmail
+      ownerEmailVerified
       ownerMobile
-    }
-  }
-`;
-
-const GET_BUSINESS = gql`
-  query GetBusiness($id: ID!) {
-    activeBusiness @client @export(as: "id")
-    business(id: $id) {
+      ownerMobileVerified
       country
+    }
+
+    activeBusiness @client @export(as: "id")
+
+    business(id: $id) {
       shopName
+      type {
+        _id
+        name
+      }
+      tradeLicenseNo
+      tradeLicenseDate
+      tradeLicenseDoc
+      contactPersonName
+      contactPersonMobile
+      businessHours {
+        open {
+          mon
+          tue
+          wed
+          thu
+          fri
+          sat
+          sun
+        }
+        close {
+          mon
+          tue
+          wed
+          thu
+          fri
+          sat
+          sun
+        }
+      }
+      city
+      pincode
+      address
+      state
     }
   }
 `;
@@ -45,22 +86,22 @@ const GET_BUSINESS = gql`
 const Settings = () => {
   document.title = 'Settings - Modernclap';
 
-  const providerQuery = useQuery(GET_PROVIDER);
-  const businessQuery = useQuery(GET_BUSINESS);
+  const query = useQuery(GET_PROVIDER_AND_BUSINESS);
 
-  // if (activeBusinessLoading) return <Loading />;
-
-  console.log(providerQuery.data);
-  console.log(businessQuery.data);
   const [updateProvider, { loading: providerLoading }] = useMutation(
     UPDATE_PROVIDER
   );
+
+  const [updateBusiness, { loading: businessLoading }] = useMutation(
+    UPDATE_BUSINESS
+  );
+
   const [settings, setSettings] = useState({});
   const [activeSection, setActiveSection] = useState('');
   const [changed, setChanged] = useState(false);
 
-  const provider = providerQuery.data && providerQuery.data.provider;
-  const business = businessQuery.data && businessQuery.data.business;
+  const provider = query.data && query.data.provider;
+  const business = query.data && query.data.business;
 
   useEffect(() => {
     setChanged(true);
@@ -79,80 +120,91 @@ const Settings = () => {
     }
   }, [provider, business]);
 
-  const onSaveSettings = async settingsList => {
-    try {
-      let newData = {};
-      for (let setting of settingsList) {
-        newData[setting] = settings[setting];
+  const updateProviderWrapper = newData => {
+    return updateProvider({
+      variables: {
+        newData
       }
-      await updateProvider({
-        variables: { newData }
-      });
-      setChanged(false);
-    } catch (err) {
-      console.log(err);
-    }
+    });
+  };
+
+  const updateBusinessWrapper = newData => {
+    console.log(newData, query.data.activeBusiness);
+    return updateBusiness({
+      variables: {
+        newData,
+        id: query.data.activeBusiness
+      }
+    })
   };
 
   return (
     <Container fluid>
-      {(providerQuery.loading || businessQuery.loading || providerLoading) && (
-        <Loading />
-      )}
-      <SwitchBusiness
-        title="Goodhand Transaction LLC"
-        options={[
-          'Change',
-          'Orville Real Estate',
-          'Lightspeed General Trading',
-          'Alahsa Stone',
-          'TOG'
-        ]}
-      />
+      {(query.loading || providerLoading || businessLoading) && <Loading />}
+      <SwitchBusiness />
       <h1 className="mt-4 dv_page_heading">Settings</h1>
       <Card className="mb-4">
         <Card.Header>Profile</Card.Header>
         <Card.Body className="p-0">
           <Form>
             <AccountDetails
-              setActive={setActiveSection}
+              setActive={bool => setActiveSection(bool ? 'accountDetails' : '')}
               active={activeSection === 'accountDetails'}
-              onSubmit={onSaveSettings}
+              onSubmit={updateProviderWrapper}
               settings={settings}
               setSettings={newSettings =>
                 setSettings({ ...settings, ...newSettings })
               }
               changed={changed}
+              setChanged={setChanged}
             />
             <ShopDetails
-              setActive={setActiveSection}
+              setActive={bool => setActiveSection(bool ? 'shopDetails' : '')}
               active={activeSection === 'shopDetails'}
-            />
-            <WorkingHours
-              setActive={setActiveSection}
-              active={activeSection === 'workingHours'}
-            />
-            <Address
-              setActive={setActiveSection}
-              active={activeSection === 'address'}
-              onSubmit={onSaveSettings}
+              onSubmit={updateBusinessWrapper}
               settings={settings}
               setSettings={newSettings =>
                 setSettings({ ...settings, ...newSettings })
               }
               changed={changed}
+              setChanged={setChanged}
+            />
+            <WorkingHours
+              setActive={bool => setActiveSection(bool ? 'workingHours' : '')}
+              active={activeSection === 'workingHours'}
+              onSubmit={updateBusinessWrapper}
+              settings={settings}
+              setSettings={newSettings =>
+                setSettings({ ...settings, ...newSettings })
+              }
+              changed={changed}
+              setChanged={setChanged}
+            />
+            <Address
+              setActive={bool => setActiveSection(bool ? 'address' : '')}
+              active={activeSection === 'address'}
+              onSubmit={updateBusinessWrapper}
+              settings={settings}
+              setSettings={newSettings =>
+                setSettings({ ...settings, ...newSettings })
+              }
+              changed={changed}
+              setChanged={setChanged}
             />
             <Media
-              setActive={setActiveSection}
+              setActive={bool => setActiveSection(bool ? 'media' : '')}
               active={activeSection === 'media'}
+              settings={settings}
             />
             <ResetPassword
-              setActive={setActiveSection}
+              setActive={bool => setActiveSection(bool ? 'resetPassword' : '')}
               active={activeSection === 'resetPassword'}
             />
           </Form>
           <CategoryRequestForm
-            setActive={setActiveSection}
+            setActive={bool =>
+              setActiveSection(bool ? 'categoryRequestForm' : '')
+            }
             active={activeSection === 'categoryRequestForm'}
           />
         </Card.Body>

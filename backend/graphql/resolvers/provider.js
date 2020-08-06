@@ -35,7 +35,7 @@ module.exports = {
     const newBusiness = new Business({
       ...args.business,
       services: [],
-      requests: [],
+      requests: []
     });
     const business = await newBusiness.save();
 
@@ -92,13 +92,25 @@ module.exports = {
     }
     const provider = await Provider.findById(providerId);
     Object.keys(args.newData).map(key => {
-      switch (key) {
-        case 'password':
-          break;
-      }
       provider[key] = args.newData[key];
     });
     await provider.save();
     return transformProvider(provider);
+  },
+
+  resetPassword: async (args, ctx) => {
+    if (!ctx.req.isAuth) throw new Error('Not Authenticated');
+    if (!ctx.req.role === 'provider') throw new Error('Not Authorized');
+
+    const provider = await Provider.findById(ctx.req.uid);
+    
+    const passwordMatch = await bcrypt.compare(args.old, provider.password);
+    if (!passwordMatch) throw new Error('Password not matched!');
+
+    console.log(args);
+    provider.password = await bcrypt.hash(args.new, 12);
+
+    await provider.save();
+    return true;
   }
 };

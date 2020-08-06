@@ -72,14 +72,14 @@ const ProviderRegistration = () => {
         registerProvider({
           variables: {
             provider: {
+              ownerName: formData.ownerName.value,
               ownerEmail: formData.ownerEmail.value,
               ownerMobile: formData.ownerMobile.value,
+              ownerPhone: formData.ownerPhone.value,
+              country: formData.country.value,
               password: formData.password.value
             },
             business: {
-              ownerName: formData.ownerName.value,
-              ownerPhone: formData.ownerPhone.value,
-              country: formData.country.value,
               tradeLicenseNo: formData.tradeLicenseNo.value,
               tradeLicenseDate: formData.tradeLicenseDate.value,
               tradeLicenseDoc: formData.tradeLicenseDoc.value,
