@@ -10,8 +10,10 @@ import Pagination from '../common/Pagination';
 import Loading from '../common/Loading';
 
 const GET_REQUESTS = gql`
-  query Requests($page: Int = 1, $limit: Int = 10) {
-    requests(page: $page, limit: $limit) {
+  query Requests($business: ID, $page: Int = 1, $limit: Int = 10) {
+    activeBusiness @client @export(as: "business")
+
+    requests(page: $page, limit: $limit, business: $business) {
       requests {
         _id
         customer {
