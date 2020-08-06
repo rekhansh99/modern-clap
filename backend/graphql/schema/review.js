@@ -20,4 +20,9 @@ input ReviewInput {
   overallRating: Int!
   message: String
 }
+
+type ReviewsList {
+  reviews: [Review!]!
+  pagination: Pagination
+}
 `;

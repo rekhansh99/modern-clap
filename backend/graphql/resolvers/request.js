@@ -61,7 +61,7 @@ module.exports = {
   },
 
   request: async (args, ctx) => {
-    if (!ctx.req.isAuth) throw new Error('Unauthorized');
+    if (!ctx.req.isAuth) throw new Error('Unauthenticated');
 
     const requestData = await request(args.id);
 
