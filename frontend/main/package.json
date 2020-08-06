@@ -2,7 +2,7 @@
   "name": "modern-clap",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mirrorssalonandspa.com/html/mirrors/img/react/",
+  "homepage": "https://beta.modernclap.com/",
   "dependencies": {
     "@apollo/client": "^3.0.2",
     "@reduxjs/toolkit": "^1.4.0",
