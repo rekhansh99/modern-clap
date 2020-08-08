@@ -35,7 +35,7 @@ const requestSchema = new Schema(
     },
     payment: {
       mode: {
-        type: String,
+        type: String, // pending completed
         required: true
       },
       subtotal: {
@@ -53,15 +53,19 @@ const requestSchema = new Schema(
       total: {
         type: Number,
         required: true
-      },
-      status: {
-        type: String,
-        required: true
       }
     },
     status: {
-      type: String,
-      required: true
+      customer: {
+        type: String, // pending upcoming ongoing completed cancelled
+        required: true,
+        default: 'pending'
+      },
+      business: {
+        type: String, // recieved missed accepted ongoing completed
+        required: true,
+        defualt: 'received'
+      }
     },
     review: {
       type: Schema.Types.ObjectId,

@@ -21,6 +21,7 @@ import MobileSeach from './pages/MobileSearch';
 import MyReviews from './pages/MyReviews';
 
 import { setLoggedIn, currentUser } from './app/cache';
+import Help from './pages/static/Help';
 
 const IS_LOGGED_IN = gql`
   query IsLoggedIn {
@@ -65,6 +66,9 @@ function App() {
         </Route>
         <Route exact path="/contact-us">
           <ContactUs />
+        </Route>
+        <Route exact path="/help">
+          <Help />
         </Route>
         <Route exact path="/">
           <Landing />
