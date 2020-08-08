@@ -22,6 +22,7 @@ import MyReviews from './pages/MyReviews';
 
 import { setLoggedIn, currentUser } from './app/cache';
 import Help from './pages/static/Help';
+import BottomNav from './components/common/BottomNav';
 
 const IS_LOGGED_IN = gql`
   query IsLoggedIn {
@@ -101,6 +102,7 @@ function App() {
           <MobileSeach />
         </Route>
       </Switch>
+      <BottomNav toggleMenu={() => {}} />
     </Router>
   );
 }
