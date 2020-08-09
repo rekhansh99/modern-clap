@@ -19,6 +19,7 @@ import { ReactComponent as Blogs } from '../../svgs/blogs.svg';
 import { ReactComponent as Reviews } from '../../svgs/reviews.svg';
 import { ReactComponent as Careers } from '../../svgs/careers.svg';
 import { ReactComponent as ContactUs } from '../../svgs/contact-us.svg';
+import { ReactComponent as Help } from '../../svgs/help.svg';
 
 import LoggedInMenuItems from './LoggedInMenuItems';
 import LoggedOutMenuItems from './LoggedOutMenuItems';
@@ -55,6 +56,12 @@ const Menu = ({ open, showMenu }) => {
       <ModalBody>
         {isLoggedIn ? <LoggedInMenuItems /> : <LoggedOutMenuItems />}
         <ul className="dv_menu_links_a">
+        <li>
+            <Link to="/help">
+              <Help />
+              Help
+            </Link>
+          </li>
           <li>
             <Link to="/provider/login">
               <Provider />

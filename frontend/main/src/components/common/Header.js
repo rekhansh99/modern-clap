@@ -81,6 +81,24 @@ const Header = props => {
             <LogoSVG width={150} />
           </Navbar.Brand>
           {/* Links */}
+          <ul className="dv_desktop_menus">
+            <li><Link to="/book-now?category=cleaners" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>cleaners </Link></li>
+            <li><Link to="/book-now?category=ladies-salon" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>ladies salon </Link></li>
+            <li><Link to="/book-now?category=gents-salon" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>gents salon </Link></li>
+            <li><Link to="/book-now?category=handyman" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>handyman </Link></li>
+            <li><Link to="/book-now?category=electrician" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>electrcian </Link></li>
+            <li><Link to="/book-now?category=ac-technician" className={classnames({ dv_scoll_desktop_menu_a: fixed })}>AC techcnician </Link></li>
+            <li><a href="#!" className={classnames({ dv_scoll_desktop_menu_a: fixed })}> +6 more  </a>
+              <ul>
+                <li><Link to="/book-now?category=deep-cleaning">deep cleaning </Link></li>
+                <li><Link to="/book-now?category=fitness">fitness </Link></li>
+                <li><Link to="/book-now?category=painters">painters </Link></li>
+                <li><Link to="/book-now?category=packers-and-movers">packers & movers </Link></li>
+                <li><Link to="/book-now?category=pest-control">Pest control </Link></li>
+                <li><Link to="/book-now?category=disinfection">disinfection </Link></li>
+              </ul>
+            </li>
+          </ul>
           <Nav as="ul" className="float-right dv_menu_top">
             <Nav.Item as="li">
               <Link
