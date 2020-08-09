@@ -36,6 +36,7 @@ const RepeatSlider = props => {
   return (
     <div className="dv_repeat_slider_wrapper">
       <Container>
+        {/* <div className="dv_offer_Ends_txt">Offer End in <span className="dv_limited_time_txt">03:34:58 </span></div>  */}
         <h3 className="dv_repeat_slider_heading">{props.heading}</h3>
         <p className="dv_repeat_slider_para">{props.desc}</p>
         <Swiper
