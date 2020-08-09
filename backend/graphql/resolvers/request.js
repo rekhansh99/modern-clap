@@ -36,6 +36,19 @@ module.exports = {
       default:
         throw new Error('Something went wrong!');
     }
+    if (args.startDate && args.endDate) {
+      match['createdAt'] = {
+        $gte: new Date(args.startDate),
+        $lt: new Date(args.endDate)
+      };
+    }
+    if (args.payment) {
+      match['request'] = {
+        payment: {
+          mode: args.payment
+        }
+      };
+    }
 
     let requestList = (
       await Request.aggregate()

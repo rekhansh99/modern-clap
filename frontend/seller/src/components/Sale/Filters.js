@@ -6,33 +6,18 @@ import { DateRangePicker } from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 const Filters = ({ onChange, ...props }) => {
-  const types = [
-    'Cleaners',
-    'Online Fitness',
-    'Ladies Salon',
-    'Gents Salon',
-    'Disinfection',
-    'Deep Cleaning',
-    'Handymen',
-    'Electrician',
-    'Painter',
-    'Packers & Movers',
-    'AC Technicians',
-    'Pest Control'
-  ];
-
-  const categories = [
-    'All',
-    'Kitchen cleaning',
-    'Bedroom cleaning',
-    'Bathroom cleaning',
-    'Living Room cleaning',
-    'Untesil cleaning',
-    'Iron with folding cloths',
-    'Machine Laundry',
-    'Refrigerator Cleaning',
-    'Ovan & Microwave Cleaning'
-  ];
+  // const categories = [
+  //   'All',
+  //   'Kitchen cleaning',
+  //   'Bedroom cleaning',
+  //   'Bathroom cleaning',
+  //   'Living Room cleaning',
+  //   'Untesil cleaning',
+  //   'Iron with folding cloths',
+  //   'Machine Laundry',
+  //   'Refrigerator Cleaning',
+  //   'Ovan & Microwave Cleaning'
+  // ];
 
   const getDateRange = () => {
     return (
@@ -100,27 +85,7 @@ const Filters = ({ onChange, ...props }) => {
             </Form.Group>
           </Col>
 
-          {/* Type Filter */}
-          <Col xs={12} lg={3}>
-            <Form.Group>
-              <label>Type </label>
-              <Form.Control
-                as="select"
-                className="dv_all_inputs"
-                value={props.type}
-                onChange={e => onChange({ type: e.target.value })}
-              >
-                <option value="select">Select</option>
-                {types.map((type, index) => (
-                  <option key={index} value={index}>
-                    {type}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-          </Col>
-
-          {/* Category Filter */}
+          {/* Category Filter
           <Col xs={12} lg={3}>
             <Form.Group>
               <label>Category </label>
@@ -138,7 +103,7 @@ const Filters = ({ onChange, ...props }) => {
                 ))}
               </Form.Control>
             </Form.Group>
-          </Col>
+          </Col> */}
 
           {/* Payment Method Filter */}
           <Col xs={12} lg={3}>
